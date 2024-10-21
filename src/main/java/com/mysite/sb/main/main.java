@@ -17,4 +17,9 @@ public class main {
 	public String business() {
 		return "business";
 	}
+	//헤더
+	@GetMapping("/header")
+	public String header() {
+		return "header";
+	}
 }
