@@ -22,4 +22,9 @@ public class main {
 	public String header() {
 		return "header";
 	}
+	//푸터
+		@GetMapping("/footer")
+		public String footer() {
+			return "footer";
+		}
 }
