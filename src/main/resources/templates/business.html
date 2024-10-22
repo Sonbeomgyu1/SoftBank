@@ -142,6 +142,39 @@
 				transform: none;
 			}
 		}
+
+		.nav-tabs .nav-link {
+			color: black !important;
+			/* 탭 글씨를 검은색으로 설정 */
+		}
+
+		.nav-tabs .nav-link.active {
+			color: black !important;
+			/* 활성화된 탭도 검은색으로 설정 */
+		}
+
+		.container h2 {
+			color: black !important;
+			/* h2 텍스트를 검은색으로 설정 */
+		}
+
+		.container {
+			color: black !important;
+			/* 컨테이너 내부 모든 텍스트를 검은색으로 설정 */
+		}
+
+		.tab-content p,
+		.tab-content a {
+			color: black !important;
+			/* 탭 콘텐츠 내부의 h3, p, a 태그를 검은색으로 설정 */
+		}
+
+		.container h2,
+		.container h3,
+		.container p {
+			color: black !important;
+			/* h2, h3, p 태그를 검은색으로 설정 */
+		}
 	</style>
 
 	<!-- Page loading scripts -->
@@ -155,6 +188,7 @@
 				}, 1500)
 			}
 		})()
+
 	</script>
 </head>
 
@@ -184,239 +218,301 @@
 		</header>
 
 		<!-- 세부페이지 배너  -->
-      <section class="overflow-hidden">
-        <div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
-          <div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
-            <div class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
-              <div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
-                <div class="parallax-layer" data-depth="0.1">
-                  <img src="assets/images/business/businessbanner.jpg" alt="Layer">
-                </div>
-               
-              </div>
-            </div>
-            <div class="col-lg-5 order-lg-1">
-              <h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">BUSINESS</h1>
-              <p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5" style="max-width: 520px;">비즈니스는 시스템 통합(SI)과 시스템 유지보수(SM), 
-				  그리고 컨설팅 및 맞춤형 솔루션 제공을 포함하여, 고객의 다양한 요구에 맞춘 종합 IT 서비스를 제공합니다.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+		<section class="overflow-hidden">
+			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
+				<div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
+					<div
+						class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
+						<div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
+							<div class="parallax-layer" data-depth="0.1">
+								<img src="assets/images/business/businessbanner.jpg" alt="Layer">
+							</div>
 
-				
-
-						
-
-
-		<!-- Benefits -->
-      <section class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5">
-        <div class="row pb-md-4 pb-xl-5">
-          <div class="col-md-6 mb-2 mb-md-0">
-            <div class="card border-0 h-100 bg-size-cover bg-position-center" style="background-image: url(/assets/images/company/greeting.jpg);">
-              <div class="d-none d-sm-block d-md-none" style="height: 450px;"></div>
-              <div class="d-sm-none" style="height: 350px;"></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-5 offset-xl-1">
-            <div class="pt-4 pb-sm-4 ps-md-4 ps-xl-0">
-              <h2 class="h1 pb-2 pb-sm-3 pb-xl-4">Benefits <br>of working with us</h2>
-              <div class="d-flex pb-3 mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">01</div>
-                <div class="ps-3">
-                  <h3 class="h5">Individual approach</h3>
-                  <p class="mb-0">Hac erat leo proin odio est sed sit felis facilisi integer sed congue neque turpis dictumst sit sed volutpat aliquet tortor non.</p>
-                </div>
-              </div>
-              <div class="d-flex pb-3 mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">02</div>
-                <div class="ps-3">
-                  <h3 class="h5">Integrated analytics</h3>
-                  <p class="mb-0">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur neque congue aliqua dolor do leo proin odio est sed sit felis facilisi integer.</p>
-                </div>
-              </div>
-              <div class="d-flex pb-3 mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">03</div>
-                <div class="ps-3">
-                  <h3 class="h5">Step by step work</h3>
-                  <p class="mb-0">More erat leo proin odio est sed sit felis facilisi integer sed congue neque turpis dictumst sit sed volutpat aliquet tortor.</p>
-                </div>
-              </div>
-              <div class="d-flex mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">04</div>
-                <div class="ps-3">
-                  <h3 class="h5">Full spectrum of services</h3>
-                  <p class="mb-0">Adipiscing posuere dui, amet, augue nisl dictum justo, enim sed neque congue non quam ultrices interdum vitae vestibulum. Hac erat leo proin odio est sed sit felis facilisi integer sed.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-		<!-- Our projects (Filterable masonry grid) -->
-		<section class="container overflow-hidden pb-5 mb-2 mb-lg-3 mb-xl-4 mb-xxl-5">
-			<div class="masonry-filterable">
-				<div class="row pb-lg-4 mb-2 mb-sm-3">
-
-					<!-- Page title -->
-					<div class="col-xxl-3 col-lg-4 text-center text-lg-start">
-						<h1>Our Projects</h1>
-						<p class="mb-4 mb-lg-0">We will put our industry expertise for creativity to work for your
-							project</p>
+						</div>
 					</div>
-
-					<!-- Filters -->
-					<div class="col-xxl-9 col-lg-8 d-flex">
-						<ul class="masonry-filters nav nav-pills fs-sm flex-nowrap overflow-auto text-nowrap w-100 mx-auto me-lg-0 pb-3"
-							style="max-width: 456px;">
-							<li class="nav-item mb-0">
-								<a class="nav-link border active" href="#" data-group="all">All</a>
-							</li>
-							<li class="nav-item mb-0">
-								<a class="nav-link border" href="#" data-group="branding">Branding</a>
-							</li>
-							<li class="nav-item mb-0">
-								<a class="nav-link border" href="#" data-group="stationery">Stationery</a>
-							</li>
-							<li class="nav-item mb-0">
-								<a class="nav-link border" href="#" data-group="web">Web</a>
-							</li>
-						</ul>
+					<div class="col-lg-5 order-lg-1">
+						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">BUSINESS</h1>
+						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
+							style="max-width: 520px;">비즈니스는 시스템 통합(SI)과 시스템 유지보수(SM),
+							그리고 컨설팅 및 맞춤형 솔루션 제공을 포함하여, 고객의 다양한 요구에 맞춘 종합 IT 서비스를 제공합니다.</p>
 					</div>
-				</div>
-
-				<!-- Grid of portfolio items -->
-				<div class="masonry-grid" data-columns="2">
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["branding"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 512px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/07.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Healthy Yellow</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Branding, Packaging</span>
-									<span>2022</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 704px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/08.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Sen Jonson</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Stationery design</span>
-									<span>2022</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["branding"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 467px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/09.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Gradient</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Branding, Packaging</span>
-									<span>2022</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
-						<div class="zoom-effect position-relative border-bottom ms-auto pb-3" style="max-width: 605px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/10.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">D.G.Vent</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Stationery design</span>
-									<span>2021</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 550px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/11.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Doe design</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Branding, Stationery</span>
-									<span>2021</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["web"]'>
-						<div class="zoom-effect position-relative border-bottom mx-auto pb-3" style="max-width: 470px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/12.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">The Studio</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Web design</span>
-									<span>2020</span>
-								</div>
-							</div>
-						</div>
-					</article>
-				</div>
-
-				<!-- Button -->
-				<div class="text-center pb-sm-2 pb-md-4 mt-n1 mt-lg-n2">
-					<a class="btn btn-lg btn-outline-dark rounded-0" href="#">Let's work together</a>
 				</div>
 			</div>
 		</section>
+
+
+
+
+
+
+		<!-- Testimonials slider -->
+		<section class="container py-3 mt-3 mb-2 my-md-4 my-lg-5">
+			<div class="row justify-content-center align-items-center py-xl-3 my-xxl-3" data-aos="fade-up"
+				data-aos-duration="600" data-aos-offset="280" data-disable-parallax-down="lg">
+				<div class="col-lg-5 pb-3 pb-lg-0 mb-3 mb-sm-4 mb-lg-0" data-aos="fade-up" data-aos-duration="850"
+					data-aos-offset="150" data-disable-parallax-down="lg">
+					<div class="pe-lg-2 pe-xl-0">
+						<h2 class="h1 text-center text-lg-start mb-4 mx-auto mx-lg-0" style="max-width: 468px;">
+							business statement
+						</h2>
+						<span class="d-inline-block position">
+							<span class="position-relative z-2 mx-2">사업 내용은 SI/SM, 컨설팅, 솔루션 제공을 통해 고객<br> 맞춤형 IT 서비스와
+								지속적인 기술 지원을 제공합니다.</span>
+						</span>
+					</div>
+
+				</div>
+				<div class="col-sm-10 col-md-8 col-lg-7 pb-2 pb-sm-1 pb-md-0">
+					<div class="swiper-wrapper">
+
+						<!-- Item -->
+						<div class="swiper-slide bg-light">
+							<div class="d-flex flex-column">
+								<div class="d-flex align-items-center align-self-end pb-2 mb-2"
+									style="max-width: 570px;">
+									<div class="bg-light rounded-circle flex-shrink-0 position-relative z-2 me-n4"
+										style="padding: .375rem;">
+										<img class="rounded-circle" src="/assets/images/business/businesscontent.jpg"
+											width="80" alt="Avatar">
+									</div>
+									<div class="card bg-secondary border-4 rounded-4 py-2 ps-3 pe-2"> <!-- 패딩 줄임 -->
+										<div class="card-body py-2 px-1"> <!-- 패딩 줄임 -->
+											<p class="fs-l"> &nbsp;&nbsp;1. 세계적 수준의 경쟁력 있는 시스템 개발 및 구축<br>
+												&nbsp;&nbsp;2. 숙련된 개발력과 시스템 운영 능력을 가진 전문 인력 확보 및
+												&nbsp;&nbsp;&nbsp;&nbsp;체계적 관리<br>
+												&nbsp;&nbsp;3. SI 컨설팅을 통한 시스템 구축으로 고객만족 극대화<br>
+												&nbsp;&nbsp;4. 사업관리 및 품질관리분야 전문 서비스</p>
+											<div class="h5 fw-bold mb-0">It Outsourcing</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="d-flex align-items-center align-self-center pb-2 mb-2"
+									style="max-width: 570px;">
+									<div class="bg-light rounded-circle flex-shrink-0 position-relative z-2 me-n4"
+										style="padding: .375rem;">
+										<img class="rounded-circle" src="/assets/images/business/businesscontent2.png"
+											width="80" alt="Avatar">
+									</div>
+									<div class="card bg-secondary border-4 rounded-4 py-2 ps-3 pe-2"> <!-- 패딩 줄임 -->
+										<div class="card-body py-2 px-1"> <!-- 패딩 줄임 -->
+											<p class="fs-l"> &nbsp;&nbsp;1. 대기업/관공서/통신사 등에 인력 파견<br>
+												&nbsp;&nbsp;2. 파견인력에 대한 피드백 시스템으로 고객 만족 극대화<br>
+												&nbsp;&nbsp;3. S/W 개발 및 패키지 : MIS/Portal, B2B/B2C, 교육용 S/W 등<br>
+												&nbsp;&nbsp;4. 각종 솔루션 : Framework (Web, C/S), 연계솔루션, 형상관리
+												&nbsp;&nbsp;&nbsp;&nbsp;솔루션 등</p>
+											<div class="h5 fw-bold mb-0">SI / SM</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="d-flex align-items-center align-self-end" style="max-width: 570px;">
+									<div class="bg-light rounded-circle flex-shrink-0 position-relative z-2 me-n4"
+										style="padding: .375rem;">
+										<img class="rounded-circle" src="/assets/images/business/businesscontent3.jpg"
+											width="80" alt="Avatar">
+									</div>
+									<div class="card bg-secondary border-4 rounded-4 py-2 ps-3 pe-2"> <!-- 패딩 줄임 -->
+										<div class="card-body py-2 px-1"> <!-- 패딩 줄임 -->
+											<p class="fs-l">
+												&nbsp;&nbsp;1. Strategy Consulting, Implementation<br>
+												&nbsp;&nbsp;2. BPM, CRM<br>
+												&nbsp;&nbsp;3. CPM, ERM<br>
+												&nbsp;&nbsp;4. SCM, Logistics</p>
+											<div class="h5 fw-bold mb-0">Consulting</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+
+
+
+		<!-- FAQ -->
+		<section class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
+			<div class="row py-2 py-sm-4 py-md-5 mt-lg-2">
+				<div class="col-sm-9 col-md-4 col-lg-5 mb-5 mb-md-0">
+					<div class="position-relative mb-sm-2">
+						`
+						<img src="/assets/images/business/itoutsourcing.jpg"
+							style="-webkit-clip-path: url(#mask); clip-path: url(#mask);" alt="Image">
+
+						<defs>
+							<clipPath id="mask" clipPathUnits="objectBoundingBox"
+								transform="scale(0.001901140684, 0.00243902439)">
+								<path
+									d="M0 392V119.598C0 109.648 8.0717 101.586 18.021 101.598L331.979 101.964C341.928 101.976 350 93.9133 350 83.964V18.3667C350 8.44183 358.033 0.389727 367.958 0.366699L507.958 0.0418617C517.916 0.0187578 526 8.08438 526 18.0418V392C526 401.941 517.941 410 508 410H18C8.05887 410 0 401.941 0 392Z" />
+							</clipPath>
+						</defs>
+						</svg>
+					</div>
+
+				</div>
+				<div class="col-md-8 col-lg-7">
+					<div class="ps-md-3 ps-lg-4 ps-xl-5">
+						<h2 class="h1 pb-sm-1 pb-md-2">It Outsourcing</h2>
+						<p class="mb-sm-4" style="margin-top: 20px;">IT 아웃소싱은 고객 맞춤형 IT 서비스 제공을 통해 기업의 경쟁력 강화와 효율적인 운영을
+							지원하며 전문 인력을 통해 최적화된 솔루션을 제시합니다.</p>
+						<!-- Accordion -->
+						<div class="accordion" id="faq">
+							<div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+								<h3 class="accordion-header">
+									<button class="accordion-button fs-6 py-3 px-0" type="button"
+										data-bs-toggle="collapse" data-bs-target="#real-estate" aria-expanded="true"
+										aria-controls="real-estate">IT 아웃소싱 컨설팅 서비스</button>
+								</h3>
+								<div class="accordion-collapse collapse show" id="real-estate" data-bs-parent="#faq">
+									<div class="accordion-body fs-sm">
+										<p>고객의 IT 아웃소싱에 대한 의사 결정과 전략 수립, 그리고 추진 성과 분석을 지원하며, 효율적인 IT 아웃소싱 관리 체계를 구축할 수
+											있도록 돕습니다. 이를 통해 고객이 성공적인 아웃소싱 운영을 할 수 있도록 맞춤형 컨설팅을 제공합니다.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+								<h3 class="accordion-header">
+									<button class="accordion-button fs-6 py-3 px-0 collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#tech" aria-expanded="false"
+										aria-controls="tech">네트워크 서비스</button>
+								</h3>
+								<div class="accordion-collapse collapse" id="tech" data-bs-parent="#faq">
+									<div class="accordion-body fs-sm">
+										<p>고객의 다양한 요구를 만족시키기 위해 맞춤형 네트워크 솔루션과 네트워크 인프라를 제공하며, 이를 관리하고 운영하는 서비스를 지원합니다.
+											고객이 안정적인 네트워크 환경을 유지할 수 있도록 효율적인 관리 체계를 제공합니다.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+								<h3 class="accordion-header">
+									<button class="accordion-button fs-6 py-3 px-0 collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#finance" aria-expanded="false"
+										aria-controls="finance">보안 서비스</button>
+								</h3>
+								<div class="accordion-collapse collapse" id="finance" data-bs-parent="#faq">
+									<div class="accordion-body fs-sm">
+										<p>고객의 특성에 적합한 보안 전략을 수립하여, 향상된 보안 관리 시스템에 따라 고객의 정보 자산을 안전하게 운영하고 관리합니다. 이를 통해
+											고객이 신뢰할 수 있는 정보 보호를 유지할 수 있도록 전문적인 지원을 제공합니다.</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item bg-transparent mb-n1 mb-xl-1">
+								<h3 class="accordion-header">
+									<button class="accordion-button fs-6 py-3 px-0 collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#medicine" aria-expanded="false"
+										aria-controls="medicine">애플리케이션 서비스</button>
+								</h3>
+								<div class="accordion-collapse collapse" id="medicine" data-bs-parent="#faq">
+									<div class="accordion-body fs-sm">
+										<p>애플리케이션 서비스는 고객의 필요에 기반한 새로운 IT 시스템의 개발과 운영을 지원합니다. 이를 통해 고객이 비즈니스를 효과적으로 관리할
+											수 있도록 전문적인 솔루션을 제공합니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Industries -->
+<section class="bg-white border-top border-light py-2 py-sm-3 py-md-4 py-m-5" data-bs-theme="dark">
+    <div class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
+        <h2 class="h1 text-center text-md-start mt-lg-n3 pb-4 pb-md-5" style="max-width: 660px;">SI/SM 사업사례 패키지(S/W)</h2>
+        <h3 class="mb-sm-4" style="font-size: 13px; font-weight: normal;">효율적인 소프트웨어 개발을 위한 개발 프레임워크, 철저한 데이터 보호를 위한 보안 솔루션, 그리고 프로젝트 자산 관리를 위한 형상관리 솔루션을 제공합니다.</h3>
+
+        <div class="row pt-sm-2 pt-md-0 pt-xl-1 pt-xxl-3">
+            <div class="col-md-6 col-xl-5 offset-xl-1 order-md-2 pb-4 pb-md-0 mb-2 mb-md-0">
+
+                <!-- Images (binded content) -->
+                <div class="binded-content" style="max-width: 526px;">
+                    <div class="binded-item active" id="marketers-image">
+                        <div class="from-bottom">
+                            <div class="d-flex justify-content-center position-absolute top-0 start-0 w-100 h-200">
+                                <div class="bg-primary rounded-5 h-100" style="width: 88.2%;"></div>
+                            </div>
+                            <img class="d-block position-relative z-2" src="/assets/images/business/sw1.jpg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="binded-item" id="agencies-image">
+                        <div class="from-bottom">
+                            <div class="d-flex justify-content-center position-absolute top-0 start-0 w-100 h-100">
+                                <div class="bg-info rounded-5 h-100" style="width: 88.2%;"></div>
+                            </div>
+                            <img class="d-block position-relative z-2" src="/assets/images/business/sw2.jpg" alt="Image" style="height: 110%;">
+                        </div>
+                    </div>
+                    <div class="binded-item" id="ecommerce-image">
+                        <div class="from-bottom">
+                            <div class="d-flex justify-content-center position-absolute top-0 start-0 w-100 h-100">
+                                <div class="bg-warning rounded-5 h-100" style="width: 88.2%;"></div>
+                            </div>
+                            <img class="d-block position-relative z-2" src="/assets/images/business/sw3.jpg" alt="Image" style="height: 150%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 order-md-1">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs flex-nowrap overflow-auto text-nowrap pb-3 mb-3 mb-xl-4" role="tablist">
+                    <li class="nav-item mb-0">
+                        <a class="nav-link active" href="#marketers-text" data-bs-toggle="tab" data-binded-content="#marketers-image" role="tab">개발 / FrameWork</a>
+                    </li>
+                    <li class="nav-item mb-0">
+                        <a class="nav-link" href="#agencies-text" data-bs-toggle="tab" data-binded-content="#agencies-image" role="tab">보안솔루션</a>
+                    </li>
+                    <li class="nav-item mb-0">
+                        <a class="nav-link" href="#ecommerce-text" data-bs-toggle="tab" data-binded-content="#ecommerce-image" role="tab">형상관리</a>
+                    </li>
+                </ul>
+
+                <!-- Tab content -->
+                <div class="tab-content pt-lg-2 pt-xl-3">
+                    <div class="tab-pane fade show active" id="marketers-text" role="tabpanel">
+                        <p class="text-body" style="font-size: 18px;">
+                            C/S 프레임워크: J2SE 기반의 Java 프레임워크<br>
+                            <br>J2SE/JDK 환경에서 클라이언트-서버(C/S) 개발 환경을 구성<br>
+                            <br> 데이터베이스와 연동할 수 있는 Java 연결 구현<br>
+                            <br>클라이언트 구현 시 일반적인 클라이언트/서버 성능을 실현<br>
+                            <br>재사용성을 높이기 위한 기능의 모듈화<br>
+                            <br>객체 지향 프로그래밍(OOP) 원칙에 충실한 프로그래밍<br>
+                            <br>웹 프레임워크: J2EE 기반의 Java 프레임워크
+                        </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="agencies-text" role="tabpanel">
+                        <p class="text-body" style="font-size: 18px;">
+                            IPS (제니퍼): J2EE 플랫폼에 대한 성능 관리<br>
+                           <br> → 실시간 WAS 시스템 감시 및 WAS, DBMS 등 구간별 성능 데이터를 제공<br>
+                            <br>→ 성능 이슈와 장애 원인을 즉시 탐지하고 알림<br>
+                            <br>→ 용량 평가 및 부하량 변동 분석 / 부하량 과부하 시 다양한 성능 조정<br>
+                            <br>→ 날짜별 성능 정보를 바탕으로 한 통계 리포트<br>
+                            <br>TMS (위협 관리 솔루션): 로컬 및 글로벌 트래픽에 대한 포괄적인 분석을 통해 웜, 해킹, 사이버 공격, 비정상적 행동 등의 위협을 예측하고 경고하며 체계적이고 효과적인 대응을 지원하는 시스템. 로컬 네트워크를 외부의 위험으로부터 방어하고, 내부 네트워크의 효율적인 운영이 가능하게 합니다.
+                        </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="ecommerce-text" role="tabpanel">
+                        <p class="text-body" style="font-size: 18px;">SERENA Professional<br>
+                            <br>→ 프로젝트 파일의 효과적인 관리<br>
+                            <br>→ 감사 가능성(Auditability), 추적 가능성(Traceability), 책임 가능성(Accountability) 확보<br>
+                           <br> → 표준화 및 프로젝트 파일의 안전성 유지<br>
+                            <br>→ 특정 릴리즈를 위한 프로젝트 산출물의 재구성(Rebuild)<br>
+                           <br> → 다양한 플랫폼 환경에서의 통합 관리 및 기존 개발 도구(Tool)와의 연계<br>
+                            <br>→ 개발 생애 주기 관리 프로젝트
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 		<!-- Clients (Logos autoplay slider) -->
@@ -865,6 +961,9 @@
 <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/aos/dist/aos.js"></script>
+<script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+<script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
 
 <!-- Bootstrap + Theme scripts -->
 <script src="assets/js/theme.min.js"></script>
