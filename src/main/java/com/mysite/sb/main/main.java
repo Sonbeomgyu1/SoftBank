@@ -17,14 +17,17 @@ public class main {
 	public String business() {
 		return "business";
 	}
-	//헤더
+
+	// 헤더
 	@GetMapping("/header")
 	public String header() {
 		return "header";
 	}
-	//푸터
-		@GetMapping("/footer")
-		public String footer() {
-			return "footer";
-		}
+
+	// 푸터
+	@GetMapping("/footer")
+	public String footer() {
+		return "footer";
+	}
+
 }
