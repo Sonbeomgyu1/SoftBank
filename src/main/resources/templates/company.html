@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+	<meta charset="utf-8">
+
+	<!-- Viewport -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+
+	<!-- SEO meta tags -->
+	<title>SoftBank</title>
+	<meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+	<meta name="keywords"
+		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+	<meta name="author" content="Createx Studio">
+
+	<!-- Webmanifest + Favicon / App icons -->
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
+
+	<!-- Theme switcher (color modes) -->
+	<script src="assets/js/theme-switcher.js"></script>
+
+	<!-- Import Google font (Inter) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+		rel="stylesheet" id="google-font">
+
+	<!-- Vendor styles -->
+	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+	<!-- Font icons -->
+	<link rel="stylesheet" href="assets/icons/around-icons.min.css">
+
+	<!-- Theme styles + Bootstrap -->
+	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+	<!-- 푸터 css 불러오기-->
+	<link rel="stylesheet" href="/assets/css/header.css"> <!-- 푸터 css 불러오기-->
+	<!-- 푸터 css 불러오기-->
+	<link rel="stylesheet" href="/assets/css/footer.css"> <!-- 푸터 css 불러오기-->
+
+
+	<!-- Page loading styles -->
+	<style>
+		.page-loading {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			-webkit-transition: all .4s .2s ease-in-out;
+			transition: all .4s .2s ease-in-out;
+			background-color: #fff;
+			opacity: 0;
+			visibility: hidden;
+			z-index: 9999;
+		}
+
+		[data-bs-theme="dark"] .page-loading {
+			background-color: #121519;
+		}
+
+		.page-loading.active {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.page-loading-inner {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			-webkit-transition: opacity .2s ease-in-out;
+			transition: opacity .2s ease-in-out;
+			opacity: 0;
+		}
+
+		.page-loading.active>.page-loading-inner {
+			opacity: 1;
+		}
+
+		.page-loading-inner>span {
+			display: block;
+			font-family: "Inter", sans-serif;
+			font-size: 1rem;
+			font-weight: normal;
+			color: #6f788b;
+		}
+
+		[data-bs-theme="dark"] .page-loading-inner>span {
+			color: #fff;
+			opacity: .6;
+		}
+
+		.page-spinner {
+			display: inline-block;
+			width: 2.75rem;
+			height: 2.75rem;
+			margin-bottom: .75rem;
+			vertical-align: text-bottom;
+			background-color: #d7dde2;
+			border-radius: 50%;
+			opacity: 0;
+			-webkit-animation: spinner .75s linear infinite;
+			animation: spinner .75s linear infinite;
+		}
+
+		[data-bs-theme="dark"] .page-spinner {
+			background-color: rgba(255, 255, 255, .25);
+		}
+
+		@-webkit-keyframes spinner {
+			0% {
+				-webkit-transform: scale(0);
+				transform: scale(0);
+			}
+
+			50% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+
+		@keyframes spinner {
+			0% {
+				-webkit-transform: scale(0);
+				transform: scale(0);
+			}
+
+			50% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+	</style>
+
+	<!-- Page loading scripts -->
+	<script>
+		(function () {
+			window.onload = function () {
+				const preloader = document.querySelector('.page-loading')
+				preloader.classList.remove('active')
+				setTimeout(function () {
+					preloader.remove()
+				}, 1500)
+			}
+		})()
+	</script>
+</head>
+
+
+<!-- Body -->
+
+<body>
+
+
+	<!-- Page loading spinner -->
+	<div class="page-loading active">
+		<div class="page-loading-inner">
+			<div class="page-spinner"></div>
+			<span>Loading...</span>
+		</div>
+	</div>
+
+
+	<!-- Page wrapper -->
+	<main class="page-wrapper">
+
+		<header>
+			<header>
+				<!-- Include the header -->
+				<div th:replace="header :: header"></div>
+			</header>
+		</header>
+
+		<!-- 세부페이지 배너  -->
+      <section class="overflow-hidden">
+        <div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
+          <div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
+            <div class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
+              <div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
+                <div class="parallax-layer" data-depth="0.1">
+                  <img src="assets/images/business/businessbanner.jpg" alt="Layer">
+                </div>
+               
+              </div>
+            </div>
+            <div class="col-lg-5 order-lg-1">
+              <h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">COMPANY</h1>
+              <p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5" style="max-width: 520px;">회사소개는 인사말을 통해 기업의 비전과 철학을 전하고, 연혁을 통해 성장 과정을 소개하며, 
+				  기술 인증을 통해 기술력과 신뢰성을 강조합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+				
+
+						
+
+
+		<!-- Benefits -->
+      <section class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5">
+        <div class="row pb-md-4 pb-xl-5">
+          <div class="col-md-6 mb-2 mb-md-0">
+            <div class="card border-0 h-100 bg-size-cover bg-position-center" style="background-image: url(/assets/images/company/greeting.jpg);">
+              <div class="d-none d-sm-block d-md-none" style="height: 450px;"></div>
+              <div class="d-sm-none" style="height: 350px;"></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="pt-4 pb-sm-4 ps-md-4 ps-xl-0">
+              <h2 class="h1 pb-2 pb-sm-3 pb-xl-4">Benefits <br>of working with us</h2>
+              <div class="d-flex pb-3 mb-2 mb-xl-3">
+                <div class="text-body-secondary pt-1">01</div>
+                <div class="ps-3">
+                  <h3 class="h5">Individual approach</h3>
+                  <p class="mb-0">Hac erat leo proin odio est sed sit felis facilisi integer sed congue neque turpis dictumst sit sed volutpat aliquet tortor non.</p>
+                </div>
+              </div>
+              <div class="d-flex pb-3 mb-2 mb-xl-3">
+                <div class="text-body-secondary pt-1">02</div>
+                <div class="ps-3">
+                  <h3 class="h5">Integrated analytics</h3>
+                  <p class="mb-0">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur neque congue aliqua dolor do leo proin odio est sed sit felis facilisi integer.</p>
+                </div>
+              </div>
+              <div class="d-flex pb-3 mb-2 mb-xl-3">
+                <div class="text-body-secondary pt-1">03</div>
+                <div class="ps-3">
+                  <h3 class="h5">Step by step work</h3>
+                  <p class="mb-0">More erat leo proin odio est sed sit felis facilisi integer sed congue neque turpis dictumst sit sed volutpat aliquet tortor.</p>
+                </div>
+              </div>
+              <div class="d-flex mb-2 mb-xl-3">
+                <div class="text-body-secondary pt-1">04</div>
+                <div class="ps-3">
+                  <h3 class="h5">Full spectrum of services</h3>
+                  <p class="mb-0">Adipiscing posuere dui, amet, augue nisl dictum justo, enim sed neque congue non quam ultrices interdum vitae vestibulum. Hac erat leo proin odio est sed sit felis facilisi integer sed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+		<!-- Our projects (Filterable masonry grid) -->
+		<section class="container overflow-hidden pb-5 mb-2 mb-lg-3 mb-xl-4 mb-xxl-5">
+			<div class="masonry-filterable">
+				<div class="row pb-lg-4 mb-2 mb-sm-3">
+
+					<!-- Page title -->
+					<div class="col-xxl-3 col-lg-4 text-center text-lg-start">
+						<h1>Our Projects</h1>
+						<p class="mb-4 mb-lg-0">We will put our industry expertise for creativity to work for your
+							project</p>
+					</div>
+
+					<!-- Filters -->
+					<div class="col-xxl-9 col-lg-8 d-flex">
+						<ul class="masonry-filters nav nav-pills fs-sm flex-nowrap overflow-auto text-nowrap w-100 mx-auto me-lg-0 pb-3"
+							style="max-width: 456px;">
+							<li class="nav-item mb-0">
+								<a class="nav-link border active" href="#" data-group="all">All</a>
+							</li>
+							<li class="nav-item mb-0">
+								<a class="nav-link border" href="#" data-group="branding">Branding</a>
+							</li>
+							<li class="nav-item mb-0">
+								<a class="nav-link border" href="#" data-group="stationery">Stationery</a>
+							</li>
+							<li class="nav-item mb-0">
+								<a class="nav-link border" href="#" data-group="web">Web</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Grid of portfolio items -->
+				<div class="masonry-grid" data-columns="2">
+
+					<!-- Item -->
+					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["branding"]'>
+						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 512px;">
+							<div class="zoom-effect-wrapper">
+								<div class="zoom-effect-img">
+									<img src="assets/img/portfolio/grid/07.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="pt-4 mt-lg-2">
+								<h2 class="h4 mb-2">
+									<a class="stretched-link" href="portfolio-single-v2.html">Healthy Yellow</a>
+								</h2>
+								<div class="d-flex justify-content-between fs-lg text-body-secondary">
+									<span>Branding, Packaging</span>
+									<span>2022</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- Item -->
+					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
+						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 704px;">
+							<div class="zoom-effect-wrapper">
+								<div class="zoom-effect-img">
+									<img src="assets/img/portfolio/grid/08.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="pt-4 mt-lg-2">
+								<h2 class="h4 mb-2">
+									<a class="stretched-link" href="portfolio-single-v2.html">Sen Jonson</a>
+								</h2>
+								<div class="d-flex justify-content-between fs-lg text-body-secondary">
+									<span>Stationery design</span>
+									<span>2022</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- Item -->
+					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["branding"]'>
+						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 467px;">
+							<div class="zoom-effect-wrapper">
+								<div class="zoom-effect-img">
+									<img src="assets/img/portfolio/grid/09.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="pt-4 mt-lg-2">
+								<h2 class="h4 mb-2">
+									<a class="stretched-link" href="portfolio-single-v2.html">Gradient</a>
+								</h2>
+								<div class="d-flex justify-content-between fs-lg text-body-secondary">
+									<span>Branding, Packaging</span>
+									<span>2022</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- Item -->
+					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
+						<div class="zoom-effect position-relative border-bottom ms-auto pb-3" style="max-width: 605px;">
+							<div class="zoom-effect-wrapper">
+								<div class="zoom-effect-img">
+									<img src="assets/img/portfolio/grid/10.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="pt-4 mt-lg-2">
+								<h2 class="h4 mb-2">
+									<a class="stretched-link" href="portfolio-single-v2.html">D.G.Vent</a>
+								</h2>
+								<div class="d-flex justify-content-between fs-lg text-body-secondary">
+									<span>Stationery design</span>
+									<span>2021</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- Item -->
+					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
+						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 550px;">
+							<div class="zoom-effect-wrapper">
+								<div class="zoom-effect-img">
+									<img src="assets/img/portfolio/grid/11.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="pt-4 mt-lg-2">
+								<h2 class="h4 mb-2">
+									<a class="stretched-link" href="portfolio-single-v2.html">Doe design</a>
+								</h2>
+								<div class="d-flex justify-content-between fs-lg text-body-secondary">
+									<span>Branding, Stationery</span>
+									<span>2021</span>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<!-- Item -->
+					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["web"]'>
+						<div class="zoom-effect position-relative border-bottom mx-auto pb-3" style="max-width: 470px;">
+							<div class="zoom-effect-wrapper">
+								<div class="zoom-effect-img">
+									<img src="assets/img/portfolio/grid/12.jpg" alt="Image">
+								</div>
+							</div>
+							<div class="pt-4 mt-lg-2">
+								<h2 class="h4 mb-2">
+									<a class="stretched-link" href="portfolio-single-v2.html">The Studio</a>
+								</h2>
+								<div class="d-flex justify-content-between fs-lg text-body-secondary">
+									<span>Web design</span>
+									<span>2020</span>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+
+				<!-- Button -->
+				<div class="text-center pb-sm-2 pb-md-4 mt-n1 mt-lg-n2">
+					<a class="btn btn-lg btn-outline-dark rounded-0" href="#">Let's work together</a>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Clients (Logos autoplay slider) -->
+		<section class="pt-sm-1 pt-lg-3 pt-xl-4">
+			<div class="container text-center">
+				<h2 class="h1">We partner with more than 60 brands</h2>
+				<p class="pb-1 pb-sm-2 pb-md-3 pb-lg-4 mb-3">Clients who have become our friends for many years</p>
+			</div>
+			<div class="swiper pb-3 pb-sm-4 mb-xl-2" data-swiper-options='{
+          "loop": true,
+          "grabCursor": false,
+          "centeredSlides": true,
+          "autoplay": {
+            "delay": 0,
+            "disableOnInteraction": false
+          },
+          "freeMode": true,
+          "speed": 10000,
+          "freeModeMomentum": false,
+          "breakpoints": {
+            "0": { "slidesPerView": 2 },
+            "600": { "slidesPerView": 3 },
+            "800": { "slidesPerView": 4 },
+            "1200": { "slidesPerView": 5 },
+            "1400": { "slidesPerView": 6 },
+            "1600": { "slidesPerView": 7 }
+          }
+        }'>
+				<div class="swiper-wrapper" style="transition-timing-function: linear !important;">
+					<div class="swiper-slide">
+						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/starcraft-dark.svg"
+							width="196" alt="Starcraft">
+						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/starcraft-light.svg"
+							width="196" alt="Starcraft">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/auchan.svg" width="196" alt="Auchan">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/klinos.svg" width="196" alt="Klinos">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/suzuki.svg" width="196" alt="Suzuki">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/airbnb.svg" width="196" alt="Airbnb">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/philips.svg" width="196" alt="Philips">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/careem.svg" width="196" alt="Careem">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/puma-dark.svg" width="196"
+							alt="Puma">
+						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/puma-light.svg" width="196"
+							alt="Puma">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/alpine.svg" width="196" alt="Alpine">
+					</div>
+				</div>
+			</div>
+			<div class="swiper" dir="rtl" data-swiper-options='{
+          "loop": true,
+          "grabCursor": false,
+          "centeredSlides": true,
+          "autoplay": {
+            "delay": 0,
+            "disableOnInteraction": false
+          },
+          "freeMode": true,
+          "speed": 8500,
+          "freeModeMomentum": false,
+          "breakpoints": {
+            "0": { "slidesPerView": 2 },
+            "600": { "slidesPerView": 3 },
+            "800": { "slidesPerView": 4 },
+            "1200": { "slidesPerView": 5 },
+            "1400": { "slidesPerView": 6 },
+            "1600": { "slidesPerView": 7 }
+          }
+        }'>
+				<div class="swiper-wrapper" style="transition-timing-function: linear !important;">
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/heineken.svg" width="196" alt="Heineken">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/champion-dark.svg"
+							width="196" alt="Champion">
+						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/champion-light.svg"
+							width="196" alt="Champion">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/auchan.svg" width="196" alt="Auchan">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/philips.svg" width="196" alt="Philips">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/airbnb.svg" width="196" alt="Airbnb">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/alpine.svg" width="196" alt="Alpine">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/puma-dark.svg" width="196"
+							alt="Puma">
+						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/puma-light.svg" width="196"
+							alt="Puma">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block mx-auto" src="assets/img/brands/foster.svg" width="196" alt="Foster">
+					</div>
+					<div class="swiper-slide">
+						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/starcraft-dark.svg"
+							width="196" alt="Starcraft">
+						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/starcraft-light.svg"
+							width="196" alt="Starcraft">
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Testimonials (Carousel) -->
+		<section class="container position-relative z-2 py-5 mt-n3 mt-sm-0 mb-md-3 my-lg-3 my-xl-4 my-xxl-5">
+			<div class="row py-md-4 py-lg-5">
+				<div class="col-md-9 col-lg-7 order-md-2">
+
+					<!-- Swiper slider -->
+					<div class="swiper" data-swiper-options='{
+              "spaceBetween": 40,
+              "loop": true,
+              "bindedContent": true,
+              "autoHeight": true,
+              "pagination": {
+                "el": ".testimonials-count",
+                "type": "fraction"
+              },
+              "navigation": {
+                "prevEl": "#prev-testimonial",
+                "nextEl": "#next-testimonial"
+              }
+            }'>
+						<div class="swiper-wrapper">
+
+							<!-- Item -->
+							<div class="swiper-slide" data-swiper-binded="#testimonial-1">
+								<div class="d-flex d-md-none pt-3 mb-3">
+									<i class="ai-quotes d-md-none text-primary display-3 mt-n2"></i>
+									<div class="ps-3">
+										<h3 class="h5 mb-0">Lilia Bocouse</h3>
+										<p class="text-body-secondary mb-0">Head of Marketing</p>
+									</div>
+								</div>
+								<h2 class="mb-lg-4">Awesome experience with a professional team. Thank you :)</h2>
+								<p class="lead mb-0">Suspendisse mauris elit, pellentesque nec purus sed, finibus
+									finibus ipsum. Proin posuere, metus sed porttitor pellentesque, ante magna tincidunt
+									mi, nec fermentum dui ligula vel massa. Praesent ultrices iaculis arcu iaculis
+									ultrices. Maecenas vitae nulla odio. In laoreet, lectus in tempus ultricies.</p>
+							</div>
+
+							<!-- Item -->
+							<div class="swiper-slide" data-swiper-binded="#testimonial-2">
+								<div class="d-flex d-md-none pt-3 mb-3">
+									<i class="ai-quotes d-md-none text-primary display-3 mt-n2"></i>
+									<div class="ps-3">
+										<h3 class="h5 mb-0">Robert Fox</h3>
+										<p class="text-body-secondary mb-0">Marketing Coordinator</p>
+									</div>
+								</div>
+								<h2 class="mb-lg-4">Thanks to your talented team for the banding we dreamed about</h2>
+								<p class="lead mb-0">Leo vitae sem eget eget at in vivamus placerat sodales tristique
+									risusiis senectusic quisque faucibus est justo egetert lobortis ultrices eu
+									dignissim etiamier turpis tincidunt eget placerat feugiat senectusic quisque
+									faucibus placerat sodales vitae tempor morbi tellus pulvinar tristique in turpis.
+								</p>
+							</div>
+
+							<!-- Item -->
+							<div class="swiper-slide" data-swiper-binded="#testimonial-3">
+								<div class="d-flex d-md-none pt-3 mb-3">
+									<i class="ai-quotes d-md-none text-primary display-3 mt-n2"></i>
+									<div class="ps-3">
+										<h3 class="h5 mb-0">Jenny Wilson</h3>
+										<p class="text-body-secondary mb-0">CEO, Co-Founder</p>
+									</div>
+								</div>
+								<h2 class="mb-lg-4">Thanks to you, we have created a unique branding that is our pride!
+								</h2>
+								<p class="lead mb-0">Duis sapien velit, rutrum ac rutrum dapibus, auctor ut lacus.
+									Aenean sit amet erat augue. Aenean finibus, nibh sed malesuada maximus, nisi tellus
+									iaculis quam, eget egestas mi felis eu urna. Quisque id nisl commodo, egestas eros
+									ac, cursus odio. Ut nec rutrum magna, vel tempor erat. Vivamus nec tempus purus.</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 offset-lg-1 order-md-1 mt-n3">
+					<i class="ai-quotes d-none d-md-block text-primary ms-n2 mb-1" style="font-size: 150px;"></i>
+
+					<!-- Contnetn binded to slider (on screens > 768px) -->
+					<div class="binded-content h-auto d-none d-md-block">
+						<div class="binded-item h-auto active" id="testimonial-1">
+							<h3 class="h5 mb-1">Lilia Bocouse</h3>
+							<p class="text-body-secondary mb-0">Head of Marketing</p>
+						</div>
+						<div class="binded-item h-auto" id="testimonial-2">
+							<h3 class="h5 mb-1">Robert Fox</h3>
+							<p class="text-body-secondary mb-0">Marketing Coordinator</p>
+						</div>
+						<div class="binded-item h-auto" id="testimonial-3">
+							<h3 class="h5 mb-1">Jenny Wilson</h3>
+							<p class="text-body-secondary mb-0">CEO, Co-Founder</p>
+						</div>
+					</div>
+
+					<!-- Swiper controls (Prev / Next) -->
+					<div class="d-flex align-items-center pb-2 pb-md-0 pt-4 mt-3">
+						<button class="btn btn-icon btn-sm btn-outline-primary rounded-circle me-3" type="button"
+							id="prev-testimonial" aria-label="Prev">
+							<i class="ai-arrow-left"></i>
+						</button>
+						<div class="testimonials-count fw-medium flex-shrink-0 text-center" style="width: 2.5rem;">
+						</div>
+						<button class="btn btn-icon btn-sm btn-outline-primary rounded-circle ms-3" type="button"
+							id="next-testimonial" aria-label="Next">
+							<i class="ai-arrow-right"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Team -->
+		<section class="container pt-2 pt-xxl-3 pb-5 mb-sm-2 mb-lg-3 mb-xl-4 mb-xxl-5">
+			<div class="row pb-md-3">
+				<div class="col-md-4 mb-2 mb-sm-3 mb-md-4 pb-2" style="margin-top: -120px;">
+					<div class="position-sticky top-0" style="padding-top: 120px;">
+						<h2 class="display-3 mb-0 mb-md-3 pb-lg-3">Meat our creative team</h2>
+						<a class="btn btn-lg btn-link px-0" href="#">
+							View all 16 members
+							<i class="ai-arrow-right ms-2"></i>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row row-cols-1 row-cols-sm-2 g-4">
+
+						<!-- Item -->
+						<div class="col">
+							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3">
+								<div class="position-relative">
+									<img src="assets/img/landing/creative-agency/team/01.jpg" alt="Image">
+									<div
+										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
+											href="#" aria-label="Facebook">
+											<i class="ai-facebook"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-dribbble rounded-circle mx-2"
+											href="#" aria-label="Dribbble">
+											<i class="ai-dribbble"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-stack-overflow rounded-circle mx-2"
+											href="#" aria-label="Stack Overflow">
+											<i class="ai-stack-overflow"></i>
+										</a>
+									</div>
+								</div>
+								<div class="border-bottom pt-4 pb-3">
+									<h3 class="h4 mb-2">Nick Black</h3>
+									<span class="fs-lg text-body-secondary">Web Designer</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="col">
+							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 ms-sm-1 ps-xl-3">
+								<div class="position-relative">
+									<img src="assets/img/landing/creative-agency/team/02.jpg" alt="Image">
+									<div
+										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
+											href="#" aria-label="Facebook">
+											<i class="ai-facebook"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-instagram rounded-circle mx-2"
+											href="#" aria-label="Instagram">
+											<i class="ai-instagram"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
+											href="#" aria-label="Behance">
+											<i class="ai-behance"></i>
+										</a>
+									</div>
+								</div>
+								<div class="border-bottom pt-4 pb-3">
+									<h3 class="h4 mb-2">Emilia Denver</h3>
+									<span class="fs-lg text-body-secondary">Identity Designer</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="col">
+							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3">
+								<div class="position-relative">
+									<img src="assets/img/landing/creative-agency/team/03.jpg" alt="Image">
+									<div
+										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
+											href="#" aria-label="Facebook">
+											<i class="ai-facebook"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-x rounded-circle mx-2" href="#"
+											aria-label="X">
+											<i class="ai-x"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-google rounded-circle mx-2" href="#"
+											aria-label="Google">
+											<i class="ai-google"></i>
+										</a>
+									</div>
+								</div>
+								<div class="border-bottom pt-4 pb-3">
+									<h3 class="h4 mb-2">Jane Cooper</h3>
+									<span class="fs-lg text-body-secondary">Marketing Coordinator</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="col">
+							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 ms-sm-1 ps-xl-3">
+								<div class="position-relative">
+									<img src="assets/img/landing/creative-agency/team/04.jpg" alt="Image">
+									<div
+										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
+											href="#" aria-label="Facebook">
+											<i class="ai-facebook"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-dribbble rounded-circle mx-2"
+											href="#" aria-label="Dribbble">
+											<i class="ai-dribbble"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
+											href="#" aria-label="Behance">
+											<i class="ai-behance"></i>
+										</a>
+									</div>
+								</div>
+								<div class="border-bottom pt-4 pb-3">
+									<h3 class="h4 mb-2">Jenny Wilson</h3>
+									<span class="fs-lg text-body-secondary">Web Designer</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="col">
+							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3">
+								<div class="position-relative">
+									<img src="assets/img/landing/creative-agency/team/05.jpg" alt="Image">
+									<div
+										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+										<a class="btn btn-light btn-icon btn-sm btn-instagram rounded-circle mx-2"
+											href="#" aria-label="Instagram">
+											<i class="ai-instagram"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-dribbble rounded-circle mx-2"
+											href="#" aria-label="Dribbble">
+											<i class="ai-dribbble"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
+											href="#" aria-label="Behance">
+											<i class="ai-behance"></i>
+										</a>
+									</div>
+								</div>
+								<div class="border-bottom pt-4 pb-3">
+									<h3 class="h4 mb-2">Robert Fox</h3>
+									<span class="fs-lg text-body-secondary">Graphic Designer</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="col">
+							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 ms-sm-1 ps-xl-3">
+								<div class="position-relative">
+									<img src="assets/img/landing/creative-agency/team/06.jpg" alt="Image">
+									<div
+										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
+										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
+											href="#" aria-label="Facebook">
+											<i class="ai-facebook"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-x rounded-circle mx-2" href="#"
+											aria-label="X">
+											<i class="ai-x"></i>
+										</a>
+										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
+											href="#" aria-label="Behance">
+											<i class="ai-behance"></i>
+										</a>
+									</div>
+								</div>
+								<div class="border-bottom pt-4 pb-3">
+									<h3 class="h4 mb-2">Jacob Jones</h3>
+									<span class="fs-lg text-body-secondary">Branding Designer</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+
+	<!-- Include the footer -->
+	<div th:replace="footer :: footer"></div>
+</body>
+
+</html>
+
+
+<!-- Back to top button -->
+<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
+		</circle>
+	</svg>
+	<i class="ai-arrow-up"></i>
+</a>
+
+
+<!-- Vendor scripts: JS libraries and plugins -->
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Bootstrap + Theme scripts -->
+<script src="assets/js/theme.min.js"></script>
+</body>
+
+</html>
