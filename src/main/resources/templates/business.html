@@ -190,6 +190,7 @@
     text-align: left; /* 텍스트 왼쪽 정렬 */
 }
 
+
 	</style>
 
 	<!-- Page loading scripts -->
@@ -203,28 +204,39 @@
 				}, 1500)
 			}
 		})()
+document.addEventListener('DOMContentLoaded', scrollToHash); 
+// 페이지가 처음 로드될 때 해시 값에 맞춰 스크롤
 
-		document.addEventListener('DOMContentLoaded', () => {
-			if (window.location.hash) {
-				const target = document.querySelector(window.location.hash);
-				if (target) {
-					// Get the height of the fixed header
-					const headerHeight = document.querySelector('header').offsetHeight || 0;
+window.addEventListener('hashchange', scrollToHash); 
+// 해시 값이 변경될 때마다 스크롤 처리
 
-					// Get the position of the target element
-					const rect = target.getBoundingClientRect();
+function scrollToHash() {
+    if (window.location.hash) { 
+        // URL에 해시 값이 있을 때 실행
+        const target = document.querySelector(window.location.hash); 
+        // 해시 값에 해당하는 요소 선택
+        
+        if (target) { 
+            // 선택한 요소가 존재할 경우
+            const headerHeight = document.querySelector('header').offsetHeight || 0; 
+            // 고정된 헤더의 높이를 가져옴 (없으면 0)
+            
+            const rect = target.getBoundingClientRect(); 
+            // 해당 요소의 화면 내 위치 정보를 가져옴
+            
+            const offset = (window.innerHeight / 10) - (rect.height / 4) - headerHeight; 
+            // 요소를 화면 중앙에 위치하도록 계산
+            
+            window.scrollTo({
+                top: window.scrollY + rect.top + offset, 
+                // 스크롤 위치를 계산한 값으로 이동
+                behavior: 'smooth' 
+                // 부드럽게 스크롤 이동
+            });
+        }
+    }
+}
 
-					// Calculate the offset to center the target element
-					const offset = (window.innerHeight / 2) - (rect.height / 2) - headerHeight;
-
-					// Scroll to the target element with the calculated offset
-					window.scrollTo({
-						top: window.scrollY + rect.top + offset,
-						behavior: 'smooth'
-					});
-				}
-			}
-		});
 
 	</script>
 </head>
@@ -866,7 +878,7 @@
 
 
 				<!-- Classes (Tabs) -->
-				<section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+				<section id="business-Solution" class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
 					<h2 class="h1 text-center pt-2 pt-sm-3">Solution</h2>
 					<p class="text-center pb-3 mb-3 mb-lg-4">반응형 웹 서비스, MDT-CRM, MDT-MIS의 세 가지 솔루션은 <br>고객 관계 관리 및 관리 정보
 						시스템을 위한 통합 플랫폼을 제공하여 운영 효율성과 사용자 경험을 향상시킵니다.</p>
