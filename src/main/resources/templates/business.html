@@ -181,10 +181,15 @@
 			/* 텍스트와 이미지를 가운데 정렬합니다. */
 
 		}
+
 		.con2 {
-		margin-bottom: 40px;
-		font-size: 60px;
-	}
+			margin-bottom: 40px;
+			font-size: 60px;
+		}
+		.pb-3 {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
 	</style>
 
 	<!-- Page loading scripts -->
@@ -198,6 +203,28 @@
 				}, 1500)
 			}
 		})()
+
+		document.addEventListener('DOMContentLoaded', () => {
+			if (window.location.hash) {
+				const target = document.querySelector(window.location.hash);
+				if (target) {
+					// Get the height of the fixed header
+					const headerHeight = document.querySelector('header').offsetHeight || 0;
+
+					// Get the position of the target element
+					const rect = target.getBoundingClientRect();
+
+					// Calculate the offset to center the target element
+					const offset = (window.innerHeight / 2) - (rect.height / 2) - headerHeight;
+
+					// Scroll to the target element with the calculated offset
+					window.scrollTo({
+						top: window.scrollY + rect.top + offset,
+						behavior: 'smooth'
+					});
+				}
+			}
+		});
 
 	</script>
 </head>
@@ -255,8 +282,8 @@
 
 
 
-		<!-- Testimonials slider -->
-		<section class="container py-3 mt-3 mb-2 my-md-4 my-lg-5">
+		<!-- 사업내용 -->
+		<section id="business-content" class="container py-3 mt-3 mb-2 my-md-4 my-lg-5">
 			<div class="row justify-content-center align-items-center py-xl-3 my-xxl-3" data-aos="fade-up"
 				data-aos-duration="600" data-aos-offset="280" data-disable-parallax-down="lg">
 				<div class="col-lg-5 pb-3 pb-lg-0 mb-3 mb-sm-4 mb-lg-0" data-aos="fade-up" data-aos-duration="850"
@@ -282,8 +309,8 @@
 									style="max-width: 570px;">
 									<div class="bg-light rounded-circle flex-shrink-0 position-relative z-2 me-n4"
 										style="padding: .375rem;">
-										<img class="rounded-circle" src="/assets/images/business/businesscontent.jpg"
-											width="80" alt="Avatar">
+										<img class="rounded-circle" src="/assets/images/business/qq1.png" width="80"
+											alt="Avatar">
 									</div>
 									<div class="card bg-secondary border-4 rounded-4 py-2 ps-3 pe-2"> <!-- 패딩 줄임 -->
 										<div class="card-body py-2 px-1"> <!-- 패딩 줄임 -->
@@ -301,8 +328,8 @@
 									style="max-width: 570px;">
 									<div class="bg-light rounded-circle flex-shrink-0 position-relative z-2 me-n4"
 										style="padding: .375rem;">
-										<img class="rounded-circle" src="/assets/images/business/businesscontent2.png"
-											width="80" alt="Avatar">
+										<img class="rounded-circle" src="/assets/images/business/qq2.png" width="80"
+											alt="Avatar">
 									</div>
 									<div class="card bg-secondary border-4 rounded-4 py-2 ps-3 pe-2"> <!-- 패딩 줄임 -->
 										<div class="card-body py-2 px-1"> <!-- 패딩 줄임 -->
@@ -319,8 +346,8 @@
 								<div class="d-flex align-items-center align-self-end" style="max-width: 570px;">
 									<div class="bg-light rounded-circle flex-shrink-0 position-relative z-2 me-n4"
 										style="padding: .375rem;">
-										<img class="rounded-circle" src="/assets/images/business/businesscontent3.jpg"
-											width="80" alt="Avatar">
+										<img class="rounded-circle" src="/assets/images/business/qq3.png" width="80"
+											alt="Avatar">
 									</div>
 									<div class="card bg-secondary border-4 rounded-4 py-2 ps-3 pe-2"> <!-- 패딩 줄임 -->
 										<div class="card-body py-2 px-1"> <!-- 패딩 줄임 -->
@@ -345,8 +372,8 @@
 
 
 
-		<!-- FAQ -->
-		<section class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
+		<!-- IT Outsourcing -->
+		<section id="business-itoutsourcing" class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
 			<div class="row py-2 py-sm-4 py-md-5 mt-lg-2">
 				<div class="col-sm-9 col-md-4 col-lg-5 mb-5 mb-md-0">
 					<div class="position-relative mb-sm-2">
@@ -430,8 +457,9 @@
 			</div>
 		</section>
 
-		<!-- Industries -->
-		<section class="bg-white border-top border-light py-2 py-sm-3 py-md-4 py-m-5" data-bs-theme="dark">
+		<!-- si/sm 사업사례 패키지(s/w) -->
+		<section id="business-sw" class="bg-white border-top border-light py-2 py-sm-3 py-md-4 py-m-5"
+			data-bs-theme="dark">
 			<div class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
 				<h2 class="h1 text-center text-md-start mt-lg-n3 pb-4 pb-md-5" style="max-width: 660px;">SI/SM 사업사례
 					패키지(S/W)</h2>
@@ -537,8 +565,8 @@
 
 
 
-		<!-- Hero section -->
-		<section class="position-relative bg-white pt-lg-4 pt-xl-5">
+		<!-- 시스템통합(si) -->
+		<section id="business-si" class="position-relative bg-white pt-lg-4 pt-xl-5">
 			<div class="jarallax position-absolute top-0 start-0 w-100 h-100" data-jarallax data-speed="0.4">
 
 			</div>
@@ -744,8 +772,8 @@
 		</section>
 
 
-		<!-- How we work (Steps) -->
-		<section class="container pt-5 mt-1 mt-sm-2 mt-xl-4 mt-xxl-5">
+		<!-- si/sm 진행절차) -->
+		<section id="business-sism" class="container pt-5 mt-1 mt-sm-2 mt-xl-4 mt-xxl-5">
 			<div class="row align-items-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-2 mt-xxl-3">
 				<h1 class="display-8 text-dark text-center pt-5" style="margin-bottom: 70px;">SI/SM 진행절차</h1>
 				<div class="col-md-4 col-xl-5 pb-3 pb-md-0 mb-4 mb-md-0">
@@ -820,23 +848,173 @@
 				</div>
 			</div>
 		</section>
-		
-		
-		<div class="consulting" style="margin-top: 15%;">
+
+		<!-- consulting -->
+		<div id="business-consulting" class="consulting" style="margin-top: 15%;">
 			<h1 class="mainconsulting0" style="font-size: 400%;"><strong>Consulting</strong></h4>
-			<h4 class="mainconsulting1"  style="font-size: 100%; margin-top:50px">
-				컨설팅 사업은 공공, 금융, 제조/서비스, 전자, 통신/미디어 등의 산업에서 CRM, CPM, ERP, MIS 등
-				다양한 솔루션을<br> 이용한 전략 컨설팅, 프로세스 혁신 컨설팅, 전략 실행 컨설팅 서비스를 제공합니다.
-			</h4>
+				<h4 class="mainconsulting1" style="font-size: 100%; margin-top:50px">
+					컨설팅 사업은 공공, 금융, 제조/서비스, 전자, 통신/미디어 등의 산업에서 CRM, CPM, ERP, MIS 등
+					다양한 솔루션을<br> 이용한 전략 컨설팅, 프로세스 혁신 컨설팅, 전략 실행 컨설팅 서비스를 제공합니다.
+				</h4>
 
-			<body>
-				<div class="image-container">
-					<img src="assets/images/business/con1.png" class="SIimg shadow-xl" alt="...">
-					
-					<img src="assets/images/business/con2.png" class="SIimg shadow-xl" alt="...">
-				</div>
-			</body>
+				<body>
+					<div class="image-container">
+						<img src="assets/images/business/con1.png" class="SIimg shadow-xl" alt="...">
+						<img src="assets/images/business/con2.png" class="SIimg shadow-xl" alt="...">
+					</div>
+				</body>
 
+
+				<!-- Classes (Tabs) -->
+				<section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+					<h2 class="h1 text-center pt-2 pt-sm-3">Solution</h2>
+					<p class="text-center pb-3 mb-3 mb-lg-4">반응형 웹 서비스, MDT-CRM, MDT-MIS의 세 가지 솔루션은 <br>고객 관계 관리 및 관리 정보
+						시스템을 위한 통합 플랫폼을 제공하여 운영 효율성과 사용자 경험을 향상시킵니다.</p>
+
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs flex-nowrap overflow-auto text-nowrap w-100 mx-auto pb-3 mb-3 mb-lg-4 justify-content-center"
+						role="tablist" style="max-width: 892px;">
+						<li class="nav-item mb-0">
+							<a class="nav-link active" href="#beginners" data-bs-toggle="tab" role="tab">반응형웹서비스</a>
+						</li>
+						<li class="nav-item mb-0">
+							<a class="nav-link" href="#stretching" data-bs-toggle="tab" role="tab">MDT-CRM</a>
+						</li>
+						<li class="nav-item mb-0">
+							<a class="nav-link" href="#fly-yoga" data-bs-toggle="tab" role="tab">MDT-MIS</a>
+						</li>
+						<li class="nav-item mb-0">
+							<a class="nav-link" href="#for-pregnant" data-bs-toggle="tab" role="tab">MDT B2B</a>
+						</li>
+					</ul>
+
+
+
+					<!-- Tab content -->
+					<div class="tab-content">
+
+						<!-- Beginers -->
+						<div class="tab-pane fade show active" id="beginners" role="tabpanel">
+							<div class="row align-items-lg-center">
+								<div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+									<img class="rounded-5" src="assets/images/business/sou1.png"
+										alt="Beginners">
+								</div>
+								<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+									<div class="ps-md-4 ps-lg-0">
+										<h2 class="mb-xl-4">반응형 웹 서비스</h2>
+										<p class="pb-3 mb-3 mb-xl-4" style="font-size: 16px;">모든 기기에서 원활한 접근성의 중요성을 잘 알고
+											있습니다. 당사의 반응형 웹 서비스는 귀하의
+											웹사이트 또는 관리 플랫폼이 PC, 태블릿, 스마트폰 등 모든 화면 크기에 자동으로 적응하도록 보장합니다. <br><br>단일 코드 기반으로 최적의
+											시청 경험을 제공하여 개발 시간과 유지 관리 비용을 줄이고 사용자 만족도를 높입니다.
+
+											직원이나 고객이 플랫폼에 액세스하는 위치에 관계없이 레이아웃과 기능은 일관되게 유지되어 효율적이고 사용자 친화적인 경험을 제공합니다.<br><br>
+											또한 당사의 기술은 귀하 사이트의 **SEO(검색 엔진 최적화)**를 향상시켜 귀하의 웹사이트 트래픽을 더 쉽게 찾고 늘릴 수 있도록
+											해줍니다.
+
+											반응형 웹 서비스를 활용하면 귀하의 디지털 존재감을 최첨단으로 유지하여 모든 장치, 브라우저에서 고품질 경험을 제공하고 비즈니스 성공을
+											촉진할 수 있습니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Stretching -->
+						<div class="tab-pane fade" id="stretching" role="tabpanel">
+							<div class="row align-items-lg-center">
+								<div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+									<img class="rounded-5" src="assets/images/business/sou2.png"
+										alt="Stretching">
+								</div>
+								<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+									<div class="ps-md-4 ps-lg-0">
+										<h2 class="mb-xl-4">MDT-CRM</h2>
+										<p class="pb-3 mb-3 mb-xl-4">반응형 웹 서비스를 통합하는 종합 솔루션
+
+											MDT CRM은 반응형 웹 서비스를 통해 모바일 및 태블릿 환경에서 판매 및 성과 관리를 강화하도록 설계된 통합 시스템입니다. 이
+											솔루션은 다양한 기기에 걸쳐 최적의 해상도로 자동 조정되어 별도의 관리 페이지나 추가 설정 없이 쉽게 접근할 수 있는 유연한 관리 도구를
+											제공합니다.<br><br>
+
+											MDT CRM은 판매 관리, 고객 관리, 성과 관리 기능을 반응형 웹 서비스와 결합하여 사용자가 PC, 스마트폰, 컴퓨터 등 모든
+											장치에서 최적화된 인터페이스에 액세스할 수 있도록 보장합니다. 정제. 반응형 UI는 화면 크기에 맞춰 원활하게 조정되므로 사용자는 현장
+											판매나 원격 근무 시에도 효율적으로 작업을 수행하고, 신속하게 대응하며, 실시간으로 데이터를 관리할 수 있습니다.<br><br>
+
+											MDT CRM의 주요 장점은 비용 절감입니다. 시스템이 웹 기반이기 때문에 추가 앱 설치나 별도의 페이지 개발이 필요 없어 개발 및
+											유지관리 비용이 대폭 절감됩니다. 또한 MDT CRM은 모든 장치에서 **일관된 사용자 경험(UX)**을 제공하여 데이터 일관성을
+											보장하고 작업 효율성을 개선하며 운영을 간소화합니다.<br><br>
+
+											MDT CRM을 사용하면 기업은 모바일 인력의 요구 사항에 맞춰 조정되는 통합 플랫폼을 통해 효과적으로 고객 관계를 관리하고 성과를
+											모니터링하며 영업 전략을 구현할 수 있습니다.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Fly-yoga -->
+						<div class="tab-pane fade" id="fly-yoga" role="tabpanel">
+							<div class="row align-items-lg-center">
+								<div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+									<img class="rounded-5" src="assets/images/business/sou3.png"
+										alt="Fly-yoga">
+								</div>
+								<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+									<div class="ps-md-4 ps-lg-0">
+										<h2 class="mb-xl-4">경영정보시스템(MIS)</h2>
+										<p class="pb-3 mb-3 mb-xl-4">경영정보시스템(MIS)
+
+											MIS(경영 정보 시스템)는 조직 내에서 데이터의 수집, 처리 및 분석을 용이하게 하도록 설계된 포괄적인 시스템입니다. 이는 관리자에게
+											정보에 입각한 결정을 내리는 데 필요한 정보를 제공하는 데 중요한 역할을 합니다. MIS는 다양한 비즈니스 운영의 데이터를 통합함으로써
+											프로세스를 간소화하고 전반적인 효율성을 향상시킵니다.<br><br>
+
+											MIS는 일반적으로 하드웨어, 소프트웨어, 데이터, 절차 및 사람을 포함한 여러 구성 요소를 포함합니다. 이러한 시스템을 통해 조직은
+											정보를 효과적으로 관리할 수 있어 부서 간 조정이 더욱 원활해집니다. MIS의 주요 이점 중 하나는 시의적절한 의사 결정과 변화하는 시장
+											상황에 대한 대응을 지원하는 실시간 보고 기능입니다.<br><br>
+
+											또한 MIS는 조직 전체의 커뮤니케이션을 강화하여 사일로를 허물고 협업을 촉진합니다. MIS에 종종 포함되는 시각화 도구를 사용하면
+											관리자는 복잡한 데이터를 쉽게 해석하여 전략 계획에 더 쉽게 접근할 수 있습니다.<br><br>
+
+											오늘날의 경쟁 환경에서 강력한 MIS를 보유하는 것은 성과를 최적화하고 장기적인 성공을 달성하려는 조직에 필수적입니다. MIS의 힘을
+											활용함으로써 기업은 귀중한 통찰력을 얻고, 고객 서비스를 개선하고, 생산성을 향상시켜 궁극적으로 지속 가능한 성장으로 이어질 수
+											있습니다.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- For pregnant -->
+						<div class="tab-pane fade" id="for-pregnant" role="tabpanel">
+							<div class="row align-items-lg-center">
+								<div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+									<img class="rounded-5" src="assets/images/business/businesscontent2.png"
+										alt="For pregnant">
+								</div>
+								<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+									<div class="ps-md-4 ps-lg-0">
+										<h2 class="mb-xl-4">MDT B2B 시스템의 비전</h2>
+										<p class="pb-3 mb-3 mb-xl-4">MDT B2B는 반응형 웹 서비스와 B2B 기능을 완벽하게 통합하는 모바일 반응형 영업 관리
+											시스템입니다. 우리의 주요 목표는 기업이 스마트 장치에서 직접 판매 프로세스, 마케팅 활동 및 고객 통합 서비스를 쉽게 관리할 수 있는
+											포괄적인 솔루션을 제공하는 것입니다.<br><br>
+
+											효율성을 높이기 위해 설계된 이 시스템은 고객 생애 가치를 극대화하고 회사의 장기적인 수익성을 높이는 데 중점을 둡니다. MDT B2B는
+											새로운 비즈니스 고객을 확보하고, 가치 있는 관계를 육성하고, 잠재적인 리드를 활성화하기 위한 전략을 효과적으로 실행함으로써 조직이
+											성장을 추진할 수 있도록 지원합니다.<br><br>
+
+											이 플랫폼은 휴대폰, 태블릿 등 다양한 기기에서 최적의 사용자 경험을 보장합니다. 이러한 모바일 응답성을 통해 영업 담당자는 중요한
+											데이터에 실시간으로 액세스할 수 있으므로 위치에 관계없이 즉각적인 대응과 효율적인 마케팅 활동 관리가 가능해집니다.<br><br>
+
+											또한 MDT B2B는 고급 분석을 활용하여 고객 데이터를 평가함으로써 개별 고객 경험을 최적화하고 평생 가치를 극대화하는 맞춤형 전략을
+											수립할 수 있습니다.<br><br>
+
+											MDT B2B의 비전은 기업이 지속 가능한 성장과 수익성 향상을 달성할 수 있도록 지원하는 고객 중심 경영 전략을 수립하는 것입니다.
+											지능형 영업관리를 최우선으로 하고, 탄탄한 고객 관계 구축을 통해 디지털 시대의 미래 경쟁력을 강화해 나가고자 합니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 	</main>
 
 
