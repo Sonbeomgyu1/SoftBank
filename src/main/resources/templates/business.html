@@ -204,38 +204,34 @@
 				}, 1500)
 			}
 		})()
-document.addEventListener('DOMContentLoaded', scrollToHash); 
-// 페이지가 처음 로드될 때 해시 값에 맞춰 스크롤
-
-window.addEventListener('hashchange', scrollToHash); 
-// 해시 값이 변경될 때마다 스크롤 처리
+		
+		
+document.addEventListener('DOMContentLoaded', scrollToHash);
+window.addEventListener('hashchange', scrollToHash);
 
 function scrollToHash() {
-    if (window.location.hash) { 
-        // URL에 해시 값이 있을 때 실행
-        const target = document.querySelector(window.location.hash); 
-        // 해시 값에 해당하는 요소 선택
-        
-        if (target) { 
-            // 선택한 요소가 존재할 경우
-            const headerHeight = document.querySelector('header').offsetHeight || 0; 
-            // 고정된 헤더의 높이를 가져옴 (없으면 0)
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+            // 고정된 헤더의 높이 가져오기
+            const headerHeight = document.querySelector('header').offsetHeight || 0;
             
-            const rect = target.getBoundingClientRect(); 
-            // 해당 요소의 화면 내 위치 정보를 가져옴
+            // 타겟 요소의 위치 가져오기
+            const rect = target.getBoundingClientRect();
             
-            const offset = (window.innerHeight / 10) - (rect.height / 4) - headerHeight; 
-            // 요소를 화면 중앙에 위치하도록 계산
+            // 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
+            const offset = (window.innerHeight / 10) - (rect.height / 4.7) - headerHeight;
             
+            // 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
             window.scrollTo({
-                top: window.scrollY + rect.top + offset, 
-                // 스크롤 위치를 계산한 값으로 이동
-                behavior: 'smooth' 
-                // 부드럽게 스크롤 이동
+                top: window.scrollY + rect.top + offset,
+                behavior: 'smooth'
             });
         }
     }
 }
+
 
 
 	</script>
