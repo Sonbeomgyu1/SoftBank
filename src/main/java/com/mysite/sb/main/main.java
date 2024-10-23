@@ -17,11 +17,31 @@ public class main {
 	public String company() {
 		return "company";
 	}
-	//사업분야
+
+	// 사업분야
 	@GetMapping("/business")
 	public String business() {
 		return "business";
 	}
+
+	// 채용안내
+	@GetMapping("/recruitment")
+	public String recruitment() {
+		return "recruitment";
+	}
+
+	// 찾아오는길
+	@GetMapping("/contact")
+	public String contact() {
+		return "contact";
+	}
+
+	// 찾아오는길
+	@GetMapping("/notice")
+	public String notice() {
+		return "notice";
+	}
+
 	// 헤더
 	@GetMapping("/header")
 	public String header() {
