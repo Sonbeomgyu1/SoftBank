@@ -155,6 +155,33 @@
 				}, 1500)
 			}
 		})()
+		
+		<!--카테고리 눌르면 바로 가는 스크립트-->
+		function scrollToHash() {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+            // 고정된 헤더의 높이 가져오기
+            const headerHeight = document.querySelector('header').offsetHeight || 0;
+            
+            // 타겟 요소의 위치 가져오기
+            const rect = target.getBoundingClientRect();
+            
+            // 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
+            const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
+            
+            // 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
+            window.scrollTo({
+                top: window.scrollY + rect.top + offset,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', scrollToHash);
+
+
 	</script>
 </head>
 
@@ -212,7 +239,7 @@
 
 
 		<!-- Benefits -->
-		<section class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5">
+		<section id="company-greeting" class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5" style="margin-top: 10%;">
 			<div class="row pb-md-4 pb-xl-5">
 				<div class="col-md-6 mb-2 mb-md-0">
 					<div class="card border-0 h-100 bg-size-cover bg-position-center"
@@ -226,44 +253,40 @@
 						<h2 class="h1 pb-2 pb-sm-3 pb-xl-4">CEO 인사말</h2>
 						<div class="d-flex pb-3 mb-2 mb-xl-3">
 							<div class="ps-3">
-								<h3 class="h5">(주) SoftBank는 혁신적인 도전 정신으로
+								<h5 class="h5" style="font-weight: normal;">(주) SoftBank는 혁신적인 도전 정신으로
 									우리나라 산업을 대표하는 정보 통신의 발전과 함께
-									어려운 환경을 극복하고 성장해 왔습니다.
-
+									어려운 환경을 극복하고 성장해 왔습니다.<br><br>
 
 									이는 모두 회사의 발전을 위해 노력한 임직원들의 수고와
-									민소프트를 아껴주시는 고객 여러분의 애정이
-									밑거름이 된 값진 결실입니다.
-
+									소프트뱅크를 아껴주시는 고객 여러분의 애정이
+									밑거름이 된 값진 결실입니다.<br><br>
 
 									세계는 이제 기술의 발전으로 산업의 경계가 없어지고
-									전례없이 빠른 기술의 변화를 겪고 있습니다.
+									전례없이 빠른 기술의 변화를 겪고 있습니다.<br><br>
 
-
-									저희 민소프트도 이러한 시대변화에 발맞추어
+									저희 소프트뱅크도 이러한 시대변화에 발맞추어
 									첨단 기술과 우수한 인재, 글로벌 경영 네트워크를 갖추고
-									고객 만족을 실현하고자 힘쓰겠습니다.
+									고객 만족을 실현하고자 힘쓰겠습니다.<br><br>
 
-
-									민소프트는 창의적인 아이디어를 가진
+									소프트뱅크의 창의적인 아이디어를 가진
 									인재들의 역량을 모아
-									경쟁력을 키우겠습니다.
-
+									경쟁력을 키우겠습니다.<br><br>
 
 									앞으로도 혁신하는 기업이 될 것을 약속드리오며
 									고객의 사랑과 은혜를 잊지 않는 겸손한 마음으로
-									언제나 노력하고 또 노력하는 민소프트가 되겠습니다.
-									감사합니다.</h3>
+									언제나 노력하고 또 노력하는 소프트뱅크가 되겠습니다.<br><br>
+									감사합니다.</h5>
 							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</section>
 
 
 		<!-- Industries (Binded accordion) -->
-		<section class="container py-5 mt-2 mt-sm-3 mt-md-4">
+		<section id="company-history" class="container py-5 mt-2 mt-sm-3 mt-md-4">
 			<h2 class="h1 text-center pt-lg-3">회사연혁</h2>
 			<p class="pb-3 pb-md-4 mb-0 mb-sm-2 mb-lg-3 text-center">오랜 역사와 혁신을 통해 꾸준히 성장해 온 기업으로, 고객의 신뢰와 함께 다양한 성과를
 				이루어 왔습니다.</p>
@@ -358,20 +381,16 @@
 					<div class="ps-lg-4 ps-xl-0">
 						<div class="binded-content">
 							<div class="binded-item active" id="finance-img">
-								<img class="rounded-5" src="assets/img/landing/web-studio/industries/01.jpg"
-									alt="Image">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
 							</div>
 							<div class="binded-item" id="tech-img">
-								<img class="rounded-5" src="assets/img/landing/web-studio/industries/02.jpg"
-									alt="Image">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
 							</div>
 							<div class="binded-item" id="medicine-img">
-								<img class="rounded-5" src="assets/img/landing/web-studio/industries/03.jpg"
-									alt="Image">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
 							</div>
 							<div class="binded-item" id="ecommerce-img">
-								<img class="rounded-5" src="assets/img/landing/web-studio/industries/04.jpg"
-									alt="Image">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
 							</div>
 						</div>
 					</div>
@@ -379,36 +398,37 @@
 			</div>
 		</section>
 
+		<!-- 기업인증페이지 -->
+		<section id="company-certification" class="overflow-hidden" style="margin-top: 10%;">
+			<div class="container pt-5 pb-sm-3 mt-5 mb-2 mb-md-3 mb-lg-4 mb-xxl-5">
+				<!-- 기업인증 페이지 -->
+				<h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4">기업인증</h1>
+				<!-- 사진 -->
+				<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up"
+					data-aos-duration="600" data-aos-offset="280">
+					<div class="col-md-4 offset-xxl-1 mb-4 mb-md-0">
+						<span href="portfolio-single-v1.html">
+							<img class="rounded-5" src="assets/images/company/sobangimage1.png" width="700" alt="Image">
+						</span>
+					</div>
+					<div class="col-md-5 col-xl-4" style="margin-left: 100px; " data-aos="fade-up"
+						data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
+						<div class="ms-md-4 ms-lg-5 ms-xxl-0" style="max-width: 400px;">
 
-		 <!-- 기업인증페이지 -->
-      <section class="overflow-hidden">
-        <div class="container pt-5 pb-sm-3 mt-5 mb-2 mb-md-3 mb-lg-4 mb-xxl-5">
-          <!-- 기업인증 페이지 -->
-          <h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4">기업인증</h1>
-          <!-- 사진 -->
-          <article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
-            <div class="col-md-4 offset-xxl-1 mb-4 mb-md-0">
-              <span href="portfolio-single-v1.html">
-                <img class="rounded-5" src="assets/images/company/sobangimage1.png" width="700" alt="Image">
-              </span>
-            </div>
-            <div class="col-md-5 col-xl-4" style="margin-left: 100px; " data-aos="fade-up" data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
-    <div class="ms-md-4 ms-lg-5 ms-xxl-0" style="max-width: 400px;">
-        
-        <h2 class="mb-lg-4">
-            <span href="">기업부설연구소</span>
-        </h2>
-        <p class="mb-0 mb-md-1 mb-lg-3">2022.07 기업부설 연구소 지정 (한국산업기술진흥협회) </p>
-        
-        </a>
-    </div>
-</div>
+							<h2 class="mb-lg-4">
+								<span href="">기업부설연구소</span>
+							</h2>
+							<p class="mb-0 mb-md-1 mb-lg-3">2022.07 기업부설 연구소 지정 (한국산업기술진흥협회) </p>
+
+							</a>
+						</div>
+					</div>
 
 
-          </article>
+				</article>
 
-          <!-- Item -->
-          <!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
+				<!-- Item -->
+				<!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
             <div class="col-md-7 order-md-2 mb-4 mb-md-0">
               <a href="portfolio-single-v1.html">
                 <img class="rounded-5" src="assets/img/portfolio/list/02.jpg" width="700" alt="Image">
@@ -429,8 +449,8 @@
             </div>
           </article>-->
 
-          <!-- Item -->
-          <!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
+				<!-- Item -->
+				<!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
             <div class="col-md-7 offset-xxl-1 mb-4 mb-md-0">
               <a href="portfolio-single-v1.html">
                 <img class="rounded-5" src="assets/img/portfolio/list/03.jpg" width="700" alt="Image">
@@ -449,8 +469,8 @@
             </div>
           </article>-->
 
-          <!-- Item -->
-          <!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
+				<!-- Item -->
+				<!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
             <div class="col-md-7 order-md-2 mb-4 mb-md-0">
               <a href="portfolio-single-v1.html">
                 <img class="rounded-5" src="assets/img/portfolio/list/04.jpg" width="700" alt="Image">
@@ -471,7 +491,7 @@
             </div>
           </article>-->
 
-         <!--  Item 
+				<!--  Item 
           <article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
             <div class="col-md-7 offset-xxl-1 mb-4 mb-md-0">
               <a href="portfolio-single-v1.html">
@@ -492,14 +512,14 @@
               </div>
             </div>
           </article>-->
-        </div>
-      </section>
+			</div>
+		</section>
 
 
-		
 
 
-		
+
+
 	</main>
 
 
