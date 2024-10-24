@@ -1,85 +1,123 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-  <head>
-    <meta charset="utf-8">
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-    
-    <!-- SEO meta tags -->
-    <title>SoftBank</title>
-    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
-    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
-    <meta name="author" content="Createx Studio">
+<head>
+	<meta charset="utf-8">
 
-    <!-- Webmanifest + Favicon / App icons -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
-        
-    <!-- Theme switcher (color modes) -->
-    <script src="assets/js/theme-switcher.js"></script>
+	<!-- Viewport -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
-    <!-- Import Google font (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+	<!-- SEO meta tags -->
+	<title>SoftBank</title>
+	<meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+	<meta name="keywords"
+		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+	<meta name="author" content="Createx Studio">
 
-    <!-- Vendor styles -->
-    <link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+	<!-- Webmanifest + Favicon / App icons -->
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
 
-    <!-- Font icons -->
-    <link rel="stylesheet" href="assets/icons/around-icons.min.css">
+	<!-- Theme switcher (color modes) -->
+	<script src="assets/js/theme-switcher.js"></script>
 
-    <!-- Theme styles + Bootstrap -->
-    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-  
-    <!-- 헤더 css 불러오기-->
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <!-- 푸터 css 불러오기-->
-    <link rel="stylesheet" href="/assets/css/footer.css">
-   
-    <!-- Page loading scripts -->
-    <script>
-      (function () {
-        window.onload = function () {
-          const preloader = document.querySelector('.page-loading')
-          preloader.classList.remove('active')
-          setTimeout(function () {
-            preloader.remove()
-          }, 1500)
+	<!-- Import Google font (Inter) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+		rel="stylesheet" id="google-font">
+
+	<!-- Vendor styles -->
+	<link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+	<!-- Font icons -->
+	<link rel="stylesheet" href="assets/icons/around-icons.min.css">
+
+	<!-- Theme styles + Bootstrap -->
+	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+	<!-- 헤더 css 불러오기-->
+	<link rel="stylesheet" href="/assets/css/header.css">
+	<!-- 푸터 css 불러오기-->
+	<link rel="stylesheet" href="/assets/css/footer.css">
+
+	<!-- Page loading scripts -->
+	<script>
+		(function () {
+			window.onload = function () {
+				const preloader = document.querySelector('.page-loading')
+				preloader.classList.remove('active')
+				setTimeout(function () {
+					preloader.remove()
+				}, 1500)
+			}
+		})()
+		
+		<!--카테고리 눌르면 바로 가는 스크립트-->
+		function scrollToHash() {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+            // 고정된 헤더의 높이 가져오기
+            const headerHeight = document.querySelector('header').offsetHeight || 0;
+            
+            // 타겟 요소의 위치 가져오기
+            const rect = target.getBoundingClientRect();
+            
+            // 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
+            const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
+            
+            // 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
+            window.scrollTo({
+                top: window.scrollY + rect.top + offset,
+                behavior: 'smooth'
+            });
         }
-      })()
-    </script>
-    
-  </head>
+    }
+}
+document.addEventListener('DOMContentLoaded', scrollToHash);
+	</script>
+
+</head>
+
+<style>
+	.card-body h3 {
+		font-size: 17px;
+	}
+
+	.card-body p {
+		font-size: 12px;
+	}
+</style>
+<!-- Body -->
+
+<body>
 
 
-  <!-- Body -->
-  <body>
+	<!-- Page loading spinner -->
+	<div class="page-loading active">
+		<div class="page-loading-inner">
+			<div class="page-spinner"></div>
+			<span>Loading...</span>
+		</div>
+	</div>
 
 
-    <!-- Page loading spinner -->
-    <div class="page-loading active">
-      <div class="page-loading-inner">
-        <div class="page-spinner"></div>
-        <span>Loading...</span>
-      </div>
-    </div>
+	<!-- Page wrapper -->
+	<main class="page-wrapper">
 
+		<header>
+			<!-- Include the header -->
+			<div th:replace="header :: header"></div>
+		</header>
 
-    <!-- Page wrapper -->
-    <main class="page-wrapper">
-
-      <header>
-		  <!-- Include the header -->
-    <div th:replace="header :: header"></div>
-	  </header>
-
-<!-- 세부페이지 배너  -->
+		<!-- 세부페이지 배너  -->
 		<section class="overflow-hidden">
 			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
 				<div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
@@ -87,7 +125,7 @@
 						class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
 						<div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
 							<div class="parallax-layer" data-depth="0.1">
-								<img src="assets/images/business/businessbanner.jpg" alt="Layer">
+								<img src="assets/images/recruit/recruitmentbanner.png" alt="Layer">
 							</div>
 
 						</div>
@@ -95,31 +133,171 @@
 					<div class="col-lg-5 order-lg-1">
 						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">채용안내</h1>
 						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
-							style="max-width: 520px;">비즈니스는 시스템 통합(SI)과 시스템 유지보수(SM),
-							그리고 컨설팅 및 맞춤형 솔루션 제공을 포함하여, 고객의 다양한 요구에 맞춘 종합 IT 서비스를 제공합니다.</p>
+							style="max-width: 520px;">채용 안내와 복제 제도를 통해 우수 인재를 발굴하고, 그들의 역량을 극대화하여 기업의 혁신과 경쟁력을 강화합니다.
+						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-      
-    </main>
-    
+		<!-- 채용안내 -->
+		<div id="recruitment-recruit" class="recruitment" style="margin-top: 10%; text-align: center;">
+    <h1 class="mainconsulting0" style="font-size: 400%;"><strong>Recruitment guide</strong></h1>
+    <h4 class="mainconsulting1" style="font-size: 100%; margin-top: 50px;">
+        회사의 인재 채용 절차와 기준을 안내하여 적합한 인재를 모집하는 정보입니다.
+    </h4>
 
-    <!-- Include the footer -->
-    <div th:replace="footer :: footer"></div></body></html>
-  
-
-    <!-- Back to top button -->
-    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
-      </svg>
-      <i class="ai-arrow-up"></i>
-    </a>
+    <div class="image-container" style="text-align: center; width: 100%; height: 80%;">
+        <img src="assets/images/recruit/recruitment1.png" class="SIimg shadow-xl" alt="..." style="width: 80%; height: auto;">
+    </div>
+</div>
 
 
-    <!-- Vendor scripts: JS libraries and plugins -->
+
+		<!-- Services -->
+		<section id="recruitment-welfare" class="container py-5 my-md-2 my-lg-3 my-xl-4 my-xxl-5">
+    <div class="col-lg-4 mx-auto text-center" >
+        <h2 class="h1 text-center pb-3 pb-lg-1" style="font-size: 400%;">복지제도</h2>
+
+        <!-- Show on screens > 992px -->
+        <ul class="list-unstyled pb-3 mb-3 mb-lg-4">
+            <li class="d-flex justify-content-center pt-2">
+                회사의 복지 제도는 임직원의 권익을 보호하고 복리를 증진시키기 위해 다양한 혜택과 지원을 제공합니다.
+            </li>
+        </ul>
+    </div>
+
+
+
+			<div class="row align-items-center py-1 py-sm-3 py-md-4 my-lg-2">
+
+
+				<div class="col-lg-8 col-xl-7 col-xxl-6">
+					<div class="row row-cols-1 row-cols-sm-2">
+						<div class="col">
+							<div class="card border-0 bg-primary bg-opacity-10">
+								<div class="card-body">
+									<i class="ai-search-settings fs-1 text-primary d-block mb-3"></i>
+									<h3 class="h4">연차제도</h3>
+									<p class="fs-sm">시차 출근제<br>
+										선택적 근무<br>
+										자유로운 연차사용 장려</p>
+								</div>
+							</div>
+							<div class="card border-0 bg-info bg-opacity-10 mt-4">
+								<div class="card-body">
+									<i class="ai-bulb-alt fs-1 text-info d-block mb-3"></i>
+									<h3 class="h4">워크샵 및 야유회</h3>
+									<p class="fs-sm">가족동반 워크샵 운영<br>
+										가족동반 야유회 운영<br>
+										직원복지 향상을 위한 문화 활동 지원</p>
+								</div>
+							</div>
+						</div>
+						<div class="col pt-lg-3">
+							<div class="card border-0 bg-warning bg-opacity-10 mt-4 mt-sm-0 mt-lg-4">
+								<div class="card-body">
+									<i class="ai-mail-filled fs-1 text-warning d-block mb-3"></i>
+									<h3 class="h4">개인장비지원</h3>
+									<p class="fs-sm">사무용품 지원<br>
+										최신 업무 장비 제공<br>
+										업무 효율성을 위한 장비 업그레이드 지원<br>
+										맞춤형 IT 장비 지원 프로그램 운영
+									</p>
+								</div>
+							</div>
+							<div class="card border-0 bg-danger bg-opacity-10 mt-4">
+								<div class="card-body">
+									<i class="ai-telegram fs-2 text-danger d-block mb-3"></i>
+									<h3 class="h4">출산휴가/육아휴직권장</h3>
+									<p class="fs-sm">육아에 도움이 되자!<br>
+										육아휴직 및 출산휴가 적극사용 권장</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Show button on screens < 992px -->
+					<div class="d-lg-none text-center pt-3 mt-3 mt-sm-4">
+						<a class="btn btn-primary" href="#">See all servises</a>
+					</div>
+				</div>
+				<div class="col-lg-8 col-xl-7 col-xxl-6">
+					<div class="row row-cols-1 row-cols-sm-2">
+						<div class="col">
+							<div class="card border-0 bg-primary bg-opacity-10">
+								<div class="card-body">
+									<i class="ai-search-settings fs-1 text-primary d-block mb-3"></i>
+									<h3 class="h4">신입 및 경력 입사자</h3>
+									<p class="fs-sm">정부 지원제도 지원 및 운영<br>
+										맞춤형 교육 프로그램 제공<br>
+										장기적인 경력 개발 기회 지원</p>
+								</div>
+							</div>
+							<div class="card border-0 bg-info bg-opacity-10 mt-4">
+								<div class="card-body">
+									<i class="ai-bulb-alt fs-1 text-info d-block mb-3"></i>
+									<h3 class="h4">성장동력비 지원</h3>
+									<p class="fs-sm">교육비 지원<br>
+										도서구입비 지원<br>
+										자격증 취득비 지원</p>
+								</div>
+							</div>
+						</div>
+						<div class="col pt-lg-3">
+							<div class="card border-0 bg-warning bg-opacity-10 mt-4 mt-sm-0 mt-lg-4">
+								<div class="card-body">
+									<i class="ai-mail-filled fs-1 text-warning d-block mb-3"></i>
+									<h3 class="h4">4대보험 법정의무 교육</h3>
+									<p class="fs-sm">4대보험 가입<br>
+										직장내 괴롭힘<br>
+										직장내 장애인 인식개선<br>
+										직장내 성희롱 근절 교육<br>
+										산업안전교육</p>
+								</div>
+							</div>
+							<div class="card border-0 bg-danger bg-opacity-10 mt-4">
+								<div class="card-body">
+									<i class="ai-telegram fs-2 text-danger d-block mb-3"></i>
+									<h3 class="h4">장기근속자포상제도/병원검진</h3>
+									<p class="fs-sm">3, 5, 7년 포상휴가 및 포상금 지급<br>
+										국가검진<br>
+										유급휴가 적용
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Show button on screens < 992px -->
+					<div class="d-lg-none text-center pt-3 mt-3 mt-sm-4">
+						<a class="btn btn-primary" href="#">See all servises</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+
+	<!-- Include the footer -->
+	<div th:replace="footer :: footer"></div>
+</body>
+
+</html>
+
+
+<!-- Back to top button -->
+<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
+		</circle>
+	</svg>
+	<i class="ai-arrow-up"></i>
+</a>
+
+
+<!-- Vendor scripts: JS libraries and plugins -->
 <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -130,7 +308,8 @@
 <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
 <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
 
-    <!-- Bootstrap + Theme scripts -->
-    <script src="assets/js/theme.min.js"></script>
-  </body>
+<!-- Bootstrap + Theme scripts -->
+<script src="assets/js/theme.min.js"></script>
+</body>
+
 </html>
