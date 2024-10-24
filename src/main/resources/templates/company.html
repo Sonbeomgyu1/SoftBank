@@ -142,6 +142,17 @@
 				transform: none;
 			}
 		}
+		
+		.accordion-button.custom-active {
+            background-color: cornflowerblue; /* 버튼 클릭 시 배경색 */
+            color: white; /* 클릭 시 텍스트 색상 */
+        }
+
+.accordion-button:not(.collapsed) {
+   color: cornflowerblue; /* 클릭된 아코디언 버튼의 텍스트 색상 */
+  background-color: var(--ar-accordion-active-bg);
+  box-shadow: inset 0 calc(-1 * var(--ar-accordion-border-width)) 0 var(--ar-accordion-border-color);
+}
 	</style>
 
 	<!-- Page loading scripts -->
@@ -155,6 +166,33 @@
 				}, 1500)
 			}
 		})()
+		
+		<!--카테고리 눌르면 바로 가는 스크립트-->
+		function scrollToHash() {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+            // 고정된 헤더의 높이 가져오기
+            const headerHeight = document.querySelector('header').offsetHeight || 0;
+            
+            // 타겟 요소의 위치 가져오기
+            const rect = target.getBoundingClientRect();
+            
+            // 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
+            const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
+            
+            // 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
+            window.scrollTo({
+                top: window.scrollY + rect.top + offset,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', scrollToHash);
+
+
 	</script>
 </head>
 
@@ -184,663 +222,360 @@
 		</header>
 
 		<!-- 세부페이지 배너  -->
-      <section class="overflow-hidden">
-        <div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
-          <div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
-            <div class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
-              <div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
-                <div class="parallax-layer" data-depth="0.1">
-                  <img src="assets/images/business/businessbanner.jpg" alt="Layer">
-                </div>
-               
-              </div>
-            </div>
-            <div class="col-lg-5 order-lg-1">
-              <h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">COMPANY</h1>
-              <p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5" style="max-width: 520px;">회사소개는 인사말을 통해 기업의 비전과 철학을 전하고, 연혁을 통해 성장 과정을 소개하며, 
-				  기술 인증을 통해 기술력과 신뢰성을 강조합니다.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+		<section class="overflow-hidden">
+			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
+				<div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
+					<div
+						class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
+						<div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
+							<div class="parallax-layer" data-depth="0.1">
+								<img src="assets/images/company/companybaner.jpg" alt="Layer">
+							</div>
 
-				
+						</div>
+					</div>
+					<div class="col-lg-5 order-lg-1">
+						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">COMPANY</h1>
+						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
+							style="max-width: 520px;">회사소개는 인사말을 통해 기업의 비전과 철학을 전하고, 연혁을 통해 성장 과정을 소개하며,
+							기술 인증을 통해 기술력과 신뢰성을 강조합니다.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-						
+
+
+
 
 
 		<!-- Benefits -->
-      <section class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5">
-        <div class="row pb-md-4 pb-xl-5">
-          <div class="col-md-6 mb-2 mb-md-0">
-            <div class="card border-0 h-100 bg-size-cover bg-position-center" style="background-image: url(/assets/images/company/greeting.jpg);">
-              <div class="d-none d-sm-block d-md-none" style="height: 450px;"></div>
-              <div class="d-sm-none" style="height: 350px;"></div>
+		<section id="company-greeting" class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5" style="margin-top: 10%;">
+			<div class="row pb-md-4 pb-xl-5">
+				<div class="col-md-6 mb-2 mb-md-0">
+					<div class="card border-0 h-100 bg-size-cover bg-position-center"
+						style="background-image: url(/assets/images/company/greeting.jpg);">
+						<div class="d-none d-sm-block d-md-none" style="height: 450px;"></div>
+						<div class="d-sm-none" style="height: 350px;"></div>
+					</div>
+				</div>
+				<div class="col-md-6 col-xl-5 offset-xl-1">
+					<div class="pt-4 pb-sm-4 ps-md-4 ps-xl-0">
+						<h2 class="h1 pb-2 pb-sm-3 pb-xl-4">CEO 인사말</h2>
+						<div class="d-flex pb-3 mb-2 mb-xl-3">
+							<div class="ps-3">
+								<h5 class="h5" style="font-weight: normal;">(주) SoftBank는 혁신적인 도전 정신으로
+									우리나라 산업을 대표하는 정보 통신의 발전과 함께
+									어려운 환경을 극복하고 성장해 왔습니다.<br><br>
+
+									이는 모두 회사의 발전을 위해 노력한 임직원들의 수고와
+									소프트뱅크를 아껴주시는 고객 여러분의 애정이
+									밑거름이 된 값진 결실입니다.<br><br>
+
+									세계는 이제 기술의 발전으로 산업의 경계가 없어지고
+									전례없이 빠른 기술의 변화를 겪고 있습니다.<br><br>
+
+									저희 소프트뱅크도 이러한 시대변화에 발맞추어
+									첨단 기술과 우수한 인재, 글로벌 경영 네트워크를 갖추고
+									고객 만족을 실현하고자 힘쓰겠습니다.<br><br>
+
+									소프트뱅크의 창의적인 아이디어를 가진
+									인재들의 역량을 모아
+									경쟁력을 키우겠습니다.<br><br>
+
+									앞으로도 혁신하는 기업이 될 것을 약속드리오며
+									고객의 사랑과 은혜를 잊지 않는 겸손한 마음으로
+									언제나 노력하고 또 노력하는 소프트뱅크가 되겠습니다.<br><br>
+									감사합니다.</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+		<!-- Industries (Binded accordion) -->
+		<section id="company-history" class="container py-5 mt-2 mt-sm-3 mt-md-4">
+			<h2 class="h1 text-center pt-lg-3">회사연혁</h2>
+			<p class="pb-3 pb-md-4 mb-0 mb-sm-2 mb-lg-3 text-center">오랜 역사와 혁신을 통해 꾸준히 성장해 온 기업으로, 고객의 신뢰와 함께 다양한 성과를
+				이루어 왔습니다.</p>
+			<div class="row align-items-lg-center">
+
+				<!-- Accordion -->
+				<div class="col-md-6 col-lg-5 pb-2 pb-lg-0 mb-4 mb-md-0">
+					<div class="accordion accordion-alt" id="industries">
+						<div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
+							<h3 class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse"
+									data-binded-content="#finance-img" data-bs-target="#finance" aria-expanded="true"
+									aria-controls="finance">2023</button>
+							</h3>
+							<!--class="accordion-collapse collapse show" 이렇게 쓰면 자동으로 2023이 펼쳐짐-->
+							<div class="accordion-collapse collapse" id="finance" data-bs-parent="#industries">
+								<div class="accordion-body"> 
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									OK케피탈 RPA시스템 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 23년 DS부문 SCM 운영/개발<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 23년 CRM실행그룹 B2B WP 개발<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS EDA 시스템 DS IT 플랫폼 2차<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 23년 DS부문 MIS 운영/개발<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ GEMS 부품 수리 기능개선<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS 메모리 VM 개발<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 23년 소주 SESS 2선 지원<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS부문 EMS 설비이송 프로세스 개선<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ SCS G-EMS PCS 기능고도화<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS B2B SaaS 전환 화면 개발<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 23년 DS IT플랫폼 DEVOPS 고도화<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									한국산업은행 정보시스템 운영<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ GEMS 모바일 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									LX판토스 WM 운영유지보수<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS B2B SaaS 전환 화면 개발<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS 부문 LSI사업부 추가 과제<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 경영위탁 관리 시스템 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 설비 기준정보 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 공급망 관리 시스템 SCM 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 생산관리 시스템 구축</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
+							<h3 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-binded-content="#tech-img" data-bs-target="#tech" aria-expanded="false"
+									aria-controls="tech">2022</button>
+							</h3>
+							<div class="accordion-collapse collapse" id="tech" data-bs-parent="#industries">
+								<div class="accordion-body"> 
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									만도 G-MES구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS 부문 EDA 클라우드 전환<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성반도체 경영지원 시스템 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									티머니 교통카드 시스템 운영<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 설비관리 시스템 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ DS부문 제품코드 전환 3차<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 제품코드변환(WP)<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									ABL생명 Digital Contact Center 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성디스플레이 사외자료공유시스템</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
+							<h3 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-binded-content="#medicine-img" data-bs-target="#medicine" aria-expanded="false"
+									aria-controls="medicine">2021</button>
+							</h3>
+							<div class="accordion-collapse collapse" id="medicine" data-bs-parent="#industries">
+								<div class="accordion-body"> 
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ TSP총괄 SCM 업무 개선 개발<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성화재 채널시스템 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									한국조폐공사 신뢰플랫폼 통합 유지 및 기능개선<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자㈜ 제품코드변환 개발</div>
+							</div>
+						</div>
+						<div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
+							<h3 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-binded-content="#ecommerce-img" data-bs-target="#ecommerce"
+									aria-expanded="false" aria-controls="ecommerce">2020</button>
+							</h3>
+							<div class="accordion-collapse collapse" id="ecommerce" data-bs-parent="#industries">
+								<div class="accordion-body"> 
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									법인 설립 소프트뱅크(주식회사)<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									소프트웨어협회 사업자신고<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									KT 부가서비스 관리자 시스템 구축<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									KT 전산시스템 개발 및 유지보스<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성반도체 RnD 업무효율화<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									삼성전자(주) G-EMS 부대설비 관리시스템 개선<br>
+									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
+									자금세탁방지 시스템 구축</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Binded images -->
+				<div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+					<div class="ps-lg-4 ps-xl-0">
+						<div class="binded-content">
+							<div class="binded-item active" id="finance-img">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
+							</div>
+							<div class="binded-item" id="tech-img">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
+							</div>
+							<div class="binded-item" id="medicine-img">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
+							</div>
+							<div class="binded-item" id="ecommerce-img">
+								<img class="rounded-5" src="assets/images/company/company1.jpg" alt="Image">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 기업인증페이지 -->
+		<section id="company-certification" class="overflow-hidden" style="margin-top: 10%;">
+			<div class="container pt-5 pb-sm-3 mt-5 mb-2 mb-md-3 mb-lg-4 mb-xxl-5">
+				<!-- 기업인증 페이지 -->
+				<h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4">기업인증</h1>
+				<!-- 사진 -->
+				<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up"
+					data-aos-duration="600" data-aos-offset="280">
+					<div class="col-md-4 offset-xxl-1 mb-4 mb-md-0">
+						<span href="portfolio-single-v1.html">
+							<img class="rounded-5" src="assets/images/company/sobangimage1.png" width="700" alt="Image">
+						</span>
+					</div>
+					<div class="col-md-5 col-xl-4" style="margin-left: 100px; " data-aos="fade-up"
+						data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
+						<div class="ms-md-4 ms-lg-5 ms-xxl-0" style="max-width: 400px;">
+
+							<h2 class="mb-lg-4">
+								<span href="">기업부설연구소</span>
+							</h2>
+							<p class="mb-0 mb-md-1 mb-lg-3">2022.07 기업부설 연구소 지정 (한국산업기술진흥협회) </p>
+
+							</a>
+						</div>
+					</div>
+
+
+				</article>
+
+				<!-- Item -->
+				<!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
+            <div class="col-md-7 order-md-2 mb-4 mb-md-0">
+              <a href="portfolio-single-v1.html">
+                <img class="rounded-5" src="assets/img/portfolio/list/02.jpg" width="700" alt="Image">
+              </a>
             </div>
-          </div>
-          <div class="col-md-6 col-xl-5 offset-xl-1">
-            <div class="pt-4 pb-sm-4 ps-md-4 ps-xl-0">
-              <h2 class="h1 pb-2 pb-sm-3 pb-xl-4">Benefits <br>of working with us</h2>
-              <div class="d-flex pb-3 mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">01</div>
-                <div class="ps-3">
-                  <h3 class="h5">Individual approach</h3>
-                  <p class="mb-0">Hac erat leo proin odio est sed sit felis facilisi integer sed congue neque turpis dictumst sit sed volutpat aliquet tortor non.</p>
-                </div>
-              </div>
-              <div class="d-flex pb-3 mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">02</div>
-                <div class="ps-3">
-                  <h3 class="h5">Integrated analytics</h3>
-                  <p class="mb-0">Find aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur neque congue aliqua dolor do leo proin odio est sed sit felis facilisi integer.</p>
-                </div>
-              </div>
-              <div class="d-flex pb-3 mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">03</div>
-                <div class="ps-3">
-                  <h3 class="h5">Step by step work</h3>
-                  <p class="mb-0">More erat leo proin odio est sed sit felis facilisi integer sed congue neque turpis dictumst sit sed volutpat aliquet tortor.</p>
-                </div>
-              </div>
-              <div class="d-flex mb-2 mb-xl-3">
-                <div class="text-body-secondary pt-1">04</div>
-                <div class="ps-3">
-                  <h3 class="h5">Full spectrum of services</h3>
-                  <p class="mb-0">Adipiscing posuere dui, amet, augue nisl dictum justo, enim sed neque congue non quam ultrices interdum vitae vestibulum. Hac erat leo proin odio est sed sit felis facilisi integer sed.</p>
-                </div>
+            <div class="col-md-5 col-xl-4 offset-xxl-1 order-md-1" data-aos="fade-up" data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
+              <div class="me-md-4 me-lg-5 me-xxl-0" style="max-width: 330px;">
+                <div class="text-body-secondary mb-2">Branding</div>
+                <h2 class="mb-lg-4">
+                  <a href="portfolio-single-v1.html">Handmade tableware company</a>
+                </h2>
+                <p class="mb-0 mb-md-1 mb-lg-3">Feugiat elit tempor, malesuada rutrum amet quis duis facilisi viverra. Quam ut in gravida dignissim eget mauris pretium facilisi dui varius amet et quam massa auctor odio.</p>
+                <a class="btn btn-lg btn-link px-0 opacity-0 d-none d-md-inline-flex" href="portfolio-single-v1.html">
+                  Read more
+                  <i class="ai-arrow-right ms-2"></i>
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </article>-->
 
+				<!-- Item -->
+				<!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
+            <div class="col-md-7 offset-xxl-1 mb-4 mb-md-0">
+              <a href="portfolio-single-v1.html">
+                <img class="rounded-5" src="assets/img/portfolio/list/03.jpg" width="700" alt="Image">
+              </a>
+            </div>
+            <div class="col-md-5 col-xl-4" data-aos="fade-up" data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
+              <div class="ms-md-4 ms-lg-5 ms-xxl-0" style="max-width: 330px;">
+                <div class="text-body-secondary mb-2">Identity, Packaging</div>
+                <h2 class="mb-lg-4"><a href="portfolio-single-v1.html">Bottle for French perfume brand</a></h2>
+                <p class="mb-0 mb-md-1 mb-lg-3">Egestas ultrices condimentum consectetur massa aliquam volutpat pulvinar aliquet nisi quam. Nibh commodo tristique nisi, justo, sed maecenas lectus ut nec eu.</p>
+                <a class="btn btn-lg btn-link px-0 opacity-0 d-none d-md-inline-flex" href="portfolio-single-v1.html">
+                  Read more
+                  <i class="ai-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>-->
 
-		<!-- Our projects (Filterable masonry grid) -->
-		<section class="container overflow-hidden pb-5 mb-2 mb-lg-3 mb-xl-4 mb-xxl-5">
-			<div class="masonry-filterable">
-				<div class="row pb-lg-4 mb-2 mb-sm-3">
+				<!-- Item -->
+				<!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
+            <div class="col-md-7 order-md-2 mb-4 mb-md-0">
+              <a href="portfolio-single-v1.html">
+                <img class="rounded-5" src="assets/img/portfolio/list/04.jpg" width="700" alt="Image">
+              </a>
+            </div>
+            <div class="col-md-5 col-xl-4 offset-xxl-1 order-md-1" data-aos="fade-up" data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
+              <div class="me-md-4 me-lg-5 me-xxl-0" style="max-width: 330px;">
+                <div class="text-body-secondary mb-2">E-book, Branding</div>
+                <h2 class="mb-lg-4">
+                  <a href="portfolio-single-v1.html">Book cover design Twin Fish</a>
+                </h2>
+                <p class="mb-0 mb-md-1 mb-lg-3">Sed feugiat tristique enim aenean netus cum adipiscing est sem eget nulla leo vestibulum. Cras urna, proin ut ut dictum risus porttitor nulla consequat et iaculis.</p>
+                <a class="btn btn-lg btn-link px-0 opacity-0 d-none d-md-inline-flex" href="portfolio-single-v1.html">
+                  Read more
+                  <i class="ai-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>-->
 
-					<!-- Page title -->
-					<div class="col-xxl-3 col-lg-4 text-center text-lg-start">
-						<h1>Our Projects</h1>
-						<p class="mb-4 mb-lg-0">We will put our industry expertise for creativity to work for your
-							project</p>
-					</div>
-
-					<!-- Filters -->
-					<div class="col-xxl-9 col-lg-8 d-flex">
-						<ul class="masonry-filters nav nav-pills fs-sm flex-nowrap overflow-auto text-nowrap w-100 mx-auto me-lg-0 pb-3"
-							style="max-width: 456px;">
-							<li class="nav-item mb-0">
-								<a class="nav-link border active" href="#" data-group="all">All</a>
-							</li>
-							<li class="nav-item mb-0">
-								<a class="nav-link border" href="#" data-group="branding">Branding</a>
-							</li>
-							<li class="nav-item mb-0">
-								<a class="nav-link border" href="#" data-group="stationery">Stationery</a>
-							</li>
-							<li class="nav-item mb-0">
-								<a class="nav-link border" href="#" data-group="web">Web</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- Grid of portfolio items -->
-				<div class="masonry-grid" data-columns="2">
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["branding"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 512px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/07.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Healthy Yellow</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Branding, Packaging</span>
-									<span>2022</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 704px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/08.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Sen Jonson</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Stationery design</span>
-									<span>2022</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["branding"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 467px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/09.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Gradient</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Branding, Packaging</span>
-									<span>2022</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
-						<div class="zoom-effect position-relative border-bottom ms-auto pb-3" style="max-width: 605px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/10.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">D.G.Vent</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Stationery design</span>
-									<span>2021</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["stationery"]'>
-						<div class="zoom-effect position-relative border-bottom pb-3" style="max-width: 550px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/11.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">Doe design</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Branding, Stationery</span>
-									<span>2021</span>
-								</div>
-							</div>
-						</div>
-					</article>
-
-					<!-- Item -->
-					<article class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5" data-groups='["web"]'>
-						<div class="zoom-effect position-relative border-bottom mx-auto pb-3" style="max-width: 470px;">
-							<div class="zoom-effect-wrapper">
-								<div class="zoom-effect-img">
-									<img src="assets/img/portfolio/grid/12.jpg" alt="Image">
-								</div>
-							</div>
-							<div class="pt-4 mt-lg-2">
-								<h2 class="h4 mb-2">
-									<a class="stretched-link" href="portfolio-single-v2.html">The Studio</a>
-								</h2>
-								<div class="d-flex justify-content-between fs-lg text-body-secondary">
-									<span>Web design</span>
-									<span>2020</span>
-								</div>
-							</div>
-						</div>
-					</article>
-				</div>
-
-				<!-- Button -->
-				<div class="text-center pb-sm-2 pb-md-4 mt-n1 mt-lg-n2">
-					<a class="btn btn-lg btn-outline-dark rounded-0" href="#">Let's work together</a>
-				</div>
+				<!--  Item 
+          <article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
+            <div class="col-md-7 offset-xxl-1 mb-4 mb-md-0">
+              <a href="portfolio-single-v1.html">
+                <img class="rounded-5" src="assets/img/portfolio/list/05.jpg" width="700" alt="Image">
+              </a>
+            </div>
+            <div class="col-md-5 col-xl-4" data-aos="fade-up" data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
+              <div class="ms-md-4 ms-lg-5 ms-xxl-0" style="max-width: 330px;">
+                <div class="text-body-secondary mb-2">Branding, Strategy</div>
+                <h2 class="mb-lg-4">
+                  <a href="portfolio-single-v1.html">Business cards and identity for Sen Jonson</a>
+                </h2>
+                <p class="mb-0 mb-md-1 mb-lg-3">Lectus lacus, ac justo, ullamcorper egestas at felis arcu arcu venenatis praesent odio. Odio vulputate purus placerat ultrices faucibus sem sed magna est elementum.</p>
+                <a class="btn btn-lg btn-link px-0 opacity-0 d-none d-md-inline-flex" href="portfolio-single-v1.html">
+                  Read more
+                  <i class="ai-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>-->
 			</div>
 		</section>
 
 
-		<!-- Clients (Logos autoplay slider) -->
-		<section class="pt-sm-1 pt-lg-3 pt-xl-4">
-			<div class="container text-center">
-				<h2 class="h1">We partner with more than 60 brands</h2>
-				<p class="pb-1 pb-sm-2 pb-md-3 pb-lg-4 mb-3">Clients who have become our friends for many years</p>
-			</div>
-			<div class="swiper pb-3 pb-sm-4 mb-xl-2" data-swiper-options='{
-          "loop": true,
-          "grabCursor": false,
-          "centeredSlides": true,
-          "autoplay": {
-            "delay": 0,
-            "disableOnInteraction": false
-          },
-          "freeMode": true,
-          "speed": 10000,
-          "freeModeMomentum": false,
-          "breakpoints": {
-            "0": { "slidesPerView": 2 },
-            "600": { "slidesPerView": 3 },
-            "800": { "slidesPerView": 4 },
-            "1200": { "slidesPerView": 5 },
-            "1400": { "slidesPerView": 6 },
-            "1600": { "slidesPerView": 7 }
-          }
-        }'>
-				<div class="swiper-wrapper" style="transition-timing-function: linear !important;">
-					<div class="swiper-slide">
-						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/starcraft-dark.svg"
-							width="196" alt="Starcraft">
-						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/starcraft-light.svg"
-							width="196" alt="Starcraft">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/auchan.svg" width="196" alt="Auchan">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/klinos.svg" width="196" alt="Klinos">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/suzuki.svg" width="196" alt="Suzuki">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/airbnb.svg" width="196" alt="Airbnb">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/philips.svg" width="196" alt="Philips">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/careem.svg" width="196" alt="Careem">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/puma-dark.svg" width="196"
-							alt="Puma">
-						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/puma-light.svg" width="196"
-							alt="Puma">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/alpine.svg" width="196" alt="Alpine">
-					</div>
-				</div>
-			</div>
-			<div class="swiper" dir="rtl" data-swiper-options='{
-          "loop": true,
-          "grabCursor": false,
-          "centeredSlides": true,
-          "autoplay": {
-            "delay": 0,
-            "disableOnInteraction": false
-          },
-          "freeMode": true,
-          "speed": 8500,
-          "freeModeMomentum": false,
-          "breakpoints": {
-            "0": { "slidesPerView": 2 },
-            "600": { "slidesPerView": 3 },
-            "800": { "slidesPerView": 4 },
-            "1200": { "slidesPerView": 5 },
-            "1400": { "slidesPerView": 6 },
-            "1600": { "slidesPerView": 7 }
-          }
-        }'>
-				<div class="swiper-wrapper" style="transition-timing-function: linear !important;">
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/heineken.svg" width="196" alt="Heineken">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/champion-dark.svg"
-							width="196" alt="Champion">
-						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/champion-light.svg"
-							width="196" alt="Champion">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/auchan.svg" width="196" alt="Auchan">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/philips.svg" width="196" alt="Philips">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/airbnb.svg" width="196" alt="Airbnb">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/alpine.svg" width="196" alt="Alpine">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/puma-dark.svg" width="196"
-							alt="Puma">
-						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/puma-light.svg" width="196"
-							alt="Puma">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block mx-auto" src="assets/img/brands/foster.svg" width="196" alt="Foster">
-					</div>
-					<div class="swiper-slide">
-						<img class="d-block d-dark-mode-none mx-auto" src="assets/img/brands/starcraft-dark.svg"
-							width="196" alt="Starcraft">
-						<img class="d-none d-dark-mode-block mx-auto" src="assets/img/brands/starcraft-light.svg"
-							width="196" alt="Starcraft">
-					</div>
-				</div>
-			</div>
-		</section>
 
 
-		<!-- Testimonials (Carousel) -->
-		<section class="container position-relative z-2 py-5 mt-n3 mt-sm-0 mb-md-3 my-lg-3 my-xl-4 my-xxl-5">
-			<div class="row py-md-4 py-lg-5">
-				<div class="col-md-9 col-lg-7 order-md-2">
-
-					<!-- Swiper slider -->
-					<div class="swiper" data-swiper-options='{
-              "spaceBetween": 40,
-              "loop": true,
-              "bindedContent": true,
-              "autoHeight": true,
-              "pagination": {
-                "el": ".testimonials-count",
-                "type": "fraction"
-              },
-              "navigation": {
-                "prevEl": "#prev-testimonial",
-                "nextEl": "#next-testimonial"
-              }
-            }'>
-						<div class="swiper-wrapper">
-
-							<!-- Item -->
-							<div class="swiper-slide" data-swiper-binded="#testimonial-1">
-								<div class="d-flex d-md-none pt-3 mb-3">
-									<i class="ai-quotes d-md-none text-primary display-3 mt-n2"></i>
-									<div class="ps-3">
-										<h3 class="h5 mb-0">Lilia Bocouse</h3>
-										<p class="text-body-secondary mb-0">Head of Marketing</p>
-									</div>
-								</div>
-								<h2 class="mb-lg-4">Awesome experience with a professional team. Thank you :)</h2>
-								<p class="lead mb-0">Suspendisse mauris elit, pellentesque nec purus sed, finibus
-									finibus ipsum. Proin posuere, metus sed porttitor pellentesque, ante magna tincidunt
-									mi, nec fermentum dui ligula vel massa. Praesent ultrices iaculis arcu iaculis
-									ultrices. Maecenas vitae nulla odio. In laoreet, lectus in tempus ultricies.</p>
-							</div>
-
-							<!-- Item -->
-							<div class="swiper-slide" data-swiper-binded="#testimonial-2">
-								<div class="d-flex d-md-none pt-3 mb-3">
-									<i class="ai-quotes d-md-none text-primary display-3 mt-n2"></i>
-									<div class="ps-3">
-										<h3 class="h5 mb-0">Robert Fox</h3>
-										<p class="text-body-secondary mb-0">Marketing Coordinator</p>
-									</div>
-								</div>
-								<h2 class="mb-lg-4">Thanks to your talented team for the banding we dreamed about</h2>
-								<p class="lead mb-0">Leo vitae sem eget eget at in vivamus placerat sodales tristique
-									risusiis senectusic quisque faucibus est justo egetert lobortis ultrices eu
-									dignissim etiamier turpis tincidunt eget placerat feugiat senectusic quisque
-									faucibus placerat sodales vitae tempor morbi tellus pulvinar tristique in turpis.
-								</p>
-							</div>
-
-							<!-- Item -->
-							<div class="swiper-slide" data-swiper-binded="#testimonial-3">
-								<div class="d-flex d-md-none pt-3 mb-3">
-									<i class="ai-quotes d-md-none text-primary display-3 mt-n2"></i>
-									<div class="ps-3">
-										<h3 class="h5 mb-0">Jenny Wilson</h3>
-										<p class="text-body-secondary mb-0">CEO, Co-Founder</p>
-									</div>
-								</div>
-								<h2 class="mb-lg-4">Thanks to you, we have created a unique branding that is our pride!
-								</h2>
-								<p class="lead mb-0">Duis sapien velit, rutrum ac rutrum dapibus, auctor ut lacus.
-									Aenean sit amet erat augue. Aenean finibus, nibh sed malesuada maximus, nisi tellus
-									iaculis quam, eget egestas mi felis eu urna. Quisque id nisl commodo, egestas eros
-									ac, cursus odio. Ut nec rutrum magna, vel tempor erat. Vivamus nec tempus purus.</p>
-							</div>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 offset-lg-1 order-md-1 mt-n3">
-					<i class="ai-quotes d-none d-md-block text-primary ms-n2 mb-1" style="font-size: 150px;"></i>
-
-					<!-- Contnetn binded to slider (on screens > 768px) -->
-					<div class="binded-content h-auto d-none d-md-block">
-						<div class="binded-item h-auto active" id="testimonial-1">
-							<h3 class="h5 mb-1">Lilia Bocouse</h3>
-							<p class="text-body-secondary mb-0">Head of Marketing</p>
-						</div>
-						<div class="binded-item h-auto" id="testimonial-2">
-							<h3 class="h5 mb-1">Robert Fox</h3>
-							<p class="text-body-secondary mb-0">Marketing Coordinator</p>
-						</div>
-						<div class="binded-item h-auto" id="testimonial-3">
-							<h3 class="h5 mb-1">Jenny Wilson</h3>
-							<p class="text-body-secondary mb-0">CEO, Co-Founder</p>
-						</div>
-					</div>
-
-					<!-- Swiper controls (Prev / Next) -->
-					<div class="d-flex align-items-center pb-2 pb-md-0 pt-4 mt-3">
-						<button class="btn btn-icon btn-sm btn-outline-primary rounded-circle me-3" type="button"
-							id="prev-testimonial" aria-label="Prev">
-							<i class="ai-arrow-left"></i>
-						</button>
-						<div class="testimonials-count fw-medium flex-shrink-0 text-center" style="width: 2.5rem;">
-						</div>
-						<button class="btn btn-icon btn-sm btn-outline-primary rounded-circle ms-3" type="button"
-							id="next-testimonial" aria-label="Next">
-							<i class="ai-arrow-right"></i>
-						</button>
-					</div>
-				</div>
-			</div>
-		</section>
 
 
-		<!-- Team -->
-		<section class="container pt-2 pt-xxl-3 pb-5 mb-sm-2 mb-lg-3 mb-xl-4 mb-xxl-5">
-			<div class="row pb-md-3">
-				<div class="col-md-4 mb-2 mb-sm-3 mb-md-4 pb-2" style="margin-top: -120px;">
-					<div class="position-sticky top-0" style="padding-top: 120px;">
-						<h2 class="display-3 mb-0 mb-md-3 pb-lg-3">Meat our creative team</h2>
-						<a class="btn btn-lg btn-link px-0" href="#">
-							View all 16 members
-							<i class="ai-arrow-right ms-2"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div class="row row-cols-1 row-cols-sm-2 g-4">
-
-						<!-- Item -->
-						<div class="col">
-							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3">
-								<div class="position-relative">
-									<img src="assets/img/landing/creative-agency/team/01.jpg" alt="Image">
-									<div
-										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
-										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
-											href="#" aria-label="Facebook">
-											<i class="ai-facebook"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-dribbble rounded-circle mx-2"
-											href="#" aria-label="Dribbble">
-											<i class="ai-dribbble"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-stack-overflow rounded-circle mx-2"
-											href="#" aria-label="Stack Overflow">
-											<i class="ai-stack-overflow"></i>
-										</a>
-									</div>
-								</div>
-								<div class="border-bottom pt-4 pb-3">
-									<h3 class="h4 mb-2">Nick Black</h3>
-									<span class="fs-lg text-body-secondary">Web Designer</span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="col">
-							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 ms-sm-1 ps-xl-3">
-								<div class="position-relative">
-									<img src="assets/img/landing/creative-agency/team/02.jpg" alt="Image">
-									<div
-										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
-										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
-											href="#" aria-label="Facebook">
-											<i class="ai-facebook"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-instagram rounded-circle mx-2"
-											href="#" aria-label="Instagram">
-											<i class="ai-instagram"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
-											href="#" aria-label="Behance">
-											<i class="ai-behance"></i>
-										</a>
-									</div>
-								</div>
-								<div class="border-bottom pt-4 pb-3">
-									<h3 class="h4 mb-2">Emilia Denver</h3>
-									<span class="fs-lg text-body-secondary">Identity Designer</span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="col">
-							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3">
-								<div class="position-relative">
-									<img src="assets/img/landing/creative-agency/team/03.jpg" alt="Image">
-									<div
-										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
-										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
-											href="#" aria-label="Facebook">
-											<i class="ai-facebook"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-x rounded-circle mx-2" href="#"
-											aria-label="X">
-											<i class="ai-x"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-google rounded-circle mx-2" href="#"
-											aria-label="Google">
-											<i class="ai-google"></i>
-										</a>
-									</div>
-								</div>
-								<div class="border-bottom pt-4 pb-3">
-									<h3 class="h4 mb-2">Jane Cooper</h3>
-									<span class="fs-lg text-body-secondary">Marketing Coordinator</span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="col">
-							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 ms-sm-1 ps-xl-3">
-								<div class="position-relative">
-									<img src="assets/img/landing/creative-agency/team/04.jpg" alt="Image">
-									<div
-										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
-										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
-											href="#" aria-label="Facebook">
-											<i class="ai-facebook"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-dribbble rounded-circle mx-2"
-											href="#" aria-label="Dribbble">
-											<i class="ai-dribbble"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
-											href="#" aria-label="Behance">
-											<i class="ai-behance"></i>
-										</a>
-									</div>
-								</div>
-								<div class="border-bottom pt-4 pb-3">
-									<h3 class="h4 mb-2">Jenny Wilson</h3>
-									<span class="fs-lg text-body-secondary">Web Designer</span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="col">
-							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 me-sm-1 pe-xl-3">
-								<div class="position-relative">
-									<img src="assets/img/landing/creative-agency/team/05.jpg" alt="Image">
-									<div
-										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
-										<a class="btn btn-light btn-icon btn-sm btn-instagram rounded-circle mx-2"
-											href="#" aria-label="Instagram">
-											<i class="ai-instagram"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-dribbble rounded-circle mx-2"
-											href="#" aria-label="Dribbble">
-											<i class="ai-dribbble"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
-											href="#" aria-label="Behance">
-											<i class="ai-behance"></i>
-										</a>
-									</div>
-								</div>
-								<div class="border-bottom pt-4 pb-3">
-									<h3 class="h4 mb-2">Robert Fox</h3>
-									<span class="fs-lg text-body-secondary">Graphic Designer</span>
-								</div>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="col">
-							<div class="card-hover pb-3 mb-lg-2 mb-xl-3 ms-sm-1 ps-xl-3">
-								<div class="position-relative">
-									<img src="assets/img/landing/creative-agency/team/06.jpg" alt="Image">
-									<div
-										class="d-flex justify-content-center position-absolute start-0 bottom-0 w-100 px-3 mb-4 opacity-0">
-										<a class="btn btn-light btn-icon btn-sm btn-facebook rounded-circle mx-2"
-											href="#" aria-label="Facebook">
-											<i class="ai-facebook"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-x rounded-circle mx-2" href="#"
-											aria-label="X">
-											<i class="ai-x"></i>
-										</a>
-										<a class="btn btn-light btn-icon btn-sm btn-behance rounded-circle mx-2"
-											href="#" aria-label="Behance">
-											<i class="ai-behance"></i>
-										</a>
-									</div>
-								</div>
-								<div class="border-bottom pt-4 pb-3">
-									<h3 class="h4 mb-2">Jacob Jones</h3>
-									<span class="fs-lg text-body-secondary">Branding Designer</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 	</main>
 
 
@@ -865,6 +600,12 @@
 <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/aos/dist/aos.js"></script>
+<script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+<script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
+<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
 
 <!-- Bootstrap + Theme scripts -->
 <script src="assets/js/theme.min.js"></script>
