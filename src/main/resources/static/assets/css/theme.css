@@ -13510,7 +13510,7 @@ label {
 .form-switch.mode-switch .form-check-input {
   order: 2;
   margin-left: 0;
-  background-color: var(--ar-primary) !important;
+  background-color: var(--ar-primary) ;
 }
 .form-switch.mode-switch .form-check-input:checked ~ .form-check-label:first-of-type {
   color: var(--ar-body-color);
