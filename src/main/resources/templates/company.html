@@ -142,17 +142,40 @@
 				transform: none;
 			}
 		}
-		
-		.accordion-button.custom-active {
-            background-color: cornflowerblue; /* 버튼 클릭 시 배경색 */
-            color: white; /* 클릭 시 텍스트 색상 */
-        }
 
-.accordion-button:not(.collapsed) {
-   color: cornflowerblue; /* 클릭된 아코디언 버튼의 텍스트 색상 */
-  background-color: var(--ar-accordion-active-bg);
-  box-shadow: inset 0 calc(-1 * var(--ar-accordion-border-width)) 0 var(--ar-accordion-border-color);
-}
+		.accordion-button.custom-active {
+			background-color: cornflowerblue;
+			/* 버튼 클릭 시 배경색 */
+			color: white;
+			/* 클릭 시 텍스트 색상 */
+		}
+
+		.accordion-button:not(.collapsed) {
+			color: cornflowerblue;
+			/* 클릭된 아코디언 버튼의 텍스트 색상 */
+			background-color: var(--ar-accordion-active-bg);
+			box-shadow: inset 0 calc(-1 * var(--ar-accordion-border-width)) 0 var(--ar-accordion-border-color);
+		}
+/*대표 김미숙 폰트 css*/
+		.ceo-info .title {
+			font-weight: bold;
+			/* 굵은 글씨 */
+			font-size: 1.5rem;
+			/* 글씨 크기 */
+			color: black;
+			/* 청록색으로 강조 */
+		}
+
+		.ceo-info .name {
+			font-family: 'Malgun Gothic', sans-serif;
+
+			font-size: 1.5rem;
+			/* 큰 글씨 */
+			color: black;
+			/* 따뜻한 오렌지 색상 */
+		}
+		
+		
 	</style>
 
 	<!-- Page loading scripts -->
@@ -166,31 +189,31 @@
 				}, 1500)
 			}
 		})()
-		
+
 		<!--카테고리 눌르면 바로 가는 스크립트-->
 		function scrollToHash() {
-    if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
+			if (window.location.hash) {
+				const target = document.querySelector(window.location.hash);
 
-        if (target) {
-            // 고정된 헤더의 높이 가져오기
-            const headerHeight = document.querySelector('header').offsetHeight || 0;
-            
-            // 타겟 요소의 위치 가져오기
-            const rect = target.getBoundingClientRect();
-            
-            // 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
-            const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
-            
-            // 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
-            window.scrollTo({
-                top: window.scrollY + rect.top + offset,
-                behavior: 'smooth'
-            });
-        }
-    }
-}
-document.addEventListener('DOMContentLoaded', scrollToHash);
+				if (target) {
+					// 고정된 헤더의 높이 가져오기
+					const headerHeight = document.querySelector('header').offsetHeight || 0;
+
+					// 타겟 요소의 위치 가져오기
+					const rect = target.getBoundingClientRect();
+
+					// 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
+					const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
+
+					// 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
+					window.scrollTo({
+						top: window.scrollY + rect.top + offset,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+		document.addEventListener('DOMContentLoaded', scrollToHash);
 
 
 	</script>
@@ -264,29 +287,27 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 						<h2 class="h1 pb-2 pb-sm-3 pb-xl-4">CEO 인사말</h2>
 						<div class="d-flex pb-3 mb-2 mb-xl-3">
 							<div class="ps-3">
-								<h5 class="h5" style="font-weight: normal;">(주) SoftBank는 혁신적인 도전 정신으로
-									우리나라 산업을 대표하는 정보 통신의 발전과 함께
-									어려운 환경을 극복하고 성장해 왔습니다.<br><br>
+								<h5 class="h5" style="font-weight: normal; ">안녕하십니까, 소프트뱅크의 CEO입니다.<br><br>
 
-									이는 모두 회사의 발전을 위해 노력한 임직원들의 수고와
-									소프트뱅크를 아껴주시는 고객 여러분의 애정이
-									밑거름이 된 값진 결실입니다.<br><br>
+									저희 소프트뱅크는 인재 발굴에 매진하며, 기업과 함께 미래를 설계하고 있습니다. Discover, 즉 인재를 발굴하는 것이 저희의 첫 번째 목표입니다.
+									최고의 인재를 찾아 그들의 잠재력을 이끌어내고, 능력을 최대한 발휘할 수 있도록 지원하고 있습니다.<br><br>
 
-									세계는 이제 기술의 발전으로 산업의 경계가 없어지고
-									전례없이 빠른 기술의 변화를 겪고 있습니다.<br><br>
+									Grow, 함께 성장하는 것은 저희가 추구하는 중요한 가치입니다. 소프트뱅크는 직원뿐만 아니라 협력 기업들과도 동반 성장을 목표로 하고
+									있습니다.<br><br>
 
-									저희 소프트뱅크도 이러한 시대변화에 발맞추어
-									첨단 기술과 우수한 인재, 글로벌 경영 네트워크를 갖추고
-									고객 만족을 실현하고자 힘쓰겠습니다.<br><br>
+									또한, Connect, 인재와 기업, 나아가 기업 간의 연결에 중점을 두고 있습니다. 글로벌 시장에서의 경쟁력을 강화하기 위해 새로운 기회를 끊임없이
+									모색하며, 혁신을 통해 상호 발전을 도모합니다. 미래를 창조하는 글로벌 경영 회사로서, 우리는 현재에 안주하지 않고 다가오는 변화에 유연하고 전략적으로
+									대응할 준비가 되어 있습니다.<br><br>
 
-									소프트뱅크의 창의적인 아이디어를 가진
-									인재들의 역량을 모아
-									경쟁력을 키우겠습니다.<br><br>
+									소프트뱅크는 도전정신과 혁신을 바탕으로, 모든 이해관계자들과 함께 밝은 미래를 그려나가고자 합니다. 여러분의 신뢰와 지지를 통해 더 큰 도약을 준비하고
+									있으며, 미래지향적인 경영으로 글로벌 리더로서의 역할을 다할 것을 약속드립니다.<br><br>
 
-									앞으로도 혁신하는 기업이 될 것을 약속드리오며
-									고객의 사랑과 은혜를 잊지 않는 겸손한 마음으로
-									언제나 노력하고 또 노력하는 소프트뱅크가 되겠습니다.<br><br>
 									감사합니다.</h5>
+									<p class="ceo-info text-end" style="margin-top: 100px;">
+										<span class="title">대표&nbsp;&nbsp;</span> <span class="name">김미숙</span>
+									</p>
+
+
 							</div>
 						</div>
 					</div>
@@ -314,7 +335,7 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 							</h3>
 							<!--class="accordion-collapse collapse show" 이렇게 쓰면 자동으로 2023이 펼쳐짐-->
 							<div class="accordion-collapse collapse" id="finance" data-bs-parent="#industries">
-								<div class="accordion-body"> 
+								<div class="accordion-body">
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									OK케피탈 RPA시스템 구축<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
@@ -356,7 +377,8 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									삼성전자㈜ 공급망 관리 시스템 SCM 구축<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
-									삼성전자㈜ 생산관리 시스템 구축</div>
+									삼성전자㈜ 생산관리 시스템 구축
+								</div>
 							</div>
 						</div>
 						<div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
@@ -366,7 +388,7 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 									aria-controls="tech">2022</button>
 							</h3>
 							<div class="accordion-collapse collapse" id="tech" data-bs-parent="#industries">
-								<div class="accordion-body"> 
+								<div class="accordion-body">
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									만도 G-MES구축<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
@@ -384,7 +406,8 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									ABL생명 Digital Contact Center 구축<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
-									삼성디스플레이 사외자료공유시스템</div>
+									삼성디스플레이 사외자료공유시스템
+								</div>
 							</div>
 						</div>
 						<div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
@@ -394,7 +417,7 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 									aria-controls="medicine">2021</button>
 							</h3>
 							<div class="accordion-collapse collapse" id="medicine" data-bs-parent="#industries">
-								<div class="accordion-body"> 
+								<div class="accordion-body">
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									삼성전자㈜ TSP총괄 SCM 업무 개선 개발<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
@@ -402,7 +425,8 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									한국조폐공사 신뢰플랫폼 통합 유지 및 기능개선<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
-									삼성전자㈜ 제품코드변환 개발</div>
+									삼성전자㈜ 제품코드변환 개발
+								</div>
 							</div>
 						</div>
 						<div class="accordion-item mb-n3 mb-lg-n2 mb-xl-1">
@@ -412,7 +436,7 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 									aria-expanded="false" aria-controls="ecommerce">2020</button>
 							</h3>
 							<div class="accordion-collapse collapse" id="ecommerce" data-bs-parent="#industries">
-								<div class="accordion-body"> 
+								<div class="accordion-body">
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									법인 설립 소프트뱅크(주식회사)<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
@@ -426,7 +450,8 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
 									삼성전자(주) G-EMS 부대설비 관리시스템 개선<br>
 									<i class="ai-check-alt fs-4 mt-n1 me-2" style="color: cornflowerblue;"></i>
-									자금세탁방지 시스템 구축</div>
+									자금세탁방지 시스템 구축
+								</div>
 							</div>
 						</div>
 					</div>

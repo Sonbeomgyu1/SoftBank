@@ -36,11 +36,17 @@ public class main {
 		return "contact";
 	}
 
-	// 찾아오는길
-	@GetMapping("/notice")
-	public String notice() {
-		return "notice";
+	// 회사소식
+	@GetMapping("/board")
+	public String board() {
+		return "board";
 	}
+	
+	// 로그인
+		@GetMapping("/login")
+		public String login() {
+			return "login";
+		}
 
 	// 헤더
 	@GetMapping("/header")
