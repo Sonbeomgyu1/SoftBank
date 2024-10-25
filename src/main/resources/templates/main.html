@@ -1,286 +1,337 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-  <head>
-    <meta charset="utf-8">
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-    
-    <!-- SEO meta tags -->
-    <title>Soft Bank</title>
-    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
-    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
-    <meta name="author" content="Createx Studio">
+<head>
+	<meta charset="utf-8">
 
-    <!-- Webmanifest + Favicon / App icons -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
-        
-    <!-- Theme switcher (color modes) -->
-    <script src="assets/js/theme-switcher.js"></script>
+	<!-- Viewport -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
 
-    <!-- Import Google font (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
-    
-    <!--Montserrat font 추가-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!--Roboto font 추가-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100,200,300;400;500;600;700;900&display=swap" rel="stylesheet">
+	<!-- SEO meta tags -->
+	<title>Soft Bank</title>
+	<meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+	<meta name="keywords"
+		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+	<meta name="author" content="Createx Studio">
 
+	<!-- Webmanifest + Favicon / App icons -->
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
 
+	<!-- Theme switcher (color modes) -->
+	<script src="assets/js/theme-switcher.js"></script>
 
-    <!-- Vendor styles -->
-    <link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+	<!-- Import Google font (Inter) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+		rel="stylesheet" id="google-font">
 
-    <!-- Font icons -->
-    <link rel="stylesheet" href="assets/icons/around-icons.min.css">
-
-    <!-- Theme styles + Bootstrap -->
-    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-  
-    <!-- 헤더 css 불러오기-->
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <!-- 푸터 css 불러오기-->
-    <link rel="stylesheet" href="/assets/css/footer.css">
-   
-    <!-- Page loading scripts -->
-    <script>
-      (function () {
-        window.onload = function () {
-          const preloader = document.querySelector('.page-loading')
-          preloader.classList.remove('active')
-          setTimeout(function () {
-            preloader.remove()
-          }, 1500)
-        }
-      })()
-    </script>
-    
-  </head>
+	<!--Montserrat font 추가-->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<!--Roboto font 추가-->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100,200,300;400;500;600;700;900&display=swap"
+		rel="stylesheet">
 
 
-  <!-- Body -->
-  <body>
+
+	<!-- Vendor styles -->
+	<link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+	<!-- Font icons -->
+	<link rel="stylesheet" href="assets/icons/around-icons.min.css">
+
+	<!-- Theme styles + Bootstrap -->
+	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+	<!-- 헤더 css 불러오기-->
+	<link rel="stylesheet" href="/assets/css/header.css">
+	<!-- 푸터 css 불러오기-->
+	<link rel="stylesheet" href="/assets/css/footer.css">
+
+	<!-- Page loading scripts -->
+	<script>
+		(function () {
+			window.onload = function () {
+				const preloader = document.querySelector('.page-loading')
+				preloader.classList.remove('active')
+				setTimeout(function () {
+					preloader.remove()
+				}, 1500)
+			}
+		})()
+	</script>
+
+</head>
 
 
-    <!-- Page loading spinner -->
-    <div class="page-loading active">
-      <div class="page-loading-inner">
-        <div class="page-spinner"></div>
-        <span>Loading...</span>
-      </div>
-    </div>
+<!-- Body -->
+
+<body>
 
 
-    <!-- Page wrapper -->
-    <main class="page-wrapper">
+	<!-- Page loading spinner -->
+	<div class="page-loading active">
+		<div class="page-loading-inner">
+			<div class="page-spinner"></div>
+			<span>Loading...</span>
+		</div>
+	</div>
 
-      <header>
-		  <!-- Include the header -->
-    <div th:replace="header :: header"></div>
-	  </header>
+
+	<!-- Page wrapper -->
+	<main class="page-wrapper">
+
+		<header>
+			<!-- Include the header -->
+			<div th:replace="header :: header"></div>
+		</header>
 
 
-      <!-- main시작  -->
-      
+		<!-- main시작  -->
+
 		<section class="container py-5 mt-5 mb-xl-3 mb-xxl-5">
 			<div class="row pt-2">
-		
+
 				<!-- Text + CTA button -->
 				<div class="col-lg-6 d-flex flex-column mb-4 mb-lg-0 pb-sm-3 pb-lg-0">
-					<h1 class="display-1 text-uppercase fw-bold mt-auto mb-2 montserrat-bold" style="font-size: 2.5rem; color: dodgerblue;">Your<br> <span
-					class="montserrat-bold"><span class="text-highlight">Trusted&nbsp;</span>Partner</span> in&nbsp;Digital&nbsp;Innovation.</h1>
-					<p class="montserrat-regular" >Driving Success with Innovative Technology.<br>
+					<h1 class="display-1 text-uppercase fw-bold mt-auto mb-2 montserrat-bold"
+						style="font-size: 2.5rem; color: dodgerblue;">Your<br> <span class="montserrat-bold"><span
+								class="text-highlight">Trusted&nbsp;</span>Partner</span>
+						in&nbsp;Digital&nbsp;Innovation.</h1>
+					<p class="montserrat-regular">Driving Success with Innovative Technology.<br>
 						Empowering Businesses with Smart IT Solutions.
 					</p>
-				</div>		
+				</div>
 				<!--main사진 넣기-->
-				 <!-- Image Section (텍스트 옆에 이미지 추가) -->
-    <div class="col-lg-6 d-flex align-items-center justify-content-center">
-      <img src="assets/images/main/main6.png" alt="Main Image" class="img-fluid custom-image">
-    </div>
-				
+				<!-- Image Section (텍스트 옆에 이미지 추가) -->
+				<div class="col-lg-6 d-flex align-items-center justify-content-center">
+					<img src="assets/images/main/main6.png" alt="Main Image" class="img-fluid custom-image">
+				</div>
+
 			</div>
 		</section>
 		<!--main 사진 끝-->
-		
+
 		<!--business 시작-->
-		 <!-- How it works (Steps) -->
-      <section class="overflow-hidden pt-5 mt-md-3 mt-lg-2 mt-xl-4 mt-xxl-5">
-        <div class="container pt-2 pt-sm-4 pt-lg-5">
-          <h2 class="h1 text-center pb-3 mb-5 mb-lg-6">Our Business Services</h2>
+		<!-- How it works (Steps) -->
+		<section class="overflow-hidden pt-5 mt-md-3 mt-lg-2 mt-xl-4 mt-xxl-5">
+			<div class="container pt-2 pt-sm-4 pt-lg-5">
+				<h2 class="h1 text-center pb-3 mb-5 mb-lg-6">Our Business Services</h2>
 
-          <!-- Step1 -->
-          <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
-            <div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <img class="d-dark-mode-none" src="assets/images/main/business/M_business1.jpg" width="525" alt="Image">
-              <img class="d-none d-dark-mode-block" src="assets/images/main/business/M_business1.jpg" width="525" alt="Image">
-            </div>
-            <div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-aos="fade-right" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <div class="pe-md-4 pe-lg-0">
-                <span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
-                <h3 class="h2 mb-3 mb-lg-4">Business Content</h3>
-               <ul class="list-unstyled mb-0">
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    Consulting
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                  Solution
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    SI/SM
-                  </li>
-                   <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    IT Outsourcing
-                  </li>
-                </ul>
-               
-              </div>
-            </div>
-          </div>
+				<!-- Step1 -->
+				<div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+					<div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-left"
+						data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+						<img class="d-dark-mode-none" src="assets/images/main/business/M_business1.jpg" width="525"
+							alt="Image">
+						<img class="d-none d-dark-mode-block" src="assets/images/main/business/M_business1.jpg"
+							width="525" alt="Image">
+					</div>
+					<div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-aos="fade-right"
+						data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+						<div class="pe-md-4 pe-lg-0">
+							<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
+							<h3 class="h2 mb-3 mb-lg-4">Business Content</h3>
+							<ul class="list-unstyled mb-0">
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									Consulting
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									Solution
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									SI/SM
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									IT Outsourcing
+								</li>
+							</ul>
 
-          <!-- Arrow -->
-          <div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500" data-aos-offset="250">
-            <svg class="d-block custom-arrow-icon" width="339" height="365" viewBox="0 0 339 365" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: -150px; margin-top: -140px; margin-bottom: -108px;">
-              <path d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606" stroke="url(#arrow1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
-              <path d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z" fill="currentColor"></path>
-              <defs>
-                <linearGradient id="arrow1" x1="324" y1="291.5" x2="-2.99974" y2="72.4997" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="currentColor"></stop>
-                  <stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+						</div>
+					</div>
+				</div>
 
-          <!-- Step2 -->
-          <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
-            <div class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <img class="d-dark-mode-none" src="assets/images/main/business/M_business2-1.png" width="473" alt="Image">
-              <img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/02-dark.png" width="473" alt="Image">
-            </div>
-            <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1" data-aos="fade-left" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <div class="ps-md-4 ps-lg-0">
-                <span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
-                <h3 class="h2 mb-3 mb-lg-4">Consulting</h3>
-                <ul class="list-unstyled mb-0">
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    공공, 금융, 제조/서비스, 전자, 통신/미디어 등 다양한 산업 분야에서 맞춤형 컨설팅 서비스를 제공합니다.
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                  MIS, CRM, SCM, ERP, MDT, Logistics 등 다양한 솔루션을 활용하여 전략 컨설팅, 프로세스 혁신 컨설팅, 전략 실행 컨설팅을 지원합니다. 
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    고객의 비즈니스 목표를 달성할 수 있도록 최적의 솔루션과 실행 계획을 제안합니다.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+				<!-- Arrow -->
+				<div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500"
+					data-aos-offset="250">
+					<svg class="d-block custom-arrow-icon" width="339" height="365" viewBox="0 0 339 365" fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						style="margin-left: -150px; margin-top: -140px; margin-bottom: -108px;">
+						<path d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606" stroke="url(#arrow1)"
+							stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+						<path
+							d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z"
+							fill="currentColor"></path>
+						<defs>
+							<linearGradient id="arrow1" x1="324" y1="291.5" x2="-2.99974" y2="72.4997"
+								gradientUnits="userSpaceOnUse">
+								<stop offset="0" stop-color="currentColor"></stop>
+								<stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
 
-          <!-- Arrow -->
-          <div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500" data-aos-offset="250">
-            <svg class="d-block custom-arrow-icon" width="263" height="275" viewBox="0 0 263 275" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -60px; margin-left: -120px; margin-bottom: -80px;">
-              <path d="M8.13678 249.647C7.47108 250.081 6.59001 249.602 6.59106 248.808L6.60444 238.689C6.60544 237.931 7.4158 237.45 8.08162 237.811L16.5478 242.408C17.2136 242.77 17.2512 243.712 16.6163 244.125L8.13678 249.647Z" fill="currentColor"></path>
-              <path d="M261.961 37.8891C216.908 65.6243 128.226 135.486 133.916 193.05C141.029 265.005 265.134 173.468 173.666 148.634C89.2542 125.715 30.9125 210.547 13.9796 236.702" stroke="url(#arrow2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
-              <defs>
-                <linearGradient id="arrow2" x1="13.9797" y1="234.5" x2="276.704" y2="60.1939" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="currentColor"></stop>
-                  <stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+				<!-- Step2 -->
+				<div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+					<div class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-right"
+						data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+						<img class="d-dark-mode-none" src="assets/images/main/business/M_business2-1.png" width="473"
+							alt="Image">
+						<img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/02-dark.png"
+							width="473" alt="Image">
+					</div>
+					<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1" data-aos="fade-left" data-aos-duration="500"
+						data-aos-offset="250" data-disable-parallax-down="md">
+						<div class="ps-md-4 ps-lg-0">
+							<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
+							<h3 class="h2 mb-3 mb-lg-4">Consulting</h3>
+							<ul class="list-unstyled mb-0">
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									공공, 금융, 제조/서비스, 전자, 통신/미디어 등 다양한 산업 분야에서 맞춤형 컨설팅 서비스를 제공합니다.
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									MIS, CRM, SCM, ERP, MDT, Logistics 등 다양한 솔루션을 활용하여 전략 컨설팅, 프로세스 혁신 컨설팅, 전략 실행 컨설팅을
+									지원합니다.
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									고객의 비즈니스 목표를 달성할 수 있도록 최적의 솔루션과 실행 계획을 제안합니다.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-          <!-- Step3 -->
-          <div class="row align-items-center position-relative">
-            <div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 d-md-flex justify-content-end pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-left" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <img class="d-dark-mode-none" src="assets/images/main/business/M_business3-3.png" width="473" alt="Image">
-              <img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/03-dark.png" width="473" alt="Image">
-            </div>
-            <div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-aos="fade-right" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <div class="pe-md-4 pe-lg-0">
-                <span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
-                <h3 class="h2 mb-3 mb-lg-4">SI/SM</h3>
-                   <ul class="list-unstyled mb-0">
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    IT 아웃소싱 사업으로 대기업, 공공기관, 통신사 등 다양한 분야에 전문 인력을 배치하고 맞춤형 솔루션을 제공합니다.
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                  고객의 요구에 맞춘 솔루션을 함께 제공하며, 파견 인력에 대한 체계적인 피드백 시스템을 통해 서비스 품질을 지속적으로 개선합니다. 
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    고객 만족을 극대화하고, 장기적인 파트너십을 구축해 나갑니다.
-                  </li>
-                </ul>
-                <!--<a class="btn btn-outline-primary rounded-pill" href="#">Get connected</a>-->
-              </div>
-            </div>
-          </div>
-          
-          <div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500" data-aos-offset="250">
-            <svg class="d-block custom-arrow-icon" width="339" height="365" viewBox="0 0 339 365" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: -150px; margin-top: -140px; margin-bottom: -108px;">
-              <path d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606" stroke="url(#arrow1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
-              <path d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z" fill="currentColor"></path>
-              <defs>
-                <linearGradient id="arrow1" x1="324" y1="291.5" x2="-2.99974" y2="72.4997" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="currentColor"></stop>
-                  <stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <!--step4-->
-          <div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
-            <div class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <img class="d-dark-mode-none" src="assets/images/main/business/M_business4-5.png" width="473" alt="Image">
-              <img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/02-dark.png" width="473" alt="Image">
-            </div>
-            <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1" data-aos="fade-left" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
-              <div class="ps-md-4 ps-lg-0">
-                <span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
-                <h3 class="h2 mb-3 mb-lg-4">IT Outsourcing</h3>
-                <ul class="list-unstyled mb-0">
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    기업의 고객, 영업, 실적 관리를 모바일 환경에서 손쉽게 관리할 수 있는 솔루션을 제공합니다.
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    반응형 웹 서비스로, 웹에서 동작하는 시스템을 모바일이나 태블릿에서도 최적화된 화면으로 표시합니다.
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
-                    다양한 기기에서 자동으로 해상도가 조절되어 사용 편의성을 극대화합니다.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-                
-        </div>
-      </section>
-      <!--business 끝-->
+				<!-- Arrow -->
+				<div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500"
+					data-aos-offset="250">
+					<svg class="d-block custom-arrow-icon" width="263" height="275" viewBox="0 0 263 275" fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						style="margin-top: -60px; margin-left: -120px; margin-bottom: -80px;">
+						<path
+							d="M8.13678 249.647C7.47108 250.081 6.59001 249.602 6.59106 248.808L6.60444 238.689C6.60544 237.931 7.4158 237.45 8.08162 237.811L16.5478 242.408C17.2136 242.77 17.2512 243.712 16.6163 244.125L8.13678 249.647Z"
+							fill="currentColor"></path>
+						<path
+							d="M261.961 37.8891C216.908 65.6243 128.226 135.486 133.916 193.05C141.029 265.005 265.134 173.468 173.666 148.634C89.2542 125.715 30.9125 210.547 13.9796 236.702"
+							stroke="url(#arrow2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+						<defs>
+							<linearGradient id="arrow2" x1="13.9797" y1="234.5" x2="276.704" y2="60.1939"
+								gradientUnits="userSpaceOnUse">
+								<stop offset="0" stop-color="currentColor"></stop>
+								<stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
+
+				<!-- Step3 -->
+				<div class="row align-items-center position-relative">
+					<div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 d-md-flex justify-content-end pb-2 pb-md-0 mb-4 mb-md-0"
+						data-aos="fade-left" data-aos-duration="500" data-aos-offset="250"
+						data-disable-parallax-down="md">
+						<img class="d-dark-mode-none" src="assets/images/main/business/M_business3-3.png" width="473"
+							alt="Image">
+						<img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/03-dark.png"
+							width="473" alt="Image">
+					</div>
+					<div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-aos="fade-right"
+						data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+						<div class="pe-md-4 pe-lg-0">
+							<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
+							<h3 class="h2 mb-3 mb-lg-4">SI/SM</h3>
+							<ul class="list-unstyled mb-0">
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									IT 아웃소싱 사업으로 대기업, 공공기관, 통신사 등 다양한 분야에 전문 인력을 배치하고 맞춤형 솔루션을 제공합니다.
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									고객의 요구에 맞춘 솔루션을 함께 제공하며, 파견 인력에 대한 체계적인 피드백 시스템을 통해 서비스 품질을 지속적으로 개선합니다.
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									고객 만족을 극대화하고, 장기적인 파트너십을 구축해 나갑니다.
+								</li>
+							</ul>
+							<!--<a class="btn btn-outline-primary rounded-pill" href="#">Get connected</a>-->
+						</div>
+					</div>
+				</div>
+
+				<div class="d-none d-lg-flex justify-content-center" data-aos="fade-in" data-aos-duration="500"
+					data-aos-offset="250">
+					<svg class="d-block custom-arrow-icon" width="339" height="365" viewBox="0 0 339 365" fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						style="margin-left: -150px; margin-top: -140px; margin-bottom: -108px;">
+						<path d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606" stroke="url(#arrow1)"
+							stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+						<path
+							d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z"
+							fill="currentColor"></path>
+						<defs>
+							<linearGradient id="arrow1" x1="324" y1="291.5" x2="-2.99974" y2="72.4997"
+								gradientUnits="userSpaceOnUse">
+								<stop offset="0" stop-color="currentColor"></stop>
+								<stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
+				<!--step4-->
+				<div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+					<div class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0" data-aos="fade-right"
+						data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="md">
+						<img class="d-dark-mode-none" src="assets/images/main/business/M_business4-5.png" width="473"
+							alt="Image">
+						<img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/steps/02-dark.png"
+							width="473" alt="Image">
+					</div>
+					<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1" data-aos="fade-left" data-aos-duration="500"
+						data-aos-offset="250" data-disable-parallax-down="md">
+						<div class="ps-md-4 ps-lg-0">
+							<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"></span>
+							<h3 class="h2 mb-3 mb-lg-4">IT Outsourcing</h3>
+							<ul class="list-unstyled mb-0">
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									기업의 고객, 영업, 실적 관리를 모바일 환경에서 손쉽게 관리할 수 있는 솔루션을 제공합니다.
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									반응형 웹 서비스로, 웹에서 동작하는 시스템을 모바일이나 태블릿에서도 최적화된 화면으로 표시합니다.
+								</li>
+								<li class="d-flex pt-1 mt-2">
+									<i class="ai-check-alt custom-check-icon fs-4 mt-n1 me-2"></i>
+									다양한 기기에서 자동으로 해상도가 조절되어 사용 편의성을 극대화합니다.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</section>
+		<!--business 끝-->
 
 		<!--ceo 인사말 시작-->
 		<section class="container pt-5 mt-md-2 mt-lg-3 mt-xl-4">
+
 		 <div class="card border-0 bg-secondary mb-3">
               <div class="card-body">
                 <figure>
@@ -339,86 +390,181 @@
         </div>
       </section>
 
-		
+			<div class="card border-0 bg-secondary mb-3">
+				<div class="card-body">
+					<figure>
+						<blockquote class="blockquote">
+
+							<p>
+
+								<span style="font-size: 2em; font-weight: bold; color: cornflowerblue;">사람</span>을
+								<span style="font-size: 2em; font-weight: bold; color: cornflowerblue;">중심</span>으로
+								<span style="font-size: 2em; font-weight: bold; color: cornflowerblue;"></span>성장하는
+								<span style="font-size: 2em; font-weight: bold; color: cornflowerblue;"></span>기업
+								<br>
+								<span
+									style="font-size: 1.5em; font-weight: bold; color: cornflowerblue;">D</span>iscover
+								인재 발굴에 힘쓰고,
+								<span style="font-size: 1.5em; font-weight: bold; color: cornflowerblue;">G</span>row 함께
+								성장합니다.<br>
+
+								<span style="font-size: 1.5em; font-weight: bold; color: cornflowerblue;">C</span>onnect
+								인재와 기업,&nbsp;기업과 기업을 연결하는<br>
+								<span
+									style="font-size: 1.5em; font-weight: bold; color: cornflowerblue;">F</span>uturistic
+								미래창조적 글로벌 경영회사 소프트뱅크입니다.
+
+							</p>
+
+						</blockquote>
+						<figcaption class="blockquote-footer" style="font-size: larger;">대표 김미숙 </figcaption>
+					</figure>
+				</div>
+			</div>
+		</section>
+		<!--ceo 인사말 끝-->
+
+
+		<!--복지제도 시작-->
+		<section class="container overflow-hidden pt-5 mt-md-3 mt-lg-2 mt-xl-4 mt-xxl-5">
+			<div class="row align-items-center mt-2 pt-2 pt-sm-4 pt-lg-5">
+				<div class="col-md-5 text-center text-md-start pe-md-5 pe-lg-0 pe-xxl-4 ps-xl-5 mb-5 mb-md-0">
+					<h2 class="h1 pb-3 pb-xl-2 mb-lg-4 mb-xl-5">Soft Bank<br>복지제도</h2>
+
+					<a class="btn btn-outline-primary rounded-pill" href="/recruitment#recruitment-welfare">복지제도
+						바로가기</a>
+
+				</div>
+				<div class="col-md-7 col-lg-6 offset-lg-1">
+					<div class="position-relative mx-auto" style="max-width: 510px;">
+						<img class="d-block d-dark-mode-none" src="assets/img/landing/saas-2/tools/circle-gray-1.png"
+							style="animation: rotate-cw 100s linear infinite;" alt="Circle">
+						<img class="d-none d-dark-mode-block" src="assets/img/landing/saas-2/tools/circle-light-1.png"
+							style="animation: rotate-cw 100s linear infinite;" alt="Circle">
+						<img class="d-block d-dark-mode-none position-absolute top-0 start-0"
+							src="assets/img/landing/saas-2/tools/circle-gray-2.png"
+							style="animation: rotate-ccw 50s linear infinite;" alt="Circle">
+						<img class="d-none d-dark-mode-block position-absolute top-0 start-0"
+							src="assets/img/landing/saas-2/tools/circle-light-2.png"
+							style="animation: rotate-ccw 50s linear infinite;" alt="Circle">
+						<img class="position-absolute icon-small" src="assets/images/main/Welfare_Icon/family2.png"
+							data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="1200"
+							alt="Icon" onclick="openModal('modal1',event)">
+						<img class="position-absolute icon-small2" src="assets/images/main/Welfare_Icon/gift3.png"
+							data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="450"
+							alt="Icon" onclick="openModal('modal2',event)">
+						<img class="position-absolute icon-small3" src="assets/images/main/Welfare_Icon/travel.png"
+							data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="600"
+							alt="Icon" onclick="openModal('modal3',event)">
+						<img class="position-absolute icon-small4" src="assets/images/main/Welfare_Icon/heart1.png"
+							data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="750"
+							alt="Icon" onclick="openModal('modal4',event)">
+						<img class="position-absolute icon-small5" src="assets/images/main/Welfare_Icon/hobby.png"
+							data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="900"
+							alt="Icon" onclick="openModal('modal5',event)">
+						<img class="position-absolute icon-small6" src="assets/images/main/Welfare_Icon/holiday1.png"
+							data-aos="fade" data-aos-duration="600" data-aos-offset="250" data-aos-delay="1050"
+							alt="Icon" onclick="openModal('modal6',event)">
+						<img class="position-absolute icon-small7" src="assets/images/main/Welfare_Icon/home4.png"
+							data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250" alt="Icon"
+							onclick="openModal('modal7',event)">
+						<img class="position-absolute icon-small8" src="assets/images/main/Welfare_Icon/hospital.png"
+							data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250" data-aos-delay="150"
+							alt="Icon" onclick="openModal('modal8',event)">
+						<img class="position-absolute icon-small9" src="assets/images/main/Welfare_Icon/laptop2.png"
+							data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250" data-aos-delay="300"
+							alt="Icon" onclick="openModal('modal9',event)">
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
 		<!--복제제도 끝-->
 
-      
-    </main>
-    
 
-    <!-- Include the footer -->
-    <div th:replace="footer :: footer"></div></body></html>
-  
-
-    <!-- Back to top button -->
-    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
-      </svg>
-      <i class="ai-arrow-up"></i>
-    </a>
+	</main>
 
 
-    <!-- Vendor scripts: JS libraries and plugins -->
-    <script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/aos/dist/aos.js"></script>
-    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
-    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+	<!-- Include the footer -->
+	<div th:replace="footer :: footer"></div>
+</body>
 
-    <!-- Bootstrap + Theme scripts -->
-    <script src="assets/js/theme.min.js"></script>
-    
-    <!-- 복지제도 아이콘 모달 HTML 추가 -->
-    <!--가족복지-->
+</html>
+
+
+<!-- Back to top button -->
+<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
+		</circle>
+	</svg>
+	<i class="ai-arrow-up"></i>
+</a>
+
+
+<!-- Vendor scripts: JS libraries and plugins -->
+<script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/aos/dist/aos.js"></script>
+<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+
+<!-- Bootstrap + Theme scripts -->
+<script src="assets/js/theme.min.js"></script>
+
+<!-- 복지제도 아이콘 모달 HTML 추가 -->
+<!--가족복지-->
 <div id="modal1" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal1')">&times;</span>
-        <p>Family Day<br>주 1회 5시 퇴근제도 운영</p>
-    </div>
+	<div class="modal-content">
+		<span class="close" onclick="closeModal('modal1')">&times;</span>
+		<p>Family Day<br>주 1회 5시 퇴근제도 운영</p>
+	</div>
 </div>
 
-	<div id="modal2" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <p>명절 선물<br>명절엔 두 손 가득 설렘을 가지고 출발</p>
-    </div>
+<div id="modal2" class="modal">
+	<div class="modal-content">
+		<span class="close" onclick="closeModal('modal2')">&times;</span>
+		<p>명절 선물<br>명절엔 두 손 가득 설렘을 가지고 출발</p>
+	</div>
 </div>
-	<!--워크샵-->
+<!--워크샵-->
 <div id="modal3" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <p>워크샵 및 야유회</p>
-    </div>
+	<div class="modal-content">
+		<span class="close" onclick="closeModal('modal3')">&times;</span>
+		<p>워크샵 및 야유회</p>
+	</div>
 </div>
 
 
-	
-  </body>
+
+</body>
+
 </html>
 
 <script>
-	
-	function openModal(modalId ,event) {
-      const modal = document.getElementById(modalId);
-    modal.style.display = "block";
-    //클릭 위치에 따라 모달 위치 설정
-    if(event){
-		modal.style.top =(event.clientY + window.scrollY) + 'px';
-		modal.style.left =(event.clientX + window.scrollX) + 'px';
+
+	function openModal(modalId, event) {
+		const modal = document.getElementById(modalId);
+		modal.style.display = "block";
+		//클릭 위치에 따라 모달 위치 설정
+		if (event) {
+			modal.style.top = (event.clientY + window.scrollY) + 'px';
+			modal.style.left = (event.clientX + window.scrollX) + 'px';
+		}
 	}
-}
 
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
+	function closeModal(modalId) {
+		document.getElementById(modalId).style.display = "none";
+	}
 
-// 모달 바깥을 클릭했을 때 닫기
-window.onclick = function(event) {
-     if (event.target.classList.contains('modal')) {
-        event.target.style.display = "none";
-    }
-}
+	// 모달 바깥을 클릭했을 때 닫기
+	window.onclick = function (event) {
+		if (event.target.classList.contains('modal')) {
+			event.target.style.display = "none";
+		}
+	}
 
 
 
@@ -431,46 +577,51 @@ window.onclick = function(event) {
 </script>
 <style>
 	/*main 사진크기 조절 css*/
-	.custom-image{
+	.custom-image {
 		width: 185%;
 		max-width: none;
 		height: auto;
 		margin-top: 120px;
 	}
-	.row{
+
+	.row {
 		align-items: center;
 	}
-	 /*main 텍스트 색상 수정*/
-	 .text-highlight {
-		 color: rgb(255, 128, 0);
-	 }
-	 
-	 /*main 텍스트 폰트 굵기 수정*/
+
+	/*main 텍스트 색상 수정*/
+	.text-highlight {
+		color: rgb(255, 128, 0);
+	}
+
+	/*main 텍스트 폰트 굵기 수정*/
 	.montserrat-bold {
-		font-family:  'Montserrat', Arial, Helvetica, sans-serif;
+		font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 		font-weight: 900;
 	}
+
 	/*main <p>태그 폰트 수정*/
-	.montserrat-regular	{
-		font-family:  'Montserrat';
+	.montserrat-regular {
+		font-family: 'Montserrat';
 		font-size: 20px;
 		color: lightskyblue;
-		font-weight: 500 ;
+		font-weight: 500;
 	}
-	
+
 	/*ceo인사말 css*/
 	.bg-secondary {
-    --ar-bg-opacity: 1;
-    background-color: var(--ar-gray-100) !important;
-}
-.mb-3 {
-    margin-bottom: 1rem !important;
-}
-.border-0 {
-    border: 0 !important;
-}
+		--ar-bg-opacity: 1;
+		background-color: var(--ar-gray-100) !important;
+	}
 
-/*복지제도 아이콘 크기/위치 조정css*/
+	.mb-3 {
+		margin-bottom: 1rem !important;
+	}
+
+	.border-0 {
+		border: 0 !important;
+	}
+
+	/*복지제도 아이콘 크기/위치 조정css*/
 	/*.icon-small {
 	top: 5px !important;
 	left: 215px !important;
@@ -485,8 +636,8 @@ window.onclick = function(event) {
 		width: 100%;
 		height: 100%;
 	}*/
-	
-	
+
+
 	.icon-small {
 		top: 5px;
 		left: 215px;
@@ -495,6 +646,7 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
+
 	.icon-small2 {
 		top: 90px;
 		left: 400px;
@@ -503,7 +655,8 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
-	 	.icon-small3 {
+
+	.icon-small3 {
 		top: 250px;
 		left: 455px;
 		width: 70px;
@@ -511,14 +664,16 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
+
 	.icon-small4 {
 		bottom: 10px;
-		right:200px;
+		right: 200px;
 		width: 70px;
 		height: auto;
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
+
 	.icon-small5 {
 		top: 350px;
 		left: 5px;
@@ -527,6 +682,7 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
+
 	.icon-small6 {
 		top: 130px;
 		left: 0px;
@@ -535,6 +691,7 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
+
 	.icon-small7 {
 		top: 150px;
 		left: 220px;
@@ -543,6 +700,7 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
+
 	.icon-small8 {
 		top: 300px;
 		left: 300px;
@@ -551,8 +709,8 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
-	
-	
+
+
 	.icon-small9 {
 		top: 300px;
 		left: 130px;
@@ -561,50 +719,55 @@ window.onclick = function(event) {
 		position: absolute !important;
 		z-index: 9999 !important;
 	}
-	 
-	 /*business 체크 아이콘 색상수정 css*/
-	 .custom-check-icon {
-		 color: cornflowerblue;
-	 }
-	 
-	
+
+	/*business 체크 아이콘 색상수정 css*/
+	.custom-check-icon {
+		color: cornflowerblue;
+	}
+
+
 	/*business 화살표 색상 수정 css*/
 	.custom-arrow-icon {
 		color: cornflowerblue;
-		
+
 	}
-	
+
 	.blockquote::before {
-    color:cornflowerblue !important; /* 원하는 색상으로 변경 */
-}
+		color: cornflowerblue !important;
+		/* 원하는 색상으로 변경 */
+	}
 
-/*복지제도 모달*/
-.modal-container{
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100;
-	background-color: rgba(0,0,0,0.5);
-	z-index: 999;
-}
-/* 모달 스타일 */
-.modal {
-    display: none; /* 초기에는 보이지 않도록 설정 */
-    position: absolute; /* fixed 대신 absolute로 설정 */
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.9); /* 배경 투명도 */
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
-}
+	/*복지제도 모달*/
+	.modal-container {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 999;
+	}
+
+	/* 모달 스타일 */
+	.modal {
+		display: none;
+		/* 초기에는 보이지 않도록 설정 */
+		position: absolute;
+		/* fixed 대신 absolute로 설정 */
+		z-index: 1;
+		background-color: rgba(255, 255, 255, 0.9);
+		/* 배경 투명도 */
+		padding: 20px;
+		border-radius: 10px;
+		width: 200px;
+		text-align: center;
+	}
 
 
 
-/*모달내용*/
-/*.modal-content {
+	/*모달내용*/
+	/*.modal-content {
     background-color: #fff;
     margin: 15% auto;
     padding: 20px;
@@ -614,46 +777,40 @@ window.onclick = function(event) {
     text-align: center;
 }*/
 
-.modal-content {
-    position: relative;
-  
-}
+	.modal-content {
+		position: relative;
 
-.close {
-    color:cornflowerblue;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    
-    
-}
+	}
 
-.close:hover,
-.close:focus {
-    color: #000;
-   
-}
-/*복지제도 바로가기 버튼 색 수정 css*/
-.btn-outline-primary {
-	color: #ffffff;
-    background-color:cornflowerblue;
-    border: 2px solid cornflowerblue;
-    
-}
-
-.btn-outline-primary:hover {
-    color:cornflowerblue;
-    background-color: #ffffff;
-    border-color:cornflowerblue;
-}
-
-/*복지제도 버튼 위치 옮기기*/
+	.close {
+		color: cornflowerblue;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+		cursor: pointer;
 
 
+	}
 
+	.close:hover,
+	.close:focus {
+		color: #000;
 
+	}
 
+	/*복지제도 바로가기 버튼 색 수정 css*/
+	.btn-outline-primary {
+		color: #ffffff;
+		background-color: cornflowerblue;
+		border: 2px solid cornflowerblue;
 
+	}
 
+	.btn-outline-primary:hover {
+		color: cornflowerblue;
+		background-color: #ffffff;
+		border-color: cornflowerblue;
+	}
+
+	/*복지제도 버튼 위치 옮기기*/
 </style>

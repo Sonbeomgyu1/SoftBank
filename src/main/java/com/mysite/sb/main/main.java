@@ -41,12 +41,18 @@ public class main {
 	public String board() {
 		return "board";
 	}
-	
+
 	// 로그인
-		@GetMapping("/login")
-		public String login() {
-			return "login";
-		}
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+
+	// 회원가입
+	@GetMapping("/sbsignup")
+	public String sbsignup() {
+		return "sbsignup";
+	}
 
 	// 헤더
 	@GetMapping("/header")

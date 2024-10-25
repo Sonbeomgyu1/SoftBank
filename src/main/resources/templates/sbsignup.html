@@ -10,9 +10,8 @@
 
 	<!-- SEO meta tags -->
 	<title>SoftBank</title>
-	<meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
-	<meta name="keywords"
-		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+	<meta name="description" content="Sign Up for SoftBank Services">
+	<meta name="keywords" content="bootstrap, business, corporate, signup, registration, html5, css3, javascript">
 	<meta name="author" content="Createx Studio">
 
 	<!-- Webmanifest + Favicon / App icons -->
@@ -64,11 +63,9 @@
 
 </head>
 
-
 <!-- Body -->
 
 <body>
-
 
 	<!-- Page loading spinner -->
 	<div class="page-loading active">
@@ -78,7 +75,6 @@
 		</div>
 	</div>
 
-
 	<!-- Page wrapper -->
 	<main class="page-wrapper">
 
@@ -87,7 +83,7 @@
 			<div th:replace="header :: header"></div>
 		</header>
 
-		<div class="d-lg-flex justify-content-center align-items-center h-100" style="margin-top: -70px;">
+		<div class="d-lg-flex justify-content-center align-items-center h-100" style="margin-top: -30px;">
 			<!-- Home button -->
 			<a class="text-nav btn btn-icon bg-light border rounded-circle position-absolute top-0 end-0 p-0 mt-3 me-3 mt-sm-4 me-sm-4"
 				href="index.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Back to home"
@@ -95,7 +91,7 @@
 				<i class="ai-home"></i>
 			</a>
 
-			<!-- Sign in form -->
+			<!-- Sign up form -->
 			<div class="d-flex flex-column align-items-center w-lg-50 h-100 px-3 px-lg-5 pt-5">
 				<div class="w-100 mt-auto" style="max-width: 526px;">
 					<a class="navbar-brand pe-sm-3" href="" style="margin-bottom: 30px;">
@@ -110,6 +106,14 @@
 							<div class="position-relative">
 								<i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
 								<input class="form-control form-control-lg ps-5" type="text" placeholder="ID" required>
+							</div>
+						</div>
+						<div class="pb-3 mb-3">
+							<div class="position-relative">
+								<i
+									class="ai-emoji-smile fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+								<input class="form-control form-control-lg ps-5" type="text" placeholder="Name"
+									required>
 							</div>
 						</div>
 						<div class="mb-4">
@@ -127,10 +131,11 @@
 							</div>
 						</div>
 
+
 						<button class="btn btn-lg w-100 mb-4" type="submit"
-							style="background-color: cornflowerblue; color: white;">Sign in</button>
+							style="background-color: cornflowerblue; color: white;">회원가입</button>
 
-
+						<p class="text-center mb-0">Already have an account? <a href="/login">Login</a></p>
 					</form>
 				</div>
 			</div>
@@ -139,37 +144,31 @@
 		<div style="margin-bottom: 150px;"></div> <!-- 이 부분에서 마진 조정 -->
 	</main>
 
-
 	<!-- Include the footer -->
 	<div th:replace="footer :: footer"></div>
-</body>
 
-</html>
+	<!-- Back to top button -->
+	<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+		<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
+			</circle>
+		</svg>
+		<i class="ai-arrow-up"></i>
+	</a>
 
+	<!-- Vendor scripts: JS libraries and plugins -->
+	<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/vendor/aos/dist/aos.js"></script>
+	<script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+	<script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
+	<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+	<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+	<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
 
-<!-- Back to top button -->
-<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
-		</circle>
-	</svg>
-	<i class="ai-arrow-up"></i>
-</a>
-
-
-<!-- Vendor scripts: JS libraries and plugins -->
-<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/aos/dist/aos.js"></script>
-<script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
-<script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
-<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
-<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
-<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
-
-<!-- Bootstrap + Theme scripts -->
-<script src="assets/js/theme.min.js"></script>
+	<!-- Bootstrap + Theme scripts -->
+	<script src="assets/js/theme.min.js"></script>
 </body>
 
 </html>

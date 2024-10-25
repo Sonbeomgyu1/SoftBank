@@ -17,8 +17,8 @@
 
 	<!-- Webmanifest + Favicon / App icons -->
 	<link rel="manifest" href="/manifest.json">
-	<link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
+	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
 
 	<!-- Theme switcher (color modes) -->
 	<script src="assets/js/theme-switcher.js"></script>
@@ -46,6 +46,20 @@
 	<!-- 푸터 css 불러오기-->
 	<link rel="stylesheet" href="/assets/css/footer.css">
 
+	<style>
+		/* 섹션이 뷰포트에 나타나기 전 상태 */
+		.section-hidden {
+			opacity: 0;
+			transform: translateY(100px);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+
+		/* 섹션이 뷰포트에 진입했을 때의 상태 */
+		.section-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
 	<!-- Page loading scripts -->
 	<script>
 		(function () {
@@ -57,31 +71,55 @@
 				}, 1500)
 			}
 		})()
-		
+
 		<!--카테고리 눌르면 바로 가는 스크립트-->
 		function scrollToHash() {
-    if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
+			if (window.location.hash) {
+				const target = document.querySelector(window.location.hash);
 
-        if (target) {
-            // 고정된 헤더의 높이 가져오기
-            const headerHeight = document.querySelector('header').offsetHeight || 0;
-            
-            // 타겟 요소의 위치 가져오기
-            const rect = target.getBoundingClientRect();
-            
-            // 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
-            const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
-            
-            // 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
-            window.scrollTo({
-                top: window.scrollY + rect.top + offset,
-                behavior: 'smooth'
-            });
-        }
-    }
-}
-document.addEventListener('DOMContentLoaded', scrollToHash);
+				if (target) {
+					// 고정된 헤더의 높이 가져오기
+					const headerHeight = document.querySelector('header').offsetHeight || 0;
+
+					// 타겟 요소의 위치 가져오기
+					const rect = target.getBoundingClientRect();
+
+					// 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
+					const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
+
+					// 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
+					window.scrollTo({
+						top: window.scrollY + rect.top + offset,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+		document.addEventListener('DOMContentLoaded', scrollToHash);
+
+		/*스크롤 내리면 애니메이션화*/
+		document.addEventListener("DOMContentLoaded", function () {
+			const sections = document.querySelectorAll(".recruitment, .container, .my-md-2");
+
+			const options = {
+				threshold: 0.2 // 섹션의 10%가 뷰포트에 들어오면 실행
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("section-visible");
+						observer.unobserve(entry.target); // 한 번 나타난 후 다시 감시하지 않음
+					}
+				});
+			}, options);
+
+			sections.forEach(section => {
+				section.classList.add("section-hidden"); // 초기 상태는 숨김
+				observer.observe(section); // 각 섹션 감시 시작
+			});
+		});
+
 	</script>
 
 </head>
@@ -142,30 +180,31 @@ document.addEventListener('DOMContentLoaded', scrollToHash);
 
 		<!-- 채용안내 -->
 		<div id="recruitment-recruit" class="recruitment" style="margin-top: 10%; text-align: center;">
-    <h1 class="mainconsulting0" style="font-size: 400%;"><strong>Recruitment guide</strong></h1>
-    <h4 class="mainconsulting1" style="font-size: 100%; margin-top: 50px;">
-        회사의 인재 채용 절차와 기준을 안내하여 적합한 인재를 모집하는 정보입니다.
-    </h4>
+			<h1 class="mainconsulting0" style="font-size: 400%;"><strong>Recruitment guide</strong></h1>
+			<h4 class="mainconsulting1" style="font-size: 100%; margin-top: 50px;">
+				회사의 인재 채용 절차와 기준을 안내하여 적합한 인재를 모집하는 정보입니다.
+			</h4>
 
-    <div class="image-container" style="text-align: center; width: 100%; height: 80%;">
-        <img src="assets/images/recruit/recruitment1.png" class="SIimg shadow-xl" alt="..." style="width: 80%; height: auto;">
-    </div>
-</div>
+			<div class="image-container" style="text-align: center; width: 90%; height: 80%;">
+				<img src="assets/images/recruit/recruitment1.png" class="SIimg shadow-xl" alt="..."
+					style="width: 80%; height: auto;">
+			</div>
+		</div>
 
 
 
 		<!-- Services -->
 		<section id="recruitment-welfare" class="container py-5 my-md-2 my-lg-3 my-xl-4 my-xxl-5">
-    <div class="col-lg-4 mx-auto text-center" >
-        <h2 class="h1 text-center pb-3 pb-lg-1" style="font-size: 400%;">복지제도</h2>
+			<div class="col-lg-4 mx-auto text-center">
+				<h2 class="h1 text-center pb-3 pb-lg-1" style="font-size: 400%;">복지제도</h2>
 
-        <!-- Show on screens > 992px -->
-        <ul class="list-unstyled pb-3 mb-3 mb-lg-4">
-            <li class="d-flex justify-content-center pt-2">
-                회사의 복지 제도는 임직원의 권익을 보호하고 복리를 증진시키기 위해 다양한 혜택과 지원을 제공합니다.
-            </li>
-        </ul>
-    </div>
+				<!-- Show on screens > 992px -->
+				<ul class="list-unstyled pb-3 mb-3 mb-lg-4">
+					<li class="d-flex justify-content-center pt-2">
+						회사의 복지 제도는 임직원의 권익을 보호하고 복리를 증진시키기 위해 다양한 혜택과 지원을 제공합니다.
+					</li>
+				</ul>
+			</div>
 
 
 
