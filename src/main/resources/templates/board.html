@@ -103,7 +103,68 @@
 			</div>
 		</section>
 
-      
+      <main>
+		<div class="row">
+			<div class="row justify-content-center">				
+				<div sec:authorize="isAuthenticated()" style="margin-left:149%;">
+					<button type="button" class="btn custom-btn" id="writeButton">글 쓰기</button>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="offset-2 col-8">
+				<table class="table list-table table-hover text-center" style="margin-top: 2%;">
+					<thead style="background-color: gainsboro">
+						<tr>
+							<th style="width: 10%">번호</th>
+							<th style="width: 45%">제목</th>
+							<th style="width: 10%">작성자</th>
+							<!--조회수 추가-->
+							<th style="width: 10%">조회수</th>
+							<th style="width: 3%"></th>
+
+						</tr>
+					</thead>
+					<!--<tbody>
+						<tr th:each="board : ${boards.content}"
+							th:onclick="|location.href='@{/boarddetail/{id}(id=${board.id})}'|">
+							<td th:text="${board.number}"></td>
+							<td>
+								<a th:href="@{/boarddetail/{id}(id=${board.id})}" th:text="${board.title}"></a>
+							</td>
+							<td th:text="${board.author != null ? board.author.name : '관리자'}"></td>
+							 조회수 추가 
+							<td th:text="${board.viewCount}"></td>
+							<td th:text="${board.isPublic ? '' : '🔒'}"></td>
+						</tr>
+					</tbody>-->
+				</table>
+
+				<!--페이징처리-->
+				<!--<div class="pagination justify-content-center">
+					<ul id="paging-ul" class="pagination">
+						<li class="page-item" th:classappend="${currentPage == 0} ? 'disabled' : ''">
+							<a class="page-link" th:href="@{/board(page=${currentPage - 1}, size=${pageSize})}"
+								aria-label="Previous">이전</a>
+						</li>
+						<li class="page-item" th:each="i : ${#numbers.sequence(1, totalPages)}"
+							th:classappend="${i - 1 == currentPage} ? 'active' : ''">
+							<a class="page-link" th:href="@{/board(page=${i - 1}, size=${pageSize})}"
+								th:text="${i}">1</a>
+						</li>
+						<li class="page-item" th:classappend="${currentPage == totalPages - 1} ? 'disabled' : ''">
+							<a class="page-link" th:href="@{/board(page=${currentPage + 1}, size=${pageSize})}"
+								aria-label="Next">다음</a>
+						</li>
+					</ul>-->
+				</div>
+			</div>
+
+		</div>
+	
     </main>
     
 
