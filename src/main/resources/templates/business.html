@@ -17,8 +17,8 @@
 
 	<!-- Webmanifest + Favicon / App icons -->
 	<link rel="manifest" href="/manifest.json">
-	<link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
+	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
 
 	<!-- Theme switcher (color modes) -->
 	<script src="assets/js/theme-switcher.js"></script>
@@ -142,6 +142,7 @@
 				transform: none;
 			}
 		}
+
 		.consulting {
 			text-align: center;
 			/* 텍스트와 이미지를 가운데 정렬합니다. */
@@ -152,23 +153,24 @@
 			margin-bottom: 40px;
 			font-size: 60px;
 		}
+
 		.pb-3 {
-    text-align: left; /* 텍스트 왼쪽 정렬 */
-}
+			text-align: left;
+			/* 텍스트 왼쪽 정렬 */
+		}
 
-/* 섹션이 뷰포트에 나타나기 전 상태 */
-.section-hidden {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
+		/* 섹션이 뷰포트에 나타나기 전 상태 */
+		.section-hidden {
+			opacity: 0;
+			transform: translateY(100px);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
 
-/* 섹션이 뷰포트에 진입했을 때의 상태 */
-.section-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+		/* 섹션이 뷰포트에 진입했을 때의 상태 */
+		.section-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	</style>
 
 	<!-- Page loading scripts -->
@@ -182,56 +184,56 @@
 				}, 1500)
 			}
 		})()
-		
+
 		/*스크롤 눌르면 바로 가기 스크립트*/
-document.addEventListener('DOMContentLoaded', scrollToHash);
-window.addEventListener('hashchange', scrollToHash);
+		document.addEventListener('DOMContentLoaded', scrollToHash);
+		window.addEventListener('hashchange', scrollToHash);
 
-function scrollToHash() {
-    if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
+		function scrollToHash() {
+			if (window.location.hash) {
+				const target = document.querySelector(window.location.hash);
 
-        if (target) {
-            // 고정된 헤더의 높이 가져오기
-            const headerHeight = document.querySelector('header').offsetHeight || 0;
-            
-            // 타겟 요소의 위치 가져오기
-            const rect = target.getBoundingClientRect();
-            
-            // 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
-            const offset = (window.innerHeight / 10) - (rect.height / 4.7) - headerHeight;
-            
-            // 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
-            window.scrollTo({
-                top: window.scrollY + rect.top + offset,
-                behavior: 'smooth'
-            });
-        }
-    }
-}
+				if (target) {
+					// 고정된 헤더의 높이 가져오기
+					const headerHeight = document.querySelector('header').offsetHeight || 0;
 
-/*스크롤 내리면 애니메이션화*/
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".recruitment, .container, .my-md-2");
+					// 타겟 요소의 위치 가져오기
+					const rect = target.getBoundingClientRect();
 
-    const options = {
-        threshold: 0.2 // 섹션의 10%가 뷰포트에 들어오면 실행
-    };
+					// 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
+					const offset = (window.innerHeight / 10) - (rect.height / 4.7) - headerHeight;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("section-visible");
-                observer.unobserve(entry.target); // 한 번 나타난 후 다시 감시하지 않음
-            }
-        });
-    }, options);
+					// 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
+					window.scrollTo({
+						top: window.scrollY + rect.top + offset,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
 
-    sections.forEach(section => {
-        section.classList.add("section-hidden"); // 초기 상태는 숨김
-        observer.observe(section); // 각 섹션 감시 시작
-    });
-});
+		/*스크롤 내리면 애니메이션화*/
+		document.addEventListener("DOMContentLoaded", function () {
+			const sections = document.querySelectorAll(".recruitment, .container, .my-md-2");
+
+			const options = {
+				threshold: 0.2 // 섹션의 10%가 뷰포트에 들어오면 실행
+			};
+
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("section-visible");
+						observer.unobserve(entry.target); // 한 번 나타난 후 다시 감시하지 않음
+					}
+				});
+			}, options);
+
+			sections.forEach(section => {
+				section.classList.add("section-hidden"); // 초기 상태는 숨김
+				observer.observe(section); // 각 섹션 감시 시작
+			});
+		});
 
 	</script>
 </head>
@@ -468,9 +470,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		<section id="business-sw" class="bg-white border-top border-light py-2 py-sm-3 py-md-4 py-m-5"
 			data-bs-theme="dark">
 			<div class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
-				<h2 class="h1 text-center text-md-start mt-lg-n3 pb-4 pb-md-5" style="max-width: 660px; color: black;">SI/SM 사업사례
+				<h2 class="h1 text-center text-md-start mt-lg-n3 pb-4 pb-md-5" style="max-width: 660px; color: black;">
+					SI/SM 사업사례
 					패키지(S/W)</h2>
-				<h3 class="mb-sm-4" style="font-size: 13px; font-weight: normal; color: black;">효율적인 소프트웨어 개발을 위한 개발 프레임워크, 철저한 데이터
+				<h3 class="mb-sm-4" style="font-size: 13px; font-weight: normal; color: black;">효율적인 소프트웨어 개발을 위한 개발
+					프레임워크, 철저한 데이터
 					보호를 위한 보안 솔루션, 그리고 프로젝트 자산 관리를 위한 형상관리 솔루션을 제공합니다.</h3>
 
 				<div class="row pt-sm-2 pt-md-0 pt-xl-1 pt-xxl-3">
@@ -516,7 +520,8 @@ document.addEventListener("DOMContentLoaded", function () {
 						<ul class="nav nav-tabs flex-nowrap overflow-auto text-nowrap pb-3 mb-3 mb-xl-4" role="tablist">
 							<li class="nav-item mb-0">
 								<a class="nav-link active" href="#marketers-text" data-bs-toggle="tab"
-									data-binded-content="#marketers-image" role="tab" style="color: black;">개발 / FrameWork</a>
+									data-binded-content="#marketers-image" role="tab" style="color: black;">개발 /
+									FrameWork</a>
 							</li>
 							<li class="nav-item mb-0">
 								<a class="nav-link" href="#agencies-text" data-bs-toggle="tab"
@@ -555,7 +560,8 @@ document.addEventListener("DOMContentLoaded", function () {
 							</div>
 
 							<div class="tab-pane fade" id="ecommerce-text" role="tabpanel">
-								<p class="text-body" style="font-size: 18px;color: black !important;">SERENA Professional<br>
+								<p class="text-body" style="font-size: 18px;color: black !important;">SERENA
+									Professional<br>
 									<br>→ 프로젝트 파일의 효과적인 관리<br>
 									<br>→ 감사 가능성(Auditability), 추적 가능성(Traceability), 책임 가능성(Accountability) 확보<br>
 									<br> → 표준화 및 프로젝트 파일의 안전성 유지<br>
@@ -898,22 +904,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 					<!-- Solution 반응형 웹 서비스 -->
-					<div class="tab-content">			
+					<div class="tab-content">
 						<div class="tab-pane fade show active" id="beginners" role="tabpanel">
 							<div class="row align-items-lg-center">
 								<div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-									<img class="rounded-5" src="assets/images/business/sou1.png"
-										alt="Beginners">
+									<img class="rounded-5" src="assets/images/business/sou1.png" alt="Beginners">
 								</div>
 								<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
 									<div class="ps-md-4 ps-lg-0">
 										<h2 class="mb-xl-4">반응형 웹 서비스</h2>
 										<p class="pb-3 mb-3 mb-xl-4" style="font-size: 16px;">모든 기기에서 원활한 접근성의 중요성을 잘 알고
 											있습니다. 당사의 반응형 웹 서비스는 귀하의
-											웹사이트 또는 관리 플랫폼이 PC, 태블릿, 스마트폰 등 모든 화면 크기에 자동으로 적응하도록 보장합니다. <br><br>단일 코드 기반으로 최적의
+											웹사이트 또는 관리 플랫폼이 PC, 태블릿, 스마트폰 등 모든 화면 크기에 자동으로 적응하도록 보장합니다. <br><br>단일 코드
+											기반으로 최적의
 											시청 경험을 제공하여 개발 시간과 유지 관리 비용을 줄이고 사용자 만족도를 높입니다.
 
-											직원이나 고객이 플랫폼에 액세스하는 위치에 관계없이 레이아웃과 기능은 일관되게 유지되어 효율적이고 사용자 친화적인 경험을 제공합니다.<br><br>
+											직원이나 고객이 플랫폼에 액세스하는 위치에 관계없이 레이아웃과 기능은 일관되게 유지되어 효율적이고 사용자 친화적인 경험을
+											제공합니다.<br><br>
 											또한 당사의 기술은 귀하 사이트의 **SEO(검색 엔진 최적화)**를 향상시켜 귀하의 웹사이트 트래픽을 더 쉽게 찾고 늘릴 수 있도록
 											해줍니다.
 
@@ -928,8 +935,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						<div class="tab-pane fade" id="stretching" role="tabpanel">
 							<div class="row align-items-lg-center">
 								<div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-									<img class="rounded-5" src="assets/images/business/sou2.png"
-										alt="Stretching">
+									<img class="rounded-5" src="assets/images/business/sou2.png" alt="Stretching">
 								</div>
 								<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
 									<div class="ps-md-4 ps-lg-0">
@@ -960,8 +966,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						<div class="tab-pane fade" id="fly-yoga" role="tabpanel">
 							<div class="row align-items-lg-center">
 								<div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-									<img class="rounded-5" src="assets/images/business/sou3.png"
-										alt="Fly-yoga">
+									<img class="rounded-5" src="assets/images/business/sou3.png" alt="Fly-yoga">
 								</div>
 								<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
 									<div class="ps-md-4 ps-lg-0">

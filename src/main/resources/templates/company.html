@@ -17,8 +17,8 @@
 
 	<!-- Webmanifest + Favicon / App icons -->
 	<link rel="manifest" href="/manifest.json">
-	<link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
+	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
 
 	<!-- Theme switcher (color modes) -->
 	<script src="assets/js/theme-switcher.js"></script>
@@ -156,7 +156,8 @@
 			background-color: var(--ar-accordion-active-bg);
 			box-shadow: inset 0 calc(-1 * var(--ar-accordion-border-width)) 0 var(--ar-accordion-border-color);
 		}
-/*대표 김미숙 폰트 css*/
+
+		/*대표 김미숙 폰트 css*/
 		.ceo-info .title {
 			font-weight: bold;
 			/* 굵은 글씨 */
@@ -174,19 +175,19 @@
 			color: black;
 			/* 따뜻한 오렌지 색상 */
 		}
-		
-		/* 섹션이 뷰포트에 나타나기 전 상태 */
-.section-hidden {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
 
-/* 섹션이 뷰포트에 진입했을 때의 상태 */
-.section-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+		/* 섹션이 뷰포트에 나타나기 전 상태 */
+		.section-hidden {
+			opacity: 0;
+			transform: translateY(100px);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+
+		/* 섹션이 뷰포트에 진입했을 때의 상태 */
+		.section-visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	</style>
 
 	<!-- Page loading scripts -->
@@ -226,28 +227,28 @@
 		}
 		document.addEventListener('DOMContentLoaded', scrollToHash);
 
-/*스크롤 내리면 애니메이션화*/
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".recruitment, .container, .my-md-2");
+		/*스크롤 내리면 애니메이션화*/
+		document.addEventListener("DOMContentLoaded", function () {
+			const sections = document.querySelectorAll(".recruitment, .container, .my-md-2");
 
-    const options = {
-        threshold: 0.2 // 섹션의 10%가 뷰포트에 들어오면 실행
-    };
+			const options = {
+				threshold: 0.2 // 섹션의 10%가 뷰포트에 들어오면 실행
+			};
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("section-visible");
-                observer.unobserve(entry.target); // 한 번 나타난 후 다시 감시하지 않음
-            }
-        });
-    }, options);
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("section-visible");
+						observer.unobserve(entry.target); // 한 번 나타난 후 다시 감시하지 않음
+					}
+				});
+			}, options);
 
-    sections.forEach(section => {
-        section.classList.add("section-hidden"); // 초기 상태는 숨김
-        observer.observe(section); // 각 섹션 감시 시작
-    });
-});
+			sections.forEach(section => {
+				section.classList.add("section-hidden"); // 초기 상태는 숨김
+				observer.observe(section); // 각 섹션 감시 시작
+			});
+		});
 	</script>
 </head>
 
@@ -335,9 +336,9 @@ document.addEventListener("DOMContentLoaded", function () {
 									있으며, 미래지향적인 경영으로 글로벌 리더로서의 역할을 다할 것을 약속드립니다.<br><br>
 
 									감사합니다.</h5>
-									<p class="ceo-info text-end" style="margin-top: 100px;">
-										<span class="title">대표&nbsp;&nbsp;</span> <span class="name">김미숙</span>
-									</p>
+								<p class="ceo-info text-end" style="margin-top: 100px;">
+									<span class="title">대표&nbsp;&nbsp;</span> <span class="name">김미숙</span>
+								</p>
 
 
 							</div>
