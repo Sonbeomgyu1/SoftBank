@@ -1,187 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-  <head>
-    <meta charset="utf-8">
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-    
-    <!-- SEO meta tags -->
-    <title>SoftBank</title>
-    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
-    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
-    <meta name="author" content="Createx Studio">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+	<title>SoftBank</title>
+	<meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+	<meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+	<meta name="author" content="Createx Studio">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
+	<script src="assets/js/theme-switcher.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+	<link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
+	<link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+	<link rel="stylesheet" href="assets/icons/around-icons.min.css">
+	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+	<link rel="stylesheet" href="/assets/css/header.css">
+	<link rel="stylesheet" href="/assets/css/footer.css">
 
-    <!-- Webmanifest + Favicon / App icons -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="assets/app-icons/icon-32x32.png" sizes="32x32">
-    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
-        
-    <!-- Theme switcher (color modes) -->
-    <script src="assets/js/theme-switcher.js"></script>
+	<style>
+	.custom-btn {
+	    opacity: 1; /* 기본적으로 불투명하게 설정 */
+	    visibility: visible; /* 보이도록 설정 */
+	    transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+	    margin-top: 20px; /* 버튼 위쪽 여백 설정 */
+	    border: 2px solid black; /* 검은색 테두리 */
+	    background-color: white; /* 배경색 설정 (원하는 색으로 변경 가능) */
+	}
 
-    <!-- Import Google font (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+	/* 버튼의 스타일을 추가할 수 있습니다 */
+	.custom-btn:hover {
+	    background-color: whitesmoke; /* 호버 시 배경색 변경 */
+	}
+	</style>
 
-    <!-- Vendor styles -->
-    <link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+	<script>
+		(function () {
+			window.onload = function () {
+				const preloader = document.querySelector('.page-loading');
+				preloader.classList.remove('active');
+				setTimeout(function () {
+					preloader.remove();
+				}, 1500);
+			}
+		})();
+	</script>
+</head>
 
-    <!-- Font icons -->
-    <link rel="stylesheet" href="assets/icons/around-icons.min.css">
+<body>
+	<div class="page-loading active">
+		<div class="page-loading-inner">
+			<div class="page-spinner"></div>
+			<span>Loading...</span>
+		</div>
+	</div>
 
-    <!-- Theme styles + Bootstrap -->
-    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-  
-    <!-- 헤더 css 불러오기-->
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <!-- 푸터 css 불러오기-->
-    <link rel="stylesheet" href="/assets/css/footer.css">
-   
-    <!-- Page loading scripts -->
-    <script>
-      (function () {
-        window.onload = function () {
-          const preloader = document.querySelector('.page-loading')
-          preloader.classList.remove('active')
-          setTimeout(function () {
-            preloader.remove()
-          }, 1500)
-        }
-      })()
-    </script>
-    
-  </head>
+	<main class="page-wrapper">
+		<header>
+			<div th:replace="header :: header"></div>
+		</header>
 
-
-  <!-- Body -->
-  <body>
-
-
-    <!-- Page loading spinner -->
-    <div class="page-loading active">
-      <div class="page-loading-inner">
-        <div class="page-spinner"></div>
-        <span>Loading...</span>
-      </div>
-    </div>
-
-
-    <!-- Page wrapper -->
-    <main class="page-wrapper">
-
-      <header>
-		  <!-- Include the header -->
-    <div th:replace="header :: header"></div>
-	  </header>
-
-<!-- 세부페이지 배너  -->
-		<!-- 세부페이지 배너  -->
 		<section class="overflow-hidden">
 			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
 				<div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
-					<div
-						class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
+					<div class="col-lg-5 order-lg-1">
+						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">공지사항</h1>
+						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5" style="max-width: 520px;">최신 소식과 공지사항을 통해 저희 서비스의 업데이트 및 중요 정보를 확인하세요. 고객님들의 다양한 요구를 충족하기 위해 지속적으로 발전하고 있으며, 향후 진행될 이벤트 및 서비스 개선 사항에 대한 정보를 공유합니다.</p>
+					</div>
+					<div class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
 						<div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
 							<div class="parallax-layer" data-depth="0.1">
 								<img src="assets/images/business/businessbanner.jpg" alt="Layer">
 							</div>
-
 						</div>
-					</div>
-					<div class="col-lg-5 order-lg-1">
-						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">공지사항</h1>
-						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
-							style="max-width: 520px;">비즈니스는 시스템 통합(SI)과 시스템 유지보수(SM),
-							그리고 컨설팅 및 맞춤형 솔루션 제공을 포함하여, 고객의 다양한 요구에 맞춘 종합 IT 서비스를 제공합니다.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-      <main>
-		<div class="row">
-			<div class="row justify-content-center">				
-				<div sec:authorize="isAuthenticated()" style="margin-left:149%;">
-					<button type="button" class="btn custom-btn" id="writeButton">글 쓰기</button>
-				</div>
-			</div>
-		</div>
-
-
-
 		<div class="row">
 			<div class="offset-2 col-8">
+				<!-- 글쓰기 버튼을 테이블 위로 이동 -->
+				<div class="text-center mb-3" style="margin-left: 1100px;">
+    <button type="button" class="custom-btn" style="padding: 10px 20px; border-radius: 25px;">글 쓰기</button>
+</div>
+
 				<table class="table list-table table-hover text-center" style="margin-top: 2%;">
 					<thead style="background-color: gainsboro">
 						<tr>
 							<th style="width: 10%">번호</th>
 							<th style="width: 45%">제목</th>
 							<th style="width: 10%">작성자</th>
-							<!--조회수 추가-->
 							<th style="width: 10%">조회수</th>
 							<th style="width: 3%"></th>
-
 						</tr>
 					</thead>
-					<!--<tbody>
-						<tr th:each="board : ${boards.content}"
-							th:onclick="|location.href='@{/boarddetail/{id}(id=${board.id})}'|">
-							<td th:text="${board.number}"></td>
-							<td>
-								<a th:href="@{/boarddetail/{id}(id=${board.id})}" th:text="${board.title}"></a>
-							</td>
-							<td th:text="${board.author != null ? board.author.name : '관리자'}"></td>
-							 조회수 추가 
-							<td th:text="${board.viewCount}"></td>
-							<td th:text="${board.isPublic ? '' : '🔒'}"></td>
-						</tr>
-					</tbody>-->
+					<tbody>
+						<!-- 데이터가 들어갈 부분 -->
+					</tbody>
 				</table>
-
-				<!--페이징처리-->
-				<!--<div class="pagination justify-content-center">
-					<ul id="paging-ul" class="pagination">
-						<li class="page-item" th:classappend="${currentPage == 0} ? 'disabled' : ''">
-							<a class="page-link" th:href="@{/board(page=${currentPage - 1}, size=${pageSize})}"
-								aria-label="Previous">이전</a>
-						</li>
-						<li class="page-item" th:each="i : ${#numbers.sequence(1, totalPages)}"
-							th:classappend="${i - 1 == currentPage} ? 'active' : ''">
-							<a class="page-link" th:href="@{/board(page=${i - 1}, size=${pageSize})}"
-								th:text="${i}">1</a>
-						</li>
-						<li class="page-item" th:classappend="${currentPage == totalPages - 1} ? 'disabled' : ''">
-							<a class="page-link" th:href="@{/board(page=${currentPage + 1}, size=${pageSize})}"
-								aria-label="Next">다음</a>
-						</li>
-					</ul>-->
-				</div>
 			</div>
-
 		</div>
-	
-    </main>
-    
 
-    <!-- Include the footer -->
-    <div th:replace="footer :: footer"></div></body></html>
-  
+	</main>
 
-    <!-- Back to top button -->
-    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
-      </svg>
-      <i class="ai-arrow-up"></i>
-    </a>
+	<div th:replace="footer :: footer"></div>
+</body>
 
+</html>
 
-    <!-- Vendor scripts: JS libraries and plugins -->
+<!-- Back to top button -->
+<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+	</svg>
+	<i class="ai-arrow-up"></i>
+</a>
+
 <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -191,8 +132,7 @@
 <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
 <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
 <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+<script src="assets/js/theme.min.js"></script>
+</body>
 
-    <!-- Bootstrap + Theme scripts -->
-    <script src="assets/js/theme.min.js"></script>
-  </body>
 </html>
