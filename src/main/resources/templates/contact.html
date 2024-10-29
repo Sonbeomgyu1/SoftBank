@@ -45,6 +45,32 @@
 	<link rel="stylesheet" href="/assets/css/header.css">
 	<!-- 푸터 css 불러오기-->
 	<link rel="stylesheet" href="/assets/css/footer.css">
+	
+	
+	<!--contacts phone부분 텍스트 가운데 정렬 
+nav-link클래스 덮어씀-->
+<style>
+	.nav-link{
+		  display: block !important;
+    text-align: center !important;
+	}
+	/*버튼색상 수정 css*/
+	.custom-btn{
+		
+		
+		background-color: cornflowerblue;
+		color: white;
+		border-color : white;
+		
+	}
+	/*hover시 색상css*/
+	.custom-btn:hover{
+		background-color: cornflowerblue;
+		color: white;
+		border-color :  cornflowerblue;
+		
+	}
+</style>
 
 	<!-- Page loading scripts -->
 	<script>
@@ -58,6 +84,7 @@
 			}
 		})()
 	</script>
+
 
 </head>
 
@@ -85,7 +112,7 @@
 		</header>
 
 		<!-- 세부페이지 배너  -->
-		<section class="overflow-hidden">
+		<section class="overflow-hidden" style="margin-bottom: 110px;">
 			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
 				<div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
 					<div
@@ -129,10 +156,10 @@
 						<div class="card border-3 h-100 text-center"> <!-- 가운데 정렬 추가 -->
 							<div class="card-body">
 								<h4 class="card-title mb-4">Address</h4>
-								<p class="fs-lg fw-medium pb-3 mb-3">서울시 양천구 목동중앙북로 90 301호</p>
-								<a class="btn btn-sm btn-outline-primary" href="#">
-									<i class="ai-map-pin me-1"></i>
-									Get directions
+								<p class="fs-lg fw-medium pb-3 mb-3">서울시 양천구<br> 목동중앙북로 90 301호</p>
+								<a class="btn btn-sm btn-outline-primary custom-btn" href="#" data-target="1">
+									<i class="ai-map-pin me-1" style="font-size: 1.9em;"></i>
+									지도 찾기
 								</a>
 							</div>
 						</div>
@@ -151,7 +178,7 @@
 									</li>
 									<li>
 										<span class="d-block fs-sm text-body-secondary mb-1">FAX</span>
-										<a class="nav-link fs-lg p-0" href=""
+										<a class="nav-link fs-lg p-0 text-cente" href=""
 											style="pointer-events: none;">02-6338-8182</a>
 									</li>
 								</ul>
@@ -166,7 +193,7 @@
 								<h4 class="card-title mb-4">Email</h4>
 								<ul class="list-unstyled mb-0">
 									<li class="pb-1 mb-2">
-										<span class="d-block fs-sm text-body-secondary mb-1">Main office</span>
+										<span class="d-block fs-sm text-body-secondary mb-1">Main office</span><br><br>
 										<a class="nav-link fs-lg p-0" href="mailto:office@example.com"
 											style="pointer-events: none;">soft-bank@naver.com</a>
 									</li>
@@ -177,11 +204,17 @@
 
 				</div>
 			</div>
-			<div style="height: 250px;"></div>
+			<div style="height: 100px;"></div>
 		</section>
 
-			<!--지도-->
-		
+	<!--카카오맵 지도 -->
+	<section data-section ="1" class="target-section" style="margin-bottom: 150px;">
+		<!--지도 생성 html-->
+		<div id="map" style="margin: 70px auto; width:70%; height:500px; border-radius: 0.8rem; display: block;">
+		</div>
+		<!--지도 끝-->
+		</section>
+
 
 
 
@@ -191,12 +224,7 @@
 
 	<!-- Include the footer -->
 	<div th:replace="footer :: footer"></div>
-</body>
-
-</html>
-
-
-<!-- Back to top button -->
+	<!-- Back to top button -->
 <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
 	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
@@ -217,8 +245,84 @@
 <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
 <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
 
+<!--카카오맵  javascript key-->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c359196e97279733729abc06ee443fa9"></script>
+
+<!--카카오맵 지도 script-->
+<script>
+	/*지도생성*/
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center: new kakao.maps.LatLng(37.5462411154717, 126.873066933577), // 지도의 중심좌표
+			level: 3 // 지도의 확대 레벨
+		};
+
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+	//마커생성
+	// 마커가 표시될 위치입니다 
+	var markerPosition = new kakao.maps.LatLng(37.5462411154717, 126.873066933577);
+
+	// 마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+		position: markerPosition
+	});
+
+	// 마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+
+
+	// 커스텀 오버레이를 생성합니다
+	var overlay = new kakao.maps.CustomOverlay({
+		content: '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
+		map: map,
+		position: markerPosition,
+		yAnchor: 2.5 // 오버레이의 위치를 조정
+	});
+
+	// 오버레이를 지도에 표시합니다
+	overlay.setMap(map);
+
+	/*버튼 클릭시 맵 섹션으로 이동*/
+	 document.querySelector('.custom-btn').addEventListener('click',function(event){
+		 event.preventDefault();
+		 const targetSection = event.target.getAttribute('data-target');
+		 
+		 //해당 섹션을 찾아 스크롤 이동
+		 const section = document.querySelector(`.target-section[data-section="${targetSection}"]`);
+		 if(section) {
+			 const yOffset = -200; // 상단에 여유 공간 주기 (예: 70px)
+        const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({
+            top: yPosition,
+            behavior: 'smooth'
+			 });
+			 
+			
+		 }
+		 
+	 });
+
+
+
+</script>
+
+
 <!-- Bootstrap + Theme scripts -->
 <script src="assets/js/theme.min.js"></script>
+
+
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+

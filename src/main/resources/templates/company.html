@@ -16,7 +16,7 @@
 	<meta name="author" content="Createx Studio">
 
 	<!-- Webmanifest + Favicon / App icons -->
-	<link rel="manifest" href="/manifest.json">
+	<!--<link rel="manifest" href="/manifest.json">-->
 	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
 	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
 
@@ -37,8 +37,8 @@
 
 	<!-- Theme styles + Bootstrap -->
 	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-	<!-- 푸터 css 불러오기-->
-	<link rel="stylesheet" href="/assets/css/header.css"> <!-- 푸터 css 불러오기-->
+	<!-- 헤더 css 불러오기-->
+	<link rel="stylesheet" href="/assets/css/header.css"> <!-- 헤더 css 불러오기-->
 	<!-- 푸터 css 불러오기-->
 	<link rel="stylesheet" href="/assets/css/footer.css"> <!-- 푸터 css 불러오기-->
 
@@ -202,53 +202,6 @@
 			}
 		})()
 
-		<!--카테고리 눌르면 바로 가는 스크립트-->
-		function scrollToHash() {
-			if (window.location.hash) {
-				const target = document.querySelector(window.location.hash);
-
-				if (target) {
-					// 고정된 헤더의 높이 가져오기
-					const headerHeight = document.querySelector('header').offsetHeight || 0;
-
-					// 타겟 요소의 위치 가져오기
-					const rect = target.getBoundingClientRect();
-
-					// 타겟 요소를 화면 중앙에 맞추기 위한 오프셋 계산
-					const offset = (window.innerHeight / 15) - (rect.height / 4) - headerHeight;
-
-					// 계산된 오프셋으로 타겟 요소로 스크롤 (부드러운 스크롤 적용)
-					window.scrollTo({
-						top: window.scrollY + rect.top + offset,
-						behavior: 'smooth'
-					});
-				}
-			}
-		}
-		document.addEventListener('DOMContentLoaded', scrollToHash);
-
-		/*스크롤 내리면 애니메이션화*/
-		document.addEventListener("DOMContentLoaded", function () {
-			const sections = document.querySelectorAll(".recruitment, .container, .my-md-2");
-
-			const options = {
-				threshold: 0.2 // 섹션의 10%가 뷰포트에 들어오면 실행
-			};
-
-			const observer = new IntersectionObserver((entries, observer) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("section-visible");
-						observer.unobserve(entry.target); // 한 번 나타난 후 다시 감시하지 않음
-					}
-				});
-			}, options);
-
-			sections.forEach(section => {
-				section.classList.add("section-hidden"); // 초기 상태는 숨김
-				observer.observe(section); // 각 섹션 감시 시작
-			});
-		});
 	</script>
 </head>
 
@@ -305,8 +258,8 @@
 
 
 
-		<!-- Benefits -->
-		<section id="company-greeting" class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5" style="margin-top: 10%;">
+		<!-- 인사말 section -->
+		<section id="company-greeting"  class="container pb-5 mb-md-3 mb-lg-4 mb-xxl-5" style="margin-top: 10%;">
 			<div class="row pb-md-4 pb-xl-5">
 				<div class="col-md-6 mb-2 mb-md-0">
 					<div class="card border-0 h-100 bg-size-cover bg-position-center"
@@ -350,8 +303,8 @@
 		</section>
 
 
-		<!-- Industries (Binded accordion) -->
-		<section id="company-history" class="container py-5 mt-2 mt-sm-3 mt-md-4">
+		<!-- 회사연혁 section -->
+		<section id="company-history"   class="container py-5 mt-2 mt-sm-3 mt-md-4">
 			<h2 class="h1 text-center pt-lg-3">회사연혁</h2>
 			<p class="pb-3 pb-md-4 mb-0 mb-sm-2 mb-lg-3 text-center">오랜 역사와 혁신을 통해 꾸준히 성장해 온 기업으로, 고객의 신뢰와 함께 다양한 성과를
 				이루어 왔습니다.</p>
@@ -512,8 +465,8 @@
 			</div>
 		</section>
 
-		<!-- 기업인증페이지 -->
-		<section id="company-certification" class="overflow-hidden" style="margin-top: 10%;">
+		<!-- 기업인증 section -->
+		<section id="company-certification"   class="overflow-hidden" style="margin-top: 10%;">
 			<div class="container pt-5 pb-sm-3 mt-5 mb-2 mb-md-3 mb-lg-4 mb-xxl-5">
 				<!-- 기업인증 페이지 -->
 				<h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4">기업인증</h1>
@@ -529,9 +482,9 @@
 						data-aos-duration="850" data-aos-offset="180" data-disable-parallax-down="md">
 						<div class="ms-md-4 ms-lg-5 ms-xxl-0" style="max-width: 400px;">
 
-							<h2 class="mb-lg-4">
+							<h3 class="mb-lg-4">
 								<span href="">기업부설연구소</span>
-							</h2>
+							</h3>
 							<p class="mb-0 mb-md-1 mb-lg-3">2022.07 기업부설 연구소 지정 (한국산업기술진흥협회) </p>
 
 							</a>
@@ -629,22 +582,13 @@
 			</div>
 		</section>
 
-
-
-
-
-
 	</main>
 
 
 	<!-- Include the footer -->
 	<div th:replace="footer :: footer"></div>
-</body>
-
-</html>
-
-
-<!-- Back to top button -->
+	
+	<!-- Back to top button -->
 <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
 	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
@@ -667,6 +611,98 @@
 
 <!-- Bootstrap + Theme scripts -->
 <script src="assets/js/theme.min.js"></script>
+	
+	
+<!--드롭다운 클릭시 조정해놓은 
+section 위치로 스크롤(section별로 위치조정) script-->	
+	<script>
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM fully loaded and parsed");
+
+    // 드롭다운 항목에 클릭 이벤트 추가
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        console.log("Adding click event listener to:", item);
+        item.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetUrl = new URL(event.target.href); // 전체 URL을 가져옴
+            const targetPath = targetUrl.pathname; // 경로만 추출
+            const targetId = targetUrl.hash; // 해시(#) 부분 추출
+
+            if (window.location.pathname !== targetPath) {
+                // 현재 페이지가 아닌 경우, 해당 페이지로 이동
+                window.location.href = `${targetPath}${targetId}`;
+            } else {
+                // 이미 같은 페이지에 있는 경우, 해당 섹션으로 스크롤 이동
+                scrollToSection(targetId);
+            }
+        });
+    });
+
+    // 페이지가 로드된 후에도 스크롤 시도
+    if (window.location.hash) {
+        setTimeout(() => {
+            scrollToSection(window.location.hash);
+        }, 500); // DOMContentLoaded 후 500ms 지연 후 시도
+    }
+});
+
+window.addEventListener("load", function() {
+    console.log("Page fully loaded with hash:", window.location.hash);
+    if (window.location.hash) {
+        scrollToSection(window.location.hash);
+    }
+});
+
+// URL 해시가 변경될 때마다 스크롤 실행
+window.addEventListener("hashchange", function() {
+    console.log("Hash changed:", window.location.hash);
+    if (window.location.hash) {
+        scrollToSection(window.location.hash);
+    }
+});
+
+// 스크롤 이동 함수
+function scrollToSection(targetId) {
+    const section = document.querySelector(targetId);
+    if (section) {
+        const headerHeight = document.querySelector('header').offsetHeight || 0;
+        let yOffset;
+
+        // 각 섹션에 따라 다른 yOffset 설정
+        if (targetId === "#company-greeting") {
+            yOffset = -headerHeight - 150;
+        } else if (targetId === "#company-history") {
+            yOffset = -headerHeight - 100;
+        } else if (targetId === "#company-certification") {
+            yOffset = -headerHeight - 70;
+        } else {
+            yOffset = -headerHeight - 20; // 기본 여백
+        }
+
+        const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        console.log("Calculated yPosition:", yPosition);
+
+        window.scrollTo({
+            top: yPosition,
+            behavior: 'smooth'
+        });
+
+        // 스크롤 후 위치 확인
+        setTimeout(() => {
+            console.log("Scrolled to position:", window.scrollY);
+        }, 500); // 스크롤 후 위치 확인을 위한 지연 시간 설정
+    } else {
+        console.log("Section not found for targetId:", targetId);
+    }
+}
+
+
+</script>
 </body>
 
 </html>
+
+
+
+
+
