@@ -67,7 +67,7 @@
 
 	<main class="page-wrapper">
 		<header>
-			<div th:replace="header :: header"></div>
+			<div th:replace="~{header :: header}"></div>
 		</header>
 
 		<section class="overflow-hidden">
@@ -114,7 +114,7 @@
 
 	</main>
 
-	<div th:replace="footer :: footer"></div>
+	<div th:replace="~{footer :: footer}"></div>
 </body>
 
 </html>

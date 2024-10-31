@@ -226,7 +226,7 @@
 		<header>
 			<header>
 				<!-- Include the header -->
-				<div th:replace="header :: header"></div>
+				<div th:replace="~{header :: header}"></div>
 			</header>
 		</header>
 
@@ -586,7 +586,7 @@
 
 
 	<!-- Include the footer -->
-	<div th:replace="footer :: footer"></div>
+	<div th:replace="~{footer :: footer}"></div>
 	
 	<!-- Back to top button -->
 <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
