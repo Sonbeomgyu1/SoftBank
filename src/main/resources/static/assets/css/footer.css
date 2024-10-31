@@ -1,43 +1,132 @@
-.footer {
-		margin-top: auto;
-		padding: 5rem 0;
+
+    .footer {
+        margin-top: auto; /* 푸터를 아래로 밀기 위한 설정 */
+        padding: 5rem 0; /* 위아래 패딩 (py-5) */
+    }
+    .text-blue {
+    color: cornflowerblue; /* SoftBank s/b 글자색 넣기 */
 	}
 
-	.text-blue {
-		color: cornflowerblue;
-		/* SoftBank s/b 글자색 넣기 */
-	}
+    .footer .container {
+        padding-top: 2rem; /* 컨테이너의 상단 패딩 (pt-md-2) */
+    }
 
-	.footer .container {
-		padding-top: 2rem;
-	}
+    .footer .row {
+        padding-bottom: 5rem; /* 행의 아래쪽 패딩 (pb-5) */
+        padding-top: 2rem; /* 행의 위쪽 패딩 (pt-sm-2) */
+        margin-bottom: 2rem; /* 행의 하단 마진 (mb-lg-2) */
+    }
 
-	.footer .row {
-		padding-bottom: 0rem;
-		padding-top: 2rem;
-		margin-bottom: 0;
-		/* 여백 제거 */
-		text-align: center;
-		/* 텍스트 중앙 정렬 */
-	}
+    .footer .col-md-12 .navbar-brand {
+        padding: 0; /* 브랜드의 상하 패딩 제거 (py-0) */
+        margin-bottom: 3rem; /* 브랜드의 하단 마진 (mb-3) */
+    }
 
-	.footer .navbar-brand {
-		padding: 0;
-		margin-bottom: 4rem;
-		/* 간격을 늘리기 위해 하단 마진 조정 */
-	}
+    .footer .nav {
+        font-size: 0.875rem; /* 글자 크기 (fs-sm) */
+        margin-bottom: 0; /* 하단 마진 제거 (mb-0) */
+    }
 
-	.footer .nav {
-		font-size: 0.875rem;
-		margin-bottom: 0;
-		/* 저작권 아래 여백 제거 */
-	}
+    .footer .custom-button {
+        background-color: #6495ED; /* 버튼 배경을 흰색으로 설정 */
+        color: white; /* 버튼 텍스트를 연한 파란색으로 설정 */
+        border: 2px solid #6495ED; /* 경계선 색상도 연한 파란색으로 설정 */
+        border-radius: 12px; /* 모서리를 둥글게 설정 */
+    }
 
-	.footer .text-body-secondary {
-		margin-top: 0rem;
-	}
+    .footer .custom-button:hover {
+        background-color: #6495ED; /* 호버 시 배경색을 연한 파란색으로 변경 */
+        color: #ffffff; /* 호버 시 텍스트 색상을 흰색으로 변경 */
+        border-color: #ffffff; /* 호버 시 경계선 색상도 흰색으로 변경 */
+    }
 
-	.footer p {
-		margin-bottom: 1rem;
-		/* 문단 사이 간격을 줄임 */
-	}
+    .footer .text-body-secondary {
+        margin-top: 0rem; /* 저작권 텍스트와 다른 요소 간 간격 설정 */
+    }
+    
+    /**/
+    .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }

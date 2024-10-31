@@ -61,5 +61,10 @@ public class main {
 	public String footer() {
 		return "footer";
 	}
-
+	// 푸터
+		@GetMapping("/footerno")
+		public String footerno() {
+			return "footerno";
+		}
+	
 }
