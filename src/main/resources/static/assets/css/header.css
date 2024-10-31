@@ -95,7 +95,19 @@
  		transform: none;
  	}
  }
-
+ /*헤더 부분 배경 색 바꾸기*/
+.bg-light {
+  --ar-bg-opacity: 1;
+  background-color: black !important;
+}
+/*헤더 부분 ( 회사소개, 사업분야, 채용안내, 찾아오는길, 회사소식) 글자색깔 바꾸기*/
+.nav-link {
+	color: white !important;
+}
+/* 헤더부분 SoftBank 중 oft // ank 색깔 바꾸기 */
+.navbar-brand {
+	color: white !important;
+}
  /*Soft Bank S랑B만 파란색으로 class이름 text-primary1*/
  .text-primary1 {
  	color: cornflowerblue;

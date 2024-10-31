@@ -8724,7 +8724,7 @@ textarea.form-control-lg {
 
 .bg-light {
   --ar-bg-opacity: 1;
-  background-color: rgba(var(--ar-light-rgb), var(--ar-bg-opacity)) !important;
+  background-color: rgba(var(--ar-light-rgb), var(--ar-bg-opacity)) ;
 }
 
 .bg-dark {
