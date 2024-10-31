@@ -65,7 +65,8 @@
 	<main class="page-wrapper">
 
 		<!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
-		<header class="navbar navbar-expand-lg fixed-top bg-light">
+		<!--헤더 배경색깔 bg-black 이 부분을 bg-light로 바꾸면 흰색-->
+		<header class="navbar navbar-expand-lg fixed-top bg-black">
 			<div class="container">
 
 				<!-- Navbar brand (Logo) -->
@@ -74,7 +75,7 @@
 						<img src="/assets/images/main/softbank_logo.png" alt="SoftBank Logo" width="75" height="60" />
 					</span>
 					<!--  <span style="color: #6495ED;">S</span>oft <span style="color: #6495ED;">B</span>ank-->
-					<span class="text-primary1">S</span>oft&nbsp;<span class="text-primary1">B</span>ank
+					<span class="text-primary1">S</span><span class="text-primary2">oft&nbsp;</span><span class="text-primary1">B</span><span class="text-primary2">ank</span>
 
 				</a>
 
@@ -102,10 +103,10 @@
 				</button>
 
 				<!-- Navbar collapse (Main navigation) -->
-				<nav class="collapse navbar-collapse" id="navbarNav">
+				<nav class="collapse navbar-collapse" id="navbarNav" >
 					<ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
 						<li class="nav-item dropdown">
-							<a class="nav-link" href="/company" aria-expanded="false">회사소개</a>
+							<a class="nav-link" href="/company" aria-expanded="false" style="color: white;">회사소개</a>
 
 							<div class="dropdown-menu overflow-hidden p-0">
 								<div class="d-lg-flex">
@@ -144,7 +145,7 @@
 						</li>
 						<!--사업분야 시작-->
 						<li class="nav-item dropdown">
-							<a class="nav-link " href="/business" aria-expanded="false">사업분야</a>
+							<a class="nav-link " href="/business" aria-expanded="false" style="color: white;">사업분야</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown">
 									<a class="dropdown-item" href="business#business-content">사업내용</a>
@@ -171,7 +172,7 @@
 						</li>
 						<!--채용안내 시작-->
 						<li class="nav-item dropdown">
-							<a class="nav-link " href="/recruitment" aria-expanded="false">채용안내</a>
+							<a class="nav-link " href="/recruitment" aria-expanded="false" style="color: white;">채용안내</a>
 							<ul class="dropdown-menu">
 								<li class="dropdown">
 									<!--<a class="dropdown-item" href="recruitment#recruitment-welfare" data-target="10">복지제도</a>-->
@@ -187,10 +188,10 @@
 							</ul>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/contact">찾아오는길</a>
+							<a class="nav-link" href="/contact" style="color: white;">찾아오는길</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/board">회사소식</a>
+							<a class="nav-link" href="/board" style="color: white;">회사소식</a>
 						</li>
 					</ul>
 					<div class="d-sm-none p-3 mt-n3">
@@ -221,5 +222,6 @@
 
 	</script>
 </body>
+
 
 </html>
