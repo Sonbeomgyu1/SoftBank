@@ -48,11 +48,7 @@ public class main {
 		return "login";
 	}
 
-	// 회원가입
-	@GetMapping("/sbsignup")
-	public String sbsignup() {
-		return "sbsignup";
-	}
+	
 
 	// 헤더
 	@GetMapping("/header")
