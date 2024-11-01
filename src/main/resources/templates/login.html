@@ -84,7 +84,7 @@
 
 		<header>
 			<!-- Include the header -->
-			<div th:replace="header :: header"></div>
+			<div th:insert="~{header :: header}"></div>
 		</header>
 
 		<div class="d-lg-flex justify-content-center align-items-center h-100" style="margin-top: -70px;">
@@ -141,7 +141,7 @@
 
 
 	<!-- Include the footer -->
-	<div th:replace="footer :: footer"></div>
+	<div th:insert="~{footer :: footer}"></div>
 </body>
 
 </html>
