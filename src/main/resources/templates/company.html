@@ -226,7 +226,7 @@
 		<header>
 			<header>
 				<!-- Include the header -->
-				<div th:insert="~{header :: header}"></div>
+				<div th:replace="~{header :: header}"></div>
 			</header>
 		</header>
 
@@ -586,6 +586,7 @@
 
 
 	<!-- Include the footer -->
+
 	<div th:insert="~{footer :: footer}"></div>
 
 	<!-- Back to top button -->
