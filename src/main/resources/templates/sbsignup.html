@@ -101,45 +101,47 @@
 						</span>
 						<span class="text-primary1">S</span>oft&nbsp;<span class="text-primary1">B</span>ank
 					</a>
-					<form class="needs-validation" action="/register" method="post" novalidate>
-						<div class="pb-3 mb-3">
-							<div class="position-relative">
-								<i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<input class="form-control form-control-lg ps-5" type="text" name="username"
-									placeholder="ID" required>
-							</div>
-						</div>
-						<div class="pb-3 mb-3">
-							<div class="position-relative">
-								<i
-									class="ai-emoji-smile fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<input class="form-control form-control-lg ps-5" type="text" name="name"
-									placeholder="Name" required>
-							</div>
-						</div>
-						<div class="mb-4">
-							<div class="position-relative">
-								<i
-									class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<div class="password-toggle">
-									<input class="form-control form-control-lg ps-5" type="password" name="password"
-										placeholder="Password" required>
-									<label class="password-toggle-btn" aria-label="Show/hide password">
-										<input class="password-toggle-check" type="checkbox"
-											onclick="togglePasswordVisibility(this)">
-										<span class="password-toggle-indicator"></span>
-									</label>
-								</div>
-							</div>
-						</div>
+					<form class="needs-validation" action="/create" method="post" novalidate>
+    <!-- CSRF 토큰 추가 -->
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-						<button class="btn btn-lg w-100 mb-4" type="submit"
-							style="background-color: cornflowerblue; color: white;">
-							회원가입
-						</button>
+    <div class="pb-3 mb-3">
+        <div class="position-relative">
+            <i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input class="form-control form-control-lg ps-5" type="text" name="username" id="username"
+                placeholder="ID" required>
+        </div>
+    </div>
+    <div class="pb-3 mb-3">
+        <div class="position-relative">
+            <i class="ai-emoji-smile fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input class="form-control form-control-lg ps-5" type="text" name="name" id="name"
+                placeholder="Name" required>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="position-relative">
+            <i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <div class="password-toggle">
+                <input class="form-control form-control-lg ps-5" type="password" name="password" id="password"
+                    placeholder="Password" required>
+                <label class="password-toggle-btn" aria-label="Show/hide password">
+                    <input class="password-toggle-check" type="checkbox"
+                        onclick="togglePasswordVisibility(this)">
+                    <span class="password-toggle-indicator"></span>
+                </label>
+            </div>
+        </div>
+    </div>
 
-						<p class="text-center mb-0">Already have an account? <a href="/login">Login</a></p>
-					</form>
+    <button class="btn btn-lg w-100 mb-4" type="submit"
+        style="background-color: cornflowerblue; color: white;">
+        회원가입
+    </button>
+
+    <p class="text-center mb-0">Already have an account? <a href="/login">Login</a></p>
+</form>
+
 
 					<script>
 						// 비밀번호 가시성 토글 함수

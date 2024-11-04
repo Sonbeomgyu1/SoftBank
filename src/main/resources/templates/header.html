@@ -7,6 +7,8 @@
 	<!-- Viewport -->
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+	<!-- Thymeleaf 예제 -->
+<meta name="csrf-token" th:content="${_csrf.token}" />
 
 	<!-- SEO meta tags -->
 	<title>header</title>
@@ -91,11 +93,18 @@
 					</label>
 				</div>
 
-				<!--target="_blank" 추가시 새창이 열림-->
-				<a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="/login" rel="noopener">
-					<i class="ai-user fs-xl me-2 ms-n1"></i>
-					Login
-				</a>
+				  <!-- Login and Logout Buttons -->
+                <div class="d-flex order-lg-3">
+                    <a class="btn btn-primary btn-sm fs-sm me-2" href="/login" rel="noopener">
+                        <i class="ai-user fs-xl me-2 ms-n1"></i>
+                        Login
+                    </a>
+                    <a class="btn btn-danger btn-sm fs-sm" href="/logout" rel="noopener">
+                        <i class="ai-user fs-xl me-2 ms-n1"></i>
+                        Logout
+                    </a>
+                </div>
+
 
 				<!-- Mobile menu toggler (Hamburger) -->
 				<button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse"
