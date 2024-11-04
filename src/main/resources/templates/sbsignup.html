@@ -80,7 +80,7 @@
 
 		<header>
 			<!-- Include the header -->
-			<div th:replace="header :: header"></div>
+			<div th:insert="~{header :: header}"></div>
 		</header>
 
 		<div class="d-lg-flex justify-content-center align-items-center h-100" style="margin-top: -30px;">
@@ -157,7 +157,7 @@
 	</main>
 
 	<!-- Include the footer -->
-	<div th:replace="footer :: footer"></div>
+	<div th:insert="~{footer :: footer}"></div>
 
 	<!-- Back to top button -->
 	<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">

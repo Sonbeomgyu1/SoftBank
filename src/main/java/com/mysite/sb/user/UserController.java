@@ -34,9 +34,11 @@ public class UserController {
         return "main"; // 성공 페이지로 이동
     }
     
+    
+    // 회원가입페이지 
     @GetMapping("/sbsignup")
     public String showSignUpForm(Model model) {
         model.addAttribute("userVo", new UserVo());
-        return "sbsignup"; // Thymeleaf 템플릿 이름
+        return "sbsignup"; 
     }
 }

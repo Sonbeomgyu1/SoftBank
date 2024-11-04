@@ -1,275 +1,360 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
 
-<head>
-	<meta charset="utf-8">
+    <!-- Viewport -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
 
-	<!-- Viewport -->
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <!-- SEO meta tags -->
+    <title>SoftBank</title>
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap HTML Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
 
-	<!-- SEO meta tags -->
-	<title>SoftBank</title>
-	<meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
-	<meta name="keywords"
-		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
-	<meta name="author" content="Createx Studio">
+    <!-- Webmanifest + Favicon / App icons -->
+    <!--<link rel="manifest" href="/manifest.json">-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/images/main/softbank_logo.png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png" />
 
-	<!-- Webmanifest + Favicon / App icons -->
-	<!--<link rel="manifest" href="/manifest.json">-->
-	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
 
-	<!-- Theme switcher (color modes) -->
-	<script src="assets/js/theme-switcher.js"></script>
+    <!-- Import Google font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+      id="google-font"
+    />
 
-	<!-- Import Google font (Inter) -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-		rel="stylesheet" id="google-font">
+    <!-- Vendor styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/img-comparison-slider/dist/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/aos/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css"
+    />
 
-	<!-- Vendor styles -->
-	<link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
-	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
-	<link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+    <!-- Font icons -->
+    <link rel="stylesheet" href="assets/icons/around-icons.min.css" />
 
-	<!-- Font icons -->
-	<link rel="stylesheet" href="assets/icons/around-icons.min.css">
+    <!-- Theme styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
 
-	<!-- Theme styles + Bootstrap -->
-	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+    <!-- 헤더 css 불러오기-->
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <!-- 푸터 css 불러오기-->
+    <link rel="stylesheet" href="/assets/css/footer.css" />
 
-	<!-- 헤더 css 불러오기-->
-	<link rel="stylesheet" href="/assets/css/header.css">
-	<!-- 푸터 css 불러오기-->
-	<link rel="stylesheet" href="/assets/css/footer.css">
-	
-	<!--카카오맵  javascript key-->
-<!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c359196e97279733729abc06ee443fa9"></script>-->
+    <!--카카오맵  javascript key-->
+    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c359196e97279733729abc06ee443fa9"></script>-->
 
-	
-	<!--contacts phone부분 텍스트 가운데 정렬 
+    <!--contacts phone부분 텍스트 가운데 정렬 
 nav-link클래스 덮어씀-->
-<style>
-	.nav-link{
-		  display: block !important;
-    text-align: center !important;
-	}
-	/*버튼색상 수정 css*/
-	.custom-btn{
-		
-		
-		background-color: cornflowerblue;
-		color: white;
-		border-color : white;
-		
-	}
-	/*hover시 색상css*/
-	.custom-btn:hover{
-		background-color: cornflowerblue;
-		color: white;
-		border-color :  cornflowerblue;
-		
-	}
-</style>
+    <style>
+      .nav-link {
+        display: block !important;
+        text-align: center !important;
+      }
 
-	<!-- Page loading scripts -->
-	<script>
-		(function () {
-			window.onload = function () {
-				const preloader = document.querySelector('.page-loading')
-				preloader.classList.remove('active')
-				setTimeout(function () {
-					preloader.remove()
-				}, 1500)
-			}
-		})()
-	</script>
-	
-	<!--비동기로 KaKao API 로드 함수 정의 -->
-	<script type="text/javascript">
-        function loadKakaoMapScript(callback) {
-            var script = document.createElement('script');
-            script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=c359196e97279733729abc06ee443fa9&autoload=false';
-            script.async = true;
-            script.defer = true;
-            script.onload = function () {
-                /*console.log("카카오맵 스크립트 로드 완료");*/
-                kakao.maps.load(callback); // 스크립트 로드 후 kakao.maps.load로 콜백 실행
-            };
-            script.onerror = function() {
-                /*console.error("카카오맵 스크립트 로드 실패");*/
-            };
-            document.head.appendChild(script);
-        }
+      /*버튼색상 수정 css*/
+      .custom-btn {
+        background-color: cornflowerblue;
+        color: white;
+        border-color: white;
+      }
+
+      /*hover시 색상css*/
+      .custom-btn:hover {
+        background-color: cornflowerblue;
+        color: white;
+        border-color: cornflowerblue;
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
     </script>
 
+    <!--비동기로 KaKao API 로드 함수 정의 -->
+    <script type="text/javascript">
+      function loadKakaoMapScript(callback) {
+        var script = document.createElement("script");
+        script.src =
+          "https://dapi.kakao.com/v2/maps/sdk.js?appkey=c359196e97279733729abc06ee443fa9&autoload=false";
+        script.async = true;
+        script.defer = true;
+        script.onload = function () {
+          /*console.log("카카오맵 스크립트 로드 완료");*/
+          kakao.maps.load(callback); // 스크립트 로드 후 kakao.maps.load로 콜백 실행
+        };
+        script.onerror = function () {
+          /*console.error("카카오맵 스크립트 로드 실패");*/
+        };
+        document.head.appendChild(script);
+      }
+    </script>
+  </head>
 
-</head>
+  <!-- Body -->
 
+  <body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
 
-<!-- Body -->
+    <!-- Page wrapper -->
+    <main class="page-wrapper">
+      <header>
+        <!-- Include the header -->
 
-<body>
+        <div th:insert="~{header :: header}"></div>
+      </header>
 
+      <!-- 세부페이지 배너  -->
+      <section class="overflow-hidden" style="margin-bottom: 110px">
+        <div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
+          <div
+            class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5"
+          >
+            <div
+              class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0"
+            >
+              <div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px">
+                <div class="parallax-layer" data-depth="0.1">
+                  <img
+                    src="assets/images/banner/contact/contact4.png"
+                    alt="Layer"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 order-lg-1">
+              <h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">
+                찾아오는길
+              </h1>
+              <p
+                class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
+                style="max-width: 520px"
+              >
+                방문하시기 전에 궁금한 점이 있으시면 언제든지 연락 주세요.
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-	<!-- Page loading spinner -->
-	<div class="page-loading active">
-		<div class="page-loading-inner">
-			<div class="page-spinner"></div>
-			<span>Loading...</span>
-		</div>
-	</div>
+      <!-- 찾아오는길 타이틀 -->
+      <h1
+        class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4"
+        style="font-size: 5rem"
+      >
+        Contacts
+      </h1>
+      <p
+        class="fs-sm text-center pb-xl-2 mx-auto mb-5"
+        style="max-width: 520px; text-align: center"
+      >
+        문의 사항이나 자세한 내용은 전화, 팩스 또는 당사 웹사이트의 이메일을
+        통해 당사 전담팀에 문의하시기 바랍니다.
+      </p>
 
+      <!-- 찾아오는길 -->
+      <section class="bg-white py-5">
+        <!-- bg-secondary에서 bg-white로 변경 -->
+        <div class="container pt-5 pb-lg-2 pb-xl-4 py-xxl-5">
+          <!-- Details cards -->
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 pb-2 pb-sm-4 pb-lg-5"
+          >
+            <!-- Address -->
+            <div class="col" style="margin-left: 15%">
+              <div class="card border-3 h-100 text-center">
+                <!-- 가운데 정렬 추가 -->
+                <div class="card-body">
+                  <h4 class="card-title mb-4">Address</h4>
+                  <p class="fs-lg fw-medium pb-3 mb-3">
+                    서울시 양천구<br />
+                    목동중앙북로 90 301호
+                  </p>
+                  <a
+                    class="btn btn-sm btn-outline-primary custom-btn"
+                    href="#"
+                    data-target="1"
+                  >
+                    <i class="ai-map-pin me-1" style="font-size: 1.9em"></i>
+                    지도 찾기
+                  </a>
+                </div>
+              </div>
+            </div>
 
-	<!-- Page wrapper -->
-	<main class="page-wrapper">
+            <!-- Phone -->
+            <div class="col">
+              <div class="card border-3 h-100 text-center">
+                <div class="card-body">
+                  <h4 class="card-title mb-4">Phone</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="pb-1 mb-2">
+                      <span class="d-block fs-sm text-body-secondary mb-1"
+                        >TEL</span
+                      >
+                      <a
+                        class="nav-link fs-lg p-0"
+                        href=""
+                        style="pointer-events: none"
+                        >02-6013-8182</a
+                      >
+                    </li>
+                    <li>
+                      <span class="d-block fs-sm text-body-secondary mb-1"
+                        >FAX</span
+                      >
+                      <a
+                        class="nav-link fs-lg p-0 text-cente"
+                        href=""
+                        style="pointer-events: none"
+                        >02-6338-8182</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-		<header>
-			<!-- Include the header -->
-			<div th:replace="~{header :: header}"></div>
-		</header>
+            <!-- Email -->
+            <div class="col">
+              <div class="card border-3 h-100 text-center">
+                <div class="card-body">
+                  <h4 class="card-title mb-4">Email</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="pb-1 mb-2">
+                      <span class="d-block fs-sm text-body-secondary mb-1"
+                        >Main office</span
+                      ><br /><br />
+                      <a
+                        class="nav-link fs-lg p-0"
+                        href="mailto:office@example.com"
+                        style="pointer-events: none"
+                        >soft-bank@naver.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height: 100px"></div>
+      </section>
 
-		<!-- 세부페이지 배너  -->
-		<section class="overflow-hidden" style="margin-bottom: 110px;">
-			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
-				<div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
-					<div
-						class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
-						<div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px;">
-							<div class="parallax-layer" data-depth="0.1">
-								<img src="assets/images/banner/contact/contact4.png" alt="Layer">
-							</div>
+      <!--카카오맵 지도 -->
+      <section
+        data-section="1"
+        class="target-section"
+        style="margin-bottom: 150px"
+      >
+        <!--지도 생성 html-->
+        <div
+          id="map"
+          style="
+            margin: 70px auto;
+            width: 70%;
+            height: 500px;
+            border-radius: 0.8rem;
+            display: block;
+          "
+        ></div>
+        <!--지도 끝-->
+      </section>
+    </main>
 
-						</div>
-					</div>
-					<div class="col-lg-5 order-lg-1">
-						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">찾아오는길</h1>
-						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
-							style="max-width: 520px;">방문하시기 전에 궁금한 점이 있으시면 언제든지 연락 주세요. <br>
-							 </p>
-					</div>
-				</div>
-			</div>
+    <!-- Include the footer -->
 
+    <div th:insert="~{footer :: footer}"></div>
 
+    <!-- Back to top button -->
+    <a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      aria-label="Scroll back to top"
+    >
+      <svg
+        viewBox="0 0 40 40"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+        ></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
 
-		</section>
+    <!-- Vendor scripts: JS libraries and plugins -->
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
 
-
-
-
-		<!-- 찾아오는길 타이틀 -->
-		<h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4" style="font-size: 5rem;">Contacts</h1>
-		<p class="fs-sm text-center pb-xl-2 mx-auto mb-5" style="max-width: 520px; text-align: center;">문의 사항이나 자세한 내용은
-			전화, 팩스 또는 당사 웹사이트의 이메일을 통해 당사 전담팀에 문의하시기 바랍니다.</p>
-
-		<!-- 찾아오는길 -->
-		<section class="bg-white py-5"> <!-- bg-secondary에서 bg-white로 변경 -->
-			<div class="container pt-5 pb-lg-2 pb-xl-4 py-xxl-5">
-				<!-- Details cards -->
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 pb-2 pb-sm-4 pb-lg-5">
-
-					<!-- Address -->
-					<div class="col" style="margin-left: 15%;">
-						<div class="card border-3 h-100 text-center"> <!-- 가운데 정렬 추가 -->
-							<div class="card-body">
-								<h4 class="card-title mb-4">Address</h4>
-								<p class="fs-lg fw-medium pb-3 mb-3">서울시 양천구<br> 목동중앙북로 90 301호</p>
-								<a class="btn btn-sm btn-outline-primary custom-btn" href="#" data-target="1">
-									<i class="ai-map-pin me-1" style="font-size: 1.9em;"></i>
-									지도 찾기
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Phone -->
-					<div class="col">
-						<div class="card border-3 h-100 text-center">
-							<div class="card-body">
-								<h4 class="card-title mb-4">Phone</h4>
-								<ul class="list-unstyled mb-0">
-									<li class="pb-1 mb-2">
-										<span class="d-block fs-sm text-body-secondary mb-1">TEL</span>
-										<a class="nav-link fs-lg p-0" href=""
-											style="pointer-events: none;">02-6013-8182</a>
-									</li>
-									<li>
-										<span class="d-block fs-sm text-body-secondary mb-1">FAX</span>
-										<a class="nav-link fs-lg p-0 text-cente" href=""
-											style="pointer-events: none;">02-6338-8182</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<!-- Email -->
-					<div class="col">
-						<div class="card border-3 h-100 text-center">
-							<div class="card-body">
-								<h4 class="card-title mb-4">Email</h4>
-								<ul class="list-unstyled mb-0">
-									<li class="pb-1 mb-2">
-										<span class="d-block fs-sm text-body-secondary mb-1">Main office</span><br><br>
-										<a class="nav-link fs-lg p-0" href="mailto:office@example.com"
-											style="pointer-events: none;">soft-bank@naver.com</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<div style="height: 100px;"></div>
-		</section>
-
-	<!--카카오맵 지도 -->
-	<section data-section ="1" class="target-section" style="margin-bottom: 150px;">
-		<!--지도 생성 html-->
-		<div id="map" style="margin: 70px auto; width:70%; height:500px; border-radius: 0.8rem; display: block;">
-		</div>
-		<!--지도 끝-->
-		</section>
-
-
-
-
-
-	</main>
-
-
-	<!-- Include the footer -->
-	<div th:replace="~{footer :: footer}"></div>
-	<!-- Back to top button -->
-<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
-		</circle>
-	</svg>
-	<i class="ai-arrow-up"></i>
-</a>
-
-
-<!-- Vendor scripts: JS libraries and plugins -->
-<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/aos/dist/aos.js"></script>
-<script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
-<script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
-<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
-<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
-<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
-
-
-
-<!--카카오맵 지도 script-->
-<!--<script>
+    <!--카카오맵 지도 script-->
+    <!--<script>
 	/*지도생성*/
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
@@ -277,125 +362,141 @@ nav-link클래스 덮어씀-->
 			level: 3 // 지도의 확대 레벨
 		};
 
-	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	<!--카카오맵  javascript key-->
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c359196e97279733729abc06ee443fa9"
+    ></script>
 
-	//마커생성
-	// 마커가 표시될 위치입니다 
-	var markerPosition = new kakao.maps.LatLng(37.5462411154717, 126.873066933577);
+    <!--카카오맵 지도 script-->
+    <script>
+      /*지도생성*/
+      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+        mapOption = {
+          center: new kakao.maps.LatLng(37.5462411154717, 126.873066933577), // 지도의 중심좌표
+          level: 3, // 지도의 확대 레벨
+        };
 
-	// 마커를 생성합니다
-	var marker = new kakao.maps.Marker({
-		position: markerPosition
-	});
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-	// 마커가 지도 위에 표시되도록 설정합니다
-	marker.setMap(map);
+      //마커생성
+      // 마커가 표시될 위치입니다
+      var markerPosition = new kakao.maps.LatLng(
+        37.5462411154717,
+        126.873066933577
+      );
 
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+        position: markerPosition,
+      });
 
-	// 커스텀 오버레이를 생성합니다
-	var overlay = new kakao.maps.CustomOverlay({
-		content: '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
-		map: map,
-		position: markerPosition,
-		yAnchor: 2.5 // 오버레이의 위치를 조정
-	});
+      // 마커가 지도 위에 표시되도록 설정합니다
+      marker.setMap(map);
 
-	// 오버레이를 지도에 표시합니다
-	overlay.setMap(map);
+      // 커스텀 오버레이를 생성합니다
+      var overlay = new kakao.maps.CustomOverlay({
+        content:
+          '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
+        map: map,
+        position: markerPosition,
+        yAnchor: 2.5, // 오버레이의 위치를 조정
+      });
 
-	/*버튼 클릭시 맵 섹션으로 이동*/
-	 document.querySelector('.custom-btn').addEventListener('click',function(event){
-		 event.preventDefault();
-		 const targetSection = event.target.getAttribute('data-target');
-		 
-		 //해당 섹션을 찾아 스크롤 이동
-		 const section = document.querySelector(`.target-section[data-section="${targetSection}"]`);
-		 if(section) {
-			 const yOffset = -200; // 상단에 여유 공간 주기 (예: 70px)
-        const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      // 오버레이를 지도에 표시합니다
+      overlay.setMap(map);
 
-        window.scrollTo({
-            top: yPosition,
-            behavior: 'smooth'
-			 });
-			 
-			
-		 }
-		 
-	 });
+      /*버튼 클릭시 맵 섹션으로 이동*/
+      document
+        .querySelector(".custom-btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetSection = event.target.getAttribute("data-target");
 
+          //해당 섹션을 찾아 스크롤 이동
+          const section = document.querySelector(
+            `.target-section[data-section="${targetSection}"]`
+          );
+          if (section) {
+            const yOffset = -200; // 상단에 여유 공간 주기 (예: 70px)
+            const yPosition =
+              section.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
 
-
-</script>-->
-
-
- <script>
-        // 지도 초기화 함수
-        function initMap() {
-          /*  console.log("지도 초기화 시작"); */
-            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-                mapOption = {
-                    center: new kakao.maps.LatLng(37.5462411154717, 126.873066933577), // 지도의 중심좌표
-                    level: 3 // 지도의 확대 레벨
-                };
-
-            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-            // 마커 생성
-            var markerPosition = new kakao.maps.LatLng(37.5462411154717, 126.873066933577);
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
+            window.scrollTo({
+              top: yPosition,
+              behavior: "smooth",
             });
-            marker.setMap(map);
-
-            // 커스텀 오버레이 생성
-            var overlay = new kakao.maps.CustomOverlay({
-                content: '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
-                map: map,
-                position: markerPosition,
-                yAnchor: 2.5
-            });
-            overlay.setMap(map);
-        }
-
-        // 페이지 로드 시 지도 로드 함수 호출
-        window.addEventListener('load', function() {
-            loadKakaoMapScript(initMap); // loadKakaoMapScript 함수로 API 로드 후 initMap 호출
+          }
         });
+    </script>
+    -->
 
-        // 찾아오는길 버튼 스크롤 이동 기능
-        document.querySelector('.custom-btn').addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetSection = event.target.getAttribute('data-target');
-            
-            const section = document.querySelector(`.target-section[data-section="${targetSection}"]`);
-            if (section) {
-                const yOffset = -200; // 상단에 여유 공간 주기
-                const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    <script>
+      // 지도 초기화 함수
+      function initMap() {
+        /*  console.log("지도 초기화 시작"); */
+        var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+          mapOption = {
+            center: new kakao.maps.LatLng(37.5462411154717, 126.873066933577), // 지도의 중심좌표
+            level: 3, // 지도의 확대 레벨
+          };
 
-                window.scrollTo({
-                    top: yPosition,
-                    behavior: 'smooth'
-                });
-            }
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커 생성
+        var markerPosition = new kakao.maps.LatLng(
+          37.5462411154717,
+          126.873066933577
+        );
+        var marker = new kakao.maps.Marker({
+          position: markerPosition,
+        });
+        marker.setMap(map);
+
+        // 커스텀 오버레이 생성
+        var overlay = new kakao.maps.CustomOverlay({
+          content:
+            '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
+          map: map,
+          position: markerPosition,
+          yAnchor: 2.5,
+        });
+        overlay.setMap(map);
+      }
+
+      // 페이지 로드 시 지도 로드 함수 호출
+      window.addEventListener("load", function () {
+        loadKakaoMapScript(initMap); // loadKakaoMapScript 함수로 API 로드 후 initMap 호출
+      });
+
+      // 찾아오는길 버튼 스크롤 이동 기능
+      document
+        .querySelector(".custom-btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetSection = event.target.getAttribute("data-target");
+
+          const section = document.querySelector(
+            `.target-section[data-section="${targetSection}"]`
+          );
+          if (section) {
+            const yOffset = -200; // 상단에 여유 공간 주기
+            const yPosition =
+              section.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({
+              top: yPosition,
+              behavior: "smooth",
+            });
+          }
         });
     </script>
 
-
-<!-- Bootstrap + Theme scripts -->
-<script src="assets/js/theme.min.js"></script>
-
-
-</body>
-
+    <!-- Bootstrap + Theme scripts -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
