@@ -96,15 +96,21 @@
 				  <!-- Login and Logout Buttons -->
                <!-- 헤더 -->
 
-    <!-- 로그인 및 로그아웃 버튼 -->
-    <a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" th:if="${isLoggedIn == null or not isLoggedIn}" href="/login" rel="noopener">
-        <i class="ai-user fs-xl me-2 ms-n1"></i>
-        Login
-    </a>
-    <a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" th:if="${isLoggedIn == null or isLoggedIn}" href="/logout" rel="noopener">
-        <i class="ai-user fs-xl me-2 ms-n1"></i>
-        Logout
-    </a>
+   
+   <!-- 로그인 및 로그아웃 버튼 -->
+<a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" 
+   th:if="${isLoggedIn == null or not isLoggedIn}" 
+   th:href="@{/user/login}" rel="noopener">
+    <i class="ai-user fs-xl me-2 ms-n1"></i>
+    로그인
+</a>
+<a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" 
+   th:if="${isLoggedIn != null and isLoggedIn}" 
+   th:href="@{/user/logout}" rel="noopener">
+    <i class="ai-user fs-xl me-2 ms-n1"></i>
+    로그아웃
+</a>
+
 
 
 

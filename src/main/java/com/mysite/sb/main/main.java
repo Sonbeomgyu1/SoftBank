@@ -41,13 +41,6 @@ public class main {
 	public String board() {
 		return "board";
 	}
-
-	// 로그인
-	@GetMapping("/login")
-	public String login() {
-		return "login";
-	}
-
 	
 
 	// 헤더
