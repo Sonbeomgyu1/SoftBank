@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -61,4 +62,13 @@ public class UserController {
     	 System.out.println("로그인 시도: " + user.getUsername());
         return "redirect:/500"; // or wherever you want to redirect after login
     }
+    
+    @PostMapping("/user/logout")
+    public String logoutUser(HttpServletRequest request) {
+        // 세션에서 isLoggedIn 속성 제거
+        request.getSession().removeAttribute("isLoggedIn");
+        // 로그아웃 처리
+        return "redirect:/board"; // 또는 원하는 경로로 리다이렉트
+    }
+
 }

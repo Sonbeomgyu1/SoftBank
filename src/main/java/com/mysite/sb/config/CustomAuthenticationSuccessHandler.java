@@ -17,7 +17,11 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         // 로그인 성공 시 콘솔에 로그 출력
         System.out.println("로그인 성공: " + authentication.getName());
 
+        // 세션에 isLoggedIn 속성 추가
+        request.getSession().setAttribute("isLoggedIn", true);
+
         // 기본 성공 URL로 리다이렉트
-        response.sendRedirect("/"); // 또는 원하는 경로로 변경
+        response.sendRedirect("/");
     }
 }
+
