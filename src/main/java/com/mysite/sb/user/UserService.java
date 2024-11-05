@@ -44,18 +44,7 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-    // login 메서드는 Spring Security의 formLogin을 통해 처리됩니다.
-    // 이 메서드는 필요없을 수 있습니다.
-    public UserVo login(String username, String password) {
-        UserVo user = userDao.findByUsername(username); // 사용자 조회
-
-        if (user != null && passwordEncoder.matches(password, user.getPassword())) { // 비밀번호 일치 확인
-            System.out.println("로그인 성공: 사용자 이름 = " + username);
-            return user; // 로그인 성공
-        }
-
-        throw new IllegalArgumentException("잘못된 사용자 이름 또는 비밀번호입니다."); // 로그인 실패 시 예외 처리
-    }
+   
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

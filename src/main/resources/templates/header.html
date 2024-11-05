@@ -94,16 +94,18 @@
 				</div>
 
 				  <!-- Login and Logout Buttons -->
-                <div class="d-flex order-lg-3">
-                    <a class="btn btn-primary btn-sm fs-sm me-2" href="/login" rel="noopener">
-                        <i class="ai-user fs-xl me-2 ms-n1"></i>
-                        Login
-                    </a>
-                    <a class="btn btn-danger btn-sm fs-sm" href="/logout" rel="noopener">
-                        <i class="ai-user fs-xl me-2 ms-n1"></i>
-                        Logout
-                    </a>
-                </div>
+               <!-- 헤더 -->
+
+    <!-- 로그인 및 로그아웃 버튼 -->
+    <a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" th:if="${isLoggedIn == null or not isLoggedIn}" href="/login" rel="noopener">
+        <i class="ai-user fs-xl me-2 ms-n1"></i>
+        Login
+    </a>
+    <a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" th:if="${isLoggedIn == null or isLoggedIn}" href="/logout" rel="noopener">
+        <i class="ai-user fs-xl me-2 ms-n1"></i>
+        Logout
+    </a>
+
 
 
 				<!-- Mobile menu toggler (Hamburger) -->
