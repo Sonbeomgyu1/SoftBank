@@ -76,32 +76,40 @@
 					<!-- Updated Signup Form with Thymeleaf -->
 					<form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post"
 						class="needs-validation" novalidate>
-						<div class="pb-3 mb-3">
-							<div class="position-relative">
+						<!-- 회원가입 폼, 타임리프(thymeleaf)를 사용해 /user/signup 경로에 POST 요청으로 폼을 제출. th:object로 userCreateForm 객체 바인딩 -->
+
+						<div class="pb-3 mb-3"> <!-- 사용자 ID 입력 필드. 아래 여백을 주어 각 입력 필드 간 간격을 유지 -->
+							<div class="position-relative"> <!-- 상대 위치 설정으로 아이콘이 입력 필드 안에 위치하도록 함 -->
 								<i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+								<!-- 사용자 아이콘, 입력 필드 안에서 위치 조정 -->
 								<input class="form-control form-control-lg ps-5" type="text" th:field="*{username}"
-									placeholder="ID" required>
+									placeholder="ID" required> <!-- 사용자 ID 입력 필드, 바인딩된 username 필드를 사용하고 필수 입력 설정 -->
 							</div>
 						</div>
-						<div class="pb-3 mb-3">
-							<div class="position-relative">
+
+						<div class="pb-3 mb-3"> <!-- 비밀번호 입력 필드, 다른 필드와의 간격을 위해 여백 설정 -->
+							<div class="position-relative"> <!-- 비밀번호 아이콘의 위치 조정 -->
 								<i
 									class="ai-emoji-smile fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+								<!-- 비밀번호 아이콘 -->
 								<input class="form-control form-control-lg ps-5" type="password" th:field="*{password}"
-									placeholder="password" required>
+									placeholder="password" required> <!-- 비밀번호 입력 필드, password 필드 바인딩 및 필수 입력 설정 -->
 							</div>
 						</div>
-						<div class="mb-4">
+
+						<div class="mb-4"> <!-- 이름 입력 필드, 마지막 필드와 하단 간격을 조절 -->
 							<div class="position-relative">
 								<i
 									class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<div class="password-toggle">
+								<!-- 이름 아이콘 -->
+								<div class="password-toggle"> <!-- 비밀번호 표시 토글을 위한 영역 -->
 									<input class="form-control form-control-lg ps-5" type="text" th:field="*{name}"
-										placeholder="name" required>
+										placeholder="name" required> <!-- 이름 입력 필드, 바인딩된 name 필드 사용 -->
 									<label class="password-toggle-btn" aria-label="Show/hide password">
+										<!-- 비밀번호 토글 버튼 -->
 										<input class="password-toggle-check" type="checkbox"
-											onclick="togglePasswordVisibility(this)">
-										<span class="password-toggle-indicator"></span>
+											onclick="togglePasswordVisibility(this)"> <!-- 클릭 시 비밀번호 표시 기능 활성화 -->
+										<span class="password-toggle-indicator"></span> <!-- 토글 버튼 시각적 표시 -->
 									</label>
 								</div>
 							</div>
@@ -109,9 +117,11 @@
 
 						<button class="btn btn-lg w-100 mb-4" type="submit"
 							style="background-color: cornflowerblue; color: white;">
-							회원가입
+							회원가입 <!-- 회원가입 버튼, 넓은 버튼 스타일 설정, 파란색 배경과 흰색 글자 -->
 						</button>
+
 						<p class="text-center mb-0">Already have an account? <a href="/login">Login</a></p>
+						<!-- 로그인 링크로 이동 가능한 메시지 -->
 					</form>
 
 					<script>
