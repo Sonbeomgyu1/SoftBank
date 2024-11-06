@@ -37,18 +37,15 @@ public class main {
 	}
 
 	// 회사소식
-	@GetMapping("/board")
-	public String board() {
-		return "board";
-	}
+	/*
+	 * @GetMapping("/board") public String board() { return "board"; }
+	 */
 
 	// 로그인
 	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
-
-	
 
 	// 헤더
 	@GetMapping("/header")
@@ -61,10 +58,11 @@ public class main {
 	public String footer() {
 		return "footer";
 	}
+
 	// 푸터
-		@GetMapping("/footerno")
-		public String footerno() {
-			return "footerno";
-		}
-	
+	@GetMapping("/footerno")
+	public String footerno() {
+		return "footerno";
+	}
+
 }
