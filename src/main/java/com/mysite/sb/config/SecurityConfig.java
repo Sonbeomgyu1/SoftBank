@@ -16,43 +16,47 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Component;
 
 @Component
-@Configuration
-@EnableWebSecurity
+@Configuration // Spring Security 설정 클래스임을 나타냄
+@EnableWebSecurity // Spring Security 활성화
 public class SecurityConfig {
 	
-	@Autowired
-    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
-	
+    @Autowired
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler; // 로그인 성공 시 커스텀 핸들러 설정
+
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-                .requestMatchers(new AntPathRequestMatcher("/**")).permitAll())
+                .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()) // 모든 경로에 대해 접근 허용
             .csrf((csrf) -> csrf
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // CSRF 토큰 저장소 설정
-                .ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**"))) // H2 콘솔 요청은 CSRF 보호 무시
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // CSRF 토큰을 쿠키에 저장
+                .ignoringRequestMatchers(new AntPathRequestMatcher("/user/login/**"))) // login에 대해서는 CSRF 보호 무시
             .headers((headers) -> headers
                 .addHeaderWriter(new XFrameOptionsHeaderWriter(
-                    XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)))
+                    XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN))) // X-Frame-Options 설정 (동일 출처에서만 iframe 허용)
             .formLogin((formLogin) -> formLogin
-                    .loginPage("/user/login")
-                    .successHandler(customAuthenticationSuccessHandler) // 여기에 추가
-                    .defaultSuccessUrl("/"))
+                    .loginPage("/user/login") // 사용자 정의 로그인 페이지 경로 설정
+                    .successHandler(customAuthenticationSuccessHandler) // 로그인 성공 시 실행할 핸들러 설정
+                    .defaultSuccessUrl("/")) // 로그인 성공 후 기본 이동할 경로 설정
             .logout((logout) -> logout
-                    .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-                    .logoutSuccessUrl("/")
-                    .invalidateHttpSession(true));
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 경로 설정
+                    .logoutSuccessUrl("/") // 로그아웃 성공 후 이동할 경로
+                    .invalidateHttpSession(true)); // 로그아웃 시 세션 무효화
         
-        return http.build();
+        return http.build(); // SecurityFilterChain 반환
     }
 
     @Bean
     PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); // 비밀번호 암호화 방식으로 BCryptPasswordEncoder 사용
     }
+    
 
+    // 이 메서드는 AuthenticationManager를 @Bean으로 정의하여 Spring Security에서 관리
+    // AuthenticationManager는 사용자 인증 처리의 핵심 컴포넌트로, 
+    // 사용자 이름과 비밀번호를 기반으로 사용자 인증을 수행함.
     @Bean
-    AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
+    AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {      
+        return authenticationConfiguration.getAuthenticationManager();       
     }
 }
