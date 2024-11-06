@@ -25,8 +25,7 @@ public class SiteUser { //데이터베이스 엔티티
     private String password;
     
     private String name;
-    
-    
+     
     @Column(nullable = false)  // role 필드는 필수로 설정
     private String role = "USER"; // 기본값을 'USER'로 설정
     
@@ -36,6 +35,6 @@ public class SiteUser { //데이터베이스 엔티티
     //주로사용되는위치	사용자로부터 입력받은 값을    	    데이터베이스에서 데이터를 읽고 쓰는 데 사용
     //                서버로 전송할 때 사용
     //연결된테이블	    없음 (DB와 연결되지 않음)	            users 테이블과 연결됨 (JPA 엔티티)
-    //주요 필드	  username, password, name	        id, username, password, name
+    //주요 필드	  username, password, name        id, username, password, name, role
     //특징	      데이터 전송 및 폼 입력 값 저장	        데이터베이스에 실제로 저장되는 엔티티
 }

@@ -53,6 +53,13 @@ public class UserSecurityService implements UserDetailsService {
     
     //새로운 사용자에게 role 컬럼을 ADMIN으로 설정하고싶을떄 SQL쿼리로 이렇게 하면됨
     //INSERT INTO users (username, password, name, role) VALUES ('newadmin', '암호', '관리자 이름', 'ADMIN');
+    
+    //로그인 순서:
+    //사용자가 로그인 폼에서 username과 password를 입력하고 로그인 요청.
+    //SecurityConfig에서 설정한 로그인 경로(/user/login)로 요청이 들어오면, Spring Security가 **UserSecurityService**에 인증을 요청.
+    //UserSecurityService는 데이터베이스에서 **username**에 해당하는 사용자 정보를 조회.
+    //UserSecurityService는 passwordEncoder로 암호화된 비밀번호와 사용자가 입력한 비밀번호를 비교.
+    //비밀번호가 맞으면 인증이 성공하고, 인증된 사용자는 시스템에 로그인됩니다.
 
 
 }
