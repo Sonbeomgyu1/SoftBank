@@ -10,9 +10,9 @@
 	<meta name="keywords"
 		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
 	<meta name="author" content="Createx Studio">
-	<!--<link rel="manifest" href="/manifest.json">-->
+	<link rel="manifest" href="/manifest.json">
 	<link rel="icon" type="image/png" href="/assets/app-icons/icon-32x32.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
+	<link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png">
 	<script src="/assets/js/theme-switcher.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,11 +27,10 @@
 	<link rel="stylesheet" href="/assets/css/header.css">
 	<link rel="stylesheet" href="/assets/css/footer.css">
 	<!-- Webmanifest + Favicon / App icons -->
-	<!--<link rel="manifest" href="/manifest.json">-->
+	<link rel="manifest" href="/manifest.json">
 	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
 	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
-	
-	 
+
 	<style>
 		.custom-btn {
 			opacity: 1;
@@ -52,11 +51,6 @@
 		.custom-btn:hover {
 			background-color: whitesmoke;
 			/* 호버 시 배경색 변경 */
-		}
-		/*페이지네이션 가운데로 css*/
-		.pagination-container{
-			display: flex;
-			justify-content: center;
 		}
 	</style>
 
@@ -114,8 +108,7 @@
 			<div class="offset-2 col-8">
 				 글쓰기 버튼을 테이블 위로 이동 
 				<div class="text-center mb-3" style="margin-left: 1100px;">
-					<button type="button" class="custom-btn" style="padding: 10px 20px; border-radius: 25px;"
-					onclick="window.location.href='/write';">글
+					<button type="button" class="custom-btn" style="padding: 10px 20px; border-radius: 25px;">글
 						쓰기</button>
 				</div>
 
@@ -131,98 +124,47 @@
 					</thead>
 					<tbody>
 						 데이터가 들어갈 부분 
-						 <tr th:each="board : ${boards}">
-                    <td th:text="${board.id}">번호</td>
-                    <td th:text="${board.title}">제목</td>
-                    <td th:text="${board.author}">작성자</td>
-                    <td th:text="${board.viewCount}">조회수</td>
-                     추가로 수정, 삭제 등의 링크를 넣고 싶다면 여기에 추가 가능 
-                </tr>
-	
 					</tbody>
 				</table>
 			</div>
 		</div>-->
-		<div class="row">
-    <div class="offset-2 col-8">
-        <!-- 글쓰기 버튼을 테이블 위로 이동 -->
-        <div class="text-center mb-3" style="margin-left: 1100px;">
-            <button type="button" class="custom-btn" style="padding: 10px 20px; border-radius: 25px;"
-                onclick="window.location.href='/board/write';">글 쓰기</button>
-        </div>
-
-        <table class="table list-table table-hover text-center" style="margin-top: 2%;">
-            <thead style="background-color: gainsboro">
-                <tr>
-                    <th style="width: 10%">번호</th>
-                    <th style="width: 40%">제목</th>
-                    <th style="width: 10%">작성자</th>
-                    <th style="width: 10%">조회수</th>
-                    <th style="width: 10%">상태</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 목록 반복 출력 -->
-                 <tr th:each="board,  stat : ${boards}">
-                    <!--<td th:text="${board.id}">번호</td>-->
-                   <!-- <td th:text="${boards.totalElements - (boards.number * boards.size) - stat.index} ">번호</td>-->
-                   <td th:text="${board.dynamicNumber}">번호</td>
-                   
-
-                    <!--<td th:text="${board.title}">제목</td>-->
-                    <td th:onclick="'goToDetail(' + ${board.id} + ')'" style="cursor: pointer;" th:text="${board.title}">제목</td>
-
-					</td>
-                    <td th:text="${board.author}">작성자</td>
-                    <td th:text="${board.viewCount}">조회수</td>
-                    <td>
-						<!--비공개일 경우 자물쇠 아이콘 표시-->
-						<!--<span th:if="${board.isPublic == 1}">
-						비공개			
-						</span>
-						<span th:if="${board.isPublic == 0}">공개</span>-->
-						<!--<span th:text="${board.isPublic == 1 ? '공개' : '비공개'}">공개 상태</span>-->
-						 <span th:if="${board.isPublic == 1}"></span>
-    					 <span th:unless="${board.isPublic == 1}">
-							 <img src="/assets/images/icon/lock2.png" alt="비공개" style="width: 15px; height: 15px; vertical-align: middle;">
-							 </span>
-					</td>
-                    <!-- 추가로 수정, 삭제 등의 링크를 넣고 싶다면 여기에 추가 가능 -->
-                </tr>
-            </tbody>
-        </table>
-        
-        <!--페이지네이션 시작-->
-        <div class="pagination-container">
-    <ul class="pagination">
-        <!-- 이전 페이지 -->
-        <li class="page-item" th:classappend="${boards.hasPrevious()} ? '' : 'disabled'">
-            <a class="page-link" th:href="@{|/board/list?page=${boards.number - 1}|}">이전</a>
-        </li>
-
-        <!-- 페이지 번호 -->
-        <li class="page-item" th:each="i : ${#numbers.sequence(0, boards.totalPages - 1)}"
-            th:classappend="${boards.number == i} ? 'active'">
-            <a class="page-link" th:href="@{|/board/list?page=${i}|}" th:text="${i + 1}">1</a>
-        </li>
-
-        <!-- 다음 페이지 -->
-        <li class="page-item" th:classappend="${boards.hasNext()} ? '' : 'disabled'">
-            <a class="page-link" th:href="@{|/board/list?page=${boards.number + 1}|}">다음</a>
-        </li>
-    </ul>
-</div>
-	<!--페이지 네이션 끝-->
-
+		
+		
+		
+		  <div class="container mt-5">
+        <h2 class="text-center">게시글 작성</h2>
+        <form action="/board/save" method="post">
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="author">작성자</label>
+                <input type="text" class="form-control" id="author" name="author" required>
+            </div>
+            <div class="form-group">
+                <label for="content">내용</label>
+                <textarea class="form-control" id="content" name="content" rows="10" required></textarea>
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="isPublic" name="isPublic" value="1">
+                <label class="form-check-label" for="isPublic">공개 여부</label>
+            </div>
+            <button type="submit" class="btn btn-success">등록</button>
+            <button type="button" onclick="window.history.back()" class="btn btn-secondary">취소</button>
+        </form>
     </div>
-</div>
-
 
 	</main>
 
 
 	<div th:insert="~{footer :: footer}"></div>
-	<!-- Back to top button -->
+
+</body>
+
+</html>
+
+<!-- Back to top button -->
 <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
 	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
@@ -241,16 +183,6 @@
 <script src="/assets/vendor/lightgallery/lightgallery.min.js"></script>
 <script src="/assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
 <script src="/assets/js/theme.min.js"></script>
-
-
-<script>
-    function goToDetail(id) {
-        window.location.href = '/board/detail/' + id;
-    }
-</script>
-
 </body>
 
 </html>
-
-
