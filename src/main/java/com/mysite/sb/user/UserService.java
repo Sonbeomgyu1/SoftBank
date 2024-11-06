@@ -3,34 +3,23 @@ package com.mysite.sb.user;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 
-@Service
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor  // Lombok 어노테이션, 필수 생성자를 자동으로 생성
+@Service  // Spring의 서비스 컴포넌트로 등록
 public class UserService {
 
-    @Autowired
-    private UserDao userDao;
+    private final UserRepository userRepository;  // UserRepository 의존성 주입
+    private final PasswordEncoder passwordEncoder;  // PasswordEncoder 의존성 주입
 
-    @Autowired
-    private PasswordEncoder passwordEncoder; // 암호화 인코더 주입
-
-    public UserVo registerUser(UserVo userVo) {
-        // 사용자명 중복 확인
-        if (userDao.findByUsername(userVo.getUsername()).isPresent()) {
-            throw new IllegalArgumentException("이미 존재하는 사용자명입니다.");
-        }
-
-        // 비밀번호 암호화
-        userVo.setPassword(passwordEncoder.encode(userVo.getPassword()));
-
-        // 저장
-        try {
-            UserVo savedUser = userDao.save(userVo);
-            System.out.println("저장된 UserVo 데이터: " + savedUser);
-            return savedUser;
-        } catch (DataIntegrityViolationException e) {
-            throw new RuntimeException("데이터베이스 오류가 발생했습니다. 관리자에게 문의하세요.", e);
-        }
+    // 사용자를 생성하는 메서드
+    public SiteUser create(String username, String password, String name) {
+        SiteUser user = new SiteUser();  // 새로운 SiteUser 객체 생성
+        user.setUsername(username);  // username 필드 설정
+        user.setPassword(passwordEncoder.encode(password));  // 비밀번호 암호화 후 설정
+        user.setName(name);  // name 필드 설정
+        this.userRepository.save(user);  // 생성된 사용자 객체를 데이터베이스에 저장
+        return user;  // 저장된 사용자 반환
     }
 }

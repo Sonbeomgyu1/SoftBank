@@ -35,7 +35,7 @@ dependencies {
 	
 	//회원가입시 필수입력값들에 대한 말
     implementation 'javax.validation:validation-api:2.0.1.Final' // 또는 최신 버전
-    implementation 'org.hibernate.validator:hibernate-validator:6.0.13.Final' // 또는 최신 버전
+    implementation 'org.hibernate.validator:hibernate-validator:7.0.0.Final' // 또는 최신 버전
     implementation 'org.glassfish:javax.el:3.0.0' // 또는 최신 버전
     
     // Spring Boot의 JPA 기능을 사용할 수 있도록 해주는 스타터 의존성입니다.
@@ -49,11 +49,17 @@ dependencies {
 
 	// Spring Security 추가
 	implementation 'org.springframework.boot:spring-boot-starter-security' 
+
 	
 
 	
 	
 	
+
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+	
+
 }
 
 tasks.named('test') {

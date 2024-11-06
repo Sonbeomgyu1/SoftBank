@@ -3,52 +3,32 @@
 
 <head>
 	<meta charset="utf-8">
-
-	<!-- Viewport -->
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-
-	<!-- SEO meta tags -->
 	<title>SoftBank</title>
 	<meta name="description" content="Sign Up for SoftBank Services">
 	<meta name="keywords" content="bootstrap, business, corporate, signup, registration, html5, css3, javascript">
 	<meta name="author" content="Createx Studio">
 
-	<!-- Webmanifest + Favicon / App icons -->
-	<!--<link rel="manifest" href="/manifest.json">-->
 	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
 	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
-
-	<!-- Theme switcher (color modes) -->
 	<script src="assets/js/theme-switcher.js"></script>
 
-	<!-- Import Google font (Inter) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
 		rel="stylesheet" id="google-font">
 
-	<!-- Vendor styles -->
 	<link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
 	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
 	<link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+	<link rel="icon" type="image/png" th:href="@{/assets/images/main/softbank_logo.png}" sizes="32x32">
+	<link rel="stylesheet" th:href="@{/assets/css/theme.min.css}">
+	<link rel="stylesheet" th:href="@{/assets/css/header.css}">
+	<link rel="stylesheet" th:href="@{/assets/css/footer.css}">
 
-	<!-- Font icons -->
-	<link rel="stylesheet" href="assets/icons/around-icons.min.css">
-
-	<!-- Theme styles + Bootstrap -->
-	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-
-	<!-- 헤더 css 불러오기-->
-	<link rel="stylesheet" href="/assets/css/header.css">
-	<!-- 푸터 css 불러오기-->
-	<link rel="stylesheet" href="/assets/css/footer.css">
-
-	<style>
-
-	</style>
-	<!-- Page loading scripts -->
+	<style></style>
 	<script>
 		(function () {
 			window.onload = function () {
@@ -63,11 +43,7 @@
 
 </head>
 
-<!-- Body -->
-
 <body>
-
-	<!-- Page loading spinner -->
 	<div class="page-loading active">
 		<div class="page-loading-inner">
 			<div class="page-spinner"></div>
@@ -75,23 +51,18 @@
 		</div>
 	</div>
 
-	<!-- Page wrapper -->
 	<main class="page-wrapper">
-
 		<header>
-			<!-- Include the header -->
 			<div th:insert="~{header :: header}"></div>
 		</header>
 
 		<div class="d-lg-flex justify-content-center align-items-center h-100" style="margin-top: -30px;">
-			<!-- Home button -->
 			<a class="text-nav btn btn-icon bg-light border rounded-circle position-absolute top-0 end-0 p-0 mt-3 me-3 mt-sm-4 me-sm-4"
 				href="index.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Back to home"
 				aria-label="Back to home">
 				<i class="ai-home"></i>
 			</a>
 
-			<!-- Sign up form -->
 			<div class="d-flex flex-column align-items-center w-lg-50 h-100 px-3 px-lg-5 pt-5">
 				<div class="w-100 mt-auto" style="max-width: 526px;">
 					<a class="navbar-brand pe-sm-3" href="" style="margin-bottom: 30px;">
@@ -101,65 +72,52 @@
 						</span>
 						<span class="text-primary1">S</span>oft&nbsp;<span class="text-primary1">B</span>ank
 					</a>
-					<form class="needs-validation" action="/register" method="post" novalidate>
-						<div class="pb-3 mb-3">
-							<div class="position-relative">
-								<i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<input class="form-control form-control-lg ps-5" type="text" name="username"
-									placeholder="ID" required>
-							</div>
-						</div>
-						<div class="pb-3 mb-3">
-							<div class="position-relative">
-								<i
-									class="ai-emoji-smile fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<input class="form-control form-control-lg ps-5" type="text" name="name"
-									placeholder="Name" required>
-							</div>
-						</div>
-						<div class="mb-4">
-							<div class="position-relative">
-								<i
-									class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<div class="password-toggle">
-									<input class="form-control form-control-lg ps-5" type="password" name="password"
-										placeholder="Password" required>
-									<label class="password-toggle-btn" aria-label="Show/hide password">
-										<input class="password-toggle-check" type="checkbox"
-											onclick="togglePasswordVisibility(this)">
-										<span class="password-toggle-indicator"></span>
-									</label>
-								</div>
-							</div>
-						</div>
 
-						<button class="btn btn-lg w-100 mb-4" type="submit"
-							style="background-color: cornflowerblue; color: white;">
-							회원가입
-						</button>
+					<div class="container my-3"> <!-- 상하 여백(margin-y)을 3만큼 추가한 컨테이너를 설정 -->
+						<form action="/user/login" method="post" th:action="@{/user/login}">
+							<!-- 로그인 요청을 보내는 POST 폼, 타임리프(thymeleaf) 문법으로 URL 매핑 -->
 
-						<p class="text-center mb-0">Already have an account? <a href="/login">Login</a></p>
-					</form>
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+							<!-- CSRF 토큰 추가: Spring Security에서 제공하는 CSRF 토큰을 폼에 숨겨진 필드로 포함하여 서버에서 CSRF 검사를 통과하게 함 -->
+
+							<div th:if="${param.error}" class="alert alert-danger">
+								<!-- 로그인 오류 발생 시 표시되는 경고 메시지. 'param.error'가 true일 때만 나타남 -->
+								사용자ID 또는 비밀번호를 확인해 주세요.
+							</div>
+
+							<div class="mb-3"> <!-- 사용자 ID 입력 필드 섹션, 하단 여백(margin-bottom)을 3만큼 추가 -->
+								<label for="username" class="form-label">사용자ID</label> <!-- 입력 필드 라벨 -->
+								<input type="text" name="username" id="username" class="form-control" required>
+								<!-- 사용자 ID 입력 필드, 필수 입력으로 설정 -->
+							</div>
+
+							<div class="mb-3"> <!-- 비밀번호 입력 필드 섹션, 하단 여백(margin-bottom)을 3만큼 추가 -->
+								<label for="password" class="form-label">비밀번호</label> <!-- 비밀번호 입력 필드 라벨 -->
+								<input type="password" name="password" id="password" class="form-control" required>
+								<!-- 비밀번호 입력 필드, 필수 입력으로 설정 -->
+							</div>
+
+							<button type="submit" class="btn btn-primary">로그인</button>
+							<!-- 로그인 버튼, 'btn-primary' 클래스로 스타일 설정 -->
+						</form>
+					</div>
+
 
 					<script>
-						// 비밀번호 가시성 토글 함수
 						function togglePasswordVisibility(checkbox) {
 							const passwordInput = checkbox.closest('.password-toggle').querySelector('input[type="password"]');
 							passwordInput.type = checkbox.checked ? 'text' : 'password';
 						}
 					</script>
-
 				</div>
 			</div>
 		</div>
 
-		<div style="margin-bottom: 150px;"></div> <!-- 이 부분에서 마진 조정 -->
+		<div style="margin-bottom: 150px;"></div>
 	</main>
 
-	<!-- Include the footer -->
 	<div th:insert="~{footer :: footer}"></div>
 
-	<!-- Back to top button -->
 	<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
 		<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
@@ -168,7 +126,6 @@
 		<i class="ai-arrow-up"></i>
 	</a>
 
-	<!-- Vendor scripts: JS libraries and plugins -->
 	<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 	<script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
 	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -178,8 +135,6 @@
 	<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
 	<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
 	<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
-
-	<!-- Bootstrap + Theme scripts -->
 	<script src="assets/js/theme.min.js"></script>
 </body>
 

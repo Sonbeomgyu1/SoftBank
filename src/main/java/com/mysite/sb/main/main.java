@@ -37,6 +37,7 @@ public class main {
 	}
 
 	// 회사소식
+
 	/*
 	 * @GetMapping("/board") public String board() { return "board"; }
 	 */
@@ -46,6 +47,13 @@ public class main {
 	public String login() {
 		return "login";
 	}
+
+	@GetMapping("/board")
+	public String board() {
+		return "board";
+	}
+	
+
 
 	// 헤더
 	@GetMapping("/header")
