@@ -25,7 +25,7 @@ public class UserController {
 
     
     //회원가입 페이지 
-    @GetMapping("/signup")
+    @GetMapping("/sbsignup")
     public String signup(UserCreateForm userCreateForm) {
         return "signup_form";
     }
