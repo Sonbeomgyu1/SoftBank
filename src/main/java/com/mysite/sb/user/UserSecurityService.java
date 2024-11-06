@@ -47,4 +47,12 @@ public class UserSecurityService implements UserDetailsService {
         // Spring Security의 User 객체로 반환 (사용자 정보 + 권한)
         return new User(siteUser.getUsername(), siteUser.getPassword(), authorities);
     }
+    
+    //회원가입했을시 user로 가입됨  관리자로 바꾸고 싶을떄 sql쿼리로 바꾸면됨    
+    //UPDATE users SET role = 'ADMIN' WHERE username = '특정사용자이름';
+    
+    //새로운 사용자에게 role 컬럼을 ADMIN으로 설정하고싶을떄 SQL쿼리로 이렇게 하면됨
+    //INSERT INTO users (username, password, name, role) VALUES ('newadmin', '암호', '관리자 이름', 'ADMIN');
+
+
 }

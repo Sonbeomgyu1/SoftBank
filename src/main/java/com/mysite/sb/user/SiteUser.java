@@ -28,6 +28,7 @@ public class SiteUser { //데이터베이스 엔티티
 
     
     //특징	          UserCreateForm	                 SiteUser
+    
     //역할	          폼 데이터 전송용 DTO	             데이터베이스 엔티티 (JPA)
     //주로사용되는위치	사용자로부터 입력받은 값을    	    데이터베이스에서 데이터를 읽고 쓰는 데 사용
     //                서버로 전송할 때 사용
