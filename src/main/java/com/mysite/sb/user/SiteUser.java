@@ -25,7 +25,10 @@ public class SiteUser { //데이터베이스 엔티티
     private String password;
     
     private String name;
-
+    
+    
+    @Column(nullable = false)  // role 필드는 필수로 설정
+    private String role = "USER"; // 기본값을 'USER'로 설정
     
     //특징	          UserCreateForm	                 SiteUser
     

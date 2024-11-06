@@ -19,7 +19,6 @@ public class UserService {
         user.setUsername(username);  // username 필드 설정
         user.setPassword(passwordEncoder.encode(password));  // 비밀번호 암호화 후 설정
         user.setName(name);  // name 필드 설정
-
         this.userRepository.save(user);  // 생성된 사용자 객체를 데이터베이스에 저장
         return user;  // 저장된 사용자 반환
     }
