@@ -32,7 +32,8 @@ public class SecurityConfig {
                     .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // CSRF 토큰을 쿠키에 저장
                     .ignoringRequestMatchers(
                         new AntPathRequestMatcher("/user/login/**"), // login에 대해서는 CSRF 보호 무시
-                        new AntPathRequestMatcher("/user/signup/**") // 회원가입에 대해서도 CSRF 보호 무시
+                        new AntPathRequestMatcher("/user/signup/**"), // 회원가입에 대해서도 CSRF 보호 무시
+                        new AntPathRequestMatcher("/admin/users/**") // 회원가입에 대해서도 CSRF 보호 무시
                     ))           
             .headers((headers) -> headers
                 .addHeaderWriter(new XFrameOptionsHeaderWriter(

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 목록</title>
+</head>
+<body>
+    <h1>회원 목록</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>역할</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 회원 목록을 반복 출력 -->
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">번호</td>
+                <td th:text="${user.username}">아이디</td>
+                <td th:text="${user.name}">이름</td>
+                <td th:text="${user.role}">역할</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
