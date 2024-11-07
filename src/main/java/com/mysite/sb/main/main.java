@@ -48,7 +48,13 @@ public class main {
 		return "login";
 	}
 
+
 	
+
+	/*
+	 * @GetMapping("/board") public String board() { return "board"; }
+	 */
+
 	
 
 

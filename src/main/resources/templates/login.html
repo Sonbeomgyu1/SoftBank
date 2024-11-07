@@ -107,6 +107,10 @@
 					</a>
 					<!-- Thymeleaf Login Form -->
 <form th:action="@{/login}" th:object="${userLoginForm}" method="post" class="needs-validation" novalidate>
+	<!--input태그 추가-->
+	<input type="hidden" name="redirectURL" th:value="${param.redirectURL}">
+	<!--input태그 끝-->
+	
     <div class="pb-3 mb-3">
         <div class="position-relative">
             <i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>

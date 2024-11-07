@@ -24,7 +24,7 @@ public class Board {
 	@Column(name = "title", nullable = false)
 	private String title;
 	
-	@Column(name =" author")
+	@Column(name ="author")
 	private String author;
 	
 	/*
