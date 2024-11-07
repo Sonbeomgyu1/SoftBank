@@ -29,6 +29,11 @@ public class SiteUser { //데이터베이스 엔티티
     @Column(nullable = false)  // role 필드는 필수로 설정
     private String role = "USER"; // 기본값을 'USER'로 설정
     
+    @Override
+    public String toString() {
+        return "SiteUser{id=" + id + ", username='" + username + "', name='" + name + "', role='" + role + "'}";
+    }
+    
     //특징	          UserCreateForm	                 SiteUser
     
     //역할	          폼 데이터 전송용 DTO	             데이터베이스 엔티티 (JPA)

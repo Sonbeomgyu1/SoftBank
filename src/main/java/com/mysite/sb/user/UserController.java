@@ -29,6 +29,8 @@ public class UserController {
     public String signup(UserCreateForm userCreateForm) {
         return "signup_form";
     }
+    
+    
     //회원가입 등록
     @PostMapping("/signup")
     public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult) {
