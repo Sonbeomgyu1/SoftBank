@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserCreateForm { //회원가입 Vo
+public class UserCreateFormVo { //회원가입 Vo
     
     private String username;
 
