@@ -22,4 +22,8 @@ public class UserService {
         this.userRepository.save(user);  // 생성된 사용자 객체를 데이터베이스에 저장
         return user;  // 저장된 사용자 반환
     }
+    //username으로 사용자 조회하는 메서드
+    public SiteUser findByUsername(String username) {
+    	return userRepository.findByUsername(username).orElse(null);
+    }
 }

@@ -182,10 +182,10 @@
                 
                 <!--수정/삭제버튼-->							
                 <div>
-                    <a th:href="@{/board/edit/{id}(id=${board.id})}" class="btn btn-primary">수정</a>
+                    <a th:href="@{/board/edit/{id}(id=${board.id})}" class="btn btn-primary" sec:authorize="isAuthenticated()">수정</a>
                     <form th:action="@{/board/delete/{id}(id=${board.id})}" method="post"  th:id="deleteForm"  style="display:inline;">
                       <!--  <button type="submit" class="btn btn-danger">삭제</button>-->
-                         <button type="button" onclick="confirmDelete()" class="btn btn-danger">삭제</button>
+                         <button type="button" onclick="confirmDelete()" class="btn btn-danger" sec:authorize="isAuthenticated()">삭제</button>
                     </form>
                 </div>
             </div>

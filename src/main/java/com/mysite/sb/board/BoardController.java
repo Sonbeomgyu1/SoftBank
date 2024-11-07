@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mysite.sb.user.SiteUser;
+import com.mysite.sb.user.UserService;
+
 import jakarta.servlet.http.HttpSession;
 
 
@@ -29,11 +32,14 @@ public class BoardController {
 
 	// 필드 선언
 	private final BoardService boardService;
+	//UserService 주입
+	private final  UserService userService;
 
 	/* private BoardService boardService; */
 	@Autowired
-	public BoardController(BoardService boardService) {
+	public BoardController(BoardService boardService , UserService userService) {
 		this.boardService = boardService;
+		this.userService= userService;
 	}
 
 	// board로 접근시 /board/list로 리다이렉트
@@ -108,7 +114,16 @@ public class BoardController {
 
 	// 게시글 작성 페이지
 	@GetMapping("/write")
-	public String writeForm() {
+	public String writeForm(Model model, Principal principal) {
+		
+		if (principal != null) {
+			//현재 로그인한 사용자의 SiteUser 엔티티를 조회하여 name을 가져옴
+			SiteUser user = userService.findByUsername(principal.getName());
+			if(user !=null) {
+				model.addAttribute("authorName",user.getName());
+			}
+		}
+		
 		return "board_write"; // boar_write.html
 	}
 
