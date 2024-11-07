@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import lombok.extern.slf4j.Slf4j;
+import jakarta.servlet.http.HttpSession;
 
 
+
+/*import lombok.extern.slf4j.Slf4j;*/
 
 /*@Slf4j*/
 @Controller
@@ -42,64 +44,61 @@ public class BoardController {
 
 	// 게시글 목록 페이지
 	@GetMapping("/list")
-	public String list(Model model, @RequestParam(value="page" , defaultValue ="0") int page,
-			@RequestParam(value="size", defaultValue = "10") int size) {
-		//페이징 처리 
-		
-		
-		 
+	public String list(Model model, @RequestParam(value = "page", defaultValue = "0") int page,
+			@RequestParam(value = "size", defaultValue = "10") int size) {
+		// 페이징 처리
+
 		/*
 		 * Pageable pageable = PageRequest.of(page, size); // 정렬은 Repository에서 처리
 		 */
 
-		  Pageable pageable = PageRequest.of(page, size,
-		  Sort.by(Sort.Direction.DESC,"id"));
-		  Page<Board> boards = boardService.getBoardList(pageable);
+		Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "id"));
+		Page<Board> boards = boardService.getBoardList(pageable);
+		/*
+		 * log.info("Total Elements: {}", boards.getTotalElements());
+		 * log.info("Current Page: {}", boards.getNumber()); log.info("Page Size: {}",
+		 * boards.getSize());
+		 */
+
+		// 각 페이지의 첫 번째 게시글 부터 1번으로 설정
+		/* int totalElements = (int) boards.getTotalElements(); */
+		int currentPageStartNumber = (page * size) + 1;
+
+		for (int i = 0; i < boards.getContent().size(); i++) {
+			Board board = boards.getContent().get(i);
+			board.setDynamicNumber(currentPageStartNumber + i);
 			/*
-			 * log.info("Total Elements: {}", boards.getTotalElements());
-			 * log.info("Current Page: {}", boards.getNumber()); log.info("Page Size: {}",
-			 * boards.getSize());
+			 * log.info("Board ID: {}, Dynamic Number: {}", board.getId(),
+			 * board.getDynamicNumber());
 			 */
-	      
-	      // 각 페이지의 첫 번째 게시글 부터 1번으로 설정
-			/* int totalElements = (int) boards.getTotalElements(); */
-	      int currentPageStartNumber = (page*size)+1;
+		}
 
-	      for (int i = 0; i < boards.getContent().size(); i++) {
-	          Board board = boards.getContent().get(i);
-	          board.setDynamicNumber(currentPageStartNumber + i);
-				/*
-				 * log.info("Board ID: {}, Dynamic Number: {}", board.getId(),
-				 * board.getDynamicNumber());
-				 */
-	      }
-		 
-		 
-		
-		 
-
-
-		
 		/* List<Board> boards = boardService.getAllBoards(); */
-		/*System.out.println("Boards : boards");*/
+		/* System.out.println("Boards : boards"); */
 		model.addAttribute("boards", boards);
 		return "board"; // board.html
 
-		
 	}
 
 	// 게시글 상세 페이지
 	@GetMapping("/detail/{id}")
-	public String detail(@PathVariable Long id, Model model, Principal principal) {
+	public String detail(@PathVariable("id") Long id, Model model, Principal principal, HttpSession session) {
 		Board board = boardService.getBoardById(id);
 
 		// 비공개 글일 경우 로그인한 사용자만 접근 허용
+
 		
-		  if(board.getIsPublic() == 0 && principal ==null) { 
-			  return "redirect:/login";
+		  if(board.getIsPublic() == 0 && principal ==null) {
+		  
+			   
+			  
+			  session.setAttribute("redirectURL", "/board/detail/" + id);
+				 return "redirect:/user/login"; 
+		 
 		  }
 		 
-
+		
+		
 		// 조회수 증가 로직
 		boardService.incrementViewCount(board);
 
@@ -134,11 +133,12 @@ public class BoardController {
 	 * boardService.saveBoard(board); return "redirect:/board/list"; return
 	 * "redirect:/list"; }
 	 */
-	
-	//게시글 작성 처리
+
+	// 게시글 작성 처리
 	@PostMapping("/save")
-	public String save(Board board,@RequestParam(value="isPublic", required=false , defaultValue="0") int isPublicParam) {
-		//체크박스가 선택되었을때 1로 설정, 선택되지 않으면 기본값 0 사용
+	public String save(Board board,
+			@RequestParam(value = "isPublic", required = false, defaultValue = "0") int isPublicParam) {
+		// 체크박스가 선택되었을때 1로 설정, 선택되지 않으면 기본값 0 사용
 		board.setIsPublic(isPublicParam);
 		System.out.println("Author:" + board.getAuthor());
 		boardService.saveBoard(board);

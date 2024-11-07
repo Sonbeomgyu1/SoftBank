@@ -32,7 +32,12 @@ public class SecurityConfig {
                     .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // CSRF 토큰을 쿠키에 저장
                     .ignoringRequestMatchers(
                         new AntPathRequestMatcher("/user/login/**"), // login에 대해서는 CSRF 보호 무시
-                        new AntPathRequestMatcher("/user/signup/**") // 회원가입에 대해서도 CSRF 보호 무시
+                        new AntPathRequestMatcher("/user/signup/**"), // 회원가입에 대해서도 CSRF 보호 무시
+                        new AntPathRequestMatcher("/board/write/**"), // 글등록  대해서도 CSRF 보호 무시
+                        new AntPathRequestMatcher("/board/save/**"), // 글등록 저장 대해서도 CSRF 보호 무시
+                        new AntPathRequestMatcher("/board/update/**"), // 글 수정에 대해서도 CSRF 보호 무시
+                        new AntPathRequestMatcher("/board/delete/**") // 글 삭제 대해서도 CSRF 보호 무시
+                       
                     ))           
             .headers((headers) -> headers
                 .addHeaderWriter(new XFrameOptionsHeaderWriter(
@@ -40,7 +45,8 @@ public class SecurityConfig {
             .formLogin((formLogin) -> formLogin
                     .loginPage("/user/login") // 사용자 정의 로그인 페이지 경로 설정
                     .successHandler(customAuthenticationSuccessHandler) // 로그인 성공 시 실행할 핸들러 설정
-                    .defaultSuccessUrl("/")) // 로그인 성공 후 기본 이동할 경로 설정
+						/* .defaultSuccessUrl("/")) */ // 로그인 성공 후 기본 이동할 경로 설정
+            		.permitAll())
             .logout((logout) -> logout
                     .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 경로 설정
                     .logoutSuccessUrl("/") // 로그아웃 성공 후 이동할 경로
