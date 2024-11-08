@@ -1,162 +1,113 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
-	<title>SoftBank</title>
-	<meta name="description" content="Sign Up for SoftBank Services">
-	<meta name="keywords" content="bootstrap, business, corporate, signup, registration, html5, css3, javascript">
-	<meta name="author" content="Createx Studio">
-
-	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
-	<script src="assets/js/theme-switcher.js"></script>
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-		rel="stylesheet" id="google-font">
-
-	<link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
-	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css">
-	<link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
-	<link rel="icon" type="image/png" th:href="@{/assets/images/main/softbank_logo.png}" sizes="32x32">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <title>SoftBank - 회원가입</title>
+    <meta name="description" content="Sign Up for SoftBank Services">
+    <meta name="keywords" content="bootstrap, business, corporate, signup, registration, html5, css3, javascript">
+    <meta name="author" content="Createx Studio">
+    <link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
+    <script src="assets/js/theme-switcher.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
 	<link rel="stylesheet" th:href="@{/assets/css/theme.min.css}">
 	<link rel="stylesheet" th:href="@{/assets/css/header.css}">
 	<link rel="stylesheet" th:href="@{/assets/css/footer.css}">
-
-	<style></style>
-	<script>
-		(function () {
-			window.onload = function () {
-				const preloader = document.querySelector('.page-loading')
-				preloader.classList.remove('active')
-				setTimeout(function () {
-					preloader.remove()
-				}, 1500)
-			}
-		})()
-	</script>
-
 </head>
-
 <body>
-	<div class="page-loading active">
-		<div class="page-loading-inner">
-			<div class="page-spinner"></div>
-			<span>Loading...</span>
-		</div>
-	</div>
+    <div class="page-wrapper">
+        <header>
+            <div th:insert="~{header :: header}"></div>
+        </header>
+        
+        <div class="d-lg-flex justify-content-center align-items-center h-100" style="margin-top: -30px;">
+            <a class="text-nav btn btn-icon bg-light border rounded-circle position-absolute top-0 end-0 p-0 mt-3 me-3 mt-sm-4 me-sm-4" href="index.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Back to home" aria-label="Back to home">
+                <i class="ai-home"></i>
+            </a>
 
-	<main class="page-wrapper">
-		<header>
-			<div th:insert="~{header :: header}"></div>
-		</header>
+            <div class="d-flex flex-column align-items-center w-lg-50 h-100 px-3 px-lg-5 pt-5">
+                <div class="w-100 mt-auto" style="max-width: 526px;">
+                    <a class="navbar-brand pe-sm-3" href="" style="margin-bottom: 30px;">
+                        <span class="text-primary flex-shrink-0 me-2">
+                            <img src="/assets/images/main/softbank_logo.png" alt="SoftBank Logo" width="110" height="110" />
+                        </span>
+                        <span class="text-primary1">S</span>oft&nbsp;<span class="text-primary1">B</span>ank
+                    </a>
 
-		<div class="d-lg-flex justify-content-center align-items-center h-100" style="margin-top: -30px;">
-			<a class="text-nav btn btn-icon bg-light border rounded-circle position-absolute top-0 end-0 p-0 mt-3 me-3 mt-sm-4 me-sm-4"
-				href="index.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Back to home"
-				aria-label="Back to home">
-				<i class="ai-home"></i>
-			</a>
+                    <!-- 회원가입 폼 -->
+                    <form action="/user/signup" method="post" class="needs-validation" novalidate>
+                        <!-- 사용자 ID 입력 필드 -->
+                        <div class="pb-3 mb-3">
+                            <div class="position-relative">
+                                <i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <input class="form-control form-control-lg ps-5" type="text" name="username" placeholder="ID" required>
+                                <div class="invalid-feedback">
+                                    ID is required
+                                </div>
+                            </div>
+                        </div>
 
-			<div class="d-flex flex-column align-items-center w-lg-50 h-100 px-3 px-lg-5 pt-5">
-				<div class="w-100 mt-auto" style="max-width: 526px;">
-					<a class="navbar-brand pe-sm-3" href="" style="margin-bottom: 30px;">
-						<span class="text-primary flex-shrink-0 me-2">
-							<img src="/assets/images/main/softbank_logo.png" alt="SoftBank Logo" width="110"
-								height="110" />
-						</span>
-						<span class="text-primary1">S</span>oft&nbsp;<span class="text-primary1">B</span>ank
-					</a>
+                        <!-- 비밀번호 입력 필드 -->
+                        <div class="pb-3 mb-3">
+                            <div class="position-relative">
+                                <i class="ai-emoji-smile fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <input class="form-control form-control-lg ps-5" type="password" name="password" placeholder="Password" required>
+                                <div class="invalid-feedback">
+                                    Password is required
+                                </div>
+                            </div>
+                        </div>
 
-					<!-- Updated Signup Form with Thymeleaf -->
-					<form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post"
-						class="needs-validation" novalidate>
-						<!-- 회원가입 폼, 타임리프(thymeleaf)를 사용해 /user/signup 경로에 POST 요청으로 폼을 제출. th:object로 userCreateForm 객체 바인딩 -->
+                        <!-- 이름 입력 필드 -->
+                        <div class="mb-4">
+                            <div class="position-relative">
+                                <i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                <input class="form-control form-control-lg ps-5" type="text" name="name" placeholder="Name" required>
+                                <div class="invalid-feedback">
+                                    Name is required
+                                </div>
+                            </div>
+                        </div>
 
-						<div class="pb-3 mb-3"> <!-- 사용자 ID 입력 필드. 아래 여백을 주어 각 입력 필드 간 간격을 유지 -->
-							<div class="position-relative"> <!-- 상대 위치 설정으로 아이콘이 입력 필드 안에 위치하도록 함 -->
-								<i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<!-- 사용자 아이콘, 입력 필드 안에서 위치 조정 -->
-								<input class="form-control form-control-lg ps-5" type="text" th:field="*{username}"
-									placeholder="ID" required> <!-- 사용자 ID 입력 필드, 바인딩된 username 필드를 사용하고 필수 입력 설정 -->
-							</div>
-						</div>
+                        <!-- 가입 버튼 -->
+                        <button class="btn btn-lg w-100 mb-4" type="submit" style="background-color: cornflowerblue; color: white;">
+                            회원가입
+                        </button>
 
-						<div class="pb-3 mb-3"> <!-- 비밀번호 입력 필드, 다른 필드와의 간격을 위해 여백 설정 -->
-							<div class="position-relative"> <!-- 비밀번호 아이콘의 위치 조정 -->
-								<i
-									class="ai-emoji-smile fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<!-- 비밀번호 아이콘 -->
-								<input class="form-control form-control-lg ps-5" type="password" th:field="*{password}"
-									placeholder="password" required> <!-- 비밀번호 입력 필드, password 필드 바인딩 및 필수 입력 설정 -->
-							</div>
-						</div>
+                        <p class="text-center mb-0">Already have an account? <a href="/user/login">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-						<div class="mb-4"> <!-- 이름 입력 필드, 마지막 필드와 하단 간격을 조절 -->
-							<div class="position-relative">
-								<i
-									class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-								<!-- 이름 아이콘 -->
-								<div class="password-toggle"> <!-- 비밀번호 표시 토글을 위한 영역 -->
-									<input class="form-control form-control-lg ps-5" type="text" th:field="*{name}"
-										placeholder="name" required> <!-- 이름 입력 필드, 바인딩된 name 필드 사용 -->
-									<label class="password-toggle-btn" aria-label="Show/hide password">
-										<!-- 비밀번호 토글 버튼 -->
-										<input class="password-toggle-check" type="checkbox"
-											onclick="togglePasswordVisibility(this)"> <!-- 클릭 시 비밀번호 표시 기능 활성화 -->
-										<span class="password-toggle-indicator"></span> <!-- 토글 버튼 시각적 표시 -->
-									</label>
-								</div>
-							</div>
-						</div>
+        <div style="margin-bottom: 150px;"></div>
+    </div>
 
-						<button class="btn btn-lg w-100 mb-4" type="submit"
-							style="background-color: cornflowerblue; color: white;">
-							회원가입 <!-- 회원가입 버튼, 넓은 버튼 스타일 설정, 파란색 배경과 흰색 글자 -->
-						</button>
+    <div>
+       <div th:insert="~{footer :: footer}"></div>
+    </div>
 
-						<p class="text-center mb-0">Already have an account? <a href="/user/login">Login</a></p>
-						<!-- 로그인 링크로 이동 가능한 메시지 -->
-					</form>
+    <a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+        <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
+            </circle>
+        </svg>
+        <i class="ai-arrow-up"></i>
+    </a>
 
-					<script>
-						function togglePasswordVisibility(checkbox) {
-							const passwordInput = checkbox.closest('.password-toggle').querySelector('input[type="password"]');
-							passwordInput.type = checkbox.checked ? 'text' : 'password';
-						}
-					</script>
-				</div>
-			</div>
-		</div>
-
-		<div style="margin-bottom: 150px;"></div>
-	</main>
-
-	<div th:insert="~{footer :: footer}"></div>
-
-	<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-		<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-			<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
-			</circle>
-		</svg>
-		<i class="ai-arrow-up"></i>
-	</a>
-
-	<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-	<script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
-	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="assets/vendor/aos/dist/aos.js"></script>
-	<script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
-	<script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
-	<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
-	<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
-	<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
-	<script src="assets/js/theme.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="assets/vendor/img-comparison-slider/dist/index.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="assets/js/theme.min.js"></script>
 </body>
-
 </html>
