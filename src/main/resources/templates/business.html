@@ -171,6 +171,28 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+		/*폰트수정 css*/
+	.custom-font {
+    font-family: 'Pretendard-Regular', sans-serif;
+}
+/*프리텐다드 폰트로 수정 css*/
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}		
+
+/*SI/SM사업사례패키지 폰트 수정 css*/	
+@font-face {
+    font-family: 'NanumBarunpen';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.custom-font2{
+	font-family: 'NanumBarunpen' , sans-serif;
+}
 	</style>
 
 	<!-- Page loading scripts -->
@@ -217,7 +239,7 @@
 
 		<!-- 세부페이지 배너  -->
 		<section class="overflow-hidden">
-			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
+			<div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5 custom-font">
 				<div class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
 					<div
 						class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
@@ -228,7 +250,7 @@
 
 						</div>
 					</div>
-					<div class="col-lg-5 order-lg-1">
+					<div class="col-lg-5 order-lg-1 custom-font">
 						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">BUSINESS</h1>
 						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
 							style="max-width: 520px;">비즈니스는 시스템 통합(SI)과 시스템 유지보수(SM),
@@ -245,16 +267,16 @@
 
 		<!-- 사업내용 -->
 		<section id="business-content" class="container py-3 mt-3 mb-2 my-md-4 my-lg-5">
-			<div class="row justify-content-center align-items-center py-xl-3 my-xxl-3" data-aos="fade-up"
+			<div class="row justify-content-center align-items-center py-xl-3 my-xxl-3 " data-aos="fade-up"
 				data-aos-duration="600" data-aos-offset="280" data-disable-parallax-down="lg">
 				<div class="col-lg-5 pb-3 pb-lg-0 mb-3 mb-sm-4 mb-lg-0" data-aos="fade-up" data-aos-duration="850"
 					data-aos-offset="150" data-disable-parallax-down="lg">
-					<div class="pe-lg-2 pe-xl-0">
+					<div class="pe-lg-2 pe-xl-0 custom-font">
 						<h2 class="h1 text-center text-lg-start mb-4 mx-auto mx-lg-0" style="max-width: 468px;">
-							business statement
+							Business Statement
 						</h2>
 						<span class="d-inline-block position">
-							<span class="position-relative z-2 mx-2">사업 내용은 SI/SM, 컨설팅, 솔루션 제공을 통해 고객<br> 맞춤형 IT 서비스와
+							<span class="position-relative z-2 ">사업 내용은 SI/SM, 컨설팅, 솔루션 제공을 통해 고객<br> 맞춤형 IT 서비스와
 								지속적인 기술 지원을 제공합니다.</span>
 						</span>
 					</div>
@@ -264,7 +286,7 @@
 					<div class="swiper-wrapper">
 
 						<!-- Item -->
-						<div class="swiper-slide bg-light">
+						<div class="swiper-slide bg-light ">
 							<div class="d-flex flex-column">
 								<div class="d-flex align-items-center align-self-end pb-2 mb-2"
 									style="max-width: 570px;">
@@ -422,10 +444,10 @@
 		<section id="business-sw" class="bg-white border-top border-light py-2 py-sm-3 py-md-4 py-m-5"
 			data-bs-theme="dark">
 			<div class="container py-5 my-lg-3 my-xl-4 my-xxl-5">
-				<h2 class="h1 text-center text-md-start mt-lg-n3 pb-4 pb-md-5" style="max-width: 660px; color: black;">
+				<h2 class="h1 text-center text-md-start mt-lg-n3 pb-4 pb-md-5 custom-font" style="max-width: 660px; color: black;">
 					SI/SM 사업사례
 					패키지(S/W)</h2>
-				<h3 class="mb-sm-4" style="font-size: 13px; font-weight: normal; color: black;">효율적인 소프트웨어 개발을 위한 개발
+				<h3 class="mb-sm-4 custom-font" style="font-size: 13px; font-weight: normal; color: black; ">효율적인 소프트웨어 개발을 위한 개발
 					프레임워크, 철저한 데이터
 					보호를 위한 보안 솔루션, 그리고 프로젝트 자산 관리를 위한 형상관리 솔루션을 제공합니다.</h3>
 
@@ -469,7 +491,7 @@
 
 					<div class="col-md-6 order-md-1">
 						<!-- Nav tabs -->
-						<ul class="nav nav-tabs flex-nowrap overflow-auto text-nowrap pb-3 mb-3 mb-xl-4" role="tablist">
+						<ul class="nav nav-tabs flex-nowrap overflow-auto text-nowrap pb-3 mb-3 mb-xl-4 custom-font" role="tablist">
 							<li class="nav-item mb-0">
 								<a class="nav-link active" href="#marketers-text" data-bs-toggle="tab"
 									data-binded-content="#marketers-image" role="tab" style="color: black;">개발 /
@@ -487,7 +509,7 @@
 
 						<!-- Tab content -->
 						<div class="tab-content pt-lg-2 pt-xl-3">
-							<div class="tab-pane fade show active" id="marketers-text" role="tabpanel">
+							<div class="tab-pane fade show active custom-font" id="marketers-text" role="tabpanel">
 								<p class="text-body" style="font-size: 18px; color: black !important;">
 									C/S 프레임워크: J2SE 기반의 Java 프레임워크<br>
 									<br>J2SE/JDK 환경에서 클라이언트-서버(C/S) 개발 환경을 구성<br>
@@ -499,7 +521,7 @@
 								</p>
 							</div>
 
-							<div class="tab-pane fade" id="agencies-text" role="tabpanel">
+							<div class="tab-pane fade custom-font" id="agencies-text" role="tabpanel">
 								<p class="text-body" style="font-size: 18px; color: black !important;">
 									IPS (제니퍼): J2EE 플랫폼에 대한 성능 관리<br>
 									<br> → 실시간 WAS 시스템 감시 및 WAS, DBMS 등 구간별 성능 데이터를 제공<br>
@@ -511,7 +533,7 @@
 								</p>
 							</div>
 
-							<div class="tab-pane fade" id="ecommerce-text" role="tabpanel">
+							<div class="tab-pane fade custom-font" id="ecommerce-text" role="tabpanel">
 								<p class="text-body" style="font-size: 18px;color: black !important;">SERENA
 									Professional<br>
 									<br>→ 프로젝트 파일의 효과적인 관리<br>
