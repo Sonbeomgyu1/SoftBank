@@ -42,4 +42,6 @@ public class AdminController {
         
         return "users"; // 업데이트 후 다시 사용자 목록을 보여줄 뷰로 리디렉션합니다.
     }
+    
+    
 }
