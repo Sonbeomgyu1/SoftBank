@@ -41,7 +41,7 @@
 		}
 
 		.card-header {
-			background-color: #4CAF50;
+			background-color: cornflowerblue;
 			color: white;
 			padding: 20px;
 			text-align: center;
@@ -91,13 +91,13 @@
 			padding: 8px 16px;
 			font-size: 16px;
 			color: white;
-			background-color: #4CAF50;
+			background-color: cornflowerblue;
 			border: none;
 			border-radius: 5px;
 			cursor: pointer;
 		}
 
 		button:hover {
-			background-color: #45a049;
+			background-color: cornflowerblue;
 		}
 	
