@@ -15,4 +15,7 @@ public interface UserRepository extends JpaRepository<SiteUser, Long> {
 
 
 //UserRepository: 주로 회원가입에 사용되며, 데이터베이스에서 사용자 정보를 저장하거나 조회하는 역할을 합니다.
-//로그인: 로그인 시에는 UserRepository에서 사용자를 조회만 하고, 실제 인증 과정은 **UserSecurityService**와 Spring Security에서 담당합니다.
+//로그인: 로그인 시에는 UserRepository에서 사용자를 조회만 하고, 실제 인증 과정은 **UserSecurityService**와 Spring Security에서 담당.
+
+//리포지토리 (Repository - JPA):
+//데이터베이스와의 상호작용을 담당. 주로 JPA를 사용하여 데이터베이스에 접근하고, 엔티티 객체를 저장 또는 조회하는 역할

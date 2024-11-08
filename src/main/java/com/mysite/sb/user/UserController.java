@@ -26,14 +26,14 @@ public class UserController {
     
     //회원가입 페이지 
     @GetMapping("/sbsignup")
-    public String signup(UserCreateForm userCreateForm) {
+    public String signup(UserCreateFormVo userCreateForm) {
         return "signup_form";
     }
     
     
     //회원가입 등록
     @PostMapping("/signup")
-    public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult) {
+    public String signup(@Valid UserCreateFormVo userCreateForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "signup_form";
         }
