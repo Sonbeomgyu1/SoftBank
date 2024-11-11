@@ -1,69 +1,66 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.1.4' // Spring Boot 버전 명시
-	id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'org.springframework.boot' version '3.1.4' // Spring Boot 버전
+    id 'io.spring.dependency-management' version '1.1.0' // 의존성 관리
+    id 'war' //war 플러그인 추가
 }
 
 group = 'com.mysite'  // 프로젝트 그룹 ID
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17' // 자바 버전
+sourceCompatibility = '17' // Java 버전
 
 repositories {
-	mavenCentral()  // 의존성 다운로드를 위한 중앙 저장소
+    mavenCentral()  // 의존성 다운로드를 위한 중앙 저장소
 }
 
 dependencies {
-	// 스프링 부트 웹 스타터 (웹 애플리케이션 개발용)
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // Spring Boot 웹 애플리케이션 개발을 위한 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
-	// Lombok (코드 간소화를 위한 라이브러리)
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+    // Lombok (코드 간소화 및 반복 코드 제거)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
-	// 테스트를 위한 의존성
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	
-	// 데브툴 사용하기 위한 라이브러리
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	
-	// MySQL JDBC 드라이버 의존성 추가
-	implementation 'mysql:mysql-connector-java:8.0.33' // 최신 버전을 확인하여 사용하세요
-	
-	// Spring Data JDBC
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	
-	//회원가입시 필수입력값들에 대한 말
-    implementation 'javax.validation:validation-api:2.0.1.Final' // 또는 최신 버전
-    implementation 'org.hibernate.validator:hibernate-validator:7.0.0.Final' // 또는 최신 버전
-    implementation 'org.glassfish:javax.el:3.0.0' // 또는 최신 버전
-    
-    // Spring Boot의 JPA 기능을 사용할 수 있도록 해주는 스타터 의존성입니다.
-    // JPA를 사용하면 데이터베이스와의 상호작용을 객체 지향적으로 처리할 수 있습니다.
+    // JPA를 사용한 데이터베이스 연동
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'mysql:mysql-connector-java:8.0.33' // MySQL JDBC 드라이버
 
-    // H2 데이터베이스 드라이버를 런타임에 추가합니다.
-    // H2는 인메모리 데이터베이스로, 테스트나 개발 용도로 많이 사용됩니다.
-    // 만약 다른 데이터베이스(MySQL, PostgreSQL 등)를 사용할 경우 해당 드라이버로 변경하면 됩니다.
-    runtimeOnly 'com.h2database:h2' // 또는 사용할 데이터베이스 드라이버
+    // Spring Data JDBC 사용 (이건 필요한 경우에만 추가)
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 
-	// Spring Security 추가
-	implementation 'org.springframework.boot:spring-boot-starter-security' 
+    // Spring Security (보안을 위한 의존성)
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
-	
+    // Thymeleaf Spring Security 연동
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 
-	
-	
-	
+    // 데이터 유효성 검증을 위한 의존성 (회원가입시 필수 입력값 검증)
+    implementation 'javax.validation:validation-api:2.0.1.Final' // 혹은 최신 버전
+    implementation 'org.hibernate.validator:hibernate-validator:7.0.0.Final' // 혹은 최신 버전
 
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    // 테스트를 위한 의존성
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    // 개발 중 자동 리스타트 및 기타 개발 도구
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-	
-	
-
+    // H2 데이터베이스 (개발용, 인메모리 DB)
+    runtimeOnly 'com.h2database:h2' // 필요 시 다른 DB 드라이버로 변경 가능
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()  // JUnit 5 플랫폼 사용
+}
+
+// WAR 파일로 빌드 설정
+bootWar {
+    // baseName 대신 archivesBaseName을 사용합니다.
+    archivesBaseName = 'softbank'  // WAR 파일 이름
+    version = '1.0.0'  // WAR 파일 버전
+}
+
+// 빌드 작업 시 bootWar 작업을 먼저 실행하도록 설정
+tasks.named('build') {
+    dependsOn bootWar
 }
