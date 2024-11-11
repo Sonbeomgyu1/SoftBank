@@ -9,6 +9,15 @@
 </head>
 <body>
     <h1>회원 목록</h1>
+<!-- 로그인 및 로그아웃 버튼 -->
+<a class="auth-btn login-btn" sec:authorize="isAnonymous()" th:href="@{/user/login}" rel="noopener">
+   <i class="ai-user icon"></i> 로그인
+</a>
+<a class="auth-btn logout-btn" sec:authorize="isAuthenticated()" th:href="@{/user/logout}" rel="noopener">
+   <i class="ai-user icon"></i> 로그아웃
+</a>
+
+
     <div class="container">
         <!-- 회원 목록을 반복 출력 -->
         <div class="user-card" th:each="user : ${users}">
