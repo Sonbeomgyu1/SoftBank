@@ -2,6 +2,8 @@ package com.mysite.sb.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,8 +28,9 @@ public class SiteUser { //데이터베이스 엔티티
     
     private String name;
      
-    @Column(nullable = false)  // role 필드는 필수로 설정
-    private String role = "USER"; // 기본값을 'USER'로 설정
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false) // 필수 설정
+    private UserRole role = UserRole.USER; // 기본값을 USER로 설정
     
     @Override
     public String toString() {

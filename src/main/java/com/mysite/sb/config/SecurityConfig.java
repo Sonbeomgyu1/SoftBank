@@ -25,10 +25,12 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-                .requestMatchers(new AntPathRequestMatcher("/admin/users/**")).authenticated() // /admin/users 경로는 인증된 사용자만 접근 가능
-                .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()) // 다른 모든 경로는 허용
+    	 http
+         .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
+             .requestMatchers(new AntPathRequestMatcher("/admin/users/**"))
+             .hasRole("ADMIN") // ADMIN 권한이 있는 사용자만 접근 가능
+             .requestMatchers(new AntPathRequestMatcher("/error")).permitAll() // /error 경로는 인증 없이 허용
+             .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()) // 다른 모든 경로는 허용
 
             .csrf((csrf) -> csrf
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // CSRF 토큰을 쿠키에 저장
