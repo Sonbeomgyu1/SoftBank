@@ -70,11 +70,6 @@ nav-link클래스 덮어씀-->
 			color: white;
 			border-color: cornflowerblue;
 		}
-
-		[data-bs-theme=dark] {
-			color-scheme: dark;
-			--ar-body-color: #576071 !important;
-		}
 	</style>
 
 	<!-- Page loading scripts -->
@@ -170,17 +165,17 @@ nav-link클래스 덮어씀-->
 			<!-- bg-secondary에서 bg-white로 변경 -->
 			<div class="container pt-5 pb-lg-2 pb-xl-4 py-xxl-5">
 				<!-- Details cards -->
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 pb-2 pb-sm-4 pb-lg-5" style="margin-left: 20.2%">
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 pb-2 pb-sm-4 pb-lg-5" style="margin-left: 20.5%">
 					<!-- Address -->
 					<div class="col" >
 						<div class="card border-3 h-100 text-center">
 							<!-- 가운데 정렬 추가 -->
 							<div class="card-body">
 								<h4 class="card-title mb-4">Address</h4>
-								<p class="fs-lg fw-medium pb-3 mb-3">
-									서울시 양천구<br />
-									목동중앙북로 90 301호
-								</p>
+
+								<a class="nav-link fs-lg p-0" href=""
+									style="pointer-events: none; margin-bottom: 15px;">서울시 양천구<br />
+									목동중앙북로 90 301호</a>
 								<a class="btn btn-sm btn-outline-primary custom-btn" href="#" data-target="1">
 									<i class="ai-map-pin me-1" style="font-size: 1.9em"></i>
 									지도 찾기
@@ -372,7 +367,7 @@ nav-link클래스 덮어씀-->
 			// 커스텀 오버레이 생성
 			var overlay = new kakao.maps.CustomOverlay({
 				content:
-					'<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
+					'<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold; color: black;">소프트 뱅크</div>',
 				map: map,
 				position: markerPosition,
 				yAnchor: 2.5,
