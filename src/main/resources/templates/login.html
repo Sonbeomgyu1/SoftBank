@@ -20,8 +20,7 @@
 	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
 	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
 
-	<!-- Theme switcher (color modes) -->
-	<script src="assets/js/theme-switcher.js"></script>
+
 
 	<!-- Import Google font (Inter) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,32 +105,38 @@
 						<span class="text-primary1">S</span>oft&nbsp;<span class="text-primary1">B</span>ank
 					</a>
 					<!-- Thymeleaf Login Form -->
-<form th:action="@{/login}" th:object="${userLoginForm}" method="post" class="needs-validation" novalidate>
-	<!--input태그 추가-->
-	<input type="hidden" name="redirectURL" th:value="${param.redirectURL}">
-	<!--input태그 끝-->
-	
-    <div class="pb-3 mb-3">
-        <div class="position-relative">
-            <i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-            <input class="form-control form-control-lg ps-5" type="text" th:field="*{username}" placeholder="ID" required>
-        </div>
-    </div>
-    <div class="mb-4">
-        <div class="position-relative">
-            <i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-            <div class="password-toggle">
-                <input class="form-control form-control-lg ps-5" type="password" th:field="*{password}" placeholder="Password" required>
-                <label class="password-toggle-btn" aria-label="Show/hide password">
-                    <input class="password-toggle-check" type="checkbox" onclick="togglePasswordVisibility(this)">
-                    <span class="password-toggle-indicator"></span>
-                </label>
-            </div>
-        </div>
-    </div>
-    <button class="btn btn-lg w-100 mb-4" type="submit" style="background-color: cornflowerblue; color: white;">Sign in</button>
-    <p class="text-center mb-0">Don't have an account? <a th:href="@{/user/signup}">Sign up</a></p>
-</form>
+					<form th:action="@{/login}" th:object="${userLoginForm}" method="post" class="needs-validation"
+						novalidate>
+						<!--input태그 추가-->
+						<input type="hidden" name="redirectURL" th:value="${param.redirectURL}">
+						<!--input태그 끝-->
+
+						<div class="pb-3 mb-3">
+							<div class="position-relative">
+								<i class="ai-user fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+								<input class="form-control form-control-lg ps-5" type="text" th:field="*{username}"
+									placeholder="ID" required>
+							</div>
+						</div>
+						<div class="mb-4">
+							<div class="position-relative">
+								<i
+									class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+								<div class="password-toggle">
+									<input class="form-control form-control-lg ps-5" type="password"
+										th:field="*{password}" placeholder="Password" required>
+									<label class="password-toggle-btn" aria-label="Show/hide password">
+										<input class="password-toggle-check" type="checkbox"
+											onclick="togglePasswordVisibility(this)">
+										<span class="password-toggle-indicator"></span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<button class="btn btn-lg w-100 mb-4" type="submit"
+							style="background-color: cornflowerblue; color: white;">Sign in</button>
+						<p class="text-center mb-0">Don't have an account? <a th:href="@{/user/signup}">Sign up</a></p>
+					</form>
 
 
 				</div>
@@ -158,11 +163,11 @@
 	<i class="ai-arrow-up"></i>
 </a>
 <script>
-	   // Toggle password visibility
-    function togglePasswordVisibility(checkbox) {
-        const passwordInput = checkbox.closest('.password-toggle').querySelector('input[type="password"]');
-        passwordInput.type = checkbox.checked ? 'text' : 'password';
-    }
+	// Toggle password visibility
+	function togglePasswordVisibility(checkbox) {
+		const passwordInput = checkbox.closest('.password-toggle').querySelector('input[type="password"]');
+		passwordInput.type = checkbox.checked ? 'text' : 'password';
+	}
 </script>
 
 <!-- Vendor scripts: JS libraries and plugins -->

@@ -116,3 +116,18 @@
  	--ar-btn-hover-bg: cornflowerblue !important;
  	--ar-btn-active-bg: cornflowerblue !important;
  }
+ 
+.navbar {
+    --ar-navbar-hover-color: cornflowerblue !important;
+}
+
+/* 모바일 화면일 때 가로 정렬 */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row; 
+        gap: 1rem; /* 메뉴 항목 간의 간격 설정 */
+        font-size: 72%;
+        
+       
+    }
+    }

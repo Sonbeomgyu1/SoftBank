@@ -10,7 +10,7 @@
 	<meta name="keywords"
 		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
 	<meta name="author" content="Createx Studio">
-	
+
 	<script src="/assets/js/theme-switcher.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,8 +28,8 @@
 	<!--<link rel="manifest" href="/manifest.json">-->
 	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
 	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
-	
-	 
+
+
 	<style>
 		.custom-btn {
 			opacity: 1;
@@ -40,19 +40,23 @@
 			/* 부드러운 전환 효과 */
 			margin-top: 20px;
 			/* 버튼 위쪽 여백 설정 */
-			border: 2px solid black;
+
 			/* 검은색 테두리 */
-			background-color: white;
+			background-color: cornflowerblue;
 			/* 배경색 설정 (원하는 색으로 변경 가능) */
 		}
 
-		/* 버튼의 스타일을 추가할 수 있습니다 */
+		/*글쓰기 버튼 효과*/
 		.custom-btn:hover {
-			background-color: whitesmoke;
-			/* 호버 시 배경색 변경 */
+			transform: scale(1.05) translateY(0px);
+			/* 크기 증가 및 위로 이동 */
+			/* transform 속성으로 버튼 크기 키우고 위로 살짝 이동 */
+			transition: transform 0.3s ease-in-out;
+			/* 변환 효과에 부드러운 전환 추가 */
 		}
+
 		/*페이지네이션 가운데로 css*/
-		.pagination-container{
+		.pagination-container {
 			display: flex;
 			justify-content: center;
 		}
@@ -142,79 +146,82 @@
 			</div>
 		</div>-->
 		<div class="row">
-    <div class="offset-2 col-8">
-        <!-- 글쓰기 버튼을 테이블 위로 이동 -->
-        <div class="text-center mb-3" style="margin-left: 1100px;">
-            <button type="button" class="custom-btn" style="padding: 10px 20px; border-radius: 25px;"
-                onclick="window.location.href='/board/write';"
-                sec:authorize="isAuthenticated()">글 쓰기</button>
-        </div>
+			<div class="offset-2 col-8">
+				<!-- 글쓰기 버튼을 테이블 위로 이동 -->
+				<div class="text-center mb-3" style="margin-left: 1100px;">
+					<button type="button" class="custom-btn"
+						style="padding: 10px 20px; border-radius: 25px; border: none; color: white;"
+						onclick="window.location.href='/board/write';" sec:authorize="isAuthenticated()">글 쓰기</button>
+				</div>
 
-        <table class="table list-table table-hover text-center" style="margin-top: 2%;">
-            <thead style="background-color: gainsboro">
-                <tr>
-                    <th style="width: 10%">번호</th>
-                    <th style="width: 40%">제목</th>
-                    <th style="width: 10%">작성자</th>
-                    <th style="width: 10%">조회수</th>
-                    <th style="width: 10%">상태</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 목록 반복 출력 -->
-                 <tr th:each="board,  stat : ${boards}">
-                    <!--<td th:text="${board.id}">번호</td>-->
-                   <!-- <td th:text="${boards.totalElements - (boards.number * boards.size) - stat.index} ">번호</td>-->
-                   <td th:text="${board.dynamicNumber}">번호</td>
-                   
 
-                    <!--<td th:text="${board.title}">제목</td>-->
-                    <td th:onclick="'goToDetail(' + ${board.id} + ')'" style="cursor: pointer;" th:text="${board.title}">제목</td>
+				<table class="table list-table table-hover text-center" style="margin-top: 2%;">
+					<thead style="background-color: gainsboro">
+						<tr>
+							<th style="width: 10%">번호</th>
+							<th style="width: 40%">제목</th>
+							<th style="width: 10%">작성자</th>
+							<th style="width: 10%">조회수</th>
+							<th style="width: 10%">상태</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- 목록 반복 출력 -->
+						<tr th:each="board,  stat : ${boards}">
+							<!--<td th:text="${board.id}">번호</td>-->
+							<!-- <td th:text="${boards.totalElements - (boards.number * boards.size) - stat.index} ">번호</td>-->
+							<td th:text="${board.dynamicNumber}">번호</td>
 
-					</td>
-                    <td th:text="${board.author}">작성자</td>
-                    <td th:text="${board.viewCount}">조회수</td>
-                    <td>
-						<!--비공개일 경우 자물쇠 아이콘 표시-->
-						<!--<span th:if="${board.isPublic == 1}">
+
+							<!--<td th:text="${board.title}">제목</td>-->
+							<td th:onclick="'goToDetail(' + ${board.id} + ')'" style="cursor: pointer;"
+								th:text="${board.title}">제목</td>
+
+							</td>
+							<td th:text="${board.author}">작성자</td>
+							<td th:text="${board.viewCount}">조회수</td>
+							<td>
+								<!--비공개일 경우 자물쇠 아이콘 표시-->
+								<!--<span th:if="${board.isPublic == 1}">
 						비공개			
 						</span>
 						<span th:if="${board.isPublic == 0}">공개</span>-->
-						<!--<span th:text="${board.isPublic == 1 ? '공개' : '비공개'}">공개 상태</span>-->
-						 <span th:if="${board.isPublic == 1}"></span>
-    					 <span th:unless="${board.isPublic == 1}">
-							 <img src="/assets/images/icon/lock2.png" alt="비공개" style="width: 15px; height: 15px; vertical-align: middle;">
-							 </span>
-					</td>
-                    <!-- 추가로 수정, 삭제 등의 링크를 넣고 싶다면 여기에 추가 가능 -->
-                </tr>
-            </tbody>
-        </table>
-        
-        <!--페이지네이션 시작-->
-        <div class="pagination-container">
-    <ul class="pagination">
-        <!-- 이전 페이지 -->
-        <li class="page-item" th:classappend="${boards.hasPrevious()} ? '' : 'disabled'">
-            <a class="page-link" th:href="@{|/board/list?page=${boards.number - 1}|}">이전</a>
-        </li>
+								<!--<span th:text="${board.isPublic == 1 ? '공개' : '비공개'}">공개 상태</span>-->
+								<span th:if="${board.isPublic == 1}"></span>
+								<span th:unless="${board.isPublic == 1}">
+									<img src="/assets/images/icon/lock2.png" alt="비공개"
+										style="width: 15px; height: 15px; vertical-align: middle;">
+								</span>
+							</td>
+							<!-- 추가로 수정, 삭제 등의 링크를 넣고 싶다면 여기에 추가 가능 -->
+						</tr>
+					</tbody>
+				</table>
 
-        <!-- 페이지 번호 -->
-        <li class="page-item" th:each="i : ${#numbers.sequence(0, boards.totalPages - 1)}"
-            th:classappend="${boards.number == i} ? 'active'">
-            <a class="page-link" th:href="@{|/board/list?page=${i}|}" th:text="${i + 1}">1</a>
-        </li>
+				<!--페이지네이션 시작-->
+				<div class="pagination-container">
+					<ul class="pagination">
+						<!-- 이전 페이지 -->
+						<li class="page-item" th:classappend="${boards.hasPrevious()} ? '' : 'disabled'">
+							<a class="page-link" th:href="@{|/board/list?page=${boards.number - 1}|}">이전</a>
+						</li>
 
-        <!-- 다음 페이지 -->
-        <li class="page-item" th:classappend="${boards.hasNext()} ? '' : 'disabled'">
-            <a class="page-link" th:href="@{|/board/list?page=${boards.number + 1}|}">다음</a>
-        </li>
-    </ul>
-</div>
-	<!--페이지 네이션 끝-->
+						<!-- 페이지 번호 -->
+						<li class="page-item" th:each="i : ${#numbers.sequence(0, boards.totalPages - 1)}"
+							th:classappend="${boards.number == i} ? 'active'">
+							<a class="page-link" th:href="@{|/board/list?page=${i}|}" th:text="${i + 1}">1</a>
+						</li>
 
-    </div>
-</div>
+						<!-- 다음 페이지 -->
+						<li class="page-item" th:classappend="${boards.hasNext()} ? '' : 'disabled'">
+							<a class="page-link" th:href="@{|/board/list?page=${boards.number + 1}|}">다음</a>
+						</li>
+					</ul>
+				</div>
+				<!--페이지 네이션 끝-->
+
+			</div>
+		</div>
 
 
 	</main>
@@ -222,34 +229,32 @@
 
 	<div th:insert="~{footer :: footer}"></div>
 	<!-- Back to top button -->
-<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
-	<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-		<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
-		</circle>
-	</svg>
-	<i class="ai-arrow-up"></i>
-</a>
+	<a class="btn-scroll-top" href="#top" data-scroll aria-label="Scroll back to top">
+		<svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10">
+			</circle>
+		</svg>
+		<i class="ai-arrow-up"></i>
+	</a>
 
-<script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="/assets/vendor/shufflejs/dist/shuffle.min.js"></script>
-<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="/assets/vendor/aos/dist/aos.js"></script>
-<script src="/assets/vendor/parallax-js/dist/parallax.min.js"></script>
-<script src="/assets/vendor/img-comparison-slider/dist/index.js"></script>
-<script src="/assets/vendor/jarallax/dist/jarallax.min.js"></script>
-<script src="/assets/vendor/lightgallery/lightgallery.min.js"></script>
-<script src="/assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
-<script src="/assets/js/theme.min.js"></script>
+	<script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="/assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+	<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="/assets/vendor/aos/dist/aos.js"></script>
+	<script src="/assets/vendor/parallax-js/dist/parallax.min.js"></script>
+	<script src="/assets/vendor/img-comparison-slider/dist/index.js"></script>
+	<script src="/assets/vendor/jarallax/dist/jarallax.min.js"></script>
+	<script src="/assets/vendor/lightgallery/lightgallery.min.js"></script>
+	<script src="/assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+	<script src="/assets/js/theme.min.js"></script>
 
 
-<script>
-    function goToDetail(id) {
-        window.location.href = '/board/detail/' + id;
-    }
-</script>
+	<script>
+		function goToDetail(id) {
+			window.location.href = '/board/detail/' + id;
+		}
+	</script>
 
 </body>
 
 </html>
-
-

@@ -34,7 +34,7 @@ public class AdminController {
 
     // 사용자 역할을 업데이트하는 메서드
     @PostMapping("/admin/users/updateRole") // /admin/users/updateRole 경로로 POST 요청이 오면 이 메서드가 실행됩니다.
-    public String updateUserRole(@RequestParam Long userId, @RequestParam String role, Model model) {
+    public String updateUserRole(@RequestParam Long userId, @RequestParam UserRole role, Model model) {
         // 사용자 ID와 새로운 역할(role)을 파라미터로 받습니다.
 
         SiteUser user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
@@ -47,7 +47,7 @@ public class AdminController {
         List<SiteUser> users = userRepository.findAll(); // 업데이트된 사용자 목록을 다시 조회합니다.
         model.addAttribute("users", users); // 변경된 사용자 목록을 모델에 추가하여 뷰에서 사용할 수 있도록 전달합니다.
         
-        return "users"; // 업데이트 후 다시 사용자 목록을 보여줄 뷰로 리디렉션합니다.
+        return "redirect:/admin/users"; // 업데이트 후 /admin/users로 리디렉션
     }
     
     @Transactional
