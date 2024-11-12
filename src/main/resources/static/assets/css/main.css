@@ -99,10 +99,26 @@
 .custom-font4{
 	font-family: 'Pretendard-Regular', sans-serif;
 }
+
+
+/*프리텐다드 폰트로 수정 css*/
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}					
+/* 복지제도 모달 헤더  폰트 수정 css*/		
+.custom-font5{
+	font-family:'Pretendard-Regular';
+}
+
+
+
 	/*복지제도 아이콘 크기/위치 조정css*/	
 	.icon-small {
-		top: 5px;
-		left: 215px;
+		top: 0px;
+		left: 195px;
 		width: 70px;
 		height: auto;
 		position: absolute !important;
@@ -111,7 +127,7 @@
 
 	.icon-small2 {
 		top: 90px;
-		left: 400px;
+		left: 410px;
 		width: 70px;
 		height: auto;
 		position: absolute !important;
@@ -119,7 +135,7 @@
 	}
 
 	.icon-small3 {
-		top: 250px;
+		top: 300px;
 		left: 455px;
 		width: 70px;
 		height: auto;
@@ -129,7 +145,7 @@
 
 	.icon-small4 {
 		bottom: 10px;
-		right: 200px;
+		right: 180px;
 		width: 70px;
 		height: auto;
 		position: absolute !important;
@@ -146,8 +162,8 @@
 	}
 
 	.icon-small6 {
-		top: 130px;
-		left: 0px;
+		top: 100px;
+		left: 20px;
 		width: 70px;
 		height: auto;
 		position: absolute !important;
@@ -203,52 +219,152 @@
 		/* 원하는 색상으로 변경 */
 	}
 
-	/*복지제도 모달*/
+	/*복지제도 모달 시작*/
 	.modal-container {
-		display: none;
+	display: none;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		/*background-color:white;*/
-		z-index: 999;
+		z-index: 9999;
+
+
+	}
+.modal {
+      display: none;
+    position: absolute;
+    z-index: 10000;
+/*    background-color: white;*/
+/*    border: 3px solid #ffb6c1; /* 핑크 테두리 */
+    width: 300px;
+    max-width: 90vw; /* 최대 너비 제한 */
+    max-height: 80vh; /* 최대 높이 제한 */
+    padding: 0;
+/*    box-shadow: 5px 5px 0 #e1a3b5, 10px 10px 0 #d490a7; /* 입체감 있는 그림자 */
+    font-family: 'Courier New', Courier, monospace; /* 레트로 폰트 */
+    border-radius: 10px; /* 약간 둥근 모서리 */
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+
+}
+	
+	
+	
+	
+	/* 모달 창이 보일 때 애니메이션 효과 */
+		.modal.show {
+    	transform: scale(1); /* 원래 크기 */
+    	 /*transform: translateY(0); /* 원래 위치 */
+    	opacity: 1; /* 완전 불투명 */
+}
+
+		/* 모달 헤더부분 css*/
+	.modal-header{
+		/*background-color: #ffb6c1;*/
+		background-color:  skyblue;
+		padding: 8px 10px;
+		font-size: 14px;
+		font-weight: bold;
+		color: white;
+		text-align: left;
+/*		border-bottom:  2px solid #e1a3b5;*/
+		display: flex;
+		justify-content: center;	/*전체 내용 가운데 정렬*/
+		align-items: center;
+		border-top-left-radius:  10px; /* 헤더와 본문의 경계 부분을 둥글게 */
+    	border-top-right-radius: 10px;
+    	box-sizing: border-box;
+    	position: relative;	/*닫기 버튼위치조정을 위한 relative*/
 	}
 
-	/* 모달 스타일 */
-	.modal {
-		display: none;
-		/* 초기에는 보이지 않도록 설정 */
+		/*모달 창 닫기 css*/
+	.modal .close{
+		cursor: pointer;
+		color: white;
+		font-weight: bold;
+		font-size: 16px;
 		position: absolute;
-		/* fixed 대신 absolute로 설정 */
-		z-index: 1;
-		/* z-index: 1000; 모달의 z-index를 높게 설정 */
-	/*	background-color: rgba(255, 255, 255, 0.9);*/
-		/* 배경 투명도 */
-		padding: 20px;
-		border-radius: 10px;
-		width: 200px;
-		text-align: center;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+	/*	margin-left: auto;  오른쪽 끝으로 정렬*/
 	}
-
-
-
-
-
+	
 	.modal-content {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: dimgray;
+    line-height: 1.5;
+    text-align: center;
+    
+    overflow-y: auto; /*세로 스크롤 허용*/
+    max-height: 60vh;
+    box-sizing: border-box; /*padding 포함하여 크기 계산*/
+    border-top-left-radius: 10px;	/*하단 모서리 둥글게*/
+    border-top-right-radius: 10px;
+    font-family: 'Pretendard-Regular';
+    font-weight: 100;
+    
+}
+
+
+
+/*	.modal-content p{
 		position: relative;
+		 margin-top: 10px;
 
+	}*/
+	
+	/*모달창 내용부분 스크롤바 스타일 */
+	.modal-content p{
+		overflow-y: scroll;
+		height: 100px;
+		scrollbar-width: thin;
+		/*scrollbar-color: #ffb6c1 #f3e6e8;*/
+		scrollbar-color:  cornflowerblue white; 
 	}
-
-	.close {
+	.modal-content p::-webkit-scrollbar{
+		width: 10px;
+	}
+	.modal-content p::-webkit-scrollbar-track{
+		/*background : #f3e6e8;*/
+		background: white;
+	}
+	.modal-content p::-webkit-scrollbar-thumb {
+    /*background-color: #ffb6c1;*/
+    background-color: cornflowerblue;
+    border-radius: 10px;
+}
+	
+	/*닫기 버튼 스타일*/
+/*	.close {
 		color: cornflowerblue;
-		float: right;
+		float: right; 
 		font-size: 28px;
 		font-weight: bold;
-		cursor: pointer;
+		cursor: pointer; 
+		
+		transition: color 0.2s ease;
+		position: absolute;
+		top: 10px;
+		right: 10px;
 
 
-	}
+	} */
+	
+/*	.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: cornflowerblue;
+    margin-bottom: 8px;
+}*/
+
 
 	.close:hover,
 	.close:focus {

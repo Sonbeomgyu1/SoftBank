@@ -472,94 +472,228 @@
 
 	<!-- 복지제도 아이콘 모달 HTML 추가 -->
 	<!--가족복지-->
-	<div id="modal1" class="modal">
+	<!--<div id="modal1" class="modal">
 		<div class="modal-content">
 			<span class="close" onclick="closeModal('modal1')">&times;</span>
 			<p>Family Day<br>주 1회 5시 퇴근제도 운영</p>
 		</div>
 	</div>
+	-->
+<!--	<div id="modal1" class="modal">
+    <div class="modal-header" >
+        Family Day
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+    </div>
+    <div class="modal-content">
+        <p>조기퇴근운영<br>주 1회 5시 퇴근제도 운영</p>
+    </div>
+</div>-->
+<div id="modal1" class="modal">
+    <div class="modal-header" >
+        Family Day
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+    </div>
+    <div class="modal-content">
+        <p>조기퇴근운영<br>주 1회 5시 퇴근제도 운영
+        </p>
+       
+        
+    </div>
+</div>
+
 
 	<div id="modal2" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			명절 선물
 			<span class="close" onclick="closeModal('modal2')">&times;</span>
-			<p>명절 선물<br>명절엔 두 손 가득 설렘을 가지고 출발</p>
-		</div>
+			</div>
+			<div class="modal-content">
+			<p>명절엔 두 손 가득 설렘을 가지고 출발</p>
+		</div>				
 	</div>
+	
+	
 	<!--워크샵-->
 	<div id="modal3" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			워크샵 및 야유회
 			<span class="close" onclick="closeModal('modal3')">&times;</span>
-			<p>워크샵 및 야유회</p>
+			</div>
+			<div class="modal-content">
+			<p>가족동반 워크샵 운영<br>
+				가족동반 야유회 운영</p>
 		</div>
+	
 	</div>
 	
 	<div id="modal4" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			출산휴가/육아휴직권장
 			<span class="close" onclick="closeModal('modal4')">&times;</span>
-			<p>출산휴가/육아휴직권장</p>
+			</div>
+			<div class="modal-content">
+			<p>육아휴직 및 출산휴가 적극사용 권장</p>
 		</div>
 	</div>
 	
 	<div id="modal5" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			취미모임 지원
 			<span class="close" onclick="closeModal('modal5')">&times;</span>
-			<p>취미모임 지원</p>
+			</div>
+			<div class="modal-content">
+			<p>등산,낚시,골프 등 <br>
+				취미 모임비 지원</p>
 		</div>
 	</div>
 	
 	<div id="modal6" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			신입 및 경력 입사자
 			<span class="close" onclick="closeModal('modal6')">&times;</span>
-			<p>신입 및 경력 입사자<br>정부 지원제도 지원 및 운영</p>
+			</div>
+			<div class="modal-content">
+			<p><br>정부 지원제도 지원 및 운영</p>
 		</div>
 	</div>
 		<div id="modal7" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			자유로운 연차사용 장려
 			<span class="close" onclick="closeModal('modal7')">&times;</span>
-			<p>자유로운 연차사용 장려</p>
+			</div>
+			<div class="modal-content">
+			<p>시차 출근제<br>
+				선택적 근무</p>
 		</div>
 	</div>
 		<div id="modal8" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			병원검진
 			<span class="close" onclick="closeModal('modal8')">&times;</span>
-			<p>병원검진<br>국가검진 유급휴가 적용</p>
+			</div>
+			<div class="modal-content">
+			<p>국가검진<br> 유급휴가 적용</p>
 		</div>
 	</div>
 	<div id="modal9" class="modal">
-		<div class="modal-content">
+		<div class="modal-header custom-font5">
+			개인장비지원
 			<span class="close" onclick="closeModal('modal9')">&times;</span>
+			</div>
+			<div class="modal-content">
 			<p>맞춤형 IT 장비 지원 프로그램 운영</p>
 		</div>
 	</div>
 
 
-	<script>
+<!--<script>
 
-		function openModal(modalId, event) {
+				function openModal(modalId, event) {
 			const modal = document.getElementById(modalId);
-			modal.style.display = "block";
+		/*	modal.style.display = "block"; */
 			
 			//클릭 위치에 따라 모달 위치 설정
+			
 			if (event) {
-				modal.style.top = (event.clientY + window.scrollY) + 'px';
-				modal.style.left = (event.clientX + window.scrollX) + 'px';
+				//아이콘과 모달 간의 수평거리
+				const offsetX = 20;
+				const offsetY = 20;
+				modal.style.top = (event.clientY + window.scrollY + offsetY) + 'px';
+        		modal.style.left = (event.clientX + window.scrollX + offsetX) + 'px';
+				
+				/*modal.style.top = (event.clientY + window.scrollY) + 'px';
+				modal.style.left = (event.clientX + window.scrollX) + 'px';*/
 			}
+			//모달열기 애니메이션 추가
+			modal.classList.add('show');
+			modal.style.display='block';	//보이도록 설정
 		}
 
 		function closeModal(modalId) {
-			document.getElementById(modalId).style.display = "none";
-		}
+			/*document.getElementById(modalId).style.display = "none"; */
+			const modal = document.getElementById(modalId);
+			
+			//모달 닫기 애니메이션 제거
+			modal.classList.remove('show');
+			
+			//애니메이션이 끝난 후 모달 숨기기
+			 setTimeout(() => {
+        modal.style.display = "none";
+    }, 300); // 300ms 후 display 속성을 none으로 설정
+}
 
 		// 모달 바깥을 클릭했을 때 닫기
-		window.onclick = function (event) {
+/*		window.onclick = function (event) {
 			if (event.target.classList.contains('modal')) {
-				event.target.style.display = "none";
+				/*event.target.style.display = "none";
+				closeModal(event.target.id);
+			}
+		}
+*/
+
+		//모달 바깥 클릭했을때 닫기
+		window.onclick = function(event){
+			if(event.target.classList.contains(modal-container)){
+				closeModal(evnet.target.firstElementChild.id);
 			}
 		}
 
 
 
+	</script>-->
+	<script>
+		function openModal(modalId, event) {
+			const modal = document.getElementById(modalId);
+		/*	modal.style.display = "block"; */
+			
+			//클릭 위치에 따라 모달 위치 설정
+			
+			if (event) {
+				//아이콘과 모달 간의 수평거리
+				const offsetX = 20;
+				const offsetY = 20;
+				modal.style.top = (event.clientY + window.scrollY + offsetY) + 'px';
+        		modal.style.left = (event.clientX + window.scrollX + offsetX) + 'px';
+				
+				/*modal.style.top = (event.clientY + window.scrollY) + 'px';
+				modal.style.left = (event.clientX + window.scrollX) + 'px';*/
+			}
+			//모달열기 애니메이션 추가
+			modal.classList.add('show');
+			modal.style.display='block';	//보이도록 설정
+		}
+
+		function closeModal(modalId) {
+			/*document.getElementById(modalId).style.display = "none"; */
+			const modal = document.getElementById(modalId);
+			
+			//모달 닫기 애니메이션 제거
+			modal.classList.remove('show');
+			
+			//애니메이션이 끝난 후 모달 숨기기
+			 setTimeout(() => {
+        modal.style.display = "none";
+    }, 300); // 300ms 후 display 속성을 none으로 설정
+}
+
+		// 모달 바깥을 클릭했을 때 닫기
+/*		window.onclick = function (event) {
+			if (event.target.classList.contains('modal')) {
+				/*event.target.style.display = "none";
+				closeModal(event.target.id);
+			}
+		}
+*/
+
+		//모달 바깥 클릭했을때 닫기
+		window.onclick = function(event) {
+    if (event.target.classList.contains('modal-container')) {
+        closeModal(event.target.firstElementChild.id);
+    }
+}
 	</script>
+	
+	
 </body>
 
 </html>
