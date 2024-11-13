@@ -878,15 +878,10 @@
 		</div>
 	</div>
 	-->
-    <!--	<div id="modal1" class="modal">
-    <div class="modal-header" >
-        Family Day
-        <span class="close" onclick="closeModal('modal1')">&times;</span>
-    </div>
-    <div class="modal-content">
-        <p>조기퇴근운영<br>주 1회 5시 퇴근제도 운영</p>
-    </div>
-</div>-->
+ 
+
+
+	<!--조기퇴근운영-->
     <div id="modal1" class="modal">
       <div class="modal-header">
         Family Day
@@ -896,7 +891,7 @@
         <p>조기퇴근운영<br />주 1회 5시 퇴근제도 운영</p>
       </div>
     </div>
-
+    <!--명절선물-->
     <div id="modal2" class="modal">
       <div class="modal-header custom-font5">
         명절 선물
@@ -991,84 +986,34 @@
       </div>
     </div>
 
-    <!--<script>
-
-				function openModal(modalId, event) {
-			const modal = document.getElementById(modalId);
-
-		/*	modal.style.display = "block"; */
-			
-
-			//클릭 위치에 따라 모달 위치 설정
-			
-			if (event) {
-				//아이콘과 모달 간의 수평거리
-				const offsetX = 20;
-				const offsetY = 20;
-				modal.style.top = (event.clientY + window.scrollY + offsetY) + 'px';
-        		modal.style.left = (event.clientX + window.scrollX + offsetX) + 'px';
-				
-				/*modal.style.top = (event.clientY + window.scrollY) + 'px';
-				modal.style.left = (event.clientX + window.scrollX) + 'px';*/
-			}
-			//모달열기 애니메이션 추가
-			modal.classList.add('show');
-			modal.style.display='block';	//보이도록 설정
-		}
-
-		function closeModal(modalId) {
-			/*document.getElementById(modalId).style.display = "none"; */
-			const modal = document.getElementById(modalId);
-			
-			//모달 닫기 애니메이션 제거
-			modal.classList.remove('show');
-			
-			//애니메이션이 끝난 후 모달 숨기기
-			 setTimeout(() => {
-        modal.style.display = "none";
-    }, 300); // 300ms 후 display 속성을 none으로 설정
-}
-
-		// 모달 바깥을 클릭했을 때 닫기
-/*		window.onclick = function (event) {
-			if (event.target.classList.contains('modal')) {
-				/*event.target.style.display = "none";
-				closeModal(event.target.id);
-			}
-		}
-*/
-
-		//모달 바깥 클릭했을때 닫기
-		window.onclick = function(event){
-			if(event.target.classList.contains(modal-container)){
-				closeModal(evnet.target.firstElementChild.id);
-			}
-		}
-
-
-
-	</script>-->
+   
+	
+	
+	
+	
     <script>
-      function openModal(modalId, event) {
-        const modal = document.getElementById(modalId);
-        /*	modal.style.display = "block"; */
+	
+	//모달이 열렸는지 추적하는 함수
+	let modalOpened =false;	
+		
+  function openModal(modalId, event) {
+  const modal = document.getElementById(modalId);
 
-        //클릭 위치에 따라 모달 위치 설정
+  // 배경이 바뀌거나 뷰포트에 변화가 있을 수 있으므로, 약간의 지연을 두고 위치 설정
+  setTimeout(() => {
+    const offsetX = 20;
+    const offsetY = 20;
 
-        if (event) {
-          //아이콘과 모달 간의 수평거리
-          const offsetX = 20;
-          const offsetY = 20;
-          modal.style.top = event.clientY + window.scrollY + offsetY + "px";
-          modal.style.left = event.clientX + window.scrollX + offsetX + "px";
+    // 아이콘 클릭 위치를 기준으로 모달 위치 설정
+    modal.style.top = event.clientY + window.scrollY + offsetY + "px";
+    modal.style.left = event.clientX + window.scrollX + offsetX + "px";
 
-          /*modal.style.top = (event.clientY + window.scrollY) + 'px';
-				modal.style.left = (event.clientX + window.scrollX) + 'px';*/
-        }
-        //모달열기 애니메이션 추가
-        modal.classList.add("show");
-        modal.style.display = "block"; //보이도록 설정
-      }
+    // 모달 보이기
+    modal.classList.add("show");
+    modal.style.display = "block";
+    modalOpened = true;
+  }, 10); // 10ms 지연 후 위치 계산
+}
 
       function closeModal(modalId) {
         /*document.getElementById(modalId).style.display = "none"; */
@@ -1093,11 +1038,21 @@
 */
 
       //모달 바깥 클릭했을때 닫기
-      window.onclick = function (event) {
-        if (event.target.classList.contains("modal-container")) {
-          closeModal(event.target.firstElementChild.id);
-        }
-      };
+ //     window.onclick = function (event) {
+ //       if (event.target.classList.contains("modal-container")) {
+ //         closeModal(event.target.firstElementChild.id);
+ //       }
+ //     };
+   
+   //모달 외부 클릭 감지
+   document.addEventListener("mouseup", function(event) {
+	   const modal = document.querySelector(".modal.show");	//열려있는 모달을 찾음
+	   if(modal && !modal.contains(event.target) && modalOpened){
+		   closeModal(modal.id);
+	   }
+   } );  
+      
+     
     </script>
   </body>
 </html>

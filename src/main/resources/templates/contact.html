@@ -75,6 +75,17 @@ nav-link클래스 덮어씀-->
 			color-scheme: dark;
 			--ar-body-color: #576071 !important;
 		}
+		
+		/*폰트 수정*/
+	@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}		
+.custom-font{
+	font-family: 'Pretendard-Regular', sans-serif;
+}
 	</style>
 
 	<!-- Page loading scripts -->
@@ -142,10 +153,10 @@ nav-link클래스 덮어씀-->
 						</div>
 					</div>
 					<div class="col-lg-5 order-lg-1">
-						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">
+						<h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3 custom-font">
 							찾아오는길
 						</h1>
-						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
+						<p class="fs-sm text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5 custom-font"
 							style="max-width: 520px">
 							방문하시기 전에 궁금한 점이 있으시면 언제든지 연락 주세요.
 							<br />
@@ -372,7 +383,7 @@ nav-link클래스 덮어씀-->
 			// 커스텀 오버레이 생성
 			var overlay = new kakao.maps.CustomOverlay({
 				content:
-					'<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
+					'<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:120px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크(주)</div>',
 				map: map,
 				position: markerPosition,
 				yAnchor: 2.5,

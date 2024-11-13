@@ -229,6 +229,9 @@
 		height: 100%;
 		/*background-color:white;*/
 		z-index: 9999;
+		
+		/*테스트중*/
+		background-color: rgba(0, 0, 0, 0.5);
 
 
 	}
@@ -261,6 +264,7 @@
     	transform: scale(1); /* 원래 크기 */
     	 /*transform: translateY(0); /* 원래 위치 */
     	opacity: 1; /* 완전 불투명 */
+    	display: block;
 }
 
 		/* 모달 헤더부분 css*/
@@ -268,7 +272,7 @@
 		/*background-color: #ffb6c1;*/
 		background-color:  skyblue;
 		padding: 8px 10px;
-		font-size: 14px;
+		font-size: 17px;
 		font-weight: bold;
 		color: white;
 		text-align: left;
@@ -287,7 +291,7 @@
 		cursor: pointer;
 		color: white;
 		font-weight: bold;
-		font-size: 16px;
+		font-size: 30px;
 		position: absolute;
 		right: 10px;
 		top: 50%;
@@ -297,12 +301,12 @@
 	}
 	
 	.modal-content {
-    padding: 10px 15px;
+ /*   padding: 10px 15px; */
+ 	padding: 30px 15px;
     font-size: 14px;
     color: dimgray;
     line-height: 1.5;
     text-align: center;
-    
     overflow-y: auto; /*세로 스크롤 허용*/
     max-height: 60vh;
     box-sizing: border-box; /*padding 포함하여 크기 계산*/
@@ -310,6 +314,11 @@
     border-top-right-radius: 10px;
     font-family: 'Pretendard-Regular';
     font-weight: 100;
+    height: calc(100%-60px); 
+    
+    background-color: white;
+   
+    
     
 }
 
