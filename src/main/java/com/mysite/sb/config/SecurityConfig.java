@@ -55,11 +55,11 @@ public class SecurityConfig {
 				.logout((logout) -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 경로 설정
 						.logoutSuccessUrl("/") // 로그아웃 성공 후 이동할 경로
 						.invalidateHttpSession(true)) // 로그아웃 시 세션 무효화
-				.sessionManagement(sessionManagement -> sessionManagement.invalidSessionUrl("/user/login")
+				.sessionManagement(sessionManagement -> sessionManagement.invalidSessionUrl("/") //세션 만료되었거나 유효하지 않은상태에서 이동하는 url
 				/*
 				 * .maximumSessions(3) .expiredUrl("/user/login") 최대로그인수 설정하는코드
 				 */
-				);
+				 ); 
 
 		return http.build(); // SecurityFilterChain 반환
 	}

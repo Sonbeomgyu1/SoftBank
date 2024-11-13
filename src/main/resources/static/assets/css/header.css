@@ -100,10 +100,12 @@
  .text-primary1 {
  	color: cornflowerblue;
  }
-  .text-primary2 {
+
+ .text-primary2 {
  	color: white;
  }
-/*로그인버튼 옆에 밤 낮 액티브 색깔*/
+
+ /*로그인버튼 옆에 밤 낮 액티브 색깔*/
  .form-switch.mode-switch .form-check-input {
  	order: 2;
  	margin-left: 0;
@@ -116,18 +118,21 @@
  	--ar-btn-hover-bg: cornflowerblue !important;
  	--ar-btn-active-bg: cornflowerblue !important;
  }
- 
-.navbar {
-    --ar-navbar-hover-color: cornflowerblue !important;
-}
 
-/* 모바일 화면일 때 가로 정렬 */
-@media (max-width: 768px) {
-    .navbar-nav {
-        flex-direction: row; 
-        gap: 1rem; /* 메뉴 항목 간의 간격 설정 */
-        font-size: 72%;
-        
-       
-    }
-    }
+ /*드롭다운 색깔 바꾸기 */
+ .dropdown-item:hover {
+ 	color: cornflowerblue !important;
+ }
+
+
+ /* 모바일 화면일 때 가로 정렬 */
+ @media (max-width: 768px) {
+ 	.navbar-nav {
+ 		flex-direction: row;
+ 		gap: 1rem;
+ 		/* 메뉴 항목 간의 간격 설정 */
+ 		font-size: 72%;
+
+
+ 	}
+ }
