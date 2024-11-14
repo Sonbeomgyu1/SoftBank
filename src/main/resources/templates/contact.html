@@ -393,7 +393,7 @@ nav-link클래스 덮어씀-->
     ></script>
 
     <!--카카오맵 지도 script-->
-    <script>
+  <!--  <script>
       /*지도생성*/
       var mapContainer = document.getElementById("map"), // 지도를 표시할 div
         mapOption = {
@@ -421,10 +421,12 @@ nav-link클래스 덮어씀-->
       // 커스텀 오버레이를 생성합니다
       var overlay = new kakao.maps.CustomOverlay({
         content:
-          '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크</div>',
+          '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold;">소프트 뱅크(주)</div>',
         map: map,
         position: markerPosition,
         yAnchor: 2.5, // 오버레이의 위치를 조정
+        
+         
       });
 
       // 오버레이를 지도에 표시합니다
@@ -454,8 +456,10 @@ nav-link클래스 덮어씀-->
             });
           }
         });
-    </script>
-    -->
+    </script>-->
+    
+
+
 
     <script>
       // 지도 초기화 함수
@@ -482,7 +486,7 @@ nav-link클래스 덮어씀-->
         // 커스텀 오버레이 생성
         var overlay = new kakao.maps.CustomOverlay({
           content:
-            '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:100px; height:30px; text-align:center; font-weight:bold; color: black;">소프트 뱅크(주)</div>',
+            '<div style="padding:5px; background-color:white; border:1px solid black; border-radius:5px; display:flex; align-items:center; justify-content:center; width:120px; height:30px; text-align:center; font-weight:bold; color: black;">소프트 뱅크(주)</div>',
 
           map: map,
           position: markerPosition,

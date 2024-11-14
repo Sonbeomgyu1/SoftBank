@@ -56,6 +56,13 @@
 		border: 0 !important;
 	}
 	
+	/*ceo수정중*/
+
+
+/* 필요하다면 아래에 추가적인 스타일을 정의하여 라이트 모드 유지 */
+
+	/*수정중 끝*/
+	
 /*CEO인사말 폰트*/
 .custom-font {
     font-family: 'Pretendard-Regular', sans-serif;
@@ -218,6 +225,9 @@
 		color: cornflowerblue !important;
 		/* 원하는 색상으로 변경 */
 	}
+	
+	
+	
 
 	/*복지제도 모달 시작*/
 	.modal-container {
