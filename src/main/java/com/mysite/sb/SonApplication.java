@@ -9,9 +9,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 @SpringBootApplication(exclude = {ErrorMvcAutoConfiguration.class})
 public class SonApplication extends SpringBootServletInitializer {
 
+	// configure 메서드
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        // Spring Boot 애플리케이션 설정을 지정
         return application.sources(SonApplication.class);
     }
 
