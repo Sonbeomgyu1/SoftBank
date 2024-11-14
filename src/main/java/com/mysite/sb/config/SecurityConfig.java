@@ -57,7 +57,7 @@ public class SecurityConfig {
 						.invalidateHttpSession(true)) // 로그아웃 시 세션 무효화
 				.sessionManagement(sessionManagement -> sessionManagement.invalidSessionUrl("/")) //세션 만료되었거나 유효하지 않은상태에서 이동하는 url
 				.exceptionHandling((exceptionHandling) -> exceptionHandling
-			            .accessDeniedPage("/error")); // 403 에러 페이지 설정
+			            .accessDeniedPage("/error")); // error 에러 페이지 설정
 						
 				/*
 				 * .maximumSessions(3) .expiredUrl("/user/login") 최대로그인수 설정하는코드
