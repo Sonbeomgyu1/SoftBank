@@ -47,6 +47,9 @@ dependencies {
 
     // H2 데이터베이스 (개발용, 인메모리 DB)
     runtimeOnly 'com.h2database:h2' // 필요 시 다른 DB 드라이버로 변경 가능
+    
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat' // WAR 배포 시 Tomcat 제공
+    
 }
 
 tasks.named('test') {
