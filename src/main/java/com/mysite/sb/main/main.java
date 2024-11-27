@@ -36,11 +36,7 @@ public class main {
 		return "contact";
 	}
 
-	// 회사소식
-
-	/*
-	 * @GetMapping("/board") public String board() { return "board"; }
-	 */
+	
 
 	// 로그인
 	@GetMapping("/login")
@@ -51,9 +47,6 @@ public class main {
 
 	
 
-	/*
-	 * @GetMapping("/board") public String board() { return "board"; }
-	 */
 
 	
 

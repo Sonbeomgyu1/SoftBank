@@ -92,6 +92,87 @@
 			font-weight: 400;
 			font-style: normal;
 		}
+		
+		/*채용공고 수정css*/
+		/*모바일 화면에서 텍스트가 꽉차게 나오는 부분 수정 css 시작*/
+		
+		@media (max-width:768px) {
+			/*텍스트 크기 조정*/
+			#recruitment-recruit .mainconsulting0 {
+				font-size: 290% !important;	/*제목 크기 축소*/
+				margin-bottom: 20px;	/*제목 아래 여백 추가*/
+				padding: 0 10px;
+			}
+			#recruitment-recruit .mainconsulting1 {
+				font-size: 90% !important;		/*설명 텍스트 크기 축소*/
+				line-height: 1.5;	/*줄 간격 조정*/
+				margin-top: 20px;	/*위쪽 여백 축소*/
+				padding: 0 20px;	/*좌우 여백 추가로 양끝 여유 공간 확보*/
+				font-weight: 400;	/*폰트 굵기 수정*/
+			}
+			
+			/*이미지 크기 조정*/
+			#recruitment-recruit .image-container img {
+				width: 100% !important;		/*이미지 너비 확장*/
+				height: auto !important;	/*비율 유지*/
+				display: block;				/*이미지 블록화*/
+				margin: 0 auto; 			/*이미지 중앙 정렬*/				
+				
+			}
+			#recruitment-recruit .image-container {
+				margin-top: 20px;		/*텍스트와 이미지 사이 여백*/
+				text-align: center;		/*이미지가 중앙에 정렬되도록 설정*/
+				
+			}
+		}
+		
+		/*모바일 화면에서 텍스트가 꽉차게 나오는 부분 수정 css 끝*/
+		
+		/*복지제도 수정 css*/
+		/*모바일화면에서 출산휴가/ 신입 및 경력자 카드 부분 간격 조정 css 시작 */
+
+	@media (max-width: 768px) {
+    /* 모든 카드의 간격을 동일하게 설정 */
+    #recruitment-welfare .card {
+        margin-bottom: 20px !important; /* 모든 카드 사이 간격 */
+    }
+
+    /* 마지막 카드 아래 여백 설정 */
+    #recruitment-welfare .card:last-child {
+        margin-bottom: 30px !important; /* 마지막 카드 여백 추가 */
+    }
+
+    /* 복지제도 헤더 텍스트 폰트 크기 조정 */
+    .recruit-font {
+        font-size: 350% !important;
+    }
+    /*개인장비지원/ 출산휴가 /4대보험 법정의무교육 / 장기근속자포상제도 부분 간격 조정하기 */
+    .welfare-gap {
+		margin-top: -25px;
+	}
+		/*푸터 가운데로*/
+	.footer-center {
+        display: flex;
+        flex-direction: row; /* 가로 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        text-align: center;		/*텍스트 중앙정렬*/
+        margin: 0 auto; /* 가로 여백 자동 설정 */
+       
+    }	
+    .footer-center span.text-nav {
+    margin: 0; /* 텍스트의 여백 제거 */
+    padding: 0; /* 텍스트의 패딩 제거 */
+}
+	
+}
+
+
+		
+		
+		/*모바일화면에서 출산휴가/ 신입 및 경력자 카드 부분 간격 조정 css 시작 */
+		
+		
 	</style>
 	<!-- Page loading scripts -->
 	<script>
@@ -192,7 +273,7 @@
 		<!--<section id="recruitment-welfare" data-section="10" class="container py-5 my-md-2 my-lg-3 my-xl-4 my-xxl-5">-->
 		<section id="recruitment-welfare" class="container py-5 my-md-2 my-lg-3 my-xl-4 my-xxl-5">
 			<div class="col-lg-4 mx-auto text-center">
-				<h2 class="h1 text-center pb-3 pb-lg-1" style="font-size: 400%;">복지제도</h2>
+				<h2 class="h1 text-center pb-3 pb-lg-1 recruit-font" style="font-size: 400%;">복지제도</h2>
 
 				<!-- Show on screens > 992px -->
 				<ul class="list-unstyled pb-3 mb-3 mb-lg-4">
@@ -229,7 +310,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col pt-lg-3">
+						<div class="col pt-lg-3 welfare-gap">
 							<div class="card border-0 bg-warning bg-opacity-10 mt-4 mt-sm-0 mt-lg-4">
 								<div class="card-body">
 									<i class="ai-monitor fs-1 text-warning d-block mb-3"></i>
@@ -277,7 +358,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col pt-lg-3">
+						<div class="col pt-lg-3 welfare-gap">
 							<div class="card border-0 bg-warning bg-opacity-10 mt-4 mt-sm-0 mt-lg-4">
 								<div class="card-body">
 									<i class="ai-calendar-check fs-1 text-warning d-block mb-3"></i>

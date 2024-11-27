@@ -30,7 +30,8 @@ public class SecurityConfig {
 																								// 가능
 				.requestMatchers(new AntPathRequestMatcher("/error")).permitAll() // /error 경로는 인증 없이 허용
 				.requestMatchers(new AntPathRequestMatcher("/**")).permitAll()) // 다른 모든 경로는 허용
-
+				
+			
 				.csrf((csrf) -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()) // CSRF 토큰을 쿠키에
 																										// 저장
 						.ignoringRequestMatchers(new AntPathRequestMatcher("/user/login/**"), // login에 대해서는 CSRF 보호 무시

@@ -91,7 +91,102 @@
 			/* 긴 단어 줄바꿈 */
 			overflow: visible;
 			/*텍스트 잘리지 않게*/
+			margin-top: 50px;
 		}
+		/*모바일에서 목록으로/수정/삭제 버튼 위치 조정및 크기조정css 시작*/
+		@media(max-width:768px){
+			/*버튼*/
+			.button-section {
+				display: flex;	
+				justify-content: space-between;	/*버튼을 양쪽 끝으로 정렬*/
+				align-items: center;
+				padding: 10px 0;		/*위아래 간격 추가*/
+				padding-top: 30px;		/*버튼 섹션을 아래로 내림*/
+			}
+			
+			.button-section div {
+			flex: 1;	/*각 버튼 그룹이 균등하게 공간을 차지*/
+		}
+		.button-section div:first-child {
+			text-align: left;		/*왼쪽정렬*/
+		}
+		.button-section div:last-child {
+			text-align: right;		/*오른쪽 정렬*/
+		}
+		.button-section .btn {
+			padding: 8px 16px;		/*버튼크기 조정*/
+			font-size: 14px;		/*글씨 크기 조정*/
+			
+		}
+		/*상세내용 헤더부분 수정 (글제목/조회수/작성자)*/
+		/*글제목*/
+		/* 제목 스타일 */
+    .card-title {
+        font-size: 16px; /* 제목 크기 줄임 */
+        font-weight: bold;
+        margin-bottom: 10px;
+        word-break: break-word; /* 긴 제목 줄 바꿈 */
+        text-align: left;
+    }
+	 /* 작성자와 조회수 컨테이너 */
+    .card-text, .card-body .d-flex.justify-content-between p:nth-child(2) {
+        display: flex !important; /* Flexbox로 배치 */        
+        align-items:  center  !important; /* 수직 가운데 정렬 */
+        margin-top: 10px !important; /* 컨테이너 상단 여백 */
+      
+        
+    }
+	/* 작성자 텍스트 */
+  
+   .card-text {
+	 font-size: 12px;		/*텍스트 크기 조정*/
+	 color: #555;			/*텍스트 색상*/
+	 margin: 0;
+	 margin-right: auto;
+	 padding-right: 10px;
+	 flex: 1;
+	 text-align: left;
+	 margin-bottom: 20px; /*작성자 텍스트랑 밑줄 간격주기*/
+	
+
+   }
+	
+  
+   /* 조회수 텍스트 */
+  .card-body .d-flex.justify-content-between p:nth-child(2){
+	  font-size: 12px;
+	  color: #555;
+	  margin: 0 !important;
+	  padding-left: 10px;
+	  flex: 0;
+	  text-align: left;
+	   word-break: keep-all !important; /* 단어 단위로 줄 바꿈 방지 */
+        white-space: nowrap !important; /* 텍스트를 한 줄로 유지 */
+	 
+  }
+  	/*글내용*/
+	.content-section1{
+		margin-top: 20px;	/*글 내용과 윗줄 간격주기*/
+	}
+	
+		/*푸터 가운데로*/
+	.footer-center {
+        display: flex;
+        flex-direction: row; /* 가로 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        text-align: center;		/*텍스트 중앙정렬*/
+        margin: 0 auto; /* 가로 여백 자동 설정 */
+       
+    }	
+    .footer-center span.text-nav {
+    margin: 0; /* 텍스트의 여백 제거 */
+    padding: 0; /* 텍스트의 패딩 제거 */
+}
+
+		
+}	
+		
 	</style>
 
 	<script>

@@ -219,7 +219,82 @@
 		.custom-font2 {
 			font-family: 'Pretendard-Regular', sans-serif;
 		}
+		
+		
+		
+
+	
+/* 텍스트 영역에 대한 스타일 */
+#company-certification .col-md-5 {
+    margin-left: 100px; /* 텍스트와 이미지 간의 간격 */
+    margin-top: 270px; /* 텍스트를 아래로 배치 */
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+}
+
+
+
+/* 제목과 내용 사이 간격 */
+#company-certification .col-md-5 h3 {
+    margin-bottom: 20px; /* 제목과 본문 사이 간격 */
+}
+ /*ceo인사말 부분 들여쓰기 클래스 추가함*/
+	.custom-heading{
+		margin-left: 13px;
+	}
+
+/* 모바일 환경에서의 스타일 */
+@media (max-width: 768px) {
+    #company-certification .col-md-5 {
+        margin-left: 0 !important; /* 모바일에서는 왼쪽 여백 제거 */
+        margin-top: 5px !important; /* 위쪽 여백 축소 */
+        text-align: center !important; /* 텍스트를 중앙 정렬 */
+    }
+		/*기업부설 연구소 텍스트 아래로 내리기*/
+    #company-certification .col-md-5 h3 {
+        margin-bottom: 10px; /* 모바일에서 간격 축소 */
+    }
+  
+  	/*기업인증 텍스트 아래로 내리기*/
+    #company-certification h1.custom-font2 {
+    margin-bottom: -10px !important; /* 상단 여백을 추가하여 텍스트를 아래로 내림 */
+}
+    /*ceo인사말 부분 들여쓰기*/
+    .custom-heading {
+        margin-left: 13px !important; /* 오른쪽으로 이동 */
+    }
+    
+    /*연혁 폰트 줄이기*/
+    .accordion-alt .accordion-body {
+		font-size: 15px;
+	}
+	
+	/*푸터 가운데로*/
+	.footer-center {
+        display: flex;
+        flex-direction: row; /* 가로 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        text-align: center;		/*텍스트 중앙정렬*/
+        margin: 0 auto; /* 가로 여백 자동 설정 */
+       
+    }	
+    .footer-center span.text-nav {
+    margin: 0; /* 텍스트의 여백 제거 */
+    padding: 0; /* 텍스트의 패딩 제거 */
+}
+}
+
+
+		
+		
+		/*기업인증 모바일일때 이미지와 텍스트 비율 조정 css 끝*/
 	</style>
+	
+		
+		
+		
+
+	
 
 	<!-- Page loading scripts -->
 	<script>
@@ -301,7 +376,7 @@
 				</div>
 				<div class="col-md-6 col-xl-5 offset-xl-1">
 					<div class="pt-4 pb-sm-4 ps-md-4 ps-xl-0 custom-font">
-						<h2 class="h1 pb-2 pb-sm-3 pb-xl-4">CEO 인사말</h2>
+						<h2 class="h1 pb-2 pb-sm-3 pb-xl-4 custom-heading">CEO 인사말</h2>
 						<div class="d-flex pb-3 mb-2 mb-xl-3">
 							<div class="ps-3">
 								<h5 class="h5" style="font-weight: normal; ">안녕하십니까, 소프트뱅크의 CEO입니다.<br><br>
@@ -498,11 +573,11 @@
 		</section>
 
 		<!-- 기업인증 section -->
-		<section id="company-certification" class="overflow-hidden" style="margin-top: 10%;">
+<!--		<section id="company-certification" class="overflow-hidden" style="margin-top: 10%;">
 			<div class="container pt-5 pb-sm-3 mt-5 mb-2 mb-md-3 mb-lg-4 mb-xxl-5">
-				<!-- 기업인증 페이지 -->
+				 기업인증 페이지 
 				<h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4 custom-font2">기업인증</h1>
-				<!-- 사진 -->
+				 사진 
 				<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up"
 					data-aos-duration="600" data-aos-offset="280">
 					<div class="col-md-4 offset-xxl-1 mb-4 mb-md-0">
@@ -526,6 +601,34 @@
 
 
 				</article>
+				</div>
+		</section>-->
+		<section id="company-certification" class="overflow-hidden" style="margin-top: 10%;">
+    <div class="container pt-5 pb-sm-3 mt-5 mb-2 mb-md-3 mb-lg-4 mb-xxl-5">
+        <!-- 기업인증 페이지 -->
+        <h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4 custom-font2 ">기업인증</h1>
+        <!-- 사진 -->
+        <article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up"
+            data-aos-duration="600" data-aos-offset="280">
+            <div class="col-md-4 col-12 mb-4 mb-md-0 text-center">
+                <img class="rounded-5 img-fluid" src="assets/images/company/certificate.png" alt="Image">
+            </div>
+            <div class="col-md-5 col-xl-4 custom-font text-center text-md-start">
+                <div class="content-wrapper">
+                    <h3 class="mb-3">
+                        <span>기업부설연구소</span>
+                    </h3>
+                    <p class="mb-0">2022.07 기업부설 연구소 지정 (한국산업기술진흥협회)</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+
+	</main>
+	
+	
 
 				<!-- Item -->
 				<!--<article class="row align-items-center card-hover pb-5 mb-md-2 mb-lg-3 mb-xl-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="280">
@@ -566,7 +669,7 @@
                   <i class="ai-arrow-right ms-2"></i>
                 </a>
               </div>
-            </div>
+            </div>F
           </article>-->
 
 				<!-- Item -->
@@ -612,10 +715,7 @@
               </div>
             </div>
           </article>-->
-			</div>
-		</section>
-
-	</main>
+			
 
 
 	<!-- Include the footer -->

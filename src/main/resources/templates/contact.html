@@ -90,6 +90,77 @@ nav-link클래스 덮어씀-->
 		.custom-font {
 			font-family: "Pretendard-Regular", sans-serif;
 		}
+		
+		/*모바일화면 css*/
+		@media (max-width: 768px) {
+	/*Contacts 텍스트 폰트크기 조정*/		
+    .contact-font {
+        font-size: 4rem !important;
+    }
+    /*설명 텍스트 가운데 정렬*/
+  .contact-font2 {
+	  text-align: center !important;
+	  margin: 0 auto;
+	  padding: 20px;
+	  max-width: 520px;
+	  line-height: 1.8;
+	  word-break: keep-all;
+	  color: black;
+	  margin-top: -20px;
+  }
+   [data-bs-theme="dark"] .contact-font2 {
+        color: #fff !important; /* 모바일 다크 모드에서 흰색 */
+    }
+  
+  
+  
+  /*Address/ Phone/ Email 카드 가운데 정렬*/
+  .bg .container .row {
+	  display: flex !important; /* 강제로 Flexbox 사용 */
+        flex-direction: column; /* 세로 정렬 (카드 하나씩 쌓기) */
+        justify-content: center; /* 수직 중앙 정렬 */
+        align-items: center; /* 수평 중앙 정렬 */
+        margin: 0 auto !important; /* 전체 가운데 정렬 */
+	  
+	  
+  }
+   .bg .container .row .col {
+        max-width: 90%; /* 카드의 최대 너비 제한 */
+        margin-bottom: 20px; /* 카드 간 간격 */
+    }
+    
+    	/*모든 카드의 높이를 동일하게*/
+    .bg .container .row .col .card {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 250px !important;
+		
+		height: 250px !important; /* 카드 높이를 줄임 */
+        padding: 15px; /* 카드 내부 여백 줄임 */
+	}
+	
+		/*푸터 가운데로*/
+	.footer-center {
+        display: flex;
+        flex-direction: row; /* 가로 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        text-align: center;		/*텍스트 중앙정렬*/
+        margin: 0 auto; /* 가로 여백 자동 설정 */
+       
+    }	
+    .footer-center span.text-nav {
+    margin: 0; /* 텍스트의 여백 제거 */
+    padding: 0; /* 텍스트의 패딩 제거 */
+}
+	 
+
+   
+}
+		
+		
 	</style>
 
 	<!-- Page loading scripts -->
@@ -171,10 +242,10 @@ nav-link클래스 덮어씀-->
 		</section>
 
 		<!-- 찾아오는길 타이틀 -->
-		<h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4" style="font-size: 5rem">
+		<h1 class="text-center pb-3 pb-md-4 pb-lg-5 mb-lg-0 mb-xl-2 mb-xxl-4 contact-font" style="font-size: 5rem">
 			Contacts
 		</h1>
-		<p class="fs-sm text-center pb-xl-2 mx-auto mb-5" style="max-width: 520px; text-align: center">
+		<p class="fs-sm text-center pb-xl-2 mx-auto mb-5 contact-font2" style="max-width: 520px; text-align: center">
 			문의 사항이나 자세한 내용은 전화, 팩스 또는 당사 웹사이트의 이메일을
 			통해 당사 전담팀에 문의하시기 바랍니다.
 		</p>

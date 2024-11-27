@@ -29,6 +29,57 @@
 		font-weight: 500;
 	}
 	
+	/*모바일에서 main폰트 조정css*/
+	@media(max-width:768px){		
+		/*h1.display-1{
+			font-size: 1.8rem;
+			line-height: 1.4;	줄간격 조정
+		}*/
+		.mobile-line-break{
+			display: inline;		/*기본 inlie 유지*/
+			
+		}
+		.mobile-line-break::before{
+			content: "";
+			/*white-space: pre;*/	/*줄바꿈 문자 적용*/
+			display: block;		/*줄바꿈 효과*/
+			margin-top: 10px;
+		}
+		.mobile-lline-break-partner{
+			display: inline;
+		}
+		.mobile-line-break-partner::before{
+			content: "";
+			display: block;
+			margin-top: 10px;
+		}
+		
+		
+		
+		/*강조된 폰트 크기*/
+		/*.montserrat-bold{
+			font-size: 1.5rem;
+		}*/
+		/*부제목 텍스트*/
+		.montserrat-regular{
+			font-size: 0.9rem;
+			line-height: 1.5;
+		}
+		/*강조된 텍스트 색상 유지*/
+		.text-highlight{
+			/*font-size: 1.5rem;*/
+			color: orange;
+		}
+		.custom-image{
+			width: 100%;
+			max-width: 1100px !important;
+			right: -2px !important;
+		}
+	}
+	/*모바일에서 main부분 텍스트 크기 조정 끝*/
+	
+	
+	
 	/*비즈니스 부분 css 수정*/
 	/*폰트 수정*/
 	@font-face {
@@ -40,6 +91,84 @@
 .custom-font2{
 	font-family: 'Pretendard-Regular', sans-serif;
 }
+/*business 체크 아이콘 색상수정 css*/
+	.custom-check-icon {
+		color: cornflowerblue;
+	}
+
+
+	/*business 화살표 색상 수정 css*/
+	.custom-arrow-icon {
+		color: cornflowerblue;
+
+	}
+
+	.blockquote::before {
+		color: cornflowerblue !important;
+		/* 원하는 색상으로 변경 */
+	}
+	
+	
+	
+	/*business 모바일에서 가운데로 정렬css시작*/
+/* 모바일에서 정렬 및 스타일 */
+@media (max-width: 768px) {
+    .row > div {
+        display: flex !important;
+        flex-direction: column !important; /* 세로 정렬 */
+        align-items: center !important; /* 중앙 정렬 */
+        justify-content: center !important; /* 수직 중앙 정렬 */
+       /* text-align: center ; */ /* 텍스트 중앙 정렬 */
+        margin-bottom: 20px !important; /* 요소 간격 */
+    }
+    .busi-center {
+		margin-left: 30px;
+	}
+	  
+
+    .row img {
+        display: block;
+        margin: 0 auto 15px; /* 이미지 하단 간격 추가 */
+        max-width: 90%; /* 화면 너비에 맞게 조정 */
+        height: auto; /* 비율 유지 */
+        position: relative;
+        right: -25px;
+    }
+
+ 
+    .biz-h3{
+		 font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+		
+	}
+
+    .biz-ul {
+        padding: 0 !important;
+        margin: 0 auto !important;
+        list-style-position: inside !important;
+        max-width: 80% !important;
+        position: relative !important;
+        left: 1px !important;
+        
+    }
+
+    .biz.li {
+    font-size: 1rem !important;
+    padding: 0 1rem !important;
+    margin-bottom: 0.5rem !important;
+     
+    }
+
+    .ps-md-4.ps-lg-0 {
+        padding: 0; /* 텍스트의 padding 제거 */
+        position: relative;	/*위치 조정을 위해 relative 추가*/
+        left: 10px;	/*텍스트를 오른쪽으로 이동*/
+    }
+}
+
+
+/*business 모바일에서 가운데로 정렬css 끝*/
 	
 
 	/*ceo인사말 css*/
@@ -268,27 +397,6 @@
 	/*---------------------------*/
 
 
-
-	/*business 체크 아이콘 색상수정 css*/
-	.custom-check-icon {
-		color: cornflowerblue;
-	}
-
-
-	/*business 화살표 색상 수정 css*/
-	.custom-arrow-icon {
-		color: cornflowerblue;
-
-	}
-
-	.blockquote::before {
-		color: cornflowerblue !important;
-		/* 원하는 색상으로 변경 */
-	}
-	
-	
-	
-
 	/*복지제도 모달 시작*/
 	.modal-container {
 	display: none;
@@ -464,11 +572,173 @@
 		background-color: #ffffff;
 		border-color: cornflowerblue;
 	}
+	
+	/*모바일 화면에서 아이콘 위치조정*/
+	@media (max-width : 768px) {
+		
+		 /* 복지제도 아이콘 크기 및 위치 조정 */
+    .icon-small {
+        top: 0px; /* 모바일용 위치 */
+        left: 30px;
+        width: 50px; /* 아이콘 크기 축소 */
+        height: 50px; /* 아이콘 크기 축소 */
+    }
 
+    .icon-small2 {
+        top: 70px;
+        left: 260px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-small3 {
+        top: 200px;
+        left: 250px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-small4 {
+        top: 250px;
+        left: 50px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-small5 {
+        top: 220px;
+        left: -175px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-small6 {
+        top: 80px;
+        left: -250px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-small7 {
+        top: 80px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-small8 {
+        top: 160px;
+        left: 100px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-small9 {
+        top: 160px;
+        left: -95px;
+        width: 50px;
+        height: 50px;
+    }
+    
+     /* 아이콘 배치 컨테이너 크기 조정 */
+    .position-relative {
+        max-width: 300px !important; /* 모바일에서 컨테이너 크기 축소 */
+        
+    }
+   /* 전체 왼쪽으로 이동 */
+.col-md-7.col-lg-6.offset-lg-1 {
+    margin-left: -17px !important;  /* 왼쪽으로 이동 */
+}
+/*.welfare-positon{
+	margin-left: -17px !important;
+}*/
+
+		
+	}
+/*모바일일때 아이콘 배치 css끝*/	
 	
 	
 	
 	
+	/*모바일상태일때 모달창 위치/크기 조정*/
+	
+	@media (max-width: 768px) {
+    .modal {
+        position: fixed; /* 화면 기준으로 고정 */
+        top: 55% !important; /* 세로 중앙 */
+        left: 40% !important; /* 가로 중앙 */
+        transform: translate(-50%, -40%); /* 정확히 화면 중앙으로 */
+        width: 50%; /* 모바일 화면에 맞는 너비 */
+        max-width: 70%; /* 최대 너비 제한 */
+        padding: 15px;
+        font-size: 12px;
+        border-radius: 10px;       
+        overflow-y: auto; /* 내용이 많을 경우 스크롤 */
+        box-sizing: border-box;
+        display: none; /* 초기 상태에서는 숨김 */
+       
+    }
+
+    /* 모달 활성화 시 */
+    .modal.show {
+        display: block; /* 표시 */
+        opacity: 1; /* 완전 보이도록 */
+        transform: translate(-45%, -40%) scale(1); /* 가로축 이동 보정 */
+    }
+
+    /* 모달 헤더 조정 */
+    .modal-header {
+        font-size: 11px;
+        padding: 10px;
+        text-align: center;
+        background-color: lightblue; /* 헤더 배경색 */
+        border-radius: 10px 10px 0 0;
+    }
+
+    /* 모달 콘텐츠 */
+    .modal-content {
+        font-size: 12px;
+        padding: 10px;
+        max-height: 60vh; /* 최대 높이 제한 */
+        overflow-y: auto; /* 스크롤 가능 */
+    }
+
+    /* 닫기 버튼 */
+    .modal .close {
+        font-size: 16px;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+    }
+    
+    
+    	/*푸터 가운데로*/
+    .footer-center img {
+        position: static !important; /* 이미지 위치 기본값으로 */
+        margin: 0 !important; /* 모든 여백 제거 */
+        max-width: none !important; /* 크기 제한 제거 */
+        right: 0 !important; /* 오른쪽 이동 제거 */
+    }	
+    	
+	.footer-center {
+        display: flex !important;
+        flex-direction: row !important; /* 가로 정렬 */
+        align-items: center !important; /* 세로 중앙 정렬 */
+        justify-content: center !important; /* 가로 중앙 정렬 */
+        text-align: center !important;		/*텍스트 중앙정렬*/
+       
+       
+    }	
+    .footer-center span.text-nav {
+    margin: 0 !important; /* 텍스트의 여백 제거 */
+    padding: 0 !important; /* 텍스트의 패딩 제거 */
+}
+}
+
+/*모바일일때 모달창 위치/크기 수정css 끝*/	
+	
+	/*푸터 이미지 간격주기*/
 	
 	
 		/*모달내용*/

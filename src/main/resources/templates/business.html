@@ -211,6 +211,190 @@
 			background-color: var(--ar-body-bg) !important;
 
 		}
+		
+		/*SI/SM 사업사례 패키지(SW)부분*/
+/*------------모바일 화면에서 버튼 수정 css 시작-------------------*/		
+/* 모바일 전용 스타일 */
+@media (max-width: 768px) {
+    /* 버튼 크기 조정 */
+    #business-sw .nav-link {
+        flex: 1; /* 동일한 버튼 너비 */
+        font-size: 12px; /* 텍스트 크기 축소 */
+        padding: 5px; /* 여백 축소 */
+    }
+
+    /* 버튼들을 한 줄에 정렬 */
+    #business-sw .nav-tabs {
+        justify-content: space-around; /* 버튼 간격을 화면에 맞게 배치 */
+        gap: 2px; /* 버튼 사이 간격 최소화 */
+    }
+
+    /* 버튼과 컨텐츠 간 여백 */
+    #business-sw .tab-content {
+        margin-top: 10px; /* 탭과 컨텐츠 간 여백 */
+        min-height: 250px; /* 콘텐츠 최소 높이 설정 */
+        position: relative; /* 콘텐츠 위치 고정 */
+    }
+
+    /* 이미지 크기 고정 */
+    #business-sw .binded-content img {
+        width: 100%; /* 이미지의 너비를 부모 요소에 맞춤 */
+        height: 200px !important; /* 모든 이미지의 세로 높이를 고정 */
+        object-fit: cover; /* 이미지를 고정 크기에 맞게 자르기 */
+    }
+
+    /* 버튼 위치 고정 */
+    #business-sw .nav-link:focus {
+        outline: none; /* 클릭 시 발생하는 외곽선 제거 */
+        position: relative; /* 버튼 위치를 고정 */
+        z-index: 1; /* 버튼이 항상 위에 표시 */
+    }
+    
+    /*SI/SM 시스템 통합 부분 일부 사진 조정 css img-height클래스 추가함*/
+    .img-height {
+		width: 100%;
+		aspect-ratio: 328 / 354.8;	/*328*354.8 기준으로 화면 넓어지면 이미지도 같이 커지게 구현 */
+		height: auto !important;
+		overflow: hidden;									
+	}
+	  .zoom-effect-img img {
+        width: 100%; /* 이미지가 컨테이너 너비를 채우도록 설정 */
+        height: 100%; /* 이미지 높이를 컨테이너에 맞춤 */
+        object-fit: cover; /* 이미지 비율 유지 및 영역 채우기 */
+    }
+	
+	
+	
+	 .zoom-effect-img img {
+        width: 100%; /* 이미지 너비 조정 */
+        height: 100%; /* 이미지 높이 조정 */
+        object-fit: cover; /* 이미지 비율을 유지하며 영역 채우기 */
+    }
+    
+    .swiper-slide {
+        display: flex;
+        flex-direction: column; /* 세로 정렬 */
+        justify-content: flex-start; /* 내용 상단 정렬 */
+        align-items: center; /* 가로 중앙 정렬 */
+    }
+}
+		
+
+
+/*------------모바일 화면에서 버튼 수정 css 끝---------------------*/
+
+
+		/*Consulting페이지 css수정*/
+/*-----------모바일에서 텍스트 크기 수정 css시작----------*/
+
+	@media(max-width: 768px){
+		/*제목 크기 축소*/
+		#business-consulting .mainconsulting0 {
+			font-size: 250% !important;	/*제목크기 축소*/
+			margin-bottom: 20px;	/*제목 아래 여백 추가*/
+			
+		}
+		
+		/*설명 텍스트 크기 축소*/
+		#business-consulting .mainconsulting1 {
+			font-size: 70% !important;	/* 텍스트 크기 축소 */
+			line-height: 1.5;	/* 줄 간격 조정으로 가독성 유지 */
+			margin-top: 20px;	 /* 위쪽 여백 축소 */
+			margin-left: 20px;	 /* 왼쪽 여백 추가 */
+			margin-right: 20px;	/* 오른쪽 여백 추가 */
+		}
+		
+		/*이미지 컨테이너 여백 조정*/
+		#business-consulting .image-container {
+			margin-top: 30px;	/* 텍스트와 이미지 사이 간격 */
+			display: flex;		/* 반응형 레이아웃 */
+			justify-content: center;	/*이미지 가운데 정렬*/
+			flex-wrap: wrap;			/*이미지가 화면을 넘어가면 줄바꿈*/
+		}
+		
+		/*이미지 크지 조정*/
+		#business-consulting .image-container .SIimg {
+			max-width: 90%;		/*이미지 너비를 화면 크기에 맞게 제한*/
+			height: auto;		/*비율 유지*/
+			margin: 10px 0;		/*이미지 간 간격*/
+		}
+	}
+
+
+/*-----------모바일에서 텍스트 크기 수정 css 끝----------*/
+
+	/*solution 수정 css*/
+	/*모바일에서 버튼 크기 수정 css 시작*/
+		@media(max-width:768px){
+			/*Nav-tabs 컨테이너 설정*/
+			#business-Solution .nav-tabs {
+				display: flex;	/*버튼들을 한줄로 나열*/
+				justify-content: flex-start !important;	/*버튼 왼쪽 정렬*/
+				flex-wrap: nowrap;	/*줄바꿈 방지*/
+				
+				gap: 10px;		
+				padding: 0 ;
+				margin: 0 ;
+				width: 100% !important;				
+			
+			}
+			
+			
+			/*버튼 크기 조정*/
+			#business-Solution .nav-tabs .nav-link {
+				flex-shrink: 0;		/*버튼이 압축되지 않도록 설정*/
+				padding: 5px 5px;	/*버튼 내부 여백 축소*/
+				font-size: 10px;	/*텍스트 크기 축소*/
+				white-space: nowrap;	/*텍스트 줄바꿈 방지*/
+				border-radius: 5px;
+				text-align: center;		/*텍스트 중앙 정렬*/
+			}
+			/*모바일에서 버튼 크기 수정 css 끝*/
+			
+			
+			/*Solution 큰제목 밑에 설명글 정렬수정 css시작*/
+			.solution-text-center{
+				font-size: 15px;
+				
+				 display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    text-align: center !important; /* 텍스트 가로 정렬 */
+    line-height: 1.6; /* 줄 간격 설정 */
+    margin: 0 auto; /* 컨테이너를 중앙에 배치 */
+    max-width: 80%; /* 컨테이너 최대 너비 제한 */
+    height: 100%; /* 부모 요소 높이에 맞게 설정 */
+			}
+			
+			/*Solution 큰제목 밑에 설명글 정렬수정 css끝*/
+			
+			
+			
+				/*푸터 가운데로*/
+	.footer-center {
+        display: flex;
+        flex-direction: row; /* 가로 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        text-align: center;		/*텍스트 중앙정렬*/
+        margin: 0 auto; /* 가로 여백 자동 설정 */
+       
+    }	
+    .footer-center span.text-nav {
+    margin: 0; /* 텍스트의 여백 제거 */
+    padding: 0; /* 텍스트의 패딩 제거 */
+}
+		
+			
+		}
+			
+		
+	
+		
+
+		
+		
+		
 	</style>
 
 	<!-- Page loading scripts -->
@@ -717,7 +901,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="zoom-effect-wrapper" style="height: 450px;"> <!-- 부모 요소의 명확한 높이 설정 -->
+							<div class="zoom-effect-wrapper img-height" style="height: 450px;"> <!-- 부모 요소의 명확한 높이 설정 -->
 								<div class="zoom-effect-img" style="height: 100%;"> <!-- 이미지 컨테이너 높이를 100%로 설정 -->
 									<img src="assets/images/business/si1.jpg" alt="Robotics"
 										style="height: 100%; width: 100%; object-fit: cover;">
@@ -765,7 +949,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="zoom-effect-wrapper" style="height: 450px;"> <!-- 부모 요소의 명확한 높이 설정 -->
+							<div class="zoom-effect-wrapper img-height" style="height: 450px;"> <!-- 부모 요소의 명확한 높이 설정 -->
 								<div class="zoom-effect-img" style="height: 100%;"> <!-- 이미지 컨테이너 높이를 100%로 설정 -->
 									<img src="assets/images/business/si2.jpg" alt="Robotics"
 										style="height: 100%; width: 100%; object-fit: cover;">
@@ -881,7 +1065,7 @@
 				<!-- Solution -->
 				<section id="business-Solution" class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
 					<h2 class="h1 text-center pt-2 pt-sm-3">Solution</h2>
-					<p class="text-center pb-3 mb-3 mb-lg-4">반응형 웹 서비스, MDT-CRM, MDT-MIS의 세 가지 솔루션은 <br>고객 관계 관리 및 관리 정보
+					<p class="text-center pb-3 mb-3 mb-lg-4 solution-text-center">반응형 웹 서비스, MDT-CRM, MDT-MIS의 세 가지 솔루션은 <br>고객 관계 관리 및 관리 정보
 						시스템을 위한 통합 플랫폼을 제공하여 운영 효율성과 사용자 경험을 향상시킵니다.</p>
 
 					<!-- Nav tabs -->
