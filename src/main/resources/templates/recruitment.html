@@ -150,6 +150,62 @@
     .welfare-gap {
 		margin-top: -25px;
 	}
+	
+	
+	/*576px 이상 1024px이하 */
+	@media (min-width:576px) and (max-width: 1024px) {
+		#recruitment-welfare {
+		        display: flex;
+		        flex-wrap: wrap; /* 카드들이 줄을 넘을 수 있게 설정 */
+		        gap: 20px; /* 카드 사이 간격 */
+		        justify-content: center; /* 카드들을 부모 컨테이너에서 중앙 정렬 */
+		    }
+
+		    #recruitment-welfare .card {
+		        flex: 1 1 calc(50% - 20px); /* 카드가 한 줄에 두 개씩 배치되도록 설정, 간격 포함 */
+		        margin-bottom: 20px; /* 카드 아래 간격 설정 */
+		    }
+
+		    /* 복지제도 헤더 텍스트 폰트 크기 조정 */
+		    .recruit-font {
+		        font-size: 300%; /* 중간 해상도에서 폰트 크기 약간 축소 */
+		    }
+
+		    /* 개인장비지원/출산휴가/4대보험 법정의무교육/장기근속자포상제도 부분 간격 조정 */
+		    .welfare-gap {
+		        margin-top: -15px; /* 태블릿 크기에서 간격을 조금 조정 */
+		    }
+			/*신입 및 경력 입사자 + 성장동력비 지원 카드 간격 조정*/
+			.welfare-interval {
+				margin-top:-50px;
+			}
+	}
+	
+	/* 1024px 이상 (PC 화면)에서 Bootstrap 기본 설정 유지 및 레이아웃 설정 */
+	@media (min-width: 1024px) {
+	    #recruitment-welfare {
+	        display: block; /* 기본 블록 배치로 돌아가기 */
+	    }
+
+	    #recruitment-welfare .card {
+	        width: auto; /* 기본 Bootstrap 그리드 설정 유지 */
+	        flex: 0 0 auto; /* 기본 플렉스 설정 유지 */
+	        margin-bottom: 20px; /* 모든 카드의 간격 설정 */
+	    }
+
+	    /* 복지제도 헤더 텍스트 폰트 크기 */
+	    .recruit-font {
+	        font-size: 250%; /* 큰 화면에서는 조금 더 작은 크기로 조정 */
+	    }
+
+	    /* 개인장비지원/출산휴가/4대보험 법정의무교육/장기근속자포상제도 부분 간격 조정 */
+	    .welfare-gap {
+	        margin-top: 0; /* PC 화면에서는 기본 간격 사용 */
+	    }
+	}
+	
+	
+	
 		/*푸터 가운데로*/
 	.footer-center {
         display: flex;
@@ -165,6 +221,23 @@
     padding: 0; /* 텍스트의 패딩 제거 */
 }
 	
+}
+/* 576px ~ 1024px 사이에서만 적용 (태블릿 등 중간 화면 크기) */
+@media (min-width: 576px) and (max-width: 1024px) {
+    .col-sm-5 {
+        width: 100% !important; /* 중간 화면에서 너비를 100%로 설정 */
+        flex: 1 1 100% !important; /* 플렉스 설정 조정 */
+        margin: 0 auto !important; /* 좌우 마진을 자동으로 설정하여 중앙 배치 */
+    }
+}
+
+/* 1024px 이상의 큰 화면에서는 Bootstrap 기본 설정 유지 */
+@media (min-width: 1024px) {
+    .col-sm-5 {
+        width: auto !important; /* 기본 너비로 설정 */
+        flex: 0 0 auto !important; /* 원래 플렉스 설정 유지 */
+        margin: 0; /* 기본 마진 유지 */
+    }
 }
 
 
@@ -338,7 +411,7 @@
 				</div>
 				<div class="col-lg-8 col-xl-7 col-xxl-6">
 					<div class="row row-cols-1 row-cols-sm-2">
-						<div class="col">
+						<div class="col welfare-interval">
 							<div class="card border-0 bg-primary bg-opacity-10">
 								<div class="card-body">
 									<i class="ai-bulb-alt fs-1 text-primary d-block mb-3"></i>

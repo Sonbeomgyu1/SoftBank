@@ -111,20 +111,54 @@
 	
 	
 	/*business 모바일에서 가운데로 정렬css시작*/
-/* 모바일에서 정렬 및 스타일 */
-@media (max-width: 768px) {
+
+	/*360px 미만에서 스타일 설정*/
+	@media (max-width: 359px) {
+	    .position-relative {
+	        max-width: 100% !important; /* 너비 제한을 없애거나 부모에 맞게 확장 */
+	        margin: 0 auto; /* 부모 요소 내에서 중앙 정렬 */
+			
+			
+	    }
+
+	    .row > div {
+	        text-align: center; /* 텍스트 중앙 정렬 */
+	        margin-bottom: 20px;
+	    }
+
+	    .row img {
+	        display: block;
+	        margin: 0 auto 15px;
+	        max-width: 90%; /* 이미지 크기를 부모 요소에 맞게 조정 */
+	        height: auto;
+	    }
+		
+		.position-relative2 {
+			       max-width: 300px !important; /* 이 해상도에서만 300px로 제한 */
+			       margin: 0 auto;
+			   }
+	}
+
+
+/* 360px - 768px 사이에서 정렬 및 스타일 설정 */
+@media (min-width: 360px) and (max-width: 768px) {
+	
+	/*이미지+ 텍스트 클래스 position-relative2로  변경*/
+	.position-relative2 {
+				       max-width: 500px !important; /* 이 해상도에서만 300px로 제한 */
+				       margin: 0 auto; 
+					   
+					   
+				   }
+	
+	
     .row > div {
         display: flex !important;
         flex-direction: column !important; /* 세로 정렬 */
-        align-items: center !important; /* 중앙 정렬 */
-        justify-content: center !important; /* 수직 중앙 정렬 */
-       /* text-align: center ; */ /* 텍스트 중앙 정렬 */
+        align-items: center !important; /* 가로 중앙 정렬 */
+        justify-content: center !important; /* 세로 중앙 정렬 */
         margin-bottom: 20px !important; /* 요소 간격 */
     }
-    .busi-center {
-		margin-left: 30px;
-	}
-	  
 
     .row img {
         display: block;
@@ -132,40 +166,38 @@
         max-width: 90%; /* 화면 너비에 맞게 조정 */
         height: auto; /* 비율 유지 */
         position: relative;
-        right: -25px;
+        right: 0; /* 이미지 위치 조정 */
     }
 
- 
-    .biz-h3{
-		 font-size: 1.2rem;
+    .biz-h3 {
+        font-size: 1.2rem;
         margin-bottom: 1rem;
         text-align: center;
-		
-	}
+    }
 
     .biz-ul {
         padding: 0 !important;
         margin: 0 auto !important;
         list-style-position: inside !important;
         max-width: 80% !important;
-        position: relative !important;
-        left: 1px !important;
-        
     }
 
-    .biz.li {
-    font-size: 1rem !important;
-    padding: 0 1rem !important;
-    margin-bottom: 0.5rem !important;
-     
+    .biz-li {
+        font-size: 1rem !important;
+        padding: 0 1rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .ps-md-4.ps-lg-0 {
-        padding: 0; /* 텍스트의 padding 제거 */
-        position: relative;	/*위치 조정을 위해 relative 추가*/
-        left: 10px;	/*텍스트를 오른쪽으로 이동*/
+        padding: 0;
+        position: relative;
+        left: 10px;
     }
 }
+
+
+
+
 
 
 /*business 모바일에서 가운데로 정렬css 끝*/
@@ -662,7 +694,7 @@
 	
 	/*모바일상태일때 모달창 위치/크기 조정*/
 	
-	@media (max-width: 768px) {
+	@media (max-width: 768px) and (max-width: 1024px) {
     .modal {
         position: fixed; /* 화면 기준으로 고정 */
         top: 55% !important; /* 세로 중앙 */
@@ -711,9 +743,10 @@
         right: 15px;
         cursor: pointer;
     }
-    
-    
-    	/*푸터 가운데로*/
+      
+}
+	@media(min-width:768px) and (max-width:1024px) {
+  	/*푸터 가운데로*/
     .footer-center img {
         position: static !important; /* 이미지 위치 기본값으로 */
         margin: 0 !important; /* 모든 여백 제거 */
@@ -734,7 +767,28 @@
     margin: 0 !important; /* 텍스트의 여백 제거 */
     padding: 0 !important; /* 텍스트의 패딩 제거 */
 }
+
 }
+/*576px이상부터 적용됨(576px이상부터 푸터가운데로 오게 정렬)*/
+/* 576px ~ 1024px 사이에서만 적용 (태블릿 등 중간 화면 크기) */
+@media (min-width: 576px) and (max-width: 1024px) {
+    .col-sm-5 {
+        width: 100% !important; /* 중간 화면에서 너비를 100%로 설정 */
+        flex: 1 1 100% !important; /* 플렉스 설정 조정 */
+        margin: 0 auto !important; /* 좌우 마진을 자동으로 설정하여 중앙 배치 */
+    }
+}
+
+/* 1024px 이상의 큰 화면에서는 Bootstrap 기본 설정 유지 */
+@media (min-width: 1024px) {
+    .col-sm-5 {
+        width: auto !important; /* 기본 너비로 설정 */
+        flex: 0 0 auto !important; /* 원래 플렉스 설정 유지 */
+        margin: 0; /* 기본 마진 유지 */
+    }
+}
+
+
 
 /*모바일일때 모달창 위치/크기 수정css 끝*/	
 	

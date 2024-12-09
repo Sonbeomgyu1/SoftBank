@@ -31,6 +31,50 @@
 	<link rel="stylesheet" th:href="@{/assets/css/footer.css}">
 	
 	<link rel="stylesheet" href="/assets/icons/around-icons.min.css">
+	<style>
+		
+			@media(min-width:768px) and (max-width:1024px) {
+		  	/*푸터 가운데로*/
+		    .footer-center img {
+		        position: static !important; /* 이미지 위치 기본값으로 */
+		        margin: 0 !important; /* 모든 여백 제거 */
+		        max-width: none !important; /* 크기 제한 제거 */
+		        right: 0 !important; /* 오른쪽 이동 제거 */
+		    }	
+		    	
+			.footer-center {
+		        display: flex !important;
+		        flex-direction: row !important; /* 가로 정렬 */
+		        align-items: center !important; /* 세로 중앙 정렬 */
+		        justify-content: center !important; /* 가로 중앙 정렬 */
+		        text-align: center !important;		/*텍스트 중앙정렬*/
+		       
+		       
+		    }	
+		    .footer-center span.text-nav {
+		    margin: 0 !important; /* 텍스트의 여백 제거 */
+		    padding: 0 !important; /* 텍스트의 패딩 제거 */
+		}
+
+		}
+		/* 576px ~ 1024px 사이에서만 적용 (태블릿 등 중간 화면 크기) */
+		@media (min-width: 576px) and (max-width: 1024px) {
+		    .col-sm-5 {
+		        width: 100% !important; /* 중간 화면에서 너비를 100%로 설정 */
+		        flex: 1 1 100% !important; /* 플렉스 설정 조정 */
+		        margin: 0 auto !important; /* 좌우 마진을 자동으로 설정하여 중앙 배치 */
+		    }
+		}
+
+		/* 1024px 이상의 큰 화면에서는 Bootstrap 기본 설정 유지 */
+		@media (min-width: 1024px) {
+		    .col-sm-5 {
+		        width: auto !important; /* 기본 너비로 설정 */
+		        flex: 0 0 auto !important; /* 원래 플렉스 설정 유지 */
+		        margin: 0; /* 기본 마진 유지 */
+		    }
+		}
+	</style>
 </head>
 
 <body>

@@ -159,7 +159,24 @@ nav-link클래스 덮어씀-->
 
    
 }
-		
+/*576px이상부터 적용됨(576px이상부터 푸터가운데로 오게 정렬)*/
+/* 576px ~ 1024px 사이에서만 적용 (태블릿 등 중간 화면 크기) */
+@media (min-width: 576px) and (max-width: 1024px) {
+    .col-sm-5 {
+        width: 100% !important; /* 중간 화면에서 너비를 100%로 설정 */
+        flex: 1 1 100% !important; /* 플렉스 설정 조정 */
+        margin: 0 auto !important; /* 좌우 마진을 자동으로 설정하여 중앙 배치 */
+    }
+}
+
+/* 1024px 이상의 큰 화면에서는 Bootstrap 기본 설정 유지 */
+@media (min-width: 1024px) {
+    .col-sm-5 {
+        width: auto !important; /* 기본 너비로 설정 */
+        flex: 0 0 auto !important; /* 원래 플렉스 설정 유지 */
+        margin: 0; /* 기본 마진 유지 */
+    }
+}
 		
 	</style>
 
