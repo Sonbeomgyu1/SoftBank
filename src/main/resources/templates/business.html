@@ -2,52 +2,103 @@
 <html lang="en" data-bs-theme="light">
 
 <head>
-	<meta charset="utf-8">
+<meta charset="utf-8" />
 
-	<!-- Viewport -->
-	<!--<meta name="viewport"
-		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">-->
-		
-	<!--Viewport 모바일 화면에서 손가락으로 확대 축소 하게 구현하는 코드-->
+    <!-- Viewport -->
+   <!-- <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />-->
+    
+    
+   <!--Viewport 모바일 화면에서 손가락으로 확대 축소 하게 구현하는 코드-->
 	 <meta
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=yes"
 />
 <!--Viewport 끝-->
 
-	<!-- SEO meta tags -->
-	<title>SoftBank</title>
-	<meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
-	<meta name="keywords"
-		content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative">
-	<meta name="author" content="Createx Studio">
 
-	<!-- Webmanifest + Favicon / App icons -->
-	<!--<link rel="manifest" href="/manifest.json">-->
-	<link rel="icon" type="image/png" href="/assets/images/main/softbank_logo.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png">
+    <!-- SEO meta tags -->
+    <title>Soft Bank</title>
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap HTML Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
 
-	<!-- Theme switcher (color modes) -->
-	<script src="assets/js/theme-switcher.js"></script>
+    <!-- Webmanifest + Favicon / App icons -->
+    <!--<link rel="manifest" href="/manifest.json">-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/images/main/softbank_logo.png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="/assets/app-icons/icon-180x180.png" />
 
-	<!-- Import Google font (Inter) -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-		rel="stylesheet" id="google-font">
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
 
-	<!-- Vendor styles -->
-	<link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <!-- Import Google font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+      id="google-font"
+    />
 
-	<!-- Font icons -->
-	<link rel="stylesheet" href="assets/icons/around-icons.min.css">
+    <!--Montserrat font 추가-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Roboto font 추가-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100,200,300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-	<!-- Theme styles + Bootstrap -->
-	<link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-	<!-- 푸터 css 불러오기-->
-	<link rel="stylesheet" href="/assets/css/header.css"> <!-- 푸터 css 불러오기-->
-	<!-- 푸터 css 불러오기-->
-	<link rel="stylesheet" href="/assets/css/footer.css"> <!-- 푸터 css 불러오기-->
+    <!-- Vendor styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/img-comparison-slider/dist/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/aos/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css"
+    />
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="assets/icons/around-icons.min.css" />
+
+    <!-- Theme styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- 헤더 css 불러오기-->
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <!-- main css 불러오기-->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <!-- 푸터 css 불러오기-->
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+
 
 
 	<!-- Page loading styles -->
@@ -348,15 +399,11 @@
         height: 100%; /* 이미지 높이를 컨테이너에 맞춤 */
         object-fit: cover; /* 이미지 비율 유지 및 영역 채우기 */
     }
-	
-	
-	
 	 .zoom-effect-img img {
         width: 100%; /* 이미지 너비 조정 */
         height: 100%; /* 이미지 높이 조정 */
         object-fit: cover; /* 이미지 비율을 유지하며 영역 채우기 */
-    }
-    
+    } 
     .swiper-slide {
         display: flex;
         flex-direction: column; /* 세로 정렬 */
@@ -364,12 +411,7 @@
         align-items: center; /* 가로 중앙 정렬 */
     }
 }
-
-
-
 /*------------모바일 화면에서 버튼 수정 css 끝---------------------*/
-
-
 		/*Consulting페이지 css수정*/
 /*-----------모바일에서 텍스트 크기 수정 css시작----------*/
 
@@ -377,10 +419,8 @@
 		/*제목 크기 축소*/
 		#business-consulting .mainconsulting0 {
 			font-size: 250% !important;	/*제목크기 축소*/
-			margin-bottom: 20px;	/*제목 아래 여백 추가*/
-			
-		}
-		
+			margin-bottom: 20px;	/*제목 아래 여백 추가*/		
+		}	
 		/*설명 텍스트 크기 축소*/
 		#business-consulting .mainconsulting1 {
 			font-size: 70% !important;	/* 텍스트 크기 축소 */
@@ -405,21 +445,10 @@
 			margin: 10px 0;		/*이미지 간 간격*/
 		}
 	}
-
-
 /*-----------모바일에서 텍스트 크기 수정 css 끝----------*/
-
 	/*solution 수정 css*/
-	
-	
-	
-	
 	/*모바일에서 버튼 크기 수정 css 시작*/
 		@media(max-width:768px){
-			
-			
-			
-			
 			/*Nav-tabs 컨테이너 설정*/
 			#business-Solution .nav-tabs {
 				display: flex;	/*버튼들을 한줄로 나열*/
@@ -676,7 +705,7 @@
 				<div class="col-sm-9 col-md-4 col-lg-5 mb-5 mb-md-0">
 					<div class="position-relative mb-sm-2">
 						`
-						<img src="/assets/images/business/itoutsourcing.jpg"
+						<img src="/assets/images/business/itoutsourcing01.jpg"
 							style="-webkit-clip-path: url(#mask); clip-path: url(#mask);" alt="Image">
 
 						<defs>
@@ -778,7 +807,7 @@
 										class="d-flex justify-content-center position-absolute top-0 start-0 w-100 h-200">
 										<div class="bg-primary rounded-5 h-100" style="width: 88.2%;"></div>
 									</div>
-									<img class="d-block position-relative z-2" src="/assets/images/business/sw1.jpg"
+									<img class="d-block position-relative z-2" src="/assets/images/business/sw01.jpg"
 										alt="Image">
 								</div>
 							</div>
@@ -788,7 +817,7 @@
 										class="d-flex justify-content-center position-absolute top-0 start-0 w-100 h-100">
 										<div class="bg-info rounded-5 h-100" style="width: 88.2%;"></div>
 									</div>
-									<img class="d-block position-relative z-2" src="/assets/images/business/sw2.jpg"
+									<img class="d-block position-relative z-2" src="/assets/images/business/sw02.jpg"
 										alt="Image" style="height: 110%;">
 								</div>
 							</div>
@@ -798,7 +827,7 @@
 										class="d-flex justify-content-center position-absolute top-0 start-0 w-100 h-100">
 										<div class="bg-warning rounded-5 h-100" style="width: 88.2%;"></div>
 									</div>
-									<img class="d-block position-relative z-2" src="/assets/images/business/sw3.jpg"
+									<img class="d-block position-relative z-2" src="/assets/images/business/sw03.jpg"
 										alt="Image" style="height: 150%;">
 								</div>
 							</div>
@@ -1016,7 +1045,7 @@
 							</div>
 							<div class="zoom-effect-wrapper img-height" style="height: 450px;"> <!-- 부모 요소의 명확한 높이 설정 -->
 								<div class="zoom-effect-img" style="height: 100%;"> <!-- 이미지 컨테이너 높이를 100%로 설정 -->
-									<img src="assets/images/business/si1.jpg" alt="Robotics"
+									<img src="assets/images/business/si01.jpg" alt="Robotics"
 										style="height: 100%; width: 100%; object-fit: cover;">
 									<!-- 이미지의 높이를 100%로 설정 -->
 								</div>
@@ -1064,7 +1093,7 @@
 							</div>
 							<div class="zoom-effect-wrapper img-height" style="height: 450px;"> <!-- 부모 요소의 명확한 높이 설정 -->
 								<div class="zoom-effect-img" style="height: 100%;"> <!-- 이미지 컨테이너 높이를 100%로 설정 -->
-									<img src="assets/images/business/si2.jpg" alt="Robotics"
+									<img src="assets/images/business/si02.jpg" alt="Robotics"
 										style="height: 100%; width: 100%; object-fit: cover;">
 									<!-- 이미지의 높이를 100%로 설정 -->
 								</div>
@@ -1088,7 +1117,7 @@
 				<h1 class="display-8 text-dark text-center pt-5" style="margin-bottom: 70px;">SI/SM 진행절차</h1>
 				<div class="col-md-4 col-xl-5 pb-3 pb-md-0 mb-4 mb-md-0">
 					<div class="ratio ratio-1x1 d-flex align-items-center position-relative rounded-circle overflow-hidden bg-size-cover mx-auto"
-						style="max-width: 530px; background-image: url(assets/images/business/si3.jpg);">
+						style="max-width: 530px; background-image: url(assets/images/business/si03.jpg);">
 						<div class="bg-dark position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
 					</div>
 				</div>
